@@ -1,0 +1,152 @@
+{
+    "item": {
+        "source_unit": "236_2026_ND-CP_D16_K4",
+        "source_point": {
+            "id": "236_2026_ND-CP_D16_K4",
+            "number": null,
+            "implicit": true,
+            "instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": null,
+        "actions": [
+            {
+                "operation": "BAI_BO",
+                "anchor": null,
+                "targets": [
+                    {
+                        "target_unit": "151_2024_ND-CP_D11_K7",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D11",
+                                "number": "11"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D11_K7",
+                                "number": "7"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    },
+                    {
+                        "target_unit": "151_2024_ND-CP_D12_K3",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D12",
+                                "number": "12"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D12_K3",
+                                "number": "3"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    },
+                    {
+                        "target_unit": "151_2024_ND-CP_D17_K4",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D17",
+                                "number": "17"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D17_K4",
+                                "number": "4"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    },
+                    {
+                        "target_unit": "151_2024_ND-CP_D18",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D18",
+                                "number": "18"
+                            },
+                            "clause": null,
+                            "point": null
+                        },
+                        "target_level": "ARTICLE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    },
+                    {
+                        "target_unit": "151_2024_ND-CP_D25_K1",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D25",
+                                "number": "25"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D25_K1",
+                                "number": "1"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    },
+                    {
+                        "target_unit": "151_2024_ND-CP_D25_K3",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D25",
+                                "number": "25"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D25_K3",
+                                "number": "3"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    },
+                    {
+                        "target_unit": "151_2024_ND-CP_D25_K6",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D25",
+                                "number": "25"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D25_K6",
+                                "number": "6"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    }
+                ],
+                "created_units": [],
+                "replacement_references": [],
+                "text_amendment": null,
+                "appendix_amendment": null,
+                "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25.",
+                "normalized_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25.",
+                "anchor_span": null,
+                "resolution_status": "RESOLVED"
+            }
+        ]
+    }
+}

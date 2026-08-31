@@ -1,0 +1,166 @@
+{
+    "item": {
+        "source_unit": "118_2025_QH15_D8_K3",
+        "source_point": {
+            "id": "118_2025_QH15_D8_K3",
+            "number": null,
+            "implicit": true,
+            "instruction": "3. Sửa đổi, bổ sung Điều 8 như sau:"
+        },
+        "replacement_root_level": "ARTICLE",
+        "replacement_tree": {
+            "article": {
+                "number": null,
+                "title": "",
+                "clauses": [
+                    {
+                        "number": "1",
+                        "content": "1. Đường bộ theo cấp quản lý bao gồm: quốc lộ, đường tỉnh, đường xã, đường thôn, đường đô thị, đường chuyên dùng và được xác định như sau:\na) Quốc lộ là đường nối liền Thủ đô Hà Nội với trung tâm hành chính cấp tỉnh; đường nối liền các trung tâm hành chính cấp tỉnh; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh của vùng, khu vực;\nb) Đường tỉnh là đường nằm trong địa bàn một tỉnh nối trung tâm hành chính của tỉnh với trung tâm hành chính của cấp xã; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của tỉnh;\nc) Đường xã là đường nối trung tâm hành chính của xã với thôn, làng, ấp, bản, buôn, bon, phum, sóc (sau đây gọi là thôn) và điểm dân cư nông thôn hoặc đường nối với xã lân cận; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của xã;\nd) Đường thôn là đường trong khu vực thôn; đường trục nối thôn với khu vực sản xuất nông nghiệp, lâm nghiệp và cơ sở sản xuất, kinh doanh khác trên địa bàn thôn;\nđ) Đường đô thị là đường trong phạm vi địa giới hành chính nội thành, nội thị, bao gồm: đường cao tốc đô thị, đường phố, đường ngõ, ngách, kiệt, hẻm trong đô thị;\ne) Đường chuyên dùng là đường chuyên phục vụ giao thông cho một hoặc một số cơ quan, tổ chức, cá nhân và đường nội bộ.",
+                        "points": [
+                            {
+                                "number": "a",
+                                "content": "a) Quốc lộ là đường nối liền Thủ đô Hà Nội với trung tâm hành chính cấp tỉnh; đường nối liền các trung tâm hành chính cấp tỉnh; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh của vùng, khu vực;"
+                            },
+                            {
+                                "number": "b",
+                                "content": "b) Đường tỉnh là đường nằm trong địa bàn một tỉnh nối trung tâm hành chính của tỉnh với trung tâm hành chính của cấp xã; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của tỉnh;"
+                            },
+                            {
+                                "number": "c",
+                                "content": "c) Đường xã là đường nối trung tâm hành chính của xã với thôn, làng, ấp, bản, buôn, bon, phum, sóc (sau đây gọi là thôn) và điểm dân cư nông thôn hoặc đường nối với xã lân cận; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của xã;"
+                            },
+                            {
+                                "number": "d",
+                                "content": "d) Đường thôn là đường trong khu vực thôn; đường trục nối thôn với khu vực sản xuất nông nghiệp, lâm nghiệp và cơ sở sản xuất, kinh doanh khác trên địa bàn thôn;"
+                            },
+                            {
+                                "number": "đ",
+                                "content": "đ) Đường đô thị là đường trong phạm vi địa giới hành chính nội thành, nội thị, bao gồm: đường cao tốc đô thị, đường phố, đường ngõ, ngách, kiệt, hẻm trong đô thị;"
+                            },
+                            {
+                                "number": "e",
+                                "content": "e) Đường chuyên dùng là đường chuyên phục vụ giao thông cho một hoặc một số cơ quan, tổ chức, cá nhân và đường nội bộ."
+                            }
+                        ]
+                    },
+                    {
+                        "number": "2",
+                        "content": "2. Đường địa phương bao gồm: đường tỉnh, đường đô thị, đường xã, đường thôn.",
+                        "points": []
+                    },
+                    {
+                        "number": "3",
+                        "content": "3. Bộ Xây dựng có trách nhiệm quản lý quốc lộ, trừ quốc lộ quy định tại điểm a khoản 4 Điều này và đường gom, đường bên quy định tại điểm c khoản 4 Điều này.",
+                        "points": []
+                    },
+                    {
+                        "number": "4",
+                        "content": "4. Ủy ban nhân dân cấp tỉnh có trách nhiệm quản lý các loại đường sau đây:\na) Quản lý đường tỉnh, quốc lộ đi qua đô thị loại đặc biệt; quốc lộ khi được phân cấp; tuyến, đoạn tuyến quốc lộ đã hoàn thành việc đầu tư xây dựng tuyến tránh thay thế phù hợp với quy hoạch mạng lưới đường bộ; tuyến, đoạn tuyến quốc lộ không còn trong quy hoạch mạng lưới đường bộ, trừ trường hợp quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh; tuyến, đoạn tuyến quốc lộ được Bộ trưởng Bộ Xây dựng giao trên cơ sở đề nghị của Ủy ban nhân dân cấp tỉnh để đáp ứng nhu cầu phát triển kinh tế - xã hội, bảo đảm lợi ích quốc gia, quốc phòng, an ninh, khả năng bố trí nguồn lực của địa phương; tuyến, đoạn tuyến quốc lộ đã được điều chuyển tài sản về Ủy ban nhân dân cấp tỉnh quản lý theo quy định của pháp luật về quản lý, sử dụng tài sản công;\nb) Quy định việc quản lý đường đô thị, đường xã, đường thôn;\nc) Quản lý đường gom, đường bên tách khỏi quốc lộ.",
+                        "points": [
+                            {
+                                "number": "a",
+                                "content": "a) Quản lý đường tỉnh, quốc lộ đi qua đô thị loại đặc biệt; quốc lộ khi được phân cấp; tuyến, đoạn tuyến quốc lộ đã hoàn thành việc đầu tư xây dựng tuyến tránh thay thế phù hợp với quy hoạch mạng lưới đường bộ; tuyến, đoạn tuyến quốc lộ không còn trong quy hoạch mạng lưới đường bộ, trừ trường hợp quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh; tuyến, đoạn tuyến quốc lộ được Bộ trưởng Bộ Xây dựng giao trên cơ sở đề nghị của Ủy ban nhân dân cấp tỉnh để đáp ứng nhu cầu phát triển kinh tế - xã hội, bảo đảm lợi ích quốc gia, quốc phòng, an ninh, khả năng bố trí nguồn lực của địa phương; tuyến, đoạn tuyến quốc lộ đã được điều chuyển tài sản về Ủy ban nhân dân cấp tỉnh quản lý theo quy định của pháp luật về quản lý, sử dụng tài sản công;"
+                            },
+                            {
+                                "number": "b",
+                                "content": "b) Quy định việc quản lý đường đô thị, đường xã, đường thôn;"
+                            },
+                            {
+                                "number": "c",
+                                "content": "c) Quản lý đường gom, đường bên tách khỏi quốc lộ."
+                            }
+                        ]
+                    },
+                    {
+                        "number": "5",
+                        "content": "5. Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có trách nhiệm quản lý đường chuyên dùng theo quy định của Luật này và quy định khác của pháp luật có liên quan.",
+                        "points": []
+                    },
+                    {
+                        "number": "6",
+                        "content": "6. Chính phủ quy định chi tiết Điều này.",
+                        "points": []
+                    }
+                ]
+            }
+        },
+        "actions": [
+            {
+                "operation": "SUA_DOI",
+                "anchor": null,
+                "targets": [
+                    {
+                        "target_unit": "35_2024_QH15_D8",
+                        "target_context": {
+                            "document": "35/2024/QH15",
+                            "article": {
+                                "id": "35_2024_QH15_D8",
+                                "number": "8"
+                            },
+                            "clause": null,
+                            "point": null
+                        },
+                        "target_level": "ARTICLE",
+                        "replacement_level": "ARTICLE",
+                        "replacement_path": [
+                            "article"
+                        ]
+                    }
+                ],
+                "created_units": [],
+                "replacement_references": [
+                    {
+                        "loai": "diem_khoan_tuyet_doi_dieu_nay",
+                        "van_ban_goc": "điểm a khoản 4 Điều này",
+                        "gia_tri_xac_dinh": {
+                            "dieu": "8",
+                            "khoan": "4",
+                            "diem": "a",
+                            "so_hieu_van_ban": "35/2024/QH15"
+                        },
+                        "quan_he": "THAM_CHIEU"
+                    },
+                    {
+                        "loai": "diem_khoan_tuyet_doi_dieu_nay",
+                        "van_ban_goc": "điểm c khoản 4 Điều này",
+                        "gia_tri_xac_dinh": {
+                            "dieu": "8",
+                            "khoan": "4",
+                            "diem": "c",
+                            "so_hieu_van_ban": "35/2024/QH15"
+                        },
+                        "quan_he": "THAM_CHIEU"
+                    },
+                    {
+                        "loai": "van_ban_nay",
+                        "van_ban_goc": "Luật này",
+                        "gia_tri_xac_dinh": {
+                            "dieu": null,
+                            "khoan": null,
+                            "diem": null,
+                            "so_hieu_van_ban": "35/2024/QH15"
+                        },
+                        "quan_he": "THAM_CHIEU"
+                    },
+                    {
+                        "loai": "dieu_nay",
+                        "van_ban_goc": "Điều này",
+                        "gia_tri_xac_dinh": {
+                            "dieu": "8",
+                            "khoan": null,
+                            "diem": null,
+                            "so_hieu_van_ban": "35/2024/QH15"
+                        },
+                        "quan_he": "THAM_CHIEU"
+                    }
+                ],
+                "text_amendment": null,
+                "appendix_amendment": null,
+                "raw_instruction": "3. Sửa đổi, bổ sung Điều 8 như sau:",
+                "normalized_instruction": "3. Sửa đổi, bổ sung Điều 8 như sau:",
+                "anchor_span": null,
+                "resolution_status": "RESOLVED"
+            }
+        ]
+    }
+}

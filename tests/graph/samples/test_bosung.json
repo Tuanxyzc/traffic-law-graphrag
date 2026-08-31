@@ -1,0 +1,119 @@
+{
+    "item": {
+        "source_unit": "236_2026_ND-CP_D3_K5",
+        "source_point": {
+            "id": "236_2026_ND-CP_D3_K5",
+            "number": null,
+            "implicit": true,
+            "instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+            "clauses": [
+                {
+                    "number": "14",
+                    "content": "14. Thông tin về sát hạch, cấp giấy phép lái xe: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quốc tịch; nơi cư trú; số giấy phép lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; cơ quan sát hạch; địa điểm tổ chức sát hạch (trung tâm sát hạch hoặc sân tập lái dùng để sát hạch); ngày, tháng, năm cấp, đổi, cấp lại giấy phép lái xe; cơ quan cấp, đổi, cấp lại giấy phép lái xe; giấy phép lái xe trước khi đổi (giấy phép lái xe hệ dân sự, giấy phép lái xe trong Công an nhân dân, giấy phép lái xe quân sự, giấy phép lái xe của nước ngoài); hạng giấy phép lái xe; thời hạn sử dụng của giấy phép lái xe; số phôi giấy phép lái xe; điều kiện hạn chế của giấy phép lái xe; số điểm hiện tại của giấy phép lái xe và lịch sử trừ điểm giấy phép lái xe.",
+                    "points": []
+                },
+                {
+                    "number": "15",
+                    "content": "15. Thông tin về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam:\na) Thông tin người điều khiển phương tiện: họ, tên; số định danh cá nhân hoặc hộ chiếu; ngày, tháng, năm sinh; quốc tịch; địa chỉ; số giấy phép lái xe; cơ quan cấp;\nb) Thông tin phương tiện: biển số xe; màu biển số xe; loại xe; nhãn hiệu; số loại; số máy; số khung; màu sơn; số chỗ ngồi hoặc đứng hoặc nằm; số hiệu giấy chứng nhận kiểm định an toàn kỹ thuật;\nc) Thông tin xuất nhập cảnh: cửa khẩu tạm nhập hoặc tái xuất; thời gian tạm nhập, tái xuất; cơ quan hải quan làm thủ tục tạm nhập, tái xuất; tên doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế hoặc tổ chức, cá nhân nộp hồ sơ đề nghị chấp thuận đưa xe cơ giới vào Việt Nam;\nd) Thông tin khác về văn bản chấp thuận của cơ quan có thẩm quyền.",
+                    "points": [
+                        {
+                            "number": "a",
+                            "content": "a) Thông tin người điều khiển phương tiện: họ, tên; số định danh cá nhân hoặc hộ chiếu; ngày, tháng, năm sinh; quốc tịch; địa chỉ; số giấy phép lái xe; cơ quan cấp;"
+                        },
+                        {
+                            "number": "b",
+                            "content": "b) Thông tin phương tiện: biển số xe; màu biển số xe; loại xe; nhãn hiệu; số loại; số máy; số khung; màu sơn; số chỗ ngồi hoặc đứng hoặc nằm; số hiệu giấy chứng nhận kiểm định an toàn kỹ thuật;"
+                        },
+                        {
+                            "number": "c",
+                            "content": "c) Thông tin xuất nhập cảnh: cửa khẩu tạm nhập hoặc tái xuất; thời gian tạm nhập, tái xuất; cơ quan hải quan làm thủ tục tạm nhập, tái xuất; tên doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế hoặc tổ chức, cá nhân nộp hồ sơ đề nghị chấp thuận đưa xe cơ giới vào Việt Nam;"
+                        },
+                        {
+                            "number": "d",
+                            "content": "d) Thông tin khác về văn bản chấp thuận của cơ quan có thẩm quyền."
+                        }
+                    ]
+                },
+                {
+                    "number": "16",
+                    "content": "16. Thông tin về đơn vị kinh doanh vận tải, phù hiệu xe kinh doanh vận tải:\na) Thông tin về đơn vị kinh doanh vận tải: tên đơn vị, mã số doanh nghiệp, số Giấy phép kinh doanh vận tải, địa chỉ, cơ quan cấp Giấy phép kinh doanh vận tải, người điều hành vận tải, loại hình kinh doanh vận tải;\nb) Thông tin về phù hiệu vận tải: biển số xe, số phù hiệu, cơ quan cấp phù hiệu, thời hạn, loại hình kinh doanh vận tải.",
+                    "points": [
+                        {
+                            "number": "a",
+                            "content": "a) Thông tin về đơn vị kinh doanh vận tải: tên đơn vị, mã số doanh nghiệp, số Giấy phép kinh doanh vận tải, địa chỉ, cơ quan cấp Giấy phép kinh doanh vận tải, người điều hành vận tải, loại hình kinh doanh vận tải;"
+                        },
+                        {
+                            "number": "b",
+                            "content": "b) Thông tin về phù hiệu vận tải: biển số xe, số phù hiệu, cơ quan cấp phù hiệu, thời hạn, loại hình kinh doanh vận tải."
+                        }
+                    ]
+                }
+            ]
+        },
+        "actions": [
+            {
+                "operation": "BO_SUNG",
+                "anchor": {
+                    "relation": "AFTER",
+                    "target_document": "151/2024/ND-CP",
+                    "target": {
+                        "document": "151/2024/ND-CP",
+                        "article": "11",
+                        "clause": "13",
+                        "point": null
+                    }
+                },
+                "targets": [
+                    {
+                        "target_unit": "151_2024_ND-CP_D11_K13",
+                        "target_context": {
+                            "document": "151/2024/ND-CP",
+                            "article": {
+                                "id": "151_2024_ND-CP_D11",
+                                "number": "11"
+                            },
+                            "clause": {
+                                "id": "151_2024_ND-CP_D11_K13",
+                                "number": "13"
+                            },
+                            "point": null
+                        },
+                        "target_level": "CLAUSE",
+                        "replacement_level": null,
+                        "replacement_path": null
+                    }
+                ],
+                "created_units": [
+                    {
+                        "unit_id": "151_2024_ND-CP_D11_K14",
+                        "unit_level": "CLAUSE",
+                        "number": "14"
+                    },
+                    {
+                        "unit_id": "151_2024_ND-CP_D11_K15",
+                        "unit_level": "CLAUSE",
+                        "number": "15"
+                    },
+                    {
+                        "unit_id": "151_2024_ND-CP_D11_K16",
+                        "unit_level": "CLAUSE",
+                        "number": "16"
+                    }
+                ],
+                "replacement_references": [],
+                "text_amendment": null,
+                "appendix_amendment": null,
+                "raw_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:",
+                "normalized_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:",
+                "anchor_span": [
+                    40,
+                    56
+                ],
+                "resolution_status": "RESOLVED"
+            }
+        ]
+    }
+}
