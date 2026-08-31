@@ -2,7 +2,6 @@ import unittest
 
 from src.parser.operation import detect_target
 
-
 DOC = "36/2024/QH15"
 
 
@@ -15,13 +14,17 @@ class TargetResolverBoundaryTests(unittest.TestCase):
 
     def test_point_does_not_cross_repeated_clause_label(self):
         self.assertEqual(
-            self.resolve("t\u1ea1i \u0111i\u1ec3m b kho\u1ea3n 4 v\u00e0 kho\u1ea3n 5 \u0110i\u1ec1u 30"),
+            self.resolve(
+                "t\u1ea1i \u0111i\u1ec3m b kho\u1ea3n 4 v\u00e0 kho\u1ea3n 5 \u0110i\u1ec1u 30"
+            ),
             [("30", "4", "b"), ("30", "5", None)],
         )
 
     def test_point_does_not_cross_comma_or_or_boundary(self):
         self.assertEqual(
-            self.resolve("\u0111i\u1ec3m b kho\u1ea3n 4, kho\u1ea3n 5 ho\u1eb7c kho\u1ea3n 6 \u0110i\u1ec1u 30"),
+            self.resolve(
+                "\u0111i\u1ec3m b kho\u1ea3n 4, kho\u1ea3n 5 ho\u1eb7c kho\u1ea3n 6 \u0110i\u1ec1u 30"
+            ),
             [("30", "4", "b"), ("30", "5", None), ("30", "6", None)],
         )
 
@@ -43,10 +46,13 @@ class TargetResolverBoundaryTests(unittest.TestCase):
         targets = detect_target(
             "\u0111i\u1ec3m b kho\u1ea3n 4 v\u00e0 kho\u1ea3n 5 \u0110i\u1ec1u 30", DOC
         )
-        self.assertEqual([target.target_id() for target in targets], [
-            "36_2024_QH15_D30_K4_Db",
-            "36_2024_QH15_D30_K5",
-        ])
+        self.assertEqual(
+            [target.target_id() for target in targets],
+            [
+                "36_2024_QH15_D30_K4_Db",
+                "36_2024_QH15_D30_K5",
+            ],
+        )
 
     def test_point_does_not_cross_semicolon_to_standalone_clause(self):
         self.assertEqual(

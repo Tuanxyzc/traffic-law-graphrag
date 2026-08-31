@@ -20,7 +20,8 @@ SKIP_FILENAME_PATTERNS = ["_all_chunks.json"]
 # apply_amendments.py) -> không chunk trực tiếp, tránh trùng/nhiễu nội dung.
 # Tự động suy ra từ VAN_BAN_SCOPE: văn bản nào có "pham_vi_ngoai_scope" = True.
 EXCLUDE_SO_HIEU = {
-    so_hieu for so_hieu, meta in VAN_BAN_SCOPE.items()
+    so_hieu
+    for so_hieu, meta in VAN_BAN_SCOPE.items()
     if meta.get("pham_vi_ngoai_scope")
 }
 
@@ -40,7 +41,9 @@ def load_all_units() -> list[dict]:
             if so_hieu in EXCLUDE_SO_HIEU:
                 continue
             if u["id"] in seen_id:
-                print(f"⚠️  TRÙNG id '{u['id']}' (từ {path.name}) — kiểm tra lại có 2 file cùng chứa 1 đơn vị không")
+                print(
+                    f"⚠️  TRÙNG id '{u['id']}' (từ {path.name}) — kiểm tra lại có 2 file cùng chứa 1 đơn vị không"
+                )
                 continue
             seen_id.add(u["id"])
             all_units.append(u)
@@ -61,7 +64,9 @@ def run():
         print(f"  - {so_hieu}: {count} units")
 
     out_path = Path(PARSED_DIR) / "_all_chunks.json"
-    out_path.write_text(json.dumps(all_units, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(all_units, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(f"Đã lưu -> {out_path}")
     return all_units
 

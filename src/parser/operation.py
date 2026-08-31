@@ -12,8 +12,9 @@ Ví dụ:
 """
 
 import re
-from src.parser.models import ViTri
+
 from src.parser import document_registry
+from src.parser.models import ViTri
 
 VI_TRI_DIEU = re.compile(r"Điều\s+(\d+[a-zđ]?)")
 VI_TRI_KHOAN = re.compile(r"[Kk]hoản\s+(\d+[a-zđ]?)")
@@ -21,17 +22,32 @@ VI_TRI_DIEM = re.compile(r"[Đđ]iểm\s+([a-zđ]\d*)\b")
 
 # Thứ tự kiểm tra CÓ Ý NGHĨA: kiểm tra các từ khóa đặc thù trước, "sửa đổi" chung chung sau cùng
 OPERATION_KEYWORDS = [
-    ("THAY_THE_PHU_LUC", re.compile(r"thay\s+thế\s+(một\s+số\s+)?phụ\s+lục", re.IGNORECASE)),
-    ("THAY_THE_TEXT", re.compile(r"thay\s+thế\s+(?:một\s+số\s+)?(?:từ|cụm\s+từ)", re.IGNORECASE)),
+    (
+        "THAY_THE_PHU_LUC",
+        re.compile(r"thay\s+thế\s+(một\s+số\s+)?phụ\s+lục", re.IGNORECASE),
+    ),
+    (
+        "THAY_THE_TEXT",
+        re.compile(r"thay\s+thế\s+(?:một\s+số\s+)?(?:từ|cụm\s+từ)", re.IGNORECASE),
+    ),
     ("BO_SUNG_TEXT", re.compile(r"bổ\s+sung\s+(?:từ|cụm\s+từ)", re.IGNORECASE)),
     ("BAI_BO_TEXT", re.compile(r"(bãi\s+bỏ|bỏ)\s+(?:từ|cụm\s+từ)", re.IGNORECASE)),
     ("BAI_BO", re.compile(r"bãi\s+bỏ", re.IGNORECASE)),
-    ("THAY_THE", re.compile(r"thay\s+thế\s+(cụm\s+từ|một\s+số\s+cụm\s+từ)", re.IGNORECASE)), # Giữ lại để back-compat hoặc bỏ? Nếu đã có THAY_THE_TEXT thì bỏ cụm từ ở đây
+    (
+        "THAY_THE",
+        re.compile(r"thay\s+thế\s+(cụm\s+từ|một\s+số\s+cụm\s+từ)", re.IGNORECASE),
+    ),  # Giữ lại để back-compat hoặc bỏ? Nếu đã có THAY_THE_TEXT thì bỏ cụm từ ở đây
     ("THAY_THE", re.compile(r"thay\s+thế", re.IGNORECASE)),
     ("THEM_MOI", re.compile(r"thêm\s+mới", re.IGNORECASE)),
-    ("BO_SUNG", re.compile(r"bổ\s+sung.{0,30}vào\s+sau", re.IGNORECASE)),  # "bổ sung Điều X vào sau Điều Y" -> entity MỚI
+    (
+        "BO_SUNG",
+        re.compile(r"bổ\s+sung.{0,30}vào\s+sau", re.IGNORECASE),
+    ),  # "bổ sung Điều X vào sau Điều Y" -> entity MỚI
     ("SUA_DOI", re.compile(r"sửa\s+đổi", re.IGNORECASE)),
-    ("BO_SUNG", re.compile(r"bổ\s+sung", re.IGNORECASE)),   # bổ sung nhưng không có "vào sau" -> vẫn coi là bổ sung nội dung/khoản mới
+    (
+        "BO_SUNG",
+        re.compile(r"bổ\s+sung", re.IGNORECASE),
+    ),  # bổ sung nhưng không có "vào sau" -> vẫn coi là bổ sung nội dung/khoản mới
 ]
 
 
@@ -54,6 +70,7 @@ def detect_target(text: str, default_so_hieu: str | None = None) -> list[ViTri]:
     Sử dụng canonical target_resolver.
     """
     from src.parser.target_resolver import resolve_targets
+
     resolved = resolve_targets(text, default_document=default_so_hieu)
     return [r.as_vitri() for r in resolved]
 

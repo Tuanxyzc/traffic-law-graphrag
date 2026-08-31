@@ -1,22 +1,25 @@
-import pytest
 import json
 import os
 from pathlib import Path
 
+import pytest
+
+from src.graph.resolver.canonical_id_resolver import CanonicalIDResolver
 from src.versioning.version_builder import VersionBuilder
 from src.versioning.version_validator import validate_all_versions
-from src.graph.resolver.canonical_id_resolver import CanonicalIDResolver
+
 
 class NodeAdapter:
     """Class bọc (wrapper) để biến JSON Semantic Unit thành dạng Object có .id, .label, .properties
     đáp ứng được interface mà VersionBuilder yêu cầu."""
+
     def __init__(self, item):
         self.id = item["id"]
         # Phân loại level (2: Article, 3: Clause, 4: Point)
         level_map = {2: "Article", 3: "Clause", 4: "Point"}
         self.label = level_map.get(item["level"], "Unknown")
         self.properties = item
-        
+
         # Mapping số hiệu (number) từ vị trí để VersionBuilder đọc được
         vi_tri = item.get("vi_tri", {})
         if self.label == "Article":
@@ -26,11 +29,13 @@ class NodeAdapter:
         elif self.label == "Point":
             self.properties["number"] = vi_tri.get("diem")
 
+
 def load_json(filepath):
     if not os.path.exists(filepath):
         return None
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
+
 
 def test_golden_case_on_real_data():
     """Test trực tiếp trên dữ liệu thật của dự án (Luật 36/2024 và Luật 118/2025)"""
@@ -41,7 +46,7 @@ def test_golden_case_on_real_data():
     # Danh sách các văn bản tham gia vào test này
     # Bao gồm cả Luật 35, 36 (gốc) và 118 (sửa đổi)
     doc_ids = ["35_2024_QH15", "36_2024_QH15", "118_2025_QH15"]
-    
+
     structure_nodes_by_document = {}
     effective_rules_by_document = {}
     amendment_actions = []
@@ -58,33 +63,39 @@ def test_golden_case_on_real_data():
         structure_data = load_json(base_dir / f"{doc_id}_structure.json")
         if structure_data:
             nodes = []
-            
+
             # Helper đệ quy để trích xuất Điều, Khoản, Điểm
             def extract_nodes(element, level_name):
-                if not element: return
+                if not element:
+                    return
                 for item in element:
                     node_id = item.get("id")
-                    if not node_id: continue
-                    
+                    if not node_id:
+                        continue
+
                     # Xác định label dựa vào level_name
                     label_map = {"dieu": "Article", "khoan": "Clause", "diem": "Point"}
                     label = label_map.get(level_name)
-                    
+
                     if label:
                         # Build NodeAdapter tương đương
                         props = {
                             "id": node_id,
-                            "level": 2 if label == "Article" else 3 if label == "Clause" else 4,
-                            "number": item.get("so")
+                            "level": 2
+                            if label == "Article"
+                            else 3
+                            if label == "Clause"
+                            else 4,
+                            "number": item.get("so"),
                         }
                         # Gán thẳng các thuộc tính để khớp interface
-                        adapter = type('obj', (object,), {
-                            'id': node_id,
-                            'label': label,
-                            'properties': props
-                        })
+                        adapter = type(
+                            "obj",
+                            (object,),
+                            {"id": node_id, "label": label, "properties": props},
+                        )
                         nodes.append(adapter)
-                    
+
                     # Đệ quy xuống cấp dưới
                     extract_nodes(item.get("khoan"), "khoan")
                     extract_nodes(item.get("diem"), "diem")
@@ -92,7 +103,7 @@ def test_golden_case_on_real_data():
             extract_nodes(structure_data.get("dieu_khong_chuong"), "dieu")
             for chuong in structure_data.get("chuong", []):
                 extract_nodes(chuong.get("dieu"), "dieu")
-                
+
             structure_nodes_by_document[doc_id] = nodes
 
         # 3. Load Amendment Index và flatten (trải phẳng) ra thành các record
@@ -106,16 +117,18 @@ def test_golden_case_on_real_data():
                     source_unit = item["source_unit"]
                     replacement_tree = item.get("replacement_tree")
                     for idx, action in enumerate(item.get("actions", []), start=1):
-                        amendment_actions.append({
-                            "action_id": f"{source_unit}_SU{semantic_index}_A{idx}",
-                            "source_document": source_doc,
-                            "source_unit": source_unit,
-                            "item": {
-                                **item,
-                                "replacement_tree": replacement_tree,
-                            },
-                            "action": action,
-                        })
+                        amendment_actions.append(
+                            {
+                                "action_id": f"{source_unit}_SU{semantic_index}_A{idx}",
+                                "source_document": source_doc,
+                                "source_unit": source_unit,
+                                "item": {
+                                    **item,
+                                    "replacement_tree": replacement_tree,
+                                },
+                                "action": action,
+                            }
+                        )
                     semantic_index += 1
 
     if not structure_nodes_by_document:
@@ -126,7 +139,7 @@ def test_golden_case_on_real_data():
         structure_nodes_by_document=structure_nodes_by_document,
         amendment_actions=amendment_actions,
         effective_rules_by_document=effective_rules_by_document,
-        resolver=CanonicalIDResolver()
+        resolver=CanonicalIDResolver(),
     )
     provisions, versions = builder.build()
 
@@ -140,13 +153,13 @@ def test_golden_case_on_real_data():
     if "36_2024_QH15_D7_K1_Dc" in versions:
         timeline = versions["36_2024_QH15_D7_K1_Dc"]
         # Chắc chắn phải có nhiều hơn 1 phiên bản (V1 gốc + V2 sửa đổi)
-        assert len(timeline) >= 2 
-        
+        assert len(timeline) >= 2
+
         # Phiên bản V1 bị đóng lại bằng ngày có hiệu lực của Luật sửa đổi (thường là 01/01/2025)
         v1 = timeline[0]
         v2 = timeline[1]
-        
+
         assert v1.is_current is False
         assert v2.is_current is True
-        assert v1.valid_to == v2.valid_from # Timeline liền mạch
+        assert v1.valid_to == v2.valid_from  # Timeline liền mạch
         assert v2.produced_by in valid_action_ids

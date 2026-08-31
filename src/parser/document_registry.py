@@ -7,8 +7,9 @@ trực tiếp, để nếu sau này đổi cách resolve (vd thêm fuzzy match) 
 """
 
 import re
+
 from src.config import DOCUMENT_REGISTRY
-from src.parser.canonical_id_resolver import normalize_so_hieu, canonical_document_id
+from src.parser.canonical_id_resolver import canonical_document_id, normalize_so_hieu
 
 
 def _canonical_meta(meta: dict | None) -> dict | None:
@@ -18,6 +19,7 @@ def _canonical_meta(meta: dict | None) -> dict | None:
     result["number"] = normalize_so_hieu(result["number"])
     result["id"] = canonical_document_id(result["number"])
     return result
+
 
 SO_HIEU_PATTERN = re.compile(r"(\d+/\d{4}/[A-ZĐ\-]+\d*)")
 

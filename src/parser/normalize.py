@@ -17,8 +17,9 @@ class DoanVan:
     """1 đoạn văn sau khi đọc từ DOCX, giữ lại thuộc tính in đậm (bold) —
     đây là tín hiệu ĐỊNH DẠNG thuần túy, không phải khái niệm pháp lý, nên
     vẫn hợp lệ để normalize.py cung cấp cho structure.py dùng sau này."""
+
     text: str
-    dam: bool   # in đậm hay không
+    dam: bool  # in đậm hay không
 
 
 PAGE_NUMBER_PATTERN = re.compile(r"^\s*\d{1,4}\s*$")
@@ -47,11 +48,11 @@ def normalize_text(text: str) -> str:
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     # Fix typo: straight quote at start of line used as opening quote
-    text = re.sub(r'^"(?=[\w])', '“', text)
+    text = re.sub(r'^"(?=[\w])', "“", text)
     # Fix typo: straight quote at end of line used as closing quote
-    text = re.sub(r'"$', '”', text)
+    text = re.sub(r'"$', "”", text)
     # Fix typo: straight quote before punctuation
-    text = re.sub(r'"(?=[\.\,\;\:\!\?])', '”', text)
+    text = re.sub(r'"(?=[\.\,\;\:\!\?])', "”", text)
     return text.strip()
 
 
@@ -59,6 +60,7 @@ def normalize_so_hieu(so_hieu: str) -> str:
     """Chuẩn hóa các alias pháp lý đã biết thành dạng chuẩn (Canonical ID)."""
     # VD: 151/2024/NĐ-CP -> 151/2024/ND-CP
     from src.parser.canonical_id_resolver import normalize_so_hieu as canonicalize
+
     return canonicalize(so_hieu)
 
 
@@ -70,7 +72,8 @@ def remove_page_number(paragraphs: list[DoanVan]) -> list[DoanVan]:
 def remove_header_footer(paragraphs: list[DoanVan]) -> list[DoanVan]:
     """Loại bỏ các dòng quốc hiệu/tiêu ngữ lặp lại (không mang nội dung pháp lý)."""
     return [
-        p for p in paragraphs
+        p
+        for p in paragraphs
         if not any(pat.match(p.text) for pat in BOILERPLATE_PATTERNS)
     ]
 
@@ -96,7 +99,9 @@ def merge_broken_paragraph(paragraphs: list[DoanVan]) -> list[DoanVan]:
         hien_tai_la_tieu_de_moi = bool(TIEU_DE_MOI.match(p.text)) or p.dam
 
         if not prev_ket_thuc_cau and not hien_tai_la_tieu_de_moi and not prev.dam:
-            result[-1] = DoanVan(text=prev.text.rstrip() + " " + p.text.lstrip(), dam=prev.dam)
+            result[-1] = DoanVan(
+                text=prev.text.rstrip() + " " + p.text.lstrip(), dam=prev.dam
+            )
         else:
             result.append(p)
 

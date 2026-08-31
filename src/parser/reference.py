@@ -14,47 +14,90 @@ Các dạng được resolve:
 """
 
 import re
-from src.parser.models import ViTri, ThamChieu
+
 from src.parser import document_registry
+from src.parser.models import ThamChieu, ViTri
 
 DIEU_SO = r"(\d+[a-zđ]?)"
-SO_HIEU_PATTERN = re.compile(r"(\d+/\d{4}/[A-ZĐ\-]+\d*)")  # vd "151/2024/NĐ-CP", "35/2024/QH15"
+SO_HIEU_PATTERN = re.compile(
+    r"(\d+/\d{4}/[A-ZĐ\-]+\d*)"
+)  # vd "151/2024/NĐ-CP", "35/2024/QH15"
 
 # Sắp xếp TỪ CỤ THỂ NHẤT ĐẾN CHUNG NHẤT — pattern đứng trước match trước,
 # tránh bị pattern chung ("Điều này") nuốt mất phần đã đủ tuyệt đối.
 PATTERNS = [
-    ("diem_khoan_dieu_tuyet_doi_nay", re.compile(
-        rf"điểm\s+([a-zđ])\s+khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
-        r"(?:Luật|Nghị định|Thông tư)\s+này", re.IGNORECASE)),
-    ("khoan_dieu_tuyet_doi_nay", re.compile(
-        rf"khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
-        r"(?:Luật|Nghị định|Thông tư)\s+này", re.IGNORECASE)),
+    (
+        "diem_khoan_dieu_tuyet_doi_nay",
+        re.compile(
+            rf"điểm\s+([a-zđ])\s+khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
+            r"(?:Luật|Nghị định|Thông tư)\s+này",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "khoan_dieu_tuyet_doi_nay",
+        re.compile(
+            rf"khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
+            r"(?:Luật|Nghị định|Thông tư)\s+này",
+            re.IGNORECASE,
+        ),
+    ),
     # Vị trí chi tiết liên văn bản: "điểm a khoản 3 Điều 46 của Luật ..."
-    ("diem_khoan_dieu_cheo_ten", re.compile(
-        rf"điểm\s+([a-zđ])\s+khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
-        rf"(Luật\s+(?!này\b)[^,.;\n]{{2,100}}?)(?=\s+(?:và|hoặc|quy định|được|tại|theo|điều khiển)\b|[,.;\n]|$)",
-        re.IGNORECASE)),
-    ("khoan_dieu_cheo_ten", re.compile(
-        rf"khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
-        rf"(Luật\s+(?!này\b)[^,.;\n]{{2,100}}?)(?=\s+(?:và|hoặc|quy định|được|tại|theo|điều khiển)\b|[,.;\n]|$)",
-        re.IGNORECASE)),
+    (
+        "diem_khoan_dieu_cheo_ten",
+        re.compile(
+            rf"điểm\s+([a-zđ])\s+khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
+            rf"(Luật\s+(?!này\b)[^,.;\n]{{2,100}}?)(?=\s+(?:và|hoặc|quy định|được|tại|theo|điều khiển)\b|[,.;\n]|$)",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "khoan_dieu_cheo_ten",
+        re.compile(
+            rf"khoản\s+{DIEU_SO}\s+Điều\s+{DIEU_SO}\s+(?:của\s+)?"
+            rf"(Luật\s+(?!này\b)[^,.;\n]{{2,100}}?)(?=\s+(?:và|hoặc|quy định|được|tại|theo|điều khiển)\b|[,.;\n]|$)",
+            re.IGNORECASE,
+        ),
+    ),
     # 1. Tuyệt đối + tên văn bản chéo có SỐ HIỆU rõ ràng: "Điều 45 Nghị định số 151/2024/NĐ-CP"
-    ("dieu_cheo_so_hieu", re.compile(
-        rf"Điều\s+{DIEU_SO}\s+(?:của\s+)?(?:Nghị định|Luật|Thông tư)(?:\s+số)?\s+({SO_HIEU_PATTERN.pattern})",
-        re.IGNORECASE)),
+    (
+        "dieu_cheo_so_hieu",
+        re.compile(
+            rf"Điều\s+{DIEU_SO}\s+(?:của\s+)?(?:Nghị định|Luật|Thông tư)(?:\s+số)?\s+({SO_HIEU_PATTERN.pattern})",
+            re.IGNORECASE,
+        ),
+    ),
     # 2. Tuyệt đối + tên văn bản chéo nêu TÊN (không có số hiệu): "Điều 17 Luật Đường bộ"
-    ("dieu_cheo_ten", re.compile(
-        rf"Điều\s+{DIEU_SO}\s+(?:của\s+)?(Luật\s+(?!này\b)[^,.;\n]{{2,100}}?|Nghị định\s+số\s+{SO_HIEU_PATTERN.pattern})"
-        rf"(?=\s+(?:và|hoặc|quy định|được|tại|theo|của)\b|[,.;\n]|$)",
-        re.IGNORECASE)),
+    (
+        "dieu_cheo_ten",
+        re.compile(
+            rf"Điều\s+{DIEU_SO}\s+(?:của\s+)?(Luật\s+(?!này\b)[^,.;\n]{{2,100}}?|Nghị định\s+số\s+{SO_HIEU_PATTERN.pattern})"
+            rf"(?=\s+(?:và|hoặc|quy định|được|tại|theo|của)\b|[,.;\n]|$)",
+            re.IGNORECASE,
+        ),
+    ),
     # 3. Tuyệt đối trong CHÍNH văn bản này: "Điều 20 Luật này" / "Điều 15 Nghị định này"
-    ("dieu_tuyet_doi_nay", re.compile(rf"Điều\s+{DIEU_SO}\s+(Luật|Nghị định|Thông tư)\s+này", re.IGNORECASE)),
+    (
+        "dieu_tuyet_doi_nay",
+        re.compile(
+            rf"Điều\s+{DIEU_SO}\s+(Luật|Nghị định|Thông tư)\s+này", re.IGNORECASE
+        ),
+    ),
     # 4. Kết hợp tuyệt đối + tương đối: "điểm c khoản 3 Điều này"
-    ("diem_khoan_tuyet_doi_dieu_nay", re.compile(rf"điểm\s+([a-zđ])\s+khoản\s+{DIEU_SO}\s+Điều\s+này", re.IGNORECASE)),
+    (
+        "diem_khoan_tuyet_doi_dieu_nay",
+        re.compile(rf"điểm\s+([a-zđ])\s+khoản\s+{DIEU_SO}\s+Điều\s+này", re.IGNORECASE),
+    ),
     # 5. "khoản 2 Điều này"
-    ("khoan_tuyet_doi_dieu_nay", re.compile(rf"khoản\s+{DIEU_SO}\s+Điều\s+này", re.IGNORECASE)),
+    (
+        "khoan_tuyet_doi_dieu_nay",
+        re.compile(rf"khoản\s+{DIEU_SO}\s+Điều\s+này", re.IGNORECASE),
+    ),
     # 6. "điểm b khoản này"
-    ("diem_tuyet_doi_khoan_nay", re.compile(r"điểm\s+([a-zđ])\s+khoản\s+này", re.IGNORECASE)),
+    (
+        "diem_tuyet_doi_khoan_nay",
+        re.compile(r"điểm\s+([a-zđ])\s+khoản\s+này", re.IGNORECASE),
+    ),
     # 7. Thuần tương đối
     ("dieu_nay", re.compile(r"[Đđ]iều\s+này")),
     ("khoan_nay", re.compile(r"[Kk]hoản\s+này")),
@@ -117,24 +160,30 @@ def _quan_he_cho(text_quanh: str) -> str:
     return "THAM_CHIEU"
 
 
-def resolve_references(text: str, vi_tri_hien_tai: ViTri, so_hieu_hien_tai: str) -> list[ThamChieu]:
+def resolve_references(
+    text: str, vi_tri_hien_tai: ViTri, so_hieu_hien_tai: str
+) -> list[ThamChieu]:
     """Quét text theo thứ tự pattern cụ thể -> chung, resolve mỗi tham chiếu
     thành ViTri tuyệt đối kèm phân loại quan_he. Đã match ở vùng nào thì loại
     trừ vùng đó khỏi các pattern sau (tránh match trùng/lồng)."""
     result: list[ThamChieu] = []
-    da_match: list[tuple[int, int]] = []  # các khoảng (start,end) đã bị 1 pattern cụ thể hơn nuốt
+    da_match: list[
+        tuple[int, int]
+    ] = []  # các khoảng (start,end) đã bị 1 pattern cụ thể hơn nuốt
 
     def da_bi_nuot(start, end) -> bool:
         return any(s <= start and end <= e for s, e in da_match)
 
     def them_tham_chieu(loai, van_ban_goc, gia_tri, start, end):
-        quan_he = _quan_he_cho(text[max(0, start - 40):start])
-        result.append(ThamChieu(
-            loai=loai,
-            van_ban_goc=van_ban_goc,
-            gia_tri_xac_dinh=gia_tri,
-            quan_he=quan_he,
-        ))
+        quan_he = _quan_he_cho(text[max(0, start - 40) : start])
+        result.append(
+            ThamChieu(
+                loai=loai,
+                van_ban_goc=van_ban_goc,
+                gia_tri_xac_dinh=gia_tri,
+                quan_he=quan_he,
+            )
+        )
         da_match.append((start, end))
 
     # Mixed point/clause series ending in ``Điều này`` are best parsed by the
@@ -147,6 +196,7 @@ def resolve_references(text: str, vi_tri_hien_tai: ViTri, so_hieu_hien_tai: str)
         re.IGNORECASE,
     )
     from src.parser.target_resolver import resolve_targets
+
     for m in series_pattern.finditer(text):
         if da_bi_nuot(m.start(), m.end()):
             continue
@@ -199,7 +249,9 @@ def resolve_references(text: str, vi_tri_hien_tai: ViTri, so_hieu_hien_tai: str)
     for m in _KHOAN_LIST_DIEU_NAY.finditer(text):
         if da_bi_nuot(m.start(), m.end()):
             continue
-        clause_numbers = re.findall(rf"{_KHOAN}\s+(\d+[a-z\u0111]?)", m.group(0), re.IGNORECASE)
+        clause_numbers = re.findall(
+            rf"{_KHOAN}\s+(\d+[a-z\u0111]?)", m.group(0), re.IGNORECASE
+        )
         for clause_number in clause_numbers:
             them_tham_chieu(
                 "khoan_tuyet_doi_dieu_nay",
@@ -241,18 +293,32 @@ def resolve_references(text: str, vi_tri_hien_tai: ViTri, so_hieu_hien_tai: str)
             if da_bi_nuot(m.start(), m.end()):
                 continue
 
-            quan_he = _quan_he_cho(text[max(0, m.start() - 40):m.start()])
+            quan_he = _quan_he_cho(text[max(0, m.start() - 40) : m.start()])
 
             if loai == "diem_khoan_dieu_tuyet_doi_nay":
-                gia_tri = ViTri(dieu=m.group(3), khoan=m.group(2), diem=m.group(1), so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=m.group(3),
+                    khoan=m.group(2),
+                    diem=m.group(1),
+                    so_hieu_van_ban=so_hieu_hien_tai,
+                )
             elif loai == "khoan_dieu_tuyet_doi_nay":
-                gia_tri = ViTri(dieu=m.group(2), khoan=m.group(1), so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=m.group(2), khoan=m.group(1), so_hieu_van_ban=so_hieu_hien_tai
+                )
             elif loai == "diem_khoan_dieu_cheo_ten":
                 so_hieu = _tra_so_hieu_theo_ten(m.group(4))
-                gia_tri = ViTri(dieu=m.group(3), khoan=m.group(2), diem=m.group(1), so_hieu_van_ban=so_hieu)
+                gia_tri = ViTri(
+                    dieu=m.group(3),
+                    khoan=m.group(2),
+                    diem=m.group(1),
+                    so_hieu_van_ban=so_hieu,
+                )
             elif loai == "khoan_dieu_cheo_ten":
                 so_hieu = _tra_so_hieu_theo_ten(m.group(3))
-                gia_tri = ViTri(dieu=m.group(2), khoan=m.group(1), so_hieu_van_ban=so_hieu)
+                gia_tri = ViTri(
+                    dieu=m.group(2), khoan=m.group(1), so_hieu_van_ban=so_hieu
+                )
             elif loai == "dieu_cheo_so_hieu":
                 gia_tri = ViTri(dieu=m.group(1), so_hieu_van_ban=m.group(2))
             elif loai == "dieu_cheo_ten":
@@ -261,21 +327,53 @@ def resolve_references(text: str, vi_tri_hien_tai: ViTri, so_hieu_hien_tai: str)
             elif loai == "dieu_tuyet_doi_nay":
                 gia_tri = ViTri(dieu=m.group(1), so_hieu_van_ban=so_hieu_hien_tai)
             elif loai == "diem_khoan_tuyet_doi_dieu_nay":
-                gia_tri = ViTri(dieu=vi_tri_hien_tai.dieu, khoan=m.group(2), diem=m.group(1), so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=vi_tri_hien_tai.dieu,
+                    khoan=m.group(2),
+                    diem=m.group(1),
+                    so_hieu_van_ban=so_hieu_hien_tai,
+                )
             elif loai == "khoan_tuyet_doi_dieu_nay":
-                gia_tri = ViTri(dieu=vi_tri_hien_tai.dieu, khoan=m.group(1), so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=vi_tri_hien_tai.dieu,
+                    khoan=m.group(1),
+                    so_hieu_van_ban=so_hieu_hien_tai,
+                )
             elif loai == "diem_tuyet_doi_khoan_nay":
-                gia_tri = ViTri(dieu=vi_tri_hien_tai.dieu, khoan=vi_tri_hien_tai.khoan, diem=m.group(1), so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=vi_tri_hien_tai.dieu,
+                    khoan=vi_tri_hien_tai.khoan,
+                    diem=m.group(1),
+                    so_hieu_van_ban=so_hieu_hien_tai,
+                )
             elif loai == "dieu_nay":
-                gia_tri = ViTri(dieu=vi_tri_hien_tai.dieu, so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=vi_tri_hien_tai.dieu, so_hieu_van_ban=so_hieu_hien_tai
+                )
             elif loai == "khoan_nay":
-                gia_tri = ViTri(dieu=vi_tri_hien_tai.dieu, khoan=vi_tri_hien_tai.khoan, so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=vi_tri_hien_tai.dieu,
+                    khoan=vi_tri_hien_tai.khoan,
+                    so_hieu_van_ban=so_hieu_hien_tai,
+                )
             elif loai == "diem_nay":
-                gia_tri = ViTri(dieu=vi_tri_hien_tai.dieu, khoan=vi_tri_hien_tai.khoan, diem=vi_tri_hien_tai.diem, so_hieu_van_ban=so_hieu_hien_tai)
+                gia_tri = ViTri(
+                    dieu=vi_tri_hien_tai.dieu,
+                    khoan=vi_tri_hien_tai.khoan,
+                    diem=vi_tri_hien_tai.diem,
+                    so_hieu_van_ban=so_hieu_hien_tai,
+                )
             else:  # van_ban_nay
                 gia_tri = ViTri(so_hieu_van_ban=so_hieu_hien_tai)
 
-            result.append(ThamChieu(loai=loai, van_ban_goc=m.group(0), gia_tri_xac_dinh=gia_tri, quan_he=quan_he))
+            result.append(
+                ThamChieu(
+                    loai=loai,
+                    van_ban_goc=m.group(0),
+                    gia_tri_xac_dinh=gia_tri,
+                    quan_he=quan_he,
+                )
+            )
             da_match.append((m.start(), m.end()))
 
     return result

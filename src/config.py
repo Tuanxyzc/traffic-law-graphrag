@@ -66,69 +66,140 @@ OPERATION_PRIORITY = ["BAI_BO", "THAY_THE", "SUA_DOI", "BO_SUNG", "THEM_MOI"]
 
 DOCUMENT_REGISTRY = {
     "35/2024/QH15": {
-        "id": "35_2024_QH15", "number": "35/2024/QH15", "name": "Luật Đường bộ",
+        "id": "35_2024_QH15",
+        "number": "35/2024/QH15",
+        "name": "Luật Đường bộ",
         "aliases": ["Luật Đường bộ", "Luật số 35/2024/QH15", "35/2024/QH15"],
-        "type": "LUAT", "role": "NORMAL",
+        "type": "LUAT",
+        "role": "NORMAL",
     },
     "36/2024/QH15": {
-        "id": "36_2024_QH15", "number": "36/2024/QH15",
+        "id": "36_2024_QH15",
+        "number": "36/2024/QH15",
         "name": "Luật Trật tự, an toàn giao thông đường bộ",
-        "aliases": ["Luật Trật tự, an toàn giao thông đường bộ", "Luật số 36/2024/QH15", "36/2024/QH15"],
-        "type": "LUAT", "role": "NORMAL",
+        "aliases": [
+            "Luật Trật tự, an toàn giao thông đường bộ",
+            "Luật số 36/2024/QH15",
+            "36/2024/QH15",
+        ],
+        "type": "LUAT",
+        "role": "NORMAL",
     },
     "118/2025/QH15": {
-        "id": "118_2025_QH15", "number": "118/2025/QH15",
+        "id": "118_2025_QH15",
+        "number": "118/2025/QH15",
         "name": "Luật sửa đổi, bổ sung một số luật về an ninh, trật tự",
-        "aliases": ["Luật sửa đổi, bổ sung một số luật về an ninh, trật tự", "Luật số 118/2025/QH15", "118/2025/QH15"],
-        "type": "LUAT", "role": "OMNIBUS",
+        "aliases": [
+            "Luật sửa đổi, bổ sung một số luật về an ninh, trật tự",
+            "Luật số 118/2025/QH15",
+            "118/2025/QH15",
+        ],
+        "type": "LUAT",
+        "role": "OMNIBUS",
     },
     "151/2024/ND-CP": {
-        "id": "151_2024_ND_CP", "number": "151/2024/NĐ-CP",
+        "id": "151_2024_ND_CP",
+        "number": "151/2024/NĐ-CP",
         "name": "Nghị định quy định chi tiết Luật Trật tự, an toàn giao thông đường bộ",
-        "aliases": ["Nghị định 151/2024/NĐ-CP", "Nghị định số 151/2024/NĐ-CP", "151/2024/NĐ-CP", "151/2024/ND-CP"],
-        "type": "NGHI_DINH", "role": "NORMAL",
+        "aliases": [
+            "Nghị định 151/2024/NĐ-CP",
+            "Nghị định số 151/2024/NĐ-CP",
+            "151/2024/NĐ-CP",
+            "151/2024/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "NORMAL",
     },
     "168/2024/ND-CP": {
-        "id": "168_2024_ND_CP", "number": "168/2024/NĐ-CP",
+        "id": "168_2024_ND_CP",
+        "number": "168/2024/NĐ-CP",
         "name": "Nghị định xử phạt vi phạm hành chính về trật tự, an toàn giao thông đường bộ",
-        "aliases": ["Nghị định 168/2024/NĐ-CP", "Nghị định số 168/2024/NĐ-CP", "168/2024/NĐ-CP", "168/2024/ND-CP"],
-        "type": "NGHI_DINH", "role": "NORMAL",
+        "aliases": [
+            "Nghị định 168/2024/NĐ-CP",
+            "Nghị định số 168/2024/NĐ-CP",
+            "168/2024/NĐ-CP",
+            "168/2024/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "NORMAL",
     },
     "184/2025/ND-CP": {
-        "id": "184_2025_ND_CP", "number": "184/2025/NĐ-CP",
+        "id": "184_2025_ND_CP",
+        "number": "184/2025/NĐ-CP",
         "name": "Nghị định phân định thẩm quyền chính quyền 2 cấp (lĩnh vực ANTT)",
-        "aliases": ["Nghị định 184/2025/NĐ-CP", "Nghị định số 184/2025/NĐ-CP", "184/2025/NĐ-CP", "184/2025/ND-CP"],
-        "type": "NGHI_DINH", "role": "OMNIBUS",
+        "aliases": [
+            "Nghị định 184/2025/NĐ-CP",
+            "Nghị định số 184/2025/NĐ-CP",
+            "184/2025/NĐ-CP",
+            "184/2025/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "OMNIBUS",
     },
     "236/2026/ND-CP": {
-        "id": "236_2026_ND_CP", "number": "236/2026/NĐ-CP",
+        "id": "236_2026_ND_CP",
+        "number": "236/2026/NĐ-CP",
         "name": "Nghị định sửa đổi, bổ sung Nghị định 151/2024/NĐ-CP",
-        "aliases": ["Nghị định 236/2026/NĐ-CP", "Nghị định số 236/2026/NĐ-CP", "236/2026/NĐ-CP", "236/2026/ND-CP"],
-        "type": "NGHI_DINH", "role": "AMENDMENT",
+        "aliases": [
+            "Nghị định 236/2026/NĐ-CP",
+            "Nghị định số 236/2026/NĐ-CP",
+            "236/2026/NĐ-CP",
+            "236/2026/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "AMENDMENT",
     },
     "238/2026/ND-CP": {
-        "id": "238_2026_ND_CP", "number": "238/2026/NĐ-CP",
+        "id": "238_2026_ND_CP",
+        "number": "238/2026/NĐ-CP",
         "name": "Nghị định sửa đổi, bổ sung Nghị định 168/2024/NĐ-CP",
-        "aliases": ["Nghị định 238/2026/NĐ-CP", "Nghị định số 238/2026/NĐ-CP", "238/2026/NĐ-CP", "238/2026/ND-CP"],
-        "type": "NGHI_DINH", "role": "AMENDMENT",
+        "aliases": [
+            "Nghị định 238/2026/NĐ-CP",
+            "Nghị định số 238/2026/NĐ-CP",
+            "238/2026/NĐ-CP",
+            "238/2026/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "AMENDMENT",
     },
     "165/2024/ND-CP": {
-        "id": "165_2024_ND_CP", "number": "165/2024/NĐ-CP",
+        "id": "165_2024_ND_CP",
+        "number": "165/2024/NĐ-CP",
         "name": "Nghị định QUY ĐỊNH CHI TIẾT, HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA LUẬT ĐƯỜNG BỘ VÀ ĐIỀU 77 LUẬT TRẬT TỰ, AN TOÀN GIAO THÔNG ĐƯỜNG BỘ",
-        "aliases": ["Nghị định 165/2024/NĐ-CP", "Nghị định số 165/2024/NĐ-CP", "165/2024/NĐ-CP", "165/2024/ND-CP"],
-        "type": "NGHI_DINH", "role": "NORMAL",
+        "aliases": [
+            "Nghị định 165/2024/NĐ-CP",
+            "Nghị định số 165/2024/NĐ-CP",
+            "165/2024/NĐ-CP",
+            "165/2024/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "NORMAL",
     },
     "160/2024/ND-CP": {
-        "id": "160_2024_ND_CP", "number": "160/2024/NĐ-CP",
+        "id": "160_2024_ND_CP",
+        "number": "160/2024/NĐ-CP",
         "name": "Nghị định QUY ĐỊNH VỀ HOẠT ĐỘNG ĐÀO TẠO VÀ SÁT HẠCH LÁI XE",
-        "aliases": ["Nghị định 160/2024/NĐ-CP", "Nghị định số 160/2024/NĐ-CP", "160/2024/NĐ-CP", "160/2024/ND-CP"],
-        "type": "NGHI_DINH", "role": "NORMAL",
+        "aliases": [
+            "Nghị định 160/2024/NĐ-CP",
+            "Nghị định số 160/2024/NĐ-CP",
+            "160/2024/NĐ-CP",
+            "160/2024/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "NORMAL",
     },
     "156/2024/ND-CP": {
-        "id": "156_2024_ND_CP", "number": "156/2024/NĐ-CP",
+        "id": "156_2024_ND_CP",
+        "number": "156/2024/NĐ-CP",
         "name": "Nghị định QUY ĐỊNH VỀ ĐẤU GIÁ BIỂN SỐ XE",
-        "aliases": ["Nghị định 156/2024/NĐ-CP", "Nghị định số 156/2024/NĐ-CP", "156/2024/NĐ-CP", "156/2024/ND-CP"],
-        "type": "NGHI_DINH", "role": "NORMAL",
+        "aliases": [
+            "Nghị định 156/2024/NĐ-CP",
+            "Nghị định số 156/2024/NĐ-CP",
+            "156/2024/NĐ-CP",
+            "156/2024/ND-CP",
+        ],
+        "type": "NGHI_DINH",
+        "role": "NORMAL",
     },
 }
 
@@ -160,14 +231,31 @@ OMNIBUS_CONFIG = [
     {
         "source": "118/2025/QH15",
         "targets": [
-            {"document": "35/2024/QH15", "keywords": ["Luật Đường bộ", "Luật số 35/2024/QH15", "35/2024/QH15"]},
-            {"document": "36/2024/QH15", "keywords": ["Luật Trật tự, an toàn giao thông đường bộ", "Luật số 36/2024/QH15", "36/2024/QH15"]},
+            {
+                "document": "35/2024/QH15",
+                "keywords": ["Luật Đường bộ", "Luật số 35/2024/QH15", "35/2024/QH15"],
+            },
+            {
+                "document": "36/2024/QH15",
+                "keywords": [
+                    "Luật Trật tự, an toàn giao thông đường bộ",
+                    "Luật số 36/2024/QH15",
+                    "36/2024/QH15",
+                ],
+            },
         ],
     },
     {
         "source": "184/2025/ND-CP",
         "targets": [
-            {"document": "151/2024/ND-CP", "keywords": ["Nghị định 151/2024/NĐ-CP", "Nghị định số 151/2024/NĐ-CP", "151/2024/NĐ-CP"]},
+            {
+                "document": "151/2024/ND-CP",
+                "keywords": [
+                    "Nghị định 151/2024/NĐ-CP",
+                    "Nghị định số 151/2024/NĐ-CP",
+                    "151/2024/NĐ-CP",
+                ],
+            },
         ],
     },
 ]
@@ -179,17 +267,9 @@ OMNIBUS_CONFIG = [
 # ==========================================================
 
 SCOPE_CONFIG = {
-    "184/2025/ND-CP": {
-        "scope_mode": "SELECTED",
-        "selected_articles": ["27"]
-    },
-    "118/2025/QH15": {
-        "scope_mode": "SELECTED",
-        "selected_articles": ["7", "8"]
-    },
-    "default": {
-        "scope_mode": "ALL"
-    }
+    "184/2025/ND-CP": {"scope_mode": "SELECTED", "selected_articles": ["27"]},
+    "118/2025/QH15": {"scope_mode": "SELECTED", "selected_articles": ["7", "8"]},
+    "default": {"scope_mode": "ALL"},
 }
 
 # ==========================================================
@@ -228,10 +308,17 @@ AMENDMENT_ARTICLE_TARGETS = {
 VAN_BAN_SCOPE = {
     number: {
         "ten": meta["name"],
-        "loai": ("NghiDinh_suaDoi" if meta["role"] == "AMENDMENT"
-                  else "Luat_gop" if meta["role"] == "OMNIBUS" and meta["type"] == "LUAT"
-                  else "NghiDinh_phanDinhThamQuyen" if meta["role"] == "OMNIBUS"
-                  else "Luat" if meta["type"] == "LUAT" else "NghiDinh"),
+        "loai": (
+            "NghiDinh_suaDoi"
+            if meta["role"] == "AMENDMENT"
+            else "Luat_gop"
+            if meta["role"] == "OMNIBUS" and meta["type"] == "LUAT"
+            else "NghiDinh_phanDinhThamQuyen"
+            if meta["role"] == "OMNIBUS"
+            else "Luat"
+            if meta["type"] == "LUAT"
+            else "NghiDinh"
+        ),
         "pham_vi_ngoai_scope": meta["role"] == "OMNIBUS",
     }
     for number, meta in DOCUMENT_REGISTRY.items()

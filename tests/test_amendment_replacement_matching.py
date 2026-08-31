@@ -1,5 +1,8 @@
 import unittest
 
+from src.graph.amendment.amendment_mapper import map_amendment_item
+from src.graph.resolver.canonical_id_resolver import CanonicalIDResolver
+from src.graph.validators.amendment_validator import validate_amendment_graph
 from src.parser.amendment_recorder import (
     build_replacement_tree_and_root,
     parse_actions,
@@ -7,9 +10,6 @@ from src.parser.amendment_recorder import (
 from src.parser.models import ViTri
 from src.parser.structure import DIEU_TITLE_PATTERN
 from src.parser.target_matcher import match_targets
-from src.graph.amendment.amendment_mapper import map_amendment_item
-from src.graph.validators.amendment_validator import validate_amendment_graph
-from src.graph.resolver.canonical_id_resolver import CanonicalIDResolver
 
 DOC = "36/2024/QH15"
 
@@ -18,18 +18,20 @@ class AmendmentReplacementMatchingTests(unittest.TestCase):
     def test_graph_validator_reports_wrong_numbered_replacement(self):
         action = {
             "operation": "SUA_DOI",
-            "targets": [{
-                "target_unit": "36_2024_QH15_D9_K18",
-                "target_context": {
-                    "document": DOC,
-                    "article": {"id": "36_2024_QH15_D9", "number": "9"},
-                    "clause": {"id": "36_2024_QH15_D9_K18", "number": "18"},
-                    "point": None,
-                },
-                "target_level": "CLAUSE",
-                "replacement_level": "CLAUSE",
-                "replacement_path": ["clauses", 0],
-            }],
+            "targets": [
+                {
+                    "target_unit": "36_2024_QH15_D9_K18",
+                    "target_context": {
+                        "document": DOC,
+                        "article": {"id": "36_2024_QH15_D9", "number": "9"},
+                        "clause": {"id": "36_2024_QH15_D9_K18", "number": "18"},
+                        "point": None,
+                    },
+                    "target_level": "CLAUSE",
+                    "replacement_level": "CLAUSE",
+                    "replacement_path": ["clauses", 0],
+                }
+            ],
             "raw_instruction": "update clause 18",
             "resolution_status": "RESOLVED",
         }
@@ -82,11 +84,13 @@ class AmendmentReplacementMatchingTests(unittest.TestCase):
             ViTri(dieu="10", khoan="2", diem="a", so_hieu_van_ban=DOC),
             ViTri(dieu="10", khoan="2", diem="b", so_hieu_van_ban=DOC),
         ]
-        tree = {"points": [
-            {"number": "b", "content": "B"},
-            {"number": "a", "content": "A"},
-            {"number": "c", "content": "C"},
-        ]}
+        tree = {
+            "points": [
+                {"number": "b", "content": "B"},
+                {"number": "a", "content": "A"},
+                {"number": "c", "content": "C"},
+            ]
+        }
 
         mapped = match_targets(targets, tree, "POINT_LIST")
         self.assertEqual(
@@ -99,10 +103,12 @@ class AmendmentReplacementMatchingTests(unittest.TestCase):
             ViTri(dieu="10", khoan="2", diem="a", so_hieu_van_ban=DOC),
             ViTri(dieu="10", khoan="2", diem="b", so_hieu_van_ban=DOC),
         ]
-        tree = {"points": [
-            {"number": None, "content": "A"},
-            {"number": None, "content": "B"},
-        ]}
+        tree = {
+            "points": [
+                {"number": None, "content": "A"},
+                {"number": None, "content": "B"},
+            ]
+        }
 
         mapped = match_targets(targets, tree, "POINT_LIST")
         self.assertEqual(
@@ -117,13 +123,14 @@ class AmendmentReplacementMatchingTests(unittest.TestCase):
             f"{article_word} 10a. Inserted article\n1. Its first clause.",
             "ARTICLE",
         )
-        mapped = match_targets(
-            [ViTri(dieu="10", so_hieu_van_ban=DOC)], tree, root
-        )[0]
+        mapped = match_targets([ViTri(dieu="10", so_hieu_van_ban=DOC)], tree, root)[0]
 
         self.assertEqual(root, "ARTICLE_LIST")
         self.assertEqual(mapped["replacement_path"], ["articles", 0])
-        self.assertEqual([article["number"] for article in tree["articles"]], ["10", "10a"])
+        self.assertEqual(
+            [article["number"] for article in tree["articles"]], ["10", "10a"]
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

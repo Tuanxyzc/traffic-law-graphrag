@@ -1,23 +1,23 @@
-import unittest
 import sys
+import unittest
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
+from src.effective.effective_rule_validator import validate_effective_rules
 from src.graph.amendment.amendment_mapper import map_amendment_item
 from src.graph.loader import load_json
 from src.graph.mapper import map_document_structure
-from src.graph.validators.amendment_validator import validate_amendment_graph
-from src.graph.validators.structure_validator import validate_structure_graph
-from src.graph.validators.cross_document_validator import (
-    validate_cross_document,
-    merge_graph_results,
-    validate_global_graph
-)
-from src.effective.effective_rule_validator import validate_effective_rules
 from src.graph.resolver.canonical_id_resolver import CanonicalIDResolver
+from src.graph.validators.amendment_validator import validate_amendment_graph
+from src.graph.validators.cross_document_validator import (
+    merge_graph_results,
+    validate_cross_document,
+    validate_global_graph,
+)
+from src.graph.validators.structure_validator import validate_structure_graph
 
 PARSED_DIR = Path("data/parsed")
 
@@ -26,7 +26,9 @@ if hasattr(sys.stdout, "reconfigure"):
 
 
 def _action_context(file_path, event_index, item_index, action_index, item, action):
-    instruction = action.get("raw_instruction") or item.get("source_point", {}).get("instruction", "")
+    instruction = action.get("raw_instruction") or item.get("source_point", {}).get(
+        "instruction", ""
+    )
     return (
         f"{file_path} event={event_index} item={item_index} action={action_index} "
         f"source_unit={item.get('source_unit')} operation={action.get('operation')} "
@@ -44,12 +46,9 @@ def collect_structure_errors():
             resolver = CanonicalIDResolver()
             nodes, relationships = map_document_structure(document_data, resolver)
             validate_structure_graph(document_data, nodes, relationships, resolver)
-            
+
             doc_id = CanonicalIDResolver().resolve_document(document_data["so_hieu"])
-            structure_results[doc_id] = {
-                "nodes": nodes,
-                "relationships": relationships
-            }
+            structure_results[doc_id] = {"nodes": nodes, "relationships": relationships}
         except Exception as exc:
             errors.append(f"{file_path}: {type(exc).__name__}: {exc}")
     return files, errors, structure_results
@@ -76,12 +75,19 @@ def collect_amendment_errors():
         for event_index, event in enumerate(amendment_data, start=1):
             if not source_doc:
                 source_doc = event.get("source_document")
-            elif event.get("source_document") and event.get("source_document") != source_doc:
-                errors.append(f"{file_path}: Mismatch source_document in event {event_index}")
+            elif (
+                event.get("source_document")
+                and event.get("source_document") != source_doc
+            ):
+                errors.append(
+                    f"{file_path}: Mismatch source_document in event {event_index}"
+                )
 
             for item_index, item in enumerate(event.get("items", []), start=1):
                 try:
-                    nodes, relationships = map_amendment_item(item, semantic_index, resolver)
+                    nodes, relationships = map_amendment_item(
+                        item, semantic_index, resolver
+                    )
                     doc_nodes.extend(nodes)
                     doc_rels.extend(relationships)
                 except Exception as exc:
@@ -96,21 +102,29 @@ def collect_amendment_errors():
                 for action_index, action in enumerate(item.get("actions", []), start=1):
                     action_count += 1
                     try:
-                        validate_amendment_graph(item, action, nodes, relationships, resolver)
+                        validate_amendment_graph(
+                            item, action, nodes, relationships, resolver
+                        )
                     except Exception as exc:
                         context = _action_context(
-                            file_path, event_index, item_index, action_index, item, action
+                            file_path,
+                            event_index,
+                            item_index,
+                            action_index,
+                            item,
+                            action,
                         )
                         errors.append(f"{context}: {type(exc).__name__}: {exc}")
                 semantic_index += 1
-                
+
         if source_doc:
             amendment_results[source_doc] = {
                 "nodes": doc_nodes,
-                "relationships": doc_rels
+                "relationships": doc_rels,
             }
 
     return files, action_count, errors, amendment_results
+
 
 def collect_effective_rule_errors(structure_results):
     errors = []
@@ -130,7 +144,9 @@ def collect_effective_rule_errors(structure_results):
             rules = data.get("rules", [])
             for rule in rules:
                 if "target_document" in rule:
-                    rule["target_document"] = resolver.resolve_document(rule["target_document"])
+                    rule["target_document"] = resolver.resolve_document(
+                        rule["target_document"]
+                    )
             rule_count += len(rules)
             validate_effective_rules(rules, structure_node_index, resolver)
         except ValueError as exc:
@@ -151,7 +167,8 @@ class FullCorpusGraphTests(unittest.TestCase):
         self.assertTrue(files, f"No structure files found under {PARSED_DIR}")
         self.assertFalse(
             errors,
-            f"{len(errors)} structure file(s) failed out of {len(files)}:\n" + "\n".join(errors),
+            f"{len(errors)} structure file(s) failed out of {len(files)}:\n"
+            + "\n".join(errors),
         )
 
     def test_all_amendment_actions_map_and_validate(self):
@@ -163,6 +180,7 @@ class FullCorpusGraphTests(unittest.TestCase):
             f"{len(errors)} amendment error(s) across {action_count} actions "
             f"in {len(files)} files:\n" + "\n".join(errors),
         )
+
     def test_all_effective_rules_validate(self):
         _, _, structure_results = collect_structure_errors()
         files, rule_count, errors = collect_effective_rule_errors(structure_results)
@@ -208,14 +226,17 @@ def main():
     except Exception as exc:
         print(f"Cross-document validation failed: {exc}")
         raise SystemExit(1)
-        
+
     print("\nRunning global graph validation...")
-    all_nodes, all_relationships = merge_graph_results(structure_results, amendment_results)
+    all_nodes, all_relationships = merge_graph_results(
+        structure_results, amendment_results
+    )
     try:
         validate_global_graph(all_nodes, all_relationships)
     except Exception as exc:
         print(f"Global graph validation failed: {exc}")
         raise SystemExit(1)
+
 
 if __name__ == "__main__":
     main()

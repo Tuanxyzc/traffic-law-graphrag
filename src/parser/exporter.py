@@ -6,28 +6,43 @@ exporter.py — Xuất dữ liệu ra file, mỗi loại phục vụ 1 mục đ�
 """
 
 import json
-from pathlib import Path
 from dataclasses import asdict
+from pathlib import Path
 
-from src.parser.models import VanBan, DonViNguNghia
 from src.parser.canonical_id_resolver import normalize_so_hieu
+from src.parser.models import DonViNguNghia, VanBan
 
 
-def save_structure(van_ban: VanBan, output_dir: str, filename_override: str | None = None):
-    filename = filename_override if filename_override else f"{van_ban.so_hieu.replace('/', '_')}_structure.json"
+def save_structure(
+    van_ban: VanBan, output_dir: str, filename_override: str | None = None
+):
+    filename = (
+        filename_override
+        if filename_override
+        else f"{van_ban.so_hieu.replace('/', '_')}_structure.json"
+    )
     path = Path(output_dir) / filename
-    path.write_text(json.dumps(asdict(van_ban), ensure_ascii=False, indent=2), encoding="utf-8")
+    path.write_text(
+        json.dumps(asdict(van_ban), ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     return path
 
 
 def save_semantic_units(units: list[DonViNguNghia], so_hieu: str, output_dir: str):
     path = Path(output_dir) / f"{so_hieu.replace('/', '_')}_semantic_units.json"
-    path.write_text(json.dumps([asdict(u) for u in units], ensure_ascii=False, indent=2), encoding="utf-8")
+    path.write_text(
+        json.dumps([asdict(u) for u in units], ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     return path
 
 
-def save_metadata(van_ban: VanBan, output_dir: str, extra: dict | None = None,
-                    amendment_target_documents: list[str] | None = None):
+def save_metadata(
+    van_ban: VanBan,
+    output_dir: str,
+    extra: dict | None = None,
+    amendment_target_documents: list[str] | None = None,
+):
     meta = {
         "so_hieu": normalize_so_hieu(van_ban.so_hieu),
         "ten": van_ban.ten,
@@ -36,9 +51,12 @@ def save_metadata(van_ban: VanBan, output_dir: str, extra: dict | None = None,
         "co_quan_ban_hanh": van_ban.co_quan_ban_hanh,
         "trang_thai_hieu_luc": van_ban.trang_thai_hieu_luc,
         "so_chuong": len(van_ban.chuong),
-        "so_dieu": len(van_ban.dieu_khong_chuong) + sum(len(c.dieu) for c in van_ban.chuong),
+        "so_dieu": len(van_ban.dieu_khong_chuong)
+        + sum(len(c.dieu) for c in van_ban.chuong),
         "is_amendment": bool(amendment_target_documents),
-        "amendment_target_documents": [normalize_so_hieu(x) for x in (amendment_target_documents or [])],
+        "amendment_target_documents": [
+            normalize_so_hieu(x) for x in (amendment_target_documents or [])
+        ],
     }
     if extra:
         meta.update(extra)

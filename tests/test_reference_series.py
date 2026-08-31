@@ -3,18 +3,22 @@ import unittest
 from src.parser.models import ViTri
 from src.parser.reference import resolve_references
 
-
 DOC = "165/2024/ND-CP"
 CURRENT = ViTri(dieu="20", khoan="5", so_hieu_van_ban=DOC)
 
 
 class ReferenceSeriesTests(unittest.TestCase):
     def target_ids(self, text):
-        return [reference.gia_tri_xac_dinh.target_id() for reference in resolve_references(text, CURRENT, DOC)]
+        return [
+            reference.gia_tri_xac_dinh.target_id()
+            for reference in resolve_references(text, CURRENT, DOC)
+        ]
 
     def test_multiple_clauses_share_current_article(self):
         self.assertEqual(
-            self.target_ids("quy \u0111\u1ecbnh t\u1ea1i kho\u1ea3n 1 v\u00e0 kho\u1ea3n 2 \u0110i\u1ec1u n\u00e0y"),
+            self.target_ids(
+                "quy \u0111\u1ecbnh t\u1ea1i kho\u1ea3n 1 v\u00e0 kho\u1ea3n 2 \u0110i\u1ec1u n\u00e0y"
+            ),
             ["165_2024_ND-CP_D20_K1", "165_2024_ND-CP_D20_K2"],
         )
 

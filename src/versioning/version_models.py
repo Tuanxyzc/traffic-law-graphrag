@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any
+
 
 @dataclass
 class CanonicalProvision:
@@ -7,6 +7,7 @@ class CanonicalProvision:
     document_id: str
     level: str
     number: str | None
+
 
 @dataclass
 class ProvisionVersion:

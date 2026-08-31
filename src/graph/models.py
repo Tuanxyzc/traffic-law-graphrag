@@ -4,9 +4,10 @@ from typing import Any
 
 @dataclass
 class GraphNode:
-    label:str
+    label: str
     id: str
-    properties:dict[str,Any]=field(default_factory=dict)
+    properties: dict[str, Any] = field(default_factory=dict)
+
 
 @dataclass
 class GraphRelationship:

@@ -2,10 +2,14 @@
 target_matcher.py — Map Targets to Replacement Tree paths.
 """
 
+
 def _target_level_cua(vt) -> str:
-    if vt.diem: return "POINT"
-    if vt.khoan: return "CLAUSE"
+    if vt.diem:
+        return "POINT"
+    if vt.khoan:
+        return "CLAUSE"
     return "ARTICLE"
+
 
 def get_nodes_at_level(replacement_tree, root_level, target_level):
     nodes = []
@@ -43,41 +47,51 @@ def get_nodes_at_level(replacement_tree, root_level, target_level):
             nodes.append((replacement_tree["point"], ["point"]))
     return nodes
 
+
 def match_targets(targets, replacement_tree, root_level) -> list[dict]:
     mapped = []
     for idx, target in enumerate(targets):
         t_level = _target_level_cua(target)
-        t_num = target.dieu if t_level == "ARTICLE" else (target.khoan if t_level == "CLAUSE" else target.diem)
-        
+        t_num = (
+            target.dieu
+            if t_level == "ARTICLE"
+            else (target.khoan if t_level == "CLAUSE" else target.diem)
+        )
+
         nodes = get_nodes_at_level(replacement_tree, root_level, t_level)
         matched_path = None
-        
+
         # Priority 1: Match by Level + Number/Letter
         if t_num:
             for node, path in nodes:
                 if str(node.get("number", "")) == str(t_num):
                     matched_path = path
                     break
-                    
+
         # Numbered nodes must never be assigned to a differently numbered
         # target. Order is meaningful only for unnumbered replacement text.
-        if (not matched_path and len(nodes) == len(targets)
-                and all(not str(node.get("number") or "").strip() for node, _ in nodes)):
+        if (
+            not matched_path
+            and len(nodes) == len(targets)
+            and all(not str(node.get("number") or "").strip() for node, _ in nodes)
+        ):
             matched_path = nodes[idx][1] if idx < len(nodes) else None
-            
+
         target_context = {
             "document": target.so_hieu_van_ban,
             "article": {"id": None, "number": target.dieu} if target.dieu else None,
             "clause": {"id": None, "number": target.khoan} if target.khoan else None,
-            "point": {"id": None, "number": target.diem} if target.diem else None
+            "point": {"id": None, "number": target.diem} if target.diem else None,
         }
-        
-        mapped.append({
-            "target_unit_mock": target,
-            "target_context": target_context,
-            "target_level": t_level,
-            "replacement_level": t_level if matched_path else None,
-            "replacement_path": matched_path
-        })
-        
+
+        mapped.append(
+            {
+                "target_unit_mock": target,
+                "target_context": target_context,
+                "target_level": t_level,
+                "replacement_level": t_level if matched_path else None,
+                "replacement_path": matched_path,
+            }
+        )
+
     return mapped
