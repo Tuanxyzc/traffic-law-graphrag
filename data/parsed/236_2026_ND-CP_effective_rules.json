@@ -1,0 +1,71 @@
+{
+  "document": "236/2026/ND-CP",
+  "document_id": "236_2026_ND-CP",
+  "rules": [
+    {
+      "rule_id": "236_2026_ND-CP_ER_18_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "236/2026/ND-CP",
+      "source_article": "18",
+      "source_clause": "1",
+      "target_document": "236/2026/ND-CP",
+      "targets": [],
+      "effective_from": "2026-07-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.",
+      "status": "RESOLVED",
+      "source_unit": "236_2026_ND-CP_D18_K1",
+      "source_unit_materialized_as_support": false
+    },
+    {
+      "rule_id": "236_2026_ND-CP_ER_18_2_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "236/2026/ND-CP",
+      "source_article": "18",
+      "source_clause": "2",
+      "target_document": "236/2026/ND-CP",
+      "targets": [
+        {
+          "unit_id": "236_2026_ND-CP_D2_K2",
+          "article": "2",
+          "clause": "2",
+          "point": null
+        }
+      ],
+      "effective_from": "2027-07-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "2. Quy định xây dựng Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam; Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải tại khoản 2 Điều 2 Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2027.",
+      "status": "RESOLVED",
+      "source_unit": "236_2026_ND-CP_D18_K2",
+      "source_unit_materialized_as_support": false
+    },
+    {
+      "rule_id": "236_2026_ND-CP_ER_18_3_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "236/2026/ND-CP",
+      "source_article": "18",
+      "source_clause": "3",
+      "target_document": "236/2026/ND-CP",
+      "targets": [
+        {
+          "unit_id": "236_2026_ND-CP_D12",
+          "article": "12",
+          "clause": null,
+          "point": null
+        }
+      ],
+      "effective_from": "2027-07-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "3. Quy định nộp hồ sơ chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam được tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch hoặc tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia tại Điều 12 Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2027.",
+      "status": "RESOLVED",
+      "source_unit": "236_2026_ND-CP_D18_K3",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

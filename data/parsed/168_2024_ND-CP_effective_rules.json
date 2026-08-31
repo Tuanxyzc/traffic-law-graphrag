@@ -1,0 +1,83 @@
+{
+  "document": "168/2024/ND-CP",
+  "document_id": "168_2024_ND-CP",
+  "rules": [
+    {
+      "rule_id": "168_2024_ND-CP_ER_53_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "168/2024/ND-CP",
+      "source_article": "53",
+      "source_clause": "1",
+      "target_document": "168/2024/ND-CP",
+      "targets": [],
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025, trừ quy định tại khoản 2 Điều này.",
+      "status": "RESOLVED",
+      "source_unit": "168_2024_ND-CP_D53_K1",
+      "source_unit_materialized_as_support": false
+    },
+    {
+      "rule_id": "168_2024_ND-CP_ER_53_2_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "168/2024/ND-CP",
+      "source_article": "53",
+      "source_clause": "2",
+      "target_document": "168/2024/ND-CP",
+      "targets": [
+        {
+          "unit_id": "168_2024_ND-CP_D6_K3_Dm",
+          "article": "6",
+          "clause": "3",
+          "point": "m"
+        },
+        {
+          "unit_id": "168_2024_ND-CP_D26_K4_De",
+          "article": "26",
+          "clause": "4",
+          "point": "e"
+        },
+        {
+          "unit_id": "168_2024_ND-CP_D27_K1_Db",
+          "article": "27",
+          "clause": "1",
+          "point": "b"
+        }
+      ],
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "2. Quy định tại điểm m khoản 3 Điều 6, điểm e khoản 4 Điều 26, điểm b khoản 1 Điều 27 của Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026",
+      "status": "RESOLVED",
+      "source_unit": "168_2024_ND-CP_D53_K2",
+      "source_unit_materialized_as_support": false
+    },
+    {
+      "rule_id": "168_2024_ND-CP_ER_53_2_2",
+      "rule_type": "EXTERNAL_RULE",
+      "source_document": "168/2024/ND-CP",
+      "source_article": "53",
+      "source_clause": "2",
+      "target_document": "168/2024/ND-CP",
+      "targets": [
+        {
+          "unit_id": "168_2024_ND-CP_D32_K1_Db",
+          "article": "32",
+          "clause": "1",
+          "point": "b"
+        }
+      ],
+      "effective_from": null,
+      "effective_to": null,
+      "external_basis": "quy định tại điểm b khoản 1 Điều 32 của Nghị định này có hiệu lực thi hành theo quy định của pháp luật bảo vệ môi trường về kiểm định khí thải xe mô tô, xe gắn máy.",
+      "condition": null,
+      "raw_text": "quy định tại điểm b khoản 1 Điều 32 của Nghị định này có hiệu lực thi hành theo quy định của pháp luật bảo vệ môi trường về kiểm định khí thải xe mô tô, xe gắn máy.",
+      "status": "EXTERNAL",
+      "source_unit": "168_2024_ND-CP_D53_K2",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

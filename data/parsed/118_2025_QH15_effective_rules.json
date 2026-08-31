@@ -1,0 +1,47 @@
+{
+  "document": "118/2025/QH15",
+  "document_id": "118_2025_QH15",
+  "rules": [
+    {
+      "rule_id": "118_2025_QH15_ER_11_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "118/2025/QH15",
+      "source_article": "11",
+      "source_clause": "1",
+      "target_document": "118/2025/QH15",
+      "targets": [],
+      "effective_from": "2026-07-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026, trừ quy định tại khoản 2 Điều này.",
+      "status": "RESOLVED",
+      "source_unit": "118_2025_QH15_D11_K1",
+      "source_unit_materialized_as_support": true
+    },
+    {
+      "rule_id": "118_2025_QH15_ER_11_2_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "118/2025/QH15",
+      "source_article": "11",
+      "source_clause": "2",
+      "target_document": "118/2025/QH15",
+      "targets": [
+        {
+          "unit_id": "118_2025_QH15_D7_K20_Da",
+          "article": "7",
+          "clause": "20",
+          "point": "a"
+        }
+      ],
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "2. Quy định tại điểm a khoản 20 Điều 7 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026.",
+      "status": "RESOLVED",
+      "source_unit": "118_2025_QH15_D11_K2",
+      "source_unit_materialized_as_support": true
+    }
+  ]
+}

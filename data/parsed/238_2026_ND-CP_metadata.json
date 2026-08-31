@@ -1,0 +1,18 @@
+{
+  "so_hieu": "238/2026/ND-CP",
+  "ten": "Nghị định sửa đổi, bổ sung Nghị định 168/2024/NĐ-CP",
+  "loai": "NghiDinh_suaDoi",
+  "ngay_ban_hanh": "2026-06-26",
+  "co_quan_ban_hanh": "CHÍNH PHỦ",
+  "trang_thai_hieu_luc": "con_hieu_luc",
+  "so_chuong": 2,
+  "so_dieu": 21,
+  "is_amendment": true,
+  "amendment_target_documents": [
+    "168/2024/ND-CP"
+  ],
+  "ngay_ban_hanh_raw": "Hà Nội, ngày 26 tháng 6 năm 2026",
+  "hieu_luc_tu": "2026-08-15",
+  "canonical_document_id": "238_2026_ND-CP",
+  "effective_rule_count": 1
+}

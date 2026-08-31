@@ -1,0 +1,19 @@
+{
+  "so_hieu": "118/2025/QH15",
+  "ten": "Luật sửa đổi, bổ sung một số luật về an ninh, trật tự",
+  "loai": "Luat_gop",
+  "ngay_ban_hanh": "2025-12-10",
+  "co_quan_ban_hanh": "QUỐC HỘI",
+  "trang_thai_hieu_luc": "con_hieu_luc",
+  "so_chuong": 0,
+  "so_dieu": 2,
+  "is_amendment": true,
+  "amendment_target_documents": [
+    "35/2024/QH15",
+    "36/2024/QH15"
+  ],
+  "ngay_ban_hanh_raw": "Hà Nội, ngày 10 tháng 12 năm 2025",
+  "hieu_luc_tu": "2026-07-01",
+  "canonical_document_id": "118_2025_QH15",
+  "effective_rule_count": 2
+}

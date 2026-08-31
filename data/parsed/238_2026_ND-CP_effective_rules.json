@@ -1,0 +1,23 @@
+{
+  "document": "238/2026/ND-CP",
+  "document_id": "238_2026_ND-CP",
+  "rules": [
+    {
+      "rule_id": "238_2026_ND-CP_ER_20_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "238/2026/ND-CP",
+      "source_article": "20",
+      "source_clause": "1",
+      "target_document": "238/2026/ND-CP",
+      "targets": [],
+      "effective_from": "2026-08-15",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Nghị định này có hiệu lực thi hành từ ngày 15 tháng 8 năm 2026.",
+      "status": "RESOLVED",
+      "source_unit": "238_2026_ND-CP_D20_K1",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

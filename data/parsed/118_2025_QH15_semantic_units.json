@@ -1,0 +1,1696 @@
+[
+  {
+    "id": "118_2025_QH15_D7_K1",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "1",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "7",
+        "khoan": "1",
+        "diem": "c",
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "7",
+        "khoan": "1",
+        "diem": "d",
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "7",
+        "khoan": "1",
+        "diem": "h",
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "van_ban_nay",
+        "van_ban_goc": "Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": null,
+          "khoan": null,
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n1. Sửa đổi, bổ sung một số điểm của khoản 1 Điều 7 như sau:\na) Sửa đổi, bổ sung điểm c và điểm d như sau:\n“c) Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng;\nd) Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe;”;\nb) Sửa đổi, bổ sung điểm h như sau:\n“h) Cơ sở dữ liệu về hành trình của phương tiện giao thông đường bộ, hình ảnh người lái xe, hình ảnh khoang chở khách theo quy định của Luật này;”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n1. Sửa đổi, bổ sung một số điểm của khoản 1 Điều 7 như sau:\na) Sửa đổi, bổ sung điểm c và điểm d như sau:\n“c) Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng;\nd) Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe;”;\nb) Sửa đổi, bổ sung điểm h như sau:\n“h) Cơ sở dữ liệu về hành trình của phương tiện giao thông đường bộ, hình ảnh người lái xe, hình ảnh khoang chở khách theo quy định của Luật này;”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n1. Sửa đổi, bổ sung một số điểm của khoản 1 Điều 7 như sau:\na) Sửa đổi, bổ sung điểm c và điểm d như sau:\n“c) Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng;\nd) Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe;”;\nb) Sửa đổi, bổ sung điểm h như sau:\n“h) Cơ sở dữ liệu về hành trình của phương tiện giao thông đường bộ, hình ảnh người lái xe, hình ảnh khoang chở khách theo quy định của Luật này;”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K1_Da",
+      "118_2025_QH15_D7_K1_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K2",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "2",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "9",
+        "khoan": "18",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "van_ban_nay",
+        "van_ban_goc": "Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": null,
+          "khoan": null,
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n2. Sửa đổi, bổ sung khoản 18 và bổ sung khoản 18a vào sau khoản 18 Điều 9 như sau:\n“18. Làm gián đoạn hoạt động hoặc làm sai lệch dữ liệu của thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách theo quy định của Luật này.\n18a. Sử dụng dữ liệu thu được từ thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách để xâm phạm nhân phẩm, danh dự, đời sống riêng tư, bí mật cá nhân, các quyền và lợi ích hợp pháp khác của cá nhân và tổ chức.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n2. Sửa đổi, bổ sung khoản 18 và bổ sung khoản 18a vào sau khoản 18 Điều 9 như sau:\n“18. Làm gián đoạn hoạt động hoặc làm sai lệch dữ liệu của thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách theo quy định của Luật này.\n18a. Sử dụng dữ liệu thu được từ thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách để xâm phạm nhân phẩm, danh dự, đời sống riêng tư, bí mật cá nhân, các quyền và lợi ích hợp pháp khác của cá nhân và tổ chức.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n2. Sửa đổi, bổ sung khoản 18 và bổ sung khoản 18a vào sau khoản 18 Điều 9 như sau:\n“18. Làm gián đoạn hoạt động hoặc làm sai lệch dữ liệu của thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách theo quy định của Luật này.\n18a. Sử dụng dữ liệu thu được từ thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách để xâm phạm nhân phẩm, danh dự, đời sống riêng tư, bí mật cá nhân, các quyền và lợi ích hợp pháp khác của cá nhân và tổ chức.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI",
+      "BO_SUNG"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K2"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K3",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "3",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "10",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n3. Sửa đổi, bổ sung khoản 3 Điều 10 như sau:\n“3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô, người lái xe không được cho trẻ em ngồi cùng hàng ghế, trừ xe ô tô chỉ có một hàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em, trừ xe ô tô kinh doanh vận tải hành khách.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n3. Sửa đổi, bổ sung khoản 3 Điều 10 như sau:\n“3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô, người lái xe không được cho trẻ em ngồi cùng hàng ghế, trừ xe ô tô chỉ có một hàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em, trừ xe ô tô kinh doanh vận tải hành khách.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n3. Sửa đổi, bổ sung khoản 3 Điều 10 như sau:\n“3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô, người lái xe không được cho trẻ em ngồi cùng hàng ghế, trừ xe ô tô chỉ có một hàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em, trừ xe ô tô kinh doanh vận tải hành khách.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K3"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K4",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "4",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "27",
+        "khoan": "3",
+        "diem": "a",
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "27",
+        "khoan": "3",
+        "diem": "b",
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n4. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 27 như sau:\n“a) Xe chữa cháy của Cảnh sát phòng cháy, chữa cháy và cứu nạn, cứu hộ và xe chữa cháy của các lực lượng khác được huy động đi làm nhiệm vụ chữa cháy, xe cứu thương đang làm nhiệm vụ cấp cứu có đèn nhấp nháy màu đỏ;\nb) Xe của lực lượng công an, quân sự, kiểm sát đi làm nhiệm vụ khẩn cấp, xe Cảnh sát giao thông dẫn đường có đèn nhấp nháy màu xanh và đỏ;”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n4. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 27 như sau:\n“a) Xe chữa cháy của Cảnh sát phòng cháy, chữa cháy và cứu nạn, cứu hộ và xe chữa cháy của các lực lượng khác được huy động đi làm nhiệm vụ chữa cháy, xe cứu thương đang làm nhiệm vụ cấp cứu có đèn nhấp nháy màu đỏ;\nb) Xe của lực lượng công an, quân sự, kiểm sát đi làm nhiệm vụ khẩn cấp, xe Cảnh sát giao thông dẫn đường có đèn nhấp nháy màu xanh và đỏ;”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n4. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 27 như sau:\n“a) Xe chữa cháy của Cảnh sát phòng cháy, chữa cháy và cứu nạn, cứu hộ và xe chữa cháy của các lực lượng khác được huy động đi làm nhiệm vụ chữa cháy, xe cứu thương đang làm nhiệm vụ cấp cứu có đèn nhấp nháy màu đỏ;\nb) Xe của lực lượng công an, quân sự, kiểm sát đi làm nhiệm vụ khẩn cấp, xe Cảnh sát giao thông dẫn đường có đèn nhấp nháy màu xanh và đỏ;”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K4"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K5",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "5",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "34",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "34",
+        "khoan": "6",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "dieu_nay",
+        "van_ban_goc": "Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "34",
+          "khoan": null,
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n5. Sửa đổi, bổ sung một số khoản của Điều 34 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Phương tiện giao thông thông minh là phương tiện giao thông đường bộ mà toàn bộ việc điều khiển, duy trì hoạt động của phương tiện không cần có sự điều khiển trực tiếp của người lái trên phương tiện đó.”;\nb) Sửa đổi, bổ sung khoản 6 như sau:\n“6. Bộ trưởng Bộ Xây dựng quy định chi tiết Điều này.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n5. Sửa đổi, bổ sung một số khoản của Điều 34 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Phương tiện giao thông thông minh là phương tiện giao thông đường bộ mà toàn bộ việc điều khiển, duy trì hoạt động của phương tiện không cần có sự điều khiển trực tiếp của người lái trên phương tiện đó.”;\nb) Sửa đổi, bổ sung khoản 6 như sau:\n“6. Bộ trưởng Bộ Xây dựng quy định chi tiết Điều 34.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n5. Sửa đổi, bổ sung một số khoản của Điều 34 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Phương tiện giao thông thông minh là phương tiện giao thông đường bộ mà toàn bộ việc điều khiển, duy trì hoạt động của phương tiện không cần có sự điều khiển trực tiếp của người lái trên phương tiện đó.”;\nb) Sửa đổi, bổ sung khoản 6 như sau:\n“6. Bộ trưởng Bộ Xây dựng quy định chi tiết Điều 34.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K5_Da",
+      "118_2025_QH15_D7_K5_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K6",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "6",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "35",
+        "khoan": "2",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "35",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "khoản 1 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "35",
+          "khoan": "1",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n6. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 35 như sau:\n“2. Xe ô tô kinh doanh vận tải hàng hóa, xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô đầu kéo, xe cứu thương, xe vận tải nội bộ phải lắp thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe. Xe ô tô kinh doanh vận tải hành khách từ 08 chỗ trở lên (không kể chỗ của người lái xe) phải lắp thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách.\nViệc xử lý dữ liệu thu được từ thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách thực hiện theo quy định của pháp luật về bảo vệ dữ liệu cá nhân và quy định khác của pháp luật có liên quan.\n3. Phương tiện giao thông thông minh là xe cơ giới, xe máy chuyên dùng thì phải bảo đảm các điều kiện quy định tại khoản 1 Điều này và được cơ quan có thẩm quyền cấp phép hoạt động.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n6. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 35 như sau:\n“2. Xe ô tô kinh doanh vận tải hàng hóa, xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô đầu kéo, xe cứu thương, xe vận tải nội bộ phải lắp thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe. Xe ô tô kinh doanh vận tải hành khách từ 08 chỗ trở lên (không kể chỗ của người lái xe) phải lắp thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách.\nViệc xử lý dữ liệu thu được từ thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách thực hiện theo quy định của pháp luật về bảo vệ dữ liệu cá nhân và quy định khác của pháp luật có liên quan.\n3. Phương tiện giao thông thông minh là xe cơ giới, xe máy chuyên dùng thì phải bảo đảm các điều kiện quy định tại khoản 1 Điều này và được cơ quan có thẩm quyền cấp phép hoạt động.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n6. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 35 như sau:\n“2. Xe ô tô kinh doanh vận tải hàng hóa, xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô đầu kéo, xe cứu thương, xe vận tải nội bộ phải lắp thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe. Xe ô tô kinh doanh vận tải hành khách từ 08 chỗ trở lên (không kể chỗ của người lái xe) phải lắp thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách.\nViệc xử lý dữ liệu thu được từ thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách thực hiện theo quy định của pháp luật về bảo vệ dữ liệu cá nhân và quy định khác của pháp luật có liên quan.\n3. Phương tiện giao thông thông minh là xe cơ giới, xe máy chuyên dùng thì phải bảo đảm các điều kiện quy định tại khoản 1 Điều này và được cơ quan có thẩm quyền cấp phép hoạt động.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K6"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K7",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "7",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "41",
+        "khoan": "7",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "khoản 8 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "41",
+          "khoan": "8",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "NGOAI_LE"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n7. Sửa đổi, bổ sung khoản 7 Điều 41 như sau:\n“7. Bộ trưởng Bộ Xây dựng ban hành quy chuẩn kỹ thuật quốc gia về chất lượng an toàn kỹ thuật và bảo vệ môi trường, tiêu thụ năng lượng xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới trong nhập khẩu, sản xuất, lắp ráp; ban hành quy chuẩn kỹ thuật quốc gia về cơ sở bảo hành, bảo dưỡng xe cơ giới; quy định về trình tự, thủ tục chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới trong nhập khẩu, sản xuất, lắp ráp, trừ trường hợp quy định tại khoản 8 Điều này; quy định về tiêu chuẩn, tập huấn đăng kiểm viên, cấp mới, cấp lại, tạm đình chỉ, thu hồi chứng chỉ đăng kiểm viên.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n7. Sửa đổi, bổ sung khoản 7 Điều 41 như sau:\n“7. Bộ trưởng Bộ Xây dựng ban hành quy chuẩn kỹ thuật quốc gia về chất lượng an toàn kỹ thuật và bảo vệ môi trường, tiêu thụ năng lượng xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới trong nhập khẩu, sản xuất, lắp ráp; ban hành quy chuẩn kỹ thuật quốc gia về cơ sở bảo hành, bảo dưỡng xe cơ giới; quy định về trình tự, thủ tục chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới trong nhập khẩu, sản xuất, lắp ráp, trừ trường hợp quy định tại khoản 8 Điều này; quy định về tiêu chuẩn, tập huấn đăng kiểm viên, cấp mới, cấp lại, tạm đình chỉ, thu hồi chứng chỉ đăng kiểm viên.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n7. Sửa đổi, bổ sung khoản 7 Điều 41 như sau:\n“7. Bộ trưởng Bộ Xây dựng ban hành quy chuẩn kỹ thuật quốc gia về chất lượng an toàn kỹ thuật và bảo vệ môi trường, tiêu thụ năng lượng xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới trong nhập khẩu, sản xuất, lắp ráp; ban hành quy chuẩn kỹ thuật quốc gia về cơ sở bảo hành, bảo dưỡng xe cơ giới; quy định về trình tự, thủ tục chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới trong nhập khẩu, sản xuất, lắp ráp, trừ trường hợp quy định tại khoản 8 Điều này; quy định về tiêu chuẩn, tập huấn đăng kiểm viên, cấp mới, cấp lại, tạm đình chỉ, thu hồi chứng chỉ đăng kiểm viên.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K7"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K8",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "8",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "42",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "42",
+        "khoan": "5",
+        "diem": "e",
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n8. Sửa đổi, bổ sung một số điểm, khoản của Điều 42 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Việc kiểm định an toàn kỹ thuật và bảo vệ môi trường xe cơ giới, xe máy chuyên dùng; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo do đăng kiểm viên của cơ sở đăng kiểm thực hiện và được cơ sở đăng kiểm cấp giấy chứng nhận.”;\nb) Sửa đổi, bổ sung điểm e khoản 5 như sau:\n“e) Quy chuẩn kỹ thuật quốc gia về cơ sở đăng kiểm xe cơ giới, cơ sở kiểm định khí thải xe mô tô, xe gắn máy; quy chuẩn kỹ thuật quốc gia về kiểm định xe cơ giới, xe máy chuyên dùng tham gia giao thông đường bộ;”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n8. Sửa đổi, bổ sung một số điểm, khoản của Điều 42 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Việc kiểm định an toàn kỹ thuật và bảo vệ môi trường xe cơ giới, xe máy chuyên dùng; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo do đăng kiểm viên của cơ sở đăng kiểm thực hiện và được cơ sở đăng kiểm cấp giấy chứng nhận.”;\nb) Sửa đổi, bổ sung điểm e khoản 5 như sau:\n“e) Quy chuẩn kỹ thuật quốc gia về cơ sở đăng kiểm xe cơ giới, cơ sở kiểm định khí thải xe mô tô, xe gắn máy; quy chuẩn kỹ thuật quốc gia về kiểm định xe cơ giới, xe máy chuyên dùng tham gia giao thông đường bộ;”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n8. Sửa đổi, bổ sung một số điểm, khoản của Điều 42 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Việc kiểm định an toàn kỹ thuật và bảo vệ môi trường xe cơ giới, xe máy chuyên dùng; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo do đăng kiểm viên của cơ sở đăng kiểm thực hiện và được cơ sở đăng kiểm cấp giấy chứng nhận.”;\nb) Sửa đổi, bổ sung điểm e khoản 5 như sau:\n“e) Quy chuẩn kỹ thuật quốc gia về cơ sở đăng kiểm xe cơ giới, cơ sở kiểm định khí thải xe mô tô, xe gắn máy; quy chuẩn kỹ thuật quốc gia về kiểm định xe cơ giới, xe máy chuyên dùng tham gia giao thông đường bộ;”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K8_Da",
+      "118_2025_QH15_D7_K8_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K9",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "9",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "43",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n9. Sửa đổi, bổ sung khoản 1 Điều 43 như sau:\n“1. Cơ sở đăng kiểm là tổ chức cung cấp dịch vụ công thực hiện kiểm định an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới, xe máy chuyên dùng được tổ chức, hoạt động theo quy định của Chính phủ; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo.\nCơ sở đăng kiểm chịu trách nhiệm về kết quả kiểm định an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng; kết quả chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo.\nCơ sở đăng kiểm chỉ được từ chối kiểm định trong các trường hợp: theo yêu cầu của cơ quan tiến hành tố tụng; khi chủ phương tiện chưa thực hiện xong yêu cầu của cơ quan nhà nước có thẩm quyền về giải quyết vụ việc vi phạm hành chính trong lĩnh vực trật tự, an toàn giao thông đường bộ; thông tin thể hiện trên chứng nhận đăng ký xe không đúng với biển số xe hoặc với phương tiện thực tế khi làm thủ tục kiểm định; chưa thực hiện cấp đổi chứng nhận đăng ký xe tại lần kiểm định tiếp theo sau khi phương tiện đã được cấp chứng nhận cải tạo; có căn cứ xác thực việc chủ xe làm giả tài liệu, giấy tờ của phương tiện.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n9. Sửa đổi, bổ sung khoản 1 Điều 43 như sau:\n“1. Cơ sở đăng kiểm là tổ chức cung cấp dịch vụ công thực hiện kiểm định an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới, xe máy chuyên dùng được tổ chức, hoạt động theo quy định của Chính phủ; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo.\nCơ sở đăng kiểm chịu trách nhiệm về kết quả kiểm định an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng; kết quả chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo.\nCơ sở đăng kiểm chỉ được từ chối kiểm định trong các trường hợp: theo yêu cầu của cơ quan tiến hành tố tụng; khi chủ phương tiện chưa thực hiện xong yêu cầu của cơ quan nhà nước có thẩm quyền về giải quyết vụ việc vi phạm hành chính trong lĩnh vực trật tự, an toàn giao thông đường bộ; thông tin thể hiện trên chứng nhận đăng ký xe không đúng với biển số xe hoặc với phương tiện thực tế khi làm thủ tục kiểm định; chưa thực hiện cấp đổi chứng nhận đăng ký xe tại lần kiểm định tiếp theo sau khi phương tiện đã được cấp chứng nhận cải tạo; có căn cứ xác thực việc chủ xe làm giả tài liệu, giấy tờ của phương tiện.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n9. Sửa đổi, bổ sung khoản 1 Điều 43 như sau:\n“1. Cơ sở đăng kiểm là tổ chức cung cấp dịch vụ công thực hiện kiểm định an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới, xe máy chuyên dùng được tổ chức, hoạt động theo quy định của Chính phủ; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo.\nCơ sở đăng kiểm chịu trách nhiệm về kết quả kiểm định an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng; kết quả chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới cải tạo, xe máy chuyên dùng cải tạo.\nCơ sở đăng kiểm chỉ được từ chối kiểm định trong các trường hợp: theo yêu cầu của cơ quan tiến hành tố tụng; khi chủ phương tiện chưa thực hiện xong yêu cầu của cơ quan nhà nước có thẩm quyền về giải quyết vụ việc vi phạm hành chính trong lĩnh vực trật tự, an toàn giao thông đường bộ; thông tin thể hiện trên chứng nhận đăng ký xe không đúng với biển số xe hoặc với phương tiện thực tế khi làm thủ tục kiểm định; chưa thực hiện cấp đổi chứng nhận đăng ký xe tại lần kiểm định tiếp theo sau khi phương tiện đã được cấp chứng nhận cải tạo; có căn cứ xác thực việc chủ xe làm giả tài liệu, giấy tờ của phương tiện.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K9"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K10",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "10",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "52",
+        "khoan": "9",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "điểm b khoản 3 và điểm a khoản 4 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "52",
+          "khoan": "3",
+          "diem": "b",
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "điểm b khoản 3 và điểm a khoản 4 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "52",
+          "khoan": "4",
+          "diem": "a",
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n10. Sửa đổi, bổ sung khoản 9 Điều 52 như sau:\n“9. Bộ trưởng Bộ Xây dựng quy định chi tiết điểm b khoản 3 và điểm a khoản 4 Điều này; quy định về tải trọng, khổ giới hạn của đường bộ; quy định lưu hành xe quá khổ giới hạn, xe quá tải trọng, xe bánh xích trên đường bộ; quy định trình tự, thủ tục cấp giấy phép lưu hành cho xe quá tải trọng, xe quá khổ giới hạn, xe bánh xích.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n10. Sửa đổi, bổ sung khoản 9 Điều 52 như sau:\n“9. Bộ trưởng Bộ Xây dựng quy định chi tiết điểm b khoản 3 và điểm a khoản 4 Điều này; quy định về tải trọng, khổ giới hạn của đường bộ; quy định lưu hành xe quá khổ giới hạn, xe quá tải trọng, xe bánh xích trên đường bộ; quy định trình tự, thủ tục cấp giấy phép lưu hành cho xe quá tải trọng, xe quá khổ giới hạn, xe bánh xích.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n10. Sửa đổi, bổ sung khoản 9 Điều 52 như sau:\n“9. Bộ trưởng Bộ Xây dựng quy định chi tiết điểm b khoản 3 và điểm a khoản 4 Điều này; quy định về tải trọng, khổ giới hạn của đường bộ; quy định lưu hành xe quá khổ giới hạn, xe quá tải trọng, xe bánh xích trên đường bộ; quy định trình tự, thủ tục cấp giấy phép lưu hành cho xe quá tải trọng, xe quá khổ giới hạn, xe bánh xích.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K10"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K11",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "11",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "57",
+        "khoan": "9",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n11. Sửa đổi, bổ sung khoản 9 Điều 57 như sau:\n“9. Bộ trưởng Bộ Công an quy định mẫu giấy phép lái xe và giấy phép lái xe quốc tế, trình tự, thủ tục cấp và việc sử dụng giấy phép lái xe, giấy phép lái xe quốc tế; Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định mẫu giấy phép lái xe, trình tự, thủ tục cấp và việc sử dụng giấy phép lái xe của lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n11. Sửa đổi, bổ sung khoản 9 Điều 57 như sau:\n“9. Bộ trưởng Bộ Công an quy định mẫu giấy phép lái xe và giấy phép lái xe quốc tế, trình tự, thủ tục cấp và việc sử dụng giấy phép lái xe, giấy phép lái xe quốc tế; Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định mẫu giấy phép lái xe, trình tự, thủ tục cấp và việc sử dụng giấy phép lái xe của lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n11. Sửa đổi, bổ sung khoản 9 Điều 57 như sau:\n“9. Bộ trưởng Bộ Công an quy định mẫu giấy phép lái xe và giấy phép lái xe quốc tế, trình tự, thủ tục cấp và việc sử dụng giấy phép lái xe, giấy phép lái xe quốc tế; Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định mẫu giấy phép lái xe, trình tự, thủ tục cấp và việc sử dụng giấy phép lái xe của lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K11"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K12",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "12",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "60",
+        "khoan": "3",
+        "diem": "e",
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "60",
+        "khoan": "7",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "60",
+        "khoan": "8",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "khoản 2 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "60",
+          "khoan": "2",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "khoản 4 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "60",
+          "khoan": "4",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n12. Sửa đổi, bổ sung một số điểm, khoản của Điều 60 như sau:\na) Sửa đổi, bổ sung điểm e khoản 3 như sau:\n“e) Nâng hạng giấy phép lái xe từ hạng B lên hạng BE, từ hạng C1 lên hạng C1E, từ hạng C, D1, D2, D lên hạng CE, từ hạng D1 lên hạng D1E, từ hạng D2 lên hạng D2E, từ hạng D lên hạng DE.”;\nb) Sửa đổi, bổ sung khoản 7, khoản 8 và bổ sung khoản 9 vào sau khoản 8 như sau:\n“7. Chính phủ quy định chi tiết các hình thức đào tạo lái xe khác quy định tại khoản 2 Điều này; quy định trình tự, thủ tục kiểm tra, đánh giá để cấp, cấp lại, thu hồi giấy phép xe tập lái; quy định tiêu chuẩn của giáo viên dạy lái xe; quy định việc cấp, cấp lại, thu hồi giấy chứng nhận giáo viên dạy lái xe; quy định việc cấp, cấp lại, thu hồi giấy phép đào tạo lái xe.\n8. Bộ trưởng Bộ Xây dựng quy định hình thức, nội dung, chương trình đào tạo lái xe; quy định thời gian lái xe an toàn cho từng hạng giấy phép lái xe quy định tại khoản 4 Điều này; quy định tiêu chuẩn của cơ sở đào tạo lái xe mô tô.\n9. Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc đào tạo lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n12. Sửa đổi, bổ sung một số điểm, khoản của Điều 60 như sau:\na) Sửa đổi, bổ sung điểm e khoản 3 như sau:\n“e) Nâng hạng giấy phép lái xe từ hạng B lên hạng BE, từ hạng C1 lên hạng C1E, từ hạng C, D1, D2, D lên hạng CE, từ hạng D1 lên hạng D1E, từ hạng D2 lên hạng D2E, từ hạng D lên hạng DE.”;\nb) Sửa đổi, bổ sung khoản 7, khoản 8 và bổ sung khoản 9 vào sau khoản 8 như sau:\n“7. Chính phủ quy định chi tiết các hình thức đào tạo lái xe khác quy định tại khoản 2 Điều này; quy định trình tự, thủ tục kiểm tra, đánh giá để cấp, cấp lại, thu hồi giấy phép xe tập lái; quy định tiêu chuẩn của giáo viên dạy lái xe; quy định việc cấp, cấp lại, thu hồi giấy chứng nhận giáo viên dạy lái xe; quy định việc cấp, cấp lại, thu hồi giấy phép đào tạo lái xe.\n8. Bộ trưởng Bộ Xây dựng quy định hình thức, nội dung, chương trình đào tạo lái xe; quy định thời gian lái xe an toàn cho từng hạng giấy phép lái xe quy định tại khoản 4 Điều này; quy định tiêu chuẩn của cơ sở đào tạo lái xe mô tô.\n9. Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc đào tạo lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n12. Sửa đổi, bổ sung một số điểm, khoản của Điều 60 như sau:\na) Sửa đổi, bổ sung điểm e khoản 3 như sau:\n“e) Nâng hạng giấy phép lái xe từ hạng B lên hạng BE, từ hạng C1 lên hạng C1E, từ hạng C, D1, D2, D lên hạng CE, từ hạng D1 lên hạng D1E, từ hạng D2 lên hạng D2E, từ hạng D lên hạng DE.”;\nb) Sửa đổi, bổ sung khoản 7, khoản 8 và bổ sung khoản 9 vào sau khoản 8 như sau:\n“7. Chính phủ quy định chi tiết các hình thức đào tạo lái xe khác quy định tại khoản 2 Điều này; quy định trình tự, thủ tục kiểm tra, đánh giá để cấp, cấp lại, thu hồi giấy phép xe tập lái; quy định tiêu chuẩn của giáo viên dạy lái xe; quy định việc cấp, cấp lại, thu hồi giấy chứng nhận giáo viên dạy lái xe; quy định việc cấp, cấp lại, thu hồi giấy phép đào tạo lái xe.\n8. Bộ trưởng Bộ Xây dựng quy định hình thức, nội dung, chương trình đào tạo lái xe; quy định thời gian lái xe an toàn cho từng hạng giấy phép lái xe quy định tại khoản 4 Điều này; quy định tiêu chuẩn của cơ sở đào tạo lái xe mô tô.\n9. Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc đào tạo lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI",
+      "BO_SUNG"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K12_Da",
+      "118_2025_QH15_D7_K12_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K13",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "13",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "61",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "61",
+        "khoan": "6",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "61",
+        "khoan": "7",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n13. Sửa đổi, bổ sung một số khoản của Điều 61 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Trung tâm sát hạch lái xe là đơn vị cung cấp dịch vụ sát hạch lái xe; phải đáp ứng các điều kiện do Chính phủ quy định và đáp ứng yêu cầu kỹ thuật theo quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ; phải sử dụng thiết bị ứng dụng công nghệ thông tin và phải chia sẻ ngay kết quả và dữ liệu giám sát quá trình sát hạch đến cơ quan quản lý sát hạch, cấp giấy phép lái xe để giám sát, trừ khi tổ chức sát hạch lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”;\nb) Sửa đổi, bổ sung khoản 6, khoản 7 và bổ sung khoản 8 vào sau khoản 7 như sau:\n“6. Chính phủ quy định điều kiện, trình tự, thủ tục kiểm tra, đánh giá để cấp, cấp lại, thu hồi giấy phép sát hạch cho trung tâm sát hạch lái xe; quy định điều kiện sân tập lái để sát hạch lái xe mô tô.\n7. Bộ trưởng Bộ Công an quy định hình thức, nội dung, quy trình sát hạch để cấp giấy phép lái xe; điều kiện, tiêu chuẩn sát hạch viên, tổ chức tập huấn, cấp thẻ sát hạch viên; tiêu chuẩn kỹ thuật sân tập lái để sát hạch lái xe mô tô, quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ.\n8. Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc sát hạch lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n13. Sửa đổi, bổ sung một số khoản của Điều 61 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Trung tâm sát hạch lái xe là đơn vị cung cấp dịch vụ sát hạch lái xe; phải đáp ứng các điều kiện do Chính phủ quy định và đáp ứng yêu cầu kỹ thuật theo quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ; phải sử dụng thiết bị ứng dụng công nghệ thông tin và phải chia sẻ ngay kết quả và dữ liệu giám sát quá trình sát hạch đến cơ quan quản lý sát hạch, cấp giấy phép lái xe để giám sát, trừ khi tổ chức sát hạch lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”;\nb) Sửa đổi, bổ sung khoản 6, khoản 7 và bổ sung khoản 8 vào sau khoản 7 như sau:\n“6. Chính phủ quy định điều kiện, trình tự, thủ tục kiểm tra, đánh giá để cấp, cấp lại, thu hồi giấy phép sát hạch cho trung tâm sát hạch lái xe; quy định điều kiện sân tập lái để sát hạch lái xe mô tô.\n7. Bộ trưởng Bộ Công an quy định hình thức, nội dung, quy trình sát hạch để cấp giấy phép lái xe; điều kiện, tiêu chuẩn sát hạch viên, tổ chức tập huấn, cấp thẻ sát hạch viên; tiêu chuẩn kỹ thuật sân tập lái để sát hạch lái xe mô tô, quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ.\n8. Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc sát hạch lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n13. Sửa đổi, bổ sung một số khoản của Điều 61 như sau:\na) Sửa đổi, bổ sung khoản 4 như sau:\n“4. Trung tâm sát hạch lái xe là đơn vị cung cấp dịch vụ sát hạch lái xe; phải đáp ứng các điều kiện do Chính phủ quy định và đáp ứng yêu cầu kỹ thuật theo quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ; phải sử dụng thiết bị ứng dụng công nghệ thông tin và phải chia sẻ ngay kết quả và dữ liệu giám sát quá trình sát hạch đến cơ quan quản lý sát hạch, cấp giấy phép lái xe để giám sát, trừ khi tổ chức sát hạch lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”;\nb) Sửa đổi, bổ sung khoản 6, khoản 7 và bổ sung khoản 8 vào sau khoản 7 như sau:\n“6. Chính phủ quy định điều kiện, trình tự, thủ tục kiểm tra, đánh giá để cấp, cấp lại, thu hồi giấy phép sát hạch cho trung tâm sát hạch lái xe; quy định điều kiện sân tập lái để sát hạch lái xe mô tô.\n7. Bộ trưởng Bộ Công an quy định hình thức, nội dung, quy trình sát hạch để cấp giấy phép lái xe; điều kiện, tiêu chuẩn sát hạch viên, tổ chức tập huấn, cấp thẻ sát hạch viên; tiêu chuẩn kỹ thuật sân tập lái để sát hạch lái xe mô tô, quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ.\n8. Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc sát hạch lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI",
+      "BO_SUNG"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K13_Da",
+      "118_2025_QH15_D7_K13_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K14",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "14",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "62",
+        "khoan": "5",
+        "diem": "b",
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "62",
+        "khoan": "6",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "khoan_dieu_tuyet_doi_nay",
+        "van_ban_goc": "khoản 3 Điều 89 của Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": "89",
+          "khoan": "3",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n14. Sửa đổi, bổ sung một số điểm, khoản của Điều 62 như sau:\na) Sửa đổi, bổ sung điểm b khoản 5 như sau:\n“b) Giấy phép lái xe cấp sai quy định hoặc người được cấp có hành vi gian dối để được cấp, đổi, cấp lại giấy phép lái xe;”;\nb) Sửa đổi, bổ sung khoản 6 như sau:\n“6. Bộ trưởng Bộ Công an quy định điều kiện, trình tự, thủ tục về cấp, đổi, cấp lại và thu hồi giấy phép lái xe; Bộ trưởng Bộ Giáo dục và Đào tạo quy định điều kiện, trình tự, thủ tục cấp, đổi, cấp lại, thu hồi chứng chỉ điều khiển xe máy chuyên dùng cho người điều khiển máy kéo có giấy phép lái xe quy định tại các điểm d, e, g, h, i, k, l, m và n khoản 3 Điều 89 của Luật này.\nBộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc cấp, đổi, cấp lại, thu hồi giấy phép lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n14. Sửa đổi, bổ sung một số điểm, khoản của Điều 62 như sau:\na) Sửa đổi, bổ sung điểm b khoản 5 như sau:\n“b) Giấy phép lái xe cấp sai quy định hoặc người được cấp có hành vi gian dối để được cấp, đổi, cấp lại giấy phép lái xe;”;\nb) Sửa đổi, bổ sung khoản 6 như sau:\n“6. Bộ trưởng Bộ Công an quy định điều kiện, trình tự, thủ tục về cấp, đổi, cấp lại và thu hồi giấy phép lái xe; Bộ trưởng Bộ Giáo dục và Đào tạo quy định điều kiện, trình tự, thủ tục cấp, đổi, cấp lại, thu hồi chứng chỉ điều khiển xe máy chuyên dùng cho người điều khiển máy kéo có giấy phép lái xe quy định tại các điểm d, e, g, h, i, k, l, m và n khoản 3 Điều 89 của Luật này.\nBộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc cấp, đổi, cấp lại, thu hồi giấy phép lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n14. Sửa đổi, bổ sung một số điểm, khoản của Điều 62 như sau:\na) Sửa đổi, bổ sung điểm b khoản 5 như sau:\n“b) Giấy phép lái xe cấp sai quy định hoặc người được cấp có hành vi gian dối để được cấp, đổi, cấp lại giấy phép lái xe;”;\nb) Sửa đổi, bổ sung khoản 6 như sau:\n“6. Bộ trưởng Bộ Công an quy định điều kiện, trình tự, thủ tục về cấp, đổi, cấp lại và thu hồi giấy phép lái xe; Bộ trưởng Bộ Giáo dục và Đào tạo quy định điều kiện, trình tự, thủ tục cấp, đổi, cấp lại, thu hồi chứng chỉ điều khiển xe máy chuyên dùng cho người điều khiển máy kéo có giấy phép lái xe quy định tại các điểm d, e, g, h, i, k, l, m và n khoản 3 Điều 89 của Luật này.\nBộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an quy định việc cấp, đổi, cấp lại, thu hồi giấy phép lái xe cho lực lượng quân đội, công an làm nhiệm vụ quốc phòng, an ninh.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K14_Da",
+      "118_2025_QH15_D7_K14_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K15",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "15",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "64",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n15. Sửa đổi, bổ sung khoản 1 Điều 64 như sau:\n“ 1. Thời gian lái xe liên tục của người lái xe không quá 04 giờ, trừ trường hợp bất khả kháng hoặc trở ngại khách quan. Thời gian làm việc của người lái xe trong một ngày, một tuần thực hiện theo quy định của Bộ luật Lao động.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n15. Sửa đổi, bổ sung khoản 1 Điều 64 như sau:\n“ 1. Thời gian lái xe liên tục của người lái xe không quá 04 giờ, trừ trường hợp bất khả kháng hoặc trở ngại khách quan. Thời gian làm việc của người lái xe trong một ngày, một tuần thực hiện theo quy định của Bộ luật Lao động.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n15. Sửa đổi, bổ sung khoản 1 Điều 64 như sau:\n“ 1. Thời gian lái xe liên tục của người lái xe không quá 04 giờ, trừ trường hợp bất khả kháng hoặc trở ngại khách quan. Thời gian làm việc của người lái xe trong một ngày, một tuần thực hiện theo quy định của Bộ luật Lao động.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K15"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K16",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "16",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "67",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n16. Sửa đổi, bổ sung khoản 3 Điều 67 như sau:\n“3. Khai thác dữ liệu từ thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; tiếp nhận dữ liệu thu thập từ công trình kiểm soát tải trọng xe.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n16. Sửa đổi, bổ sung khoản 3 Điều 67 như sau:\n“3. Khai thác dữ liệu từ thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; tiếp nhận dữ liệu thu thập từ công trình kiểm soát tải trọng xe.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n16. Sửa đổi, bổ sung khoản 3 Điều 67 như sau:\n“3. Khai thác dữ liệu từ thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; tiếp nhận dữ liệu thu thập từ công trình kiểm soát tải trọng xe.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K16"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K17",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "17",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "71",
+        "khoan": null,
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n17. Sửa đổi, bổ sung Điều 71 như sau:\n“Điều 71. Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ; hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới\n1. Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ được quy định như sau:\na) Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ là hệ thống thu thập tín hiệu, dữ liệu, âm thanh, hình ảnh về hành trình của phương tiện tham gia giao thông đường bộ, tình trạng giao thông và các dữ liệu liên quan khác được xây dựng, lắp đặt trên các tuyến giao thông đường bộ theo quy chuẩn kỹ thuật quốc gia để giám sát tình hình an ninh, trật tự, an toàn giao thông đường bộ; phát hiện vi phạm pháp luật về trật tự, an toàn giao thông đường bộ và vi phạm pháp luật khác;\nb) Việc xây dựng, quản lý, vận hành, sử dụng hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ phải tuân thủ đúng quy trình, quy tắc, bảo đảm hoạt động liên tục và kết nối với Trung tâm chỉ huy giao thông;\nc) Dữ liệu thu thập được từ hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ phải được quản lý theo quy định của pháp luật; bảo đảm các yêu cầu về bảo vệ dữ liệu cá nhân, bảo vệ các quyền và lợi ích hợp pháp của cá nhân và tổ chức; được sử dụng để xử lý vi phạm pháp luật về trật tự, an toàn giao thông đường bộ, vi phạm pháp luật khác và phục vụ công tác quản lý nhà nước.\n2. Hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách dùng để ghi, lưu trữ, truyền phát thông tin, dữ liệu về hành trình của phương tiện tham gia giao thông đường bộ và hình ảnh của người lái xe, hình ảnh khoang chở khách phục vụ công tác bảo đảm an ninh, trật tự, an toàn giao thông đường bộ và xử lý hành vi vi phạm pháp luật, quản lý nhà nước về vận tải đường bộ; do lực lượng Cảnh sát giao thông quản lý, vận hành, sử dụng; được kết nối, chia sẻ với cơ quan quản lý đường bộ và các cơ quan liên quan.\n3. Hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới được trang bị cho lực lượng Cảnh sát giao thông để phục vụ kiểm tra, phát hiện và xử lý hành vi vi phạm quy định của pháp luật về tải trọng xe trên đường bộ.\n4. Bộ trưởng Bộ Công an ban hành quy chuẩn kỹ thuật quốc gia về hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ và quy chuẩn kỹ thuật quốc gia về thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; quy định việc xây dựng, quản lý, vận hành, khai thác và sử dụng hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ, thiết bị thông minh hỗ trợ chỉ huy, điều khiển giao thông đường bộ; quy định việc quản lý, vận hành, sử dụng hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; quy định việc trang bị, lắp đặt, quản lý, vận hành, sử dụng hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n17. Sửa đổi, bổ sung Điều 71 như sau:\n“Điều 71. Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ; hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới\n1. Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ được quy định như sau:\na) Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ là hệ thống thu thập tín hiệu, dữ liệu, âm thanh, hình ảnh về hành trình của phương tiện tham gia giao thông đường bộ, tình trạng giao thông và các dữ liệu liên quan khác được xây dựng, lắp đặt trên các tuyến giao thông đường bộ theo quy chuẩn kỹ thuật quốc gia để giám sát tình hình an ninh, trật tự, an toàn giao thông đường bộ; phát hiện vi phạm pháp luật về trật tự, an toàn giao thông đường bộ và vi phạm pháp luật khác;\nb) Việc xây dựng, quản lý, vận hành, sử dụng hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ phải tuân thủ đúng quy trình, quy tắc, bảo đảm hoạt động liên tục và kết nối với Trung tâm chỉ huy giao thông;\nc) Dữ liệu thu thập được từ hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ phải được quản lý theo quy định của pháp luật; bảo đảm các yêu cầu về bảo vệ dữ liệu cá nhân, bảo vệ các quyền và lợi ích hợp pháp của cá nhân và tổ chức; được sử dụng để xử lý vi phạm pháp luật về trật tự, an toàn giao thông đường bộ, vi phạm pháp luật khác và phục vụ công tác quản lý nhà nước.\n2. Hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách dùng để ghi, lưu trữ, truyền phát thông tin, dữ liệu về hành trình của phương tiện tham gia giao thông đường bộ và hình ảnh của người lái xe, hình ảnh khoang chở khách phục vụ công tác bảo đảm an ninh, trật tự, an toàn giao thông đường bộ và xử lý hành vi vi phạm pháp luật, quản lý nhà nước về vận tải đường bộ; do lực lượng Cảnh sát giao thông quản lý, vận hành, sử dụng; được kết nối, chia sẻ với cơ quan quản lý đường bộ và các cơ quan liên quan.\n3. Hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới được trang bị cho lực lượng Cảnh sát giao thông để phục vụ kiểm tra, phát hiện và xử lý hành vi vi phạm quy định của pháp luật về tải trọng xe trên đường bộ.\n4. Bộ trưởng Bộ Công an ban hành quy chuẩn kỹ thuật quốc gia về hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ và quy chuẩn kỹ thuật quốc gia về thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; quy định việc xây dựng, quản lý, vận hành, khai thác và sử dụng hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ, thiết bị thông minh hỗ trợ chỉ huy, điều khiển giao thông đường bộ; quy định việc quản lý, vận hành, sử dụng hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; quy định việc trang bị, lắp đặt, quản lý, vận hành, sử dụng hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n17. Sửa đổi, bổ sung Điều 71 như sau:\n“Điều 71. Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ; hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới\n1. Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ được quy định như sau:\na) Hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ là hệ thống thu thập tín hiệu, dữ liệu, âm thanh, hình ảnh về hành trình của phương tiện tham gia giao thông đường bộ, tình trạng giao thông và các dữ liệu liên quan khác được xây dựng, lắp đặt trên các tuyến giao thông đường bộ theo quy chuẩn kỹ thuật quốc gia để giám sát tình hình an ninh, trật tự, an toàn giao thông đường bộ; phát hiện vi phạm pháp luật về trật tự, an toàn giao thông đường bộ và vi phạm pháp luật khác;\nb) Việc xây dựng, quản lý, vận hành, sử dụng hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ phải tuân thủ đúng quy trình, quy tắc, bảo đảm hoạt động liên tục và kết nối với Trung tâm chỉ huy giao thông;\nc) Dữ liệu thu thập được từ hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ phải được quản lý theo quy định của pháp luật; bảo đảm các yêu cầu về bảo vệ dữ liệu cá nhân, bảo vệ các quyền và lợi ích hợp pháp của cá nhân và tổ chức; được sử dụng để xử lý vi phạm pháp luật về trật tự, an toàn giao thông đường bộ, vi phạm pháp luật khác và phục vụ công tác quản lý nhà nước.\n2. Hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách dùng để ghi, lưu trữ, truyền phát thông tin, dữ liệu về hành trình của phương tiện tham gia giao thông đường bộ và hình ảnh của người lái xe, hình ảnh khoang chở khách phục vụ công tác bảo đảm an ninh, trật tự, an toàn giao thông đường bộ và xử lý hành vi vi phạm pháp luật, quản lý nhà nước về vận tải đường bộ; do lực lượng Cảnh sát giao thông quản lý, vận hành, sử dụng; được kết nối, chia sẻ với cơ quan quản lý đường bộ và các cơ quan liên quan.\n3. Hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới được trang bị cho lực lượng Cảnh sát giao thông để phục vụ kiểm tra, phát hiện và xử lý hành vi vi phạm quy định của pháp luật về tải trọng xe trên đường bộ.\n4. Bộ trưởng Bộ Công an ban hành quy chuẩn kỹ thuật quốc gia về hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ và quy chuẩn kỹ thuật quốc gia về thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; quy định việc xây dựng, quản lý, vận hành, khai thác và sử dụng hệ thống giám sát bảo đảm an ninh, trật tự, an toàn giao thông đường bộ, thiết bị thông minh hỗ trợ chỉ huy, điều khiển giao thông đường bộ; quy định việc quản lý, vận hành, sử dụng hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách; quy định việc trang bị, lắp đặt, quản lý, vận hành, sử dụng hệ thống thiết bị kỹ thuật nghiệp vụ kiểm tra tải trọng xe cơ giới.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K17"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K18",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "18",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "75",
+        "khoan": "4",
+        "diem": "c",
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n18. Sửa đổi, bổ sung điểm c khoản 4 Điều 75 như sau:\n“c) Hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách;”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n18. Sửa đổi, bổ sung điểm c khoản 4 Điều 75 như sau:\n“c) Hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách;”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n18. Sửa đổi, bổ sung điểm c khoản 4 Điều 75 như sau:\n“c) Hệ thống quản lý dữ liệu thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe, thiết bị ghi nhận hình ảnh khoang chở khách;”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K18"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K19",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "19",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "87",
+        "khoan": "2",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "87",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "khoan_dieu_tuyet_doi_nay",
+        "van_ban_goc": "khoản 3 Điều 10 của Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": "10",
+          "khoan": "3",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "van_ban_nay",
+        "van_ban_goc": "Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": null,
+          "khoan": null,
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n19. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 87 như sau:\n“2. Bộ Công an là cơ quan đầu mối giúp Chính phủ thực hiện thống nhất quản lý nhà nước về trật tự, an toàn giao thông đường bộ; sát hạch, cấp giấy phép lái xe; xây dựng lực lượng Cảnh sát giao thông chính quy, tinh nhuệ, hiện đại đáp ứng yêu cầu nhiệm vụ bảo đảm trật tự, an toàn giao thông đường bộ.\n3. Bộ Xây dựng thực hiện quản lý nhà nước về đào tạo lái xe; chất lượng an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới và nhiệm vụ quản lý khác theo quy định của Luật này; ban hành quy chuẩn kỹ thuật quốc gia về thiết bị an toàn cho trẻ em quy định tại khoản 3 Điều 10 của Luật này.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n19. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 87 như sau:\n“2. Bộ Công an là cơ quan đầu mối giúp Chính phủ thực hiện thống nhất quản lý nhà nước về trật tự, an toàn giao thông đường bộ; sát hạch, cấp giấy phép lái xe; xây dựng lực lượng Cảnh sát giao thông chính quy, tinh nhuệ, hiện đại đáp ứng yêu cầu nhiệm vụ bảo đảm trật tự, an toàn giao thông đường bộ.\n3. Bộ Xây dựng thực hiện quản lý nhà nước về đào tạo lái xe; chất lượng an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới và nhiệm vụ quản lý khác theo quy định của Luật này; ban hành quy chuẩn kỹ thuật quốc gia về thiết bị an toàn cho trẻ em quy định tại khoản 3 Điều 10 của Luật này.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n19. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 87 như sau:\n“2. Bộ Công an là cơ quan đầu mối giúp Chính phủ thực hiện thống nhất quản lý nhà nước về trật tự, an toàn giao thông đường bộ; sát hạch, cấp giấy phép lái xe; xây dựng lực lượng Cảnh sát giao thông chính quy, tinh nhuệ, hiện đại đáp ứng yêu cầu nhiệm vụ bảo đảm trật tự, an toàn giao thông đường bộ.\n3. Bộ Xây dựng thực hiện quản lý nhà nước về đào tạo lái xe; chất lượng an toàn kỹ thuật và bảo vệ môi trường của xe cơ giới, xe máy chuyên dùng, phụ tùng xe cơ giới và nhiệm vụ quản lý khác theo quy định của Luật này; ban hành quy chuẩn kỹ thuật quốc gia về thiết bị an toàn cho trẻ em quy định tại khoản 3 Điều 10 của Luật này.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K19"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K20",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "20",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "88",
+        "khoan": "2",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "khoan_dieu_tuyet_doi_nay",
+        "van_ban_goc": "Khoản 3 Điều 10 của Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": "10",
+          "khoan": "3",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "khoan_dieu_tuyet_doi_nay",
+        "van_ban_goc": "khoản 2 Điều 35 của Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": "35",
+          "khoan": "2",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "khoan_dieu_tuyet_doi_nay",
+        "van_ban_goc": "khoản 2 Điều 35 của Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": "35",
+          "khoan": "2",
+          "diem": null,
+          "so_hieu_van_ban": "36/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n20. Sửa đổi, bổ sung một số khoản của Điều 88 như sau:\na) Sửa đổi, bổ sung khoản 2 như sau:\n“2. Khoản 3 Điều 10 của Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.”;\nb) Bổ sung khoản 2a vào sau khoản 2 như sau:\n“2a. Quy định lắp thiết bị ghi nhận hình ảnh người lái xe đối với xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô kinh doanh vận tải hàng hóa (trừ xe ô tô đầu kéo), xe vận tải nội bộ tại khoản 2 Điều 35 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2028. Quy định lắp thiết bị ghi nhận hình ảnh khoang chở khách đối với xe ô tô kinh doanh vận tải hành khách từ 08 chỗ trở lên (không kể chỗ của người lái xe) tại khoản 2 Điều 35 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2029 và thực hiện theo lộ trình do Chính phủ quy định.”.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n20. Sửa đổi, bổ sung một số khoản của Điều 88 như sau:\na) Sửa đổi, bổ sung khoản 2 như sau:\n“2. Khoản 3 Điều 10 của Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.”;\nb) Bổ sung khoản 2a vào sau khoản 2 như sau:\n“2a. Quy định lắp thiết bị ghi nhận hình ảnh người lái xe đối với xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô kinh doanh vận tải hàng hóa (trừ xe ô tô đầu kéo), xe vận tải nội bộ tại khoản 2 Điều 35 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2028. Quy định lắp thiết bị ghi nhận hình ảnh khoang chở khách đối với xe ô tô kinh doanh vận tải hành khách từ 08 chỗ trở lên (không kể chỗ của người lái xe) tại khoản 2 Điều 35 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2029 và thực hiện theo lộ trình do Chính phủ quy định.”.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n20. Sửa đổi, bổ sung một số khoản của Điều 88 như sau:\na) Sửa đổi, bổ sung khoản 2 như sau:\n“2. Khoản 3 Điều 10 của Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.”;\nb) Bổ sung khoản 2a vào sau khoản 2 như sau:\n“2a. Quy định lắp thiết bị ghi nhận hình ảnh người lái xe đối với xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô kinh doanh vận tải hàng hóa (trừ xe ô tô đầu kéo), xe vận tải nội bộ tại khoản 2 Điều 35 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2028. Quy định lắp thiết bị ghi nhận hình ảnh khoang chở khách đối với xe ô tô kinh doanh vận tải hành khách từ 08 chỗ trở lên (không kể chỗ của người lái xe) tại khoản 2 Điều 35 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2029 và thực hiện theo lộ trình do Chính phủ quy định.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI",
+      "BO_SUNG"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K20_Da",
+      "118_2025_QH15_D7_K20_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K21",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "21",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "THAY_THE_TEXT",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "11",
+        "khoan": "13",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "12",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "42",
+        "khoan": "5",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "49",
+        "khoan": "1",
+        "diem": "d",
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "53",
+        "khoan": "7",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "63",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "THAY_THE_TEXT"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K21"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K22",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "22",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "BAI_BO_TEXT",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "6",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      },
+      {
+        "dieu": "75",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n22. Bỏ một số cụm từ tại một số khoản, điều như sau:\na) Bỏ cụm từ “, Bộ Lao động, Thương binh và Xã hội,” tại khoản 3 Điều 6;\nb) Bỏ cụm từ “trực thuộc trung ương” tại khoản 3 Điều 75.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n22. Bỏ một số cụm từ tại một số khoản, điều như sau:\na) Bỏ cụm từ “, Bộ Lao động, Thương binh và Xã hội,” tại khoản 3 Điều 6;\nb) Bỏ cụm từ “trực thuộc trung ương” tại khoản 3 Điều 75.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n22. Bỏ một số cụm từ tại một số khoản, điều như sau:\na) Bỏ cụm từ “, Bộ Lao động, Thương binh và Xã hội,” tại khoản 3 Điều 6;\nb) Bỏ cụm từ “trực thuộc trung ương” tại khoản 3 Điều 75.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "BAI_BO_TEXT"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K22_Da",
+      "118_2025_QH15_D7_K22_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D7_K23",
+    "vi_tri": {
+      "dieu": "7",
+      "khoan": "23",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "BAI_BO",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "62",
+        "khoan": "7",
+        "diem": null,
+        "so_hieu_van_ban": "36/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n23. Bãi bỏ khoản 7 Điều 62.",
+    "noi_dung_chuan_hoa": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n23. Bãi bỏ khoản 7 Điều 62.",
+    "noi_dung": "Điều 7. Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ\n23. Bãi bỏ khoản 7 Điều 62.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Trật tự, an toàn giao thông đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "BAI_BO"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D7_K23"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K1",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "1",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "2",
+        "khoan": "6",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n1. Sửa đổi, bổ sung khoản 6 Điều 2 như sau:\n“6. Cơ quan quản lý đường bộ là cơ quan thuộc Bộ Xây dựng giúp Bộ trưởng Bộ Xây dựng thực hiện chức năng quản lý nhà nước về hoạt động đường bộ; cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh; Ủy ban nhân dân cấp xã.”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n1. Sửa đổi, bổ sung khoản 6 Điều 2 như sau:\n“6. Cơ quan quản lý đường bộ là cơ quan thuộc Bộ Xây dựng giúp Bộ trưởng Bộ Xây dựng thực hiện chức năng quản lý nhà nước về hoạt động đường bộ; cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh; Ủy ban nhân dân cấp xã.”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n1. Sửa đổi, bổ sung khoản 6 Điều 2 như sau:\n“6. Cơ quan quản lý đường bộ là cơ quan thuộc Bộ Xây dựng giúp Bộ trưởng Bộ Xây dựng thực hiện chức năng quản lý nhà nước về hoạt động đường bộ; cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh; Ủy ban nhân dân cấp xã.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K1"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K2",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "2",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "5",
+        "khoan": "1",
+        "diem": "c",
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "5",
+        "khoan": "2",
+        "diem": "c",
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n2. Sửa đổi, bổ sung một số điểm, khoản của Điều 5 như sau:\na) Sửa đổi, bổ sung điểm c khoản 1 như sau:\n“c) Bộ Xây dựng tổ chức lập quy hoạch mạng lưới đường bộ.”;\nb) Sửa đổi, bổ sung điểm c khoản 2 như sau:\n“c) Bộ Xây dựng tổ chức lập quy hoạch kết cấu hạ tầng đường bộ.”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n2. Sửa đổi, bổ sung một số điểm, khoản của Điều 5 như sau:\na) Sửa đổi, bổ sung điểm c khoản 1 như sau:\n“c) Bộ Xây dựng tổ chức lập quy hoạch mạng lưới đường bộ.”;\nb) Sửa đổi, bổ sung điểm c khoản 2 như sau:\n“c) Bộ Xây dựng tổ chức lập quy hoạch kết cấu hạ tầng đường bộ.”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n2. Sửa đổi, bổ sung một số điểm, khoản của Điều 5 như sau:\na) Sửa đổi, bổ sung điểm c khoản 1 như sau:\n“c) Bộ Xây dựng tổ chức lập quy hoạch mạng lưới đường bộ.”;\nb) Sửa đổi, bổ sung điểm c khoản 2 như sau:\n“c) Bộ Xây dựng tổ chức lập quy hoạch kết cấu hạ tầng đường bộ.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K2_Da",
+      "118_2025_QH15_D8_K2_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K3",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "3",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "8",
+        "khoan": null,
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "điểm a khoản 4 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "8",
+          "khoan": "4",
+          "diem": "a",
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "structural_series",
+        "van_ban_goc": "điểm c khoản 4 Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "8",
+          "khoan": "4",
+          "diem": "c",
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "dieu_nay",
+        "van_ban_goc": "Điều này",
+        "gia_tri_xac_dinh": {
+          "dieu": "8",
+          "khoan": null,
+          "diem": null,
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "van_ban_nay",
+        "van_ban_goc": "Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": null,
+          "khoan": null,
+          "diem": null,
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n3. Sửa đổi, bổ sung Điều 8 như sau:\n“Điều 8. Phân loại đường bộ theo cấp quản lý\n1. Đường bộ theo cấp quản lý bao gồm: quốc lộ, đường tỉnh, đường xã, đường thôn, đường đô thị, đường chuyên dùng và được xác định như sau:\na) Quốc lộ là đường nối liền Thủ đô Hà Nội với trung tâm hành chính cấp tỉnh; đường nối liền các trung tâm hành chính cấp tỉnh; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh của vùng, khu vực;\nb) Đường tỉnh là đường nằm trong địa bàn một tỉnh nối trung tâm hành chính của tỉnh với trung tâm hành chính của cấp xã; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của tỉnh;\nc) Đường xã là đường nối trung tâm hành chính của xã với thôn, làng, ấp, bản, buôn, bon, phum, sóc (sau đây gọi là thôn) và điểm dân cư nông thôn hoặc đường nối với xã lân cận; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của xã;\nd) Đường thôn là đường trong khu vực thôn; đường trục nối thôn với khu vực sản xuất nông nghiệp, lâm nghiệp và cơ sở sản xuất, kinh doanh khác trên địa bàn thôn;\nđ) Đường đô thị là đường trong phạm vi địa giới hành chính nội thành, nội thị, bao gồm: đường cao tốc đô thị, đường phố, đường ngõ, ngách, kiệt, hẻm trong đô thị;\ne) Đường chuyên dùng là đường chuyên phục vụ giao thông cho một hoặc một số cơ quan, tổ chức, cá nhân và đường nội bộ.\n2. Đường địa phương bao gồm: đường tỉnh, đường đô thị, đường xã, đường thôn.\n3. Bộ Xây dựng có trách nhiệm quản lý quốc lộ, trừ quốc lộ quy định tại điểm a khoản 4 Điều này và đường gom, đường bên quy định tại điểm c khoản 4 Điều này.\n4. Ủy ban nhân dân cấp tỉnh có trách nhiệm quản lý các loại đường sau đây:\na) Quản lý đường tỉnh, quốc lộ đi qua đô thị loại đặc biệt; quốc lộ khi được phân cấp; tuyến, đoạn tuyến quốc lộ đã hoàn thành việc đầu tư xây dựng tuyến tránh thay thế phù hợp với quy hoạch mạng lưới đường bộ; tuyến, đoạn tuyến quốc lộ không còn trong quy hoạch mạng lưới đường bộ, trừ trường hợp quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh; tuyến, đoạn tuyến quốc lộ được Bộ trưởng Bộ Xây dựng giao trên cơ sở đề nghị của Ủy ban nhân dân cấp tỉnh để đáp ứng nhu cầu phát triển kinh tế - xã hội, bảo đảm lợi ích quốc gia, quốc phòng, an ninh, khả năng bố trí nguồn lực của địa phương; tuyến, đoạn tuyến quốc lộ đã được điều chuyển tài sản về Ủy ban nhân dân cấp tỉnh quản lý theo quy định của pháp luật về quản lý, sử dụng tài sản công;\nb) Quy định việc quản lý đường đô thị, đường xã, đường thôn;\nc) Quản lý đường gom, đường bên tách khỏi quốc lộ.\n5. Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có trách nhiệm quản lý đường chuyên dùng theo quy định của Luật này và quy định khác của pháp luật có liên quan.\n6. Chính phủ quy định chi tiết Điều này.”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n3. Sửa đổi, bổ sung Điều 8 như sau:\n“Điều 8. Phân loại đường bộ theo cấp quản lý\n1. Đường bộ theo cấp quản lý bao gồm: quốc lộ, đường tỉnh, đường xã, đường thôn, đường đô thị, đường chuyên dùng và được xác định như sau:\na) Quốc lộ là đường nối liền Thủ đô Hà Nội với trung tâm hành chính cấp tỉnh; đường nối liền các trung tâm hành chính cấp tỉnh; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh của vùng, khu vực;\nb) Đường tỉnh là đường nằm trong địa bàn một tỉnh nối trung tâm hành chính của tỉnh với trung tâm hành chính của cấp xã; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của tỉnh;\nc) Đường xã là đường nối trung tâm hành chính của xã với thôn, làng, ấp, bản, buôn, bon, phum, sóc (sau đây gọi là thôn) và điểm dân cư nông thôn hoặc đường nối với xã lân cận; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của xã;\nd) Đường thôn là đường trong khu vực thôn; đường trục nối thôn với khu vực sản xuất nông nghiệp, lâm nghiệp và cơ sở sản xuất, kinh doanh khác trên địa bàn thôn;\nđ) Đường đô thị là đường trong phạm vi địa giới hành chính nội thành, nội thị, bao gồm: đường cao tốc đô thị, đường phố, đường ngõ, ngách, kiệt, hẻm trong đô thị;\ne) Đường chuyên dùng là đường chuyên phục vụ giao thông cho một hoặc một số cơ quan, tổ chức, cá nhân và đường nội bộ.\n2. Đường địa phương bao gồm: đường tỉnh, đường đô thị, đường xã, đường thôn.\n3. Bộ Xây dựng có trách nhiệm quản lý quốc lộ, trừ quốc lộ quy định tại điểm a khoản 4 Điều 8 và đường gom, đường bên quy định tại điểm c khoản 4 Điều 8.\n4. Ủy ban nhân dân cấp tỉnh có trách nhiệm quản lý các loại đường sau đây:\na) Quản lý đường tỉnh, quốc lộ đi qua đô thị loại đặc biệt; quốc lộ khi được phân cấp; tuyến, đoạn tuyến quốc lộ đã hoàn thành việc đầu tư xây dựng tuyến tránh thay thế phù hợp với quy hoạch mạng lưới đường bộ; tuyến, đoạn tuyến quốc lộ không còn trong quy hoạch mạng lưới đường bộ, trừ trường hợp quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh; tuyến, đoạn tuyến quốc lộ được Bộ trưởng Bộ Xây dựng giao trên cơ sở đề nghị của Ủy ban nhân dân cấp tỉnh để đáp ứng nhu cầu phát triển kinh tế - xã hội, bảo đảm lợi ích quốc gia, quốc phòng, an ninh, khả năng bố trí nguồn lực của địa phương; tuyến, đoạn tuyến quốc lộ đã được điều chuyển tài sản về Ủy ban nhân dân cấp tỉnh quản lý theo quy định của pháp luật về quản lý, sử dụng tài sản công;\nb) Quy định việc quản lý đường đô thị, đường xã, đường thôn;\nc) Quản lý đường gom, đường bên tách khỏi quốc lộ.\n5. Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có trách nhiệm quản lý đường chuyên dùng theo quy định của Luật này và quy định khác của pháp luật có liên quan.\n6. Chính phủ quy định chi tiết Điều 8.”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n3. Sửa đổi, bổ sung Điều 8 như sau:\n“Điều 8. Phân loại đường bộ theo cấp quản lý\n1. Đường bộ theo cấp quản lý bao gồm: quốc lộ, đường tỉnh, đường xã, đường thôn, đường đô thị, đường chuyên dùng và được xác định như sau:\na) Quốc lộ là đường nối liền Thủ đô Hà Nội với trung tâm hành chính cấp tỉnh; đường nối liền các trung tâm hành chính cấp tỉnh; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh của vùng, khu vực;\nb) Đường tỉnh là đường nằm trong địa bàn một tỉnh nối trung tâm hành chính của tỉnh với trung tâm hành chính của cấp xã; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của tỉnh;\nc) Đường xã là đường nối trung tâm hành chính của xã với thôn, làng, ấp, bản, buôn, bon, phum, sóc (sau đây gọi là thôn) và điểm dân cư nông thôn hoặc đường nối với xã lân cận; đường có vị trí quan trọng đối với sự phát triển kinh tế - xã hội của xã;\nd) Đường thôn là đường trong khu vực thôn; đường trục nối thôn với khu vực sản xuất nông nghiệp, lâm nghiệp và cơ sở sản xuất, kinh doanh khác trên địa bàn thôn;\nđ) Đường đô thị là đường trong phạm vi địa giới hành chính nội thành, nội thị, bao gồm: đường cao tốc đô thị, đường phố, đường ngõ, ngách, kiệt, hẻm trong đô thị;\ne) Đường chuyên dùng là đường chuyên phục vụ giao thông cho một hoặc một số cơ quan, tổ chức, cá nhân và đường nội bộ.\n2. Đường địa phương bao gồm: đường tỉnh, đường đô thị, đường xã, đường thôn.\n3. Bộ Xây dựng có trách nhiệm quản lý quốc lộ, trừ quốc lộ quy định tại điểm a khoản 4 Điều 8 và đường gom, đường bên quy định tại điểm c khoản 4 Điều 8.\n4. Ủy ban nhân dân cấp tỉnh có trách nhiệm quản lý các loại đường sau đây:\na) Quản lý đường tỉnh, quốc lộ đi qua đô thị loại đặc biệt; quốc lộ khi được phân cấp; tuyến, đoạn tuyến quốc lộ đã hoàn thành việc đầu tư xây dựng tuyến tránh thay thế phù hợp với quy hoạch mạng lưới đường bộ; tuyến, đoạn tuyến quốc lộ không còn trong quy hoạch mạng lưới đường bộ, trừ trường hợp quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh; tuyến, đoạn tuyến quốc lộ được Bộ trưởng Bộ Xây dựng giao trên cơ sở đề nghị của Ủy ban nhân dân cấp tỉnh để đáp ứng nhu cầu phát triển kinh tế - xã hội, bảo đảm lợi ích quốc gia, quốc phòng, an ninh, khả năng bố trí nguồn lực của địa phương; tuyến, đoạn tuyến quốc lộ đã được điều chuyển tài sản về Ủy ban nhân dân cấp tỉnh quản lý theo quy định của pháp luật về quản lý, sử dụng tài sản công;\nb) Quy định việc quản lý đường đô thị, đường xã, đường thôn;\nc) Quản lý đường gom, đường bên tách khỏi quốc lộ.\n5. Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có trách nhiệm quản lý đường chuyên dùng theo quy định của Luật này và quy định khác của pháp luật có liên quan.\n6. Chính phủ quy định chi tiết Điều 8.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K3"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K4",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "4",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "27",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "diem_tuyet_doi_khoan_nay",
+        "van_ban_goc": "điểm c khoản này",
+        "gia_tri_xac_dinh": {
+          "dieu": "27",
+          "khoan": "3",
+          "diem": "c",
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      },
+      {
+        "loai": "khoan_nay",
+        "van_ban_goc": "khoản này",
+        "gia_tri_xac_dinh": {
+          "dieu": "27",
+          "khoan": "3",
+          "diem": null,
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n4. Sửa đổi, bổ sung khoản 3 Điều 27 như sau:\n“3. Trách nhiệm công bố tải trọng, khổ giới hạn của đường bộ được quy định như sau:\na) Cơ quan quản lý đường bộ thuộc Bộ Xây dựng công bố tải trọng, khổ giới hạn của đường bộ thuộc phạm vi quản lý của Bộ Xây dựng;\nb) Cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh công bố tải trọng, khổ giới hạn của đường bộ thuộc phạm vi quản lý và đường chuyên dùng quy định tại điểm c khoản này trên địa bàn;\nc) Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có hoạt động giao thông công cộng có trách nhiệm cung cấp thông tin về tải trọng, khổ giới hạn của đường chuyên dùng để cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh công bố;\nd) Chủ đầu tư dự án đầu tư xây dựng công trình đường bộ có trách nhiệm cung cấp thông tin về tải trọng, khổ giới hạn cho các cơ quan quy định tại các điểm a, b và c khoản này.”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n4. Sửa đổi, bổ sung khoản 3 Điều 27 như sau:\n“3. Trách nhiệm công bố tải trọng, khổ giới hạn của đường bộ được quy định như sau:\na) Cơ quan quản lý đường bộ thuộc Bộ Xây dựng công bố tải trọng, khổ giới hạn của đường bộ thuộc phạm vi quản lý của Bộ Xây dựng;\nb) Cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh công bố tải trọng, khổ giới hạn của đường bộ thuộc phạm vi quản lý và đường chuyên dùng quy định tại điểm c Khoản 3 trên địa bàn;\nc) Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có hoạt động giao thông công cộng có trách nhiệm cung cấp thông tin về tải trọng, khổ giới hạn của đường chuyên dùng để cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh công bố;\nd) Chủ đầu tư dự án đầu tư xây dựng công trình đường bộ có trách nhiệm cung cấp thông tin về tải trọng, khổ giới hạn cho các cơ quan quy định tại các điểm a, b và c Khoản 3.”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n4. Sửa đổi, bổ sung khoản 3 Điều 27 như sau:\n“3. Trách nhiệm công bố tải trọng, khổ giới hạn của đường bộ được quy định như sau:\na) Cơ quan quản lý đường bộ thuộc Bộ Xây dựng công bố tải trọng, khổ giới hạn của đường bộ thuộc phạm vi quản lý của Bộ Xây dựng;\nb) Cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh công bố tải trọng, khổ giới hạn của đường bộ thuộc phạm vi quản lý và đường chuyên dùng quy định tại điểm c Khoản 3 trên địa bàn;\nc) Người quản lý, sử dụng đường bộ đối với đường chuyên dùng có hoạt động giao thông công cộng có trách nhiệm cung cấp thông tin về tải trọng, khổ giới hạn của đường chuyên dùng để cơ quan chuyên môn thuộc Ủy ban nhân dân cấp tỉnh công bố;\nd) Chủ đầu tư dự án đầu tư xây dựng công trình đường bộ có trách nhiệm cung cấp thông tin về tải trọng, khổ giới hạn cho các cơ quan quy định tại các điểm a, b và c Khoản 3.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K4"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K5",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "5",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "29",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [
+      {
+        "loai": "diem_khoan_dieu_tuyet_doi_nay",
+        "van_ban_goc": "điểm d khoản 2 Điều 10 của Luật này",
+        "gia_tri_xac_dinh": {
+          "dieu": "10",
+          "khoan": "2",
+          "diem": "d",
+          "so_hieu_van_ban": "35/2024/QH15"
+        },
+        "quan_he": "THAM_CHIEU"
+      }
+    ],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n5. Sửa đổi, bổ sung khoản 1 Điều 29 như sau:\n“1. Đường bộ được thẩm tra, thẩm định về an toàn giao thông trong giai đoạn lập dự án đầu tư xây dựng công trình; thiết kế triển khai sau thiết kế cơ sở; trước khi đưa công trình đường bộ vào khai thác và trong quá trình khai thác công trình đường bộ, trừ đường bộ có cấp kỹ thuật theo quy định tại điểm d khoản 2 Điều 10 của Luật này, đường phố gom, đường nội bộ đô thị.\nTrong giai đoạn lập dự án đầu tư, thiết kế triển khai sau thiết kế cơ sở, việc thẩm tra, thẩm định an toàn giao thông được thực hiện cùng với công tác thẩm tra, thẩm định báo cáo nghiên cứu khả thi, thiết kế xây dựng.”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n5. Sửa đổi, bổ sung khoản 1 Điều 29 như sau:\n“1. Đường bộ được thẩm tra, thẩm định về an toàn giao thông trong giai đoạn lập dự án đầu tư xây dựng công trình; thiết kế triển khai sau thiết kế cơ sở; trước khi đưa công trình đường bộ vào khai thác và trong quá trình khai thác công trình đường bộ, trừ đường bộ có cấp kỹ thuật theo quy định tại điểm d khoản 2 Điều 10 của Luật này, đường phố gom, đường nội bộ đô thị.\nTrong giai đoạn lập dự án đầu tư, thiết kế triển khai sau thiết kế cơ sở, việc thẩm tra, thẩm định an toàn giao thông được thực hiện cùng với công tác thẩm tra, thẩm định báo cáo nghiên cứu khả thi, thiết kế xây dựng.”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n5. Sửa đổi, bổ sung khoản 1 Điều 29 như sau:\n“1. Đường bộ được thẩm tra, thẩm định về an toàn giao thông trong giai đoạn lập dự án đầu tư xây dựng công trình; thiết kế triển khai sau thiết kế cơ sở; trước khi đưa công trình đường bộ vào khai thác và trong quá trình khai thác công trình đường bộ, trừ đường bộ có cấp kỹ thuật theo quy định tại điểm d khoản 2 Điều 10 của Luật này, đường phố gom, đường nội bộ đô thị.\nTrong giai đoạn lập dự án đầu tư, thiết kế triển khai sau thiết kế cơ sở, việc thẩm tra, thẩm định an toàn giao thông được thực hiện cùng với công tác thẩm tra, thẩm định báo cáo nghiên cứu khả thi, thiết kế xây dựng.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K5"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K6",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "6",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "39",
+        "khoan": "1",
+        "diem": "a",
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "39",
+        "khoan": "1",
+        "diem": "b",
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n6. Sửa đổi, bổ sung điểm a và điểm b khoản 1 Điều 39 như sau:\n“a) Bến xe được xây dựng tại các đô thị và các khu vực cần thiết khác để phục vụ vận tải hành khách công cộng;\nb) Bãi đỗ xe được xây dựng phù hợp với nhu cầu đỗ xe tại các khu vực trong đô thị, ngoại ô thành phố, đường có lưu lượng vận tải lớn và các khu vực khác khi cần thiết để phục vụ đỗ xe, trông giữ xe. Bãi đỗ xe gồm: bãi đỗ xe tải; bãi đỗ xe khách, xe con; bãi đỗ xe dùng cho nhiều loại xe;”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n6. Sửa đổi, bổ sung điểm a và điểm b khoản 1 Điều 39 như sau:\n“a) Bến xe được xây dựng tại các đô thị và các khu vực cần thiết khác để phục vụ vận tải hành khách công cộng;\nb) Bãi đỗ xe được xây dựng phù hợp với nhu cầu đỗ xe tại các khu vực trong đô thị, ngoại ô thành phố, đường có lưu lượng vận tải lớn và các khu vực khác khi cần thiết để phục vụ đỗ xe, trông giữ xe. Bãi đỗ xe gồm: bãi đỗ xe tải; bãi đỗ xe khách, xe con; bãi đỗ xe dùng cho nhiều loại xe;”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n6. Sửa đổi, bổ sung điểm a và điểm b khoản 1 Điều 39 như sau:\n“a) Bến xe được xây dựng tại các đô thị và các khu vực cần thiết khác để phục vụ vận tải hành khách công cộng;\nb) Bãi đỗ xe được xây dựng phù hợp với nhu cầu đỗ xe tại các khu vực trong đô thị, ngoại ô thành phố, đường có lưu lượng vận tải lớn và các khu vực khác khi cần thiết để phục vụ đỗ xe, trông giữ xe. Bãi đỗ xe gồm: bãi đỗ xe tải; bãi đỗ xe khách, xe con; bãi đỗ xe dùng cho nhiều loại xe;”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K6"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K7",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "7",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "SUA_DOI",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "78",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n7. Sửa đổi, bổ sung khoản 3 Điều 78 như sau:\n“3. Người thuê phương tiện để tự lái không được sử dụng phương tiện đi thuê để vận tải hành khách, hàng hóa có thu tiền, trừ xe gắn máy, xe mô tô hai bánh.”.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n7. Sửa đổi, bổ sung khoản 3 Điều 78 như sau:\n“3. Người thuê phương tiện để tự lái không được sử dụng phương tiện đi thuê để vận tải hành khách, hàng hóa có thu tiền, trừ xe gắn máy, xe mô tô hai bánh.”.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n7. Sửa đổi, bổ sung khoản 3 Điều 78 như sau:\n“3. Người thuê phương tiện để tự lái không được sử dụng phương tiện đi thuê để vận tải hành khách, hàng hóa có thu tiền, trừ xe gắn máy, xe mô tô hai bánh.”.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "SUA_DOI"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K7"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K8",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "8",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "THAY_THE_TEXT",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "10",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "21",
+        "khoan": "3",
+        "diem": "a",
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "25",
+        "khoan": "5",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "26",
+        "khoan": "5",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "28",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "30",
+        "khoan": "4",
+        "diem": "b",
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "30",
+        "khoan": "5",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "32",
+        "khoan": "3",
+        "diem": "b",
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "32",
+        "khoan": "7",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "35",
+        "khoan": "8",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "36",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "37",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "38",
+        "khoan": "2",
+        "diem": "a",
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "38",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "39",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "39",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "39",
+        "khoan": "5",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "49",
+        "khoan": null,
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "52",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "52",
+        "khoan": "5",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "57",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "61",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "82",
+        "khoan": "2",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "82",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "THAY_THE_TEXT"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K8"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K9",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "9",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "BAI_BO_TEXT",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "10",
+        "khoan": "3",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "12",
+        "khoan": "1",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n9. Bỏ một số cụm từ tại một số khoản, điều như sau:\na) Bỏ cụm từ “các điểm a, b và d” tại khoản 3 Điều 10;\nb) Bỏ cụm từ “; quy hoạch sử dụng đất cấp huyện” tại khoản 1 Điều 12.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n9. Bỏ một số cụm từ tại một số khoản, điều như sau:\na) Bỏ cụm từ “các điểm a, b và d” tại khoản 3 Điều 10;\nb) Bỏ cụm từ “; quy hoạch sử dụng đất cấp huyện” tại khoản 1 Điều 12.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n9. Bỏ một số cụm từ tại một số khoản, điều như sau:\na) Bỏ cụm từ “các điểm a, b và d” tại khoản 3 Điều 10;\nb) Bỏ cụm từ “; quy hoạch sử dụng đất cấp huyện” tại khoản 1 Điều 12.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "BAI_BO_TEXT"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K9_Da",
+      "118_2025_QH15_D8_K9_Db"
+    ]
+  },
+  {
+    "id": "118_2025_QH15_D8_K10",
+    "vi_tri": {
+      "dieu": "8",
+      "khoan": "10",
+      "diem": null,
+      "so_hieu_van_ban": "118/2025/QH15"
+    },
+    "hanh_dong": "BAI_BO",
+    "level": 3,
+    "doi_tuong": [
+      {
+        "dieu": "10",
+        "khoan": "4",
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      },
+      {
+        "dieu": "83",
+        "khoan": null,
+        "diem": null,
+        "so_hieu_van_ban": "35/2024/QH15"
+      }
+    ],
+    "tham_chieu": [],
+    "noi_dung_goc": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n10. Bãi bỏ khoản 4 Điều 10, Điều 83.",
+    "noi_dung_chuan_hoa": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n10. Bãi bỏ khoản 4 Điều 10, Điều 83.",
+    "noi_dung": "Điều 8. Sửa đổi, bổ sung một số điều của Luật Đường bộ\n10. Bãi bỏ khoản 4 Điều 10, Điều 83.",
+    "hieu_luc_tu": null,
+    "tieu_de_dieu": "Sửa đổi, bổ sung một số điều của Luật Đường bộ",
+    "chuong": null,
+    "tieu_de_chuong": null,
+    "phien_ban": "goc",
+    "sua_doi_boi_van_ban": null,
+    "hanh_dong_chi_tiet": [
+      "BAI_BO"
+    ],
+    "amendment_event_sources": [
+      "118_2025_QH15_D8_K10"
+    ]
+  }
+]

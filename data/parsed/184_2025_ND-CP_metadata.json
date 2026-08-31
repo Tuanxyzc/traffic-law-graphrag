@@ -1,0 +1,18 @@
+{
+  "so_hieu": "184/2025/ND-CP",
+  "ten": "Nghị định phân định thẩm quyền chính quyền 2 cấp (lĩnh vực ANTT)",
+  "loai": "NghiDinh_phanDinhThamQuyen",
+  "ngay_ban_hanh": "2025-07-01",
+  "co_quan_ban_hanh": "CHÍNH PHỦ",
+  "trang_thai_hieu_luc": "con_hieu_luc",
+  "so_chuong": 0,
+  "so_dieu": 1,
+  "is_amendment": true,
+  "amendment_target_documents": [
+    "151/2024/ND-CP"
+  ],
+  "ngay_ban_hanh_raw": "Hà Nội, ngày 01 tháng 7 năm 2025",
+  "hieu_luc_tu": "2025-07-01",
+  "canonical_document_id": "184_2025_ND-CP",
+  "effective_rule_count": 2
+}

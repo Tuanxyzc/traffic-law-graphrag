@@ -1,0 +1,290 @@
+[
+  {
+    "source": "160_2024_ND-CP_D9_K3_Db",
+    "target": "36_2024_QH15_D57_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D9_K3_De",
+    "target": "160_2024_ND-CP_D9_K3_Dd",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D11_K1",
+    "target": "160_2024_ND-CP_D10_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D12_K1_Dd",
+    "target": "160_2024_ND-CP_D12_K1_Dc",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D12_K2_Da",
+    "target": "160_2024_ND-CP_D12_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D12_K2_Db",
+    "target": "160_2024_ND-CP_D10_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D12_K3",
+    "target": "160_2024_ND-CP_D12_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D12_K3",
+    "target": "160_2024_ND-CP_D12_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D13_K1_Da",
+    "target": "160_2024_ND-CP_D12_K1_Dd",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D13_K1_Db",
+    "target": "160_2024_ND-CP_D12_K1_Dd",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D13_K1_Db",
+    "target": "160_2024_ND-CP_D13_K1_Db",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D14_K2_Da",
+    "target": "160_2024_ND-CP_D14_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D14_K3",
+    "target": "160_2024_ND-CP_D14_K1_Da",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D16_K2_Da",
+    "target": "160_2024_ND-CP_D16_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D17_K1_Da",
+    "target": "160_2024_ND-CP_D9_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D17_K2_Da",
+    "target": "160_2024_ND-CP_D17_K1_Da",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D17_K2_Da",
+    "target": "160_2024_ND-CP_D17_K1_Db",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D17_K2_Da",
+    "target": "160_2024_ND-CP_D17_K1_Dc",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D17_K2_Da",
+    "target": "160_2024_ND-CP_D17_K1_Dd",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D17_K2_Da",
+    "target": "160_2024_ND-CP_D17_K1_De",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D19_K1_Dđ",
+    "target": "160_2024_ND-CP_D19_K1_Dd",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D20_K1_Da",
+    "target": "160_2024_ND-CP_D19_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D21_K2_Da",
+    "target": "160_2024_ND-CP_D21_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D24_K7_Da",
+    "target": "36_2024_QH15_D57_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D24_K7_Dg",
+    "target": "160_2024_ND-CP_D24_K7_Dđ",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D27_K1",
+    "target": "160_2024_ND-CP_D3_K4",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D31_K2_Da",
+    "target": "160_2024_ND-CP_D31_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D31_K3",
+    "target": "160_2024_ND-CP_D31_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D31_K3",
+    "target": "160_2024_ND-CP_D31_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D35_K2_Da",
+    "target": "160_2024_ND-CP_D35_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D35_K3",
+    "target": "160_2024_ND-CP_D35_K1",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D35_K3",
+    "target": "160_2024_ND-CP_D35_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D38_K5",
+    "target": "36_2024_QH15_D59_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D40_K2",
+    "target": "70_2022_ND-CP_D3",
+    "relation": "THAM_CHIEU",
+    "external": true
+  },
+  {
+    "source": "160_2024_ND-CP_D40_K2",
+    "target": "41_2024_ND-CP_D4",
+    "relation": "THAM_CHIEU",
+    "external": true
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K1",
+    "target": "36_2024_QH15_D89_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K2",
+    "target": "160_2024_ND-CP_D24_K5",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K2",
+    "target": "36_2024_QH15_D89_K4",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K3",
+    "target": "160_2024_ND-CP_D24_K5",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K4",
+    "target": "160_2024_ND-CP_D36_K4_Dc",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K5",
+    "target": "36_2024_QH15_D89_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D33_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D34_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D26_K2_Dc",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D11_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D15_K2",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D18_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "160_2024_ND-CP_D41_K6",
+    "target": "160_2024_ND-CP_D27_K3",
+    "relation": "THAM_CHIEU",
+    "external": false
+  }
+]

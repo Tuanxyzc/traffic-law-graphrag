@@ -1,0 +1,71 @@
+{
+  "document": "35/2024/QH15",
+  "document_id": "35_2024_QH15",
+  "rules": [
+    {
+      "rule_id": "35_2024_QH15_ER_85_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "35/2024/QH15",
+      "source_article": "85",
+      "source_clause": "1",
+      "target_document": "35/2024/QH15",
+      "targets": [],
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025, trừ trường hợp quy định tại khoản 2 Điều này.",
+      "status": "RESOLVED",
+      "source_unit": "35_2024_QH15_D85_K1",
+      "source_unit_materialized_as_support": false
+    },
+    {
+      "rule_id": "35_2024_QH15_ER_85_2_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "35/2024/QH15",
+      "source_article": "85",
+      "source_clause": "2",
+      "target_document": "35/2024/QH15",
+      "targets": [
+        {
+          "unit_id": "35_2024_QH15_D42_K2_Da",
+          "article": "42",
+          "clause": "2",
+          "point": "a"
+        },
+        {
+          "unit_id": "35_2024_QH15_D42_K2_Db",
+          "article": "42",
+          "clause": "2",
+          "point": "b"
+        },
+        {
+          "unit_id": "35_2024_QH15_D43",
+          "article": "43",
+          "clause": null,
+          "point": null
+        },
+        {
+          "unit_id": "35_2024_QH15_D50",
+          "article": "50",
+          "clause": null,
+          "point": null
+        },
+        {
+          "unit_id": "35_2024_QH15_D84_K1",
+          "article": "84",
+          "clause": "1",
+          "point": null
+        }
+      ],
+      "effective_from": "2024-10-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "2. Điểm a và điểm b khoản 2 Điều 42, Điều 43, Điều 50, khoản 1 Điều 84 của Luật này có hiệu lực thi hành từ ngày 01 tháng 10 năm 2024.",
+      "status": "RESOLVED",
+      "source_unit": "35_2024_QH15_D85_K2",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

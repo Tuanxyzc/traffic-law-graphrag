@@ -1,0 +1,47 @@
+{
+  "document": "36/2024/QH15",
+  "document_id": "36_2024_QH15",
+  "rules": [
+    {
+      "rule_id": "36_2024_QH15_ER_88_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "36/2024/QH15",
+      "source_article": "88",
+      "source_clause": "1",
+      "target_document": "36/2024/QH15",
+      "targets": [],
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025, trừ trường hợp quy định tại khoản 2 Điều này.",
+      "status": "RESOLVED",
+      "source_unit": "36_2024_QH15_D88_K1",
+      "source_unit_materialized_as_support": false
+    },
+    {
+      "rule_id": "36_2024_QH15_ER_88_2_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "36/2024/QH15",
+      "source_article": "88",
+      "source_clause": "2",
+      "target_document": "36/2024/QH15",
+      "targets": [
+        {
+          "unit_id": "36_2024_QH15_D10_K3",
+          "article": "10",
+          "clause": "3",
+          "point": null
+        }
+      ],
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "2. Khoản 3 Điều 10 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026.",
+      "status": "RESOLVED",
+      "source_unit": "36_2024_QH15_D88_K2",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

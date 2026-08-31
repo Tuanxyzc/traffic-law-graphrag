@@ -1,0 +1,20 @@
+[
+  {
+    "source": "184_2025_ND-CP_D27_K4",
+    "target": "151_2024_ND-CP_D12_K1_Da",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K4",
+    "target": "151_2024_ND-CP_D12_K1_Dđ",
+    "relation": "THAM_CHIEU",
+    "external": false
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K4",
+    "target": "151_2024_ND-CP_D11_K6",
+    "relation": "THAM_CHIEU",
+    "external": false
+  }
+]

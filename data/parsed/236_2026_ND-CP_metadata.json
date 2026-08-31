@@ -1,0 +1,18 @@
+{
+  "so_hieu": "236/2026/ND-CP",
+  "ten": "Nghị định sửa đổi, bổ sung Nghị định 151/2024/NĐ-CP",
+  "loai": "NghiDinh_suaDoi",
+  "ngay_ban_hanh": "2026-06-26",
+  "co_quan_ban_hanh": "CHÍNH PHỦ",
+  "trang_thai_hieu_luc": "con_hieu_luc",
+  "so_chuong": 0,
+  "so_dieu": 19,
+  "is_amendment": true,
+  "amendment_target_documents": [
+    "151/2024/ND-CP"
+  ],
+  "ngay_ban_hanh_raw": "Hà Nội, ngày 26 tháng 6 năm 2026",
+  "hieu_luc_tu": "2026-07-01",
+  "canonical_document_id": "236_2026_ND-CP",
+  "effective_rule_count": 3
+}

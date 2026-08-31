@@ -1,0 +1,3404 @@
+[
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D1",
+        "number": "1"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D1",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 1. Sửa đổi, bổ sung khoản 1 Điều 9"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "1",
+            "content": "1. Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ được xây dựng thống nhất trên toàn quốc, do lực lượng Cảnh sát giao thông quản lý, vận hành, khai thác, dùng chung cho các cơ quan, tổ chức, cá nhân có thẩm quyền, trừ cơ sở dữ liệu liên quan đến lĩnh vực quốc phòng, an ninh.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D9_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D9",
+                    "number": "9"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D9_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Sửa đổi, bổ sung khoản 1 Điều 9",
+            "normalized_instruction": "Sửa đổi, bổ sung khoản 1 Điều 9",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D2",
+        "number": "2"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D2_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D2_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+          "clauses": [
+            {
+              "number": "1",
+              "content": "1. Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ được xây dựng phù hợp khung kiến trúc tổng thể quốc gia số, khung kiến trúc dữ liệu quốc gia, khung quản trị, quản lý dữ liệu quốc gia; tuân thủ các quy định pháp luật chuyên ngành có liên quan.",
+              "points": []
+            },
+            {
+              "number": "2",
+              "content": "2. Bộ Công an có trách nhiệm xây dựng, quản lý Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ và các cơ sở dữ liệu chuyên ngành có liên quan; các bộ, ngành có trách nhiệm xây dựng cơ sở dữ liệu quốc gia, cơ sở dữ liệu chuyên ngành, kết nối, chia sẻ thông tin theo quy định của pháp luật với Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ phục vụ công tác quản lý nhà nước về trật tự, an toàn giao thông đường bộ và giải quyết các thủ tục hành chính cho người dân, doanh nghiệp.",
+              "points": []
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D10_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D10",
+                    "number": "10"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D10_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  0
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D10_K2",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D10",
+                    "number": "10"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D10_K2",
+                    "number": "2"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  1
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D2_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D2_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:"
+        },
+        "replacement_root_level": "POINT_LIST",
+        "replacement_tree": {
+          "points": [
+            {
+              "number": "a",
+              "content": "a) Bộ Công an có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về đăng ký, quản lý xe cơ giới, xe máy chuyên dùng (trừ xe quân sự); Cơ sở dữ liệu về xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ; Cơ sở dữ liệu về tai nạn giao thông đường bộ; Cơ sở dữ liệu về hành trình của phương tiện giao thông đường bộ, hình ảnh người lái xe (trừ xe quân sự); Cơ sở dữ liệu về quản lý thời gian điều khiển phương tiện của người lái xe (trừ xe quân sự); Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng trong Công an nhân dân; Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe; Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ trong Công an nhân dân; Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam;"
+            },
+            {
+              "number": "b",
+              "content": "b) Bộ Xây dựng có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng (trừ xe quân sự, xe công an); Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng (trừ dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật của lực lượng quân đội, công an); Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải;"
+            },
+            {
+              "number": "c",
+              "content": "c) Bộ Tài chính có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về xe xuất khẩu, nhập khẩu; Cơ sở dữ liệu về hóa đơn, chứng từ; Cơ sở dữ liệu về lệ phí trước bạ xe;"
+            },
+            {
+              "number": "d",
+              "content": "d) Bộ Quốc phòng có trách nhiệm xây dựng, quản lý cơ sở dữ liệu thuộc phạm vi quản lý của Bộ Quốc phòng sau đây: Cơ sở dữ liệu về đăng ký, kiểm định xe cơ giới, xe máy chuyên dùng; Cơ sở dữ liệu về đào tạo, sát hạch, cấp giấy phép lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ; Cơ sở dữ liệu về tai nạn giao thông đường bộ; Cơ sở dữ liệu về xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ;"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D10_K3_Da",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D10",
+                    "number": "10"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D10_K3",
+                    "number": "3"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D10_K3_Da",
+                    "number": "a"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "points",
+                  0
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D10_K3_Db",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D10",
+                    "number": "10"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D10_K3",
+                    "number": "3"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D10_K3_Db",
+                    "number": "b"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "points",
+                  1
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D10_K3_Dc",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D10",
+                    "number": "10"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D10_K3",
+                    "number": "3"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D10_K3_Dc",
+                    "number": "c"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "points",
+                  2
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D10_K3_Dd",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D10",
+                    "number": "10"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D10_K3",
+                    "number": "3"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D10_K3_Dd",
+                    "number": "d"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "points",
+                  3
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D3",
+        "number": "3"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D3_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D3_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "1",
+            "content": "1. Thông tin về đăng ký, quản lý xe cơ giới, xe máy chuyên dùng:\na) Thông tin về chủ sở hữu xe cơ giới, xe máy chuyên dùng:\nĐối với cá nhân: họ, tên; ngày, tháng, năm sinh; giới tính; số định danh cá nhân; số điện thoại (nếu có); quốc tịch; nơi thường trú; nơi tạm trú, nơi ở hiện tại, địa chỉ đăng ký xe.\nĐối với tổ chức: tên tổ chức; tên người đại diện hợp pháp; địa chỉ; mã số thuế hoặc quyết định thành lập hoặc số định danh của tổ chức (nếu có); số điện thoại; loại hình doanh nghiệp; tình trạng hoạt động;\nb) Thông tin về phương tiện theo quy định tại điểm a khoản 2 Điều này;\nc) Thông tin về đăng ký, quản lý xe: biển số xe; màu biển số xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận đăng ký xe; thời hạn đăng ký xe; trạng thái đăng ký xe; trạng thái xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận nguồn gốc xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận quyền sở hữu; số, ngày, tháng, năm cấp, cơ quan cấp chứng từ lệ phí trước bạ, số tiền lệ phí trước bạ; loại xe ưu tiên, thiết bị phát tín hiệu ưu tiên, màu của tín hiệu đèn ưu tiên, số, thời hạn sử dụng giấy phép, cơ quan cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên;\nd) Thông tin về phương tiện giao thông cơ giới đường bộ qua các trạm thu phí.",
+            "points": [
+              {
+                "number": "a",
+                "content": "a) Thông tin về chủ sở hữu xe cơ giới, xe máy chuyên dùng:\nĐối với cá nhân: họ, tên; ngày, tháng, năm sinh; giới tính; số định danh cá nhân; số điện thoại (nếu có); quốc tịch; nơi thường trú; nơi tạm trú, nơi ở hiện tại, địa chỉ đăng ký xe.\nĐối với tổ chức: tên tổ chức; tên người đại diện hợp pháp; địa chỉ; mã số thuế hoặc quyết định thành lập hoặc số định danh của tổ chức (nếu có); số điện thoại; loại hình doanh nghiệp; tình trạng hoạt động;"
+              },
+              {
+                "number": "b",
+                "content": "b) Thông tin về phương tiện theo quy định tại điểm a khoản 2 Điều này;"
+              },
+              {
+                "number": "c",
+                "content": "c) Thông tin về đăng ký, quản lý xe: biển số xe; màu biển số xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận đăng ký xe; thời hạn đăng ký xe; trạng thái đăng ký xe; trạng thái xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận nguồn gốc xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận quyền sở hữu; số, ngày, tháng, năm cấp, cơ quan cấp chứng từ lệ phí trước bạ, số tiền lệ phí trước bạ; loại xe ưu tiên, thiết bị phát tín hiệu ưu tiên, màu của tín hiệu đèn ưu tiên, số, thời hạn sử dụng giấy phép, cơ quan cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên;"
+              },
+              {
+                "number": "d",
+                "content": "d) Thông tin về phương tiện giao thông cơ giới đường bộ qua các trạm thu phí."
+              }
+            ]
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "structural_series",
+                "van_ban_goc": "điểm a khoản 2 Điều này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "11",
+                  "khoan": "2",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "structural_series",
+                "van_ban_goc": "điểm a khoản 2 Điều này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "11",
+                  "khoan": "2",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D3_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D3_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung khoản 6 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "6",
+            "content": "6. Thông tin về đào tạo lái xe; chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng:\na) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quê quán; quốc tịch; nơi cư trú; mã, tên cơ sở đào tạo lái xe; hạng xe đào tạo; mã, tên khóa đào tạo; ngày khai giảng, ngày bế giảng, số km đào tạo thực hành lái xe; kết quả, số giấy xác nhận hoàn thành khóa đào tạo lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; hạng giấy phép lái xe đã được cấp;\nb) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; quốc tịch; nơi cư trú; khóa đào tạo; thời gian hoàn thành khóa học; kết quả kiểm tra cấp chứng chỉ; ngày, tháng, năm đạt kết quả kiểm tra cấp chứng chỉ; số chứng chỉ; ngày, tháng, năm cấp chứng chỉ; cơ sở đào tạo và cấp chứng chỉ; ngày, tháng, năm đổi, cấp lại chứng chỉ; cơ quan đổi, cấp lại chứng chỉ.",
+            "points": [
+              {
+                "number": "a",
+                "content": "a) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quê quán; quốc tịch; nơi cư trú; mã, tên cơ sở đào tạo lái xe; hạng xe đào tạo; mã, tên khóa đào tạo; ngày khai giảng, ngày bế giảng, số km đào tạo thực hành lái xe; kết quả, số giấy xác nhận hoàn thành khóa đào tạo lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; hạng giấy phép lái xe đã được cấp;"
+              },
+              {
+                "number": "b",
+                "content": "b) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; quốc tịch; nơi cư trú; khóa đào tạo; thời gian hoàn thành khóa học; kết quả kiểm tra cấp chứng chỉ; ngày, tháng, năm đạt kết quả kiểm tra cấp chứng chỉ; số chứng chỉ; ngày, tháng, năm cấp chứng chỉ; cơ sở đào tạo và cấp chứng chỉ; ngày, tháng, năm đổi, cấp lại chứng chỉ; cơ quan đổi, cấp lại chứng chỉ."
+              }
+            ]
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K6",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K6",
+                    "number": "6"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung khoản 6 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung khoản 6 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D3_K3",
+        "source_point": {
+          "id": "236_2026_ND-CP_D3_K3",
+          "number": null,
+          "implicit": true,
+          "instruction": "3. Sửa đổi, bổ sung điểm g khoản 8 như sau:"
+        },
+        "replacement_root_level": "POINT",
+        "replacement_tree": {
+          "point": {
+            "number": "g",
+            "content": "g) Thông tin bồi thường bảo hiểm bắt buộc trách nhiệm dân sự của chủ xe cơ giới; thông tin tai nạn giao thông, xử phạt vi phạm hành chính, đăng ký, đăng kiểm liên quan tới xe cơ giới, xe máy chuyên dùng thu thập được thông qua kết nối với cơ sở dữ liệu của Bộ Công an, Bộ Xây dựng, Bộ Quốc phòng."
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K8_Dg",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K8",
+                    "number": "8"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D11_K8_Dg",
+                    "number": "g"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "point"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "3. Sửa đổi, bổ sung điểm g khoản 8 như sau:",
+            "normalized_instruction": "3. Sửa đổi, bổ sung điểm g khoản 8 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D3_K4",
+        "source_point": {
+          "id": "236_2026_ND-CP_D3_K4",
+          "number": null,
+          "implicit": true,
+          "instruction": "4. Sửa đổi, bổ sung khoản 13 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "13",
+            "content": "13. Thông tin về sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; hành nghề lái xe ô tô hoặc không hành nghề lái xe ô tô; nơi làm việc (đối với người hành nghề lái xe ô tô); nơi khám sức khỏe; thời gian khám sức khỏe; kết quả khám lâm sàng; kết quả khám cận lâm sàng; tình trạng cơ xương khớp; kết luận về tình trạng sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K13",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K13",
+                    "number": "13"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "4. Sửa đổi, bổ sung khoản 13 như sau:",
+            "normalized_instruction": "4. Sửa đổi, bổ sung khoản 13 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D3_K5",
+        "source_point": {
+          "id": "236_2026_ND-CP_D3_K5",
+          "number": null,
+          "implicit": true,
+          "instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+          "clauses": [
+            {
+              "number": "14",
+              "content": "14. Thông tin về sát hạch, cấp giấy phép lái xe: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quốc tịch; nơi cư trú; số giấy phép lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; cơ quan sát hạch; địa điểm tổ chức sát hạch (trung tâm sát hạch hoặc sân tập lái dùng để sát hạch); ngày, tháng, năm cấp, đổi, cấp lại giấy phép lái xe; cơ quan cấp, đổi, cấp lại giấy phép lái xe; giấy phép lái xe trước khi đổi (giấy phép lái xe hệ dân sự, giấy phép lái xe trong Công an nhân dân, giấy phép lái xe quân sự, giấy phép lái xe của nước ngoài); hạng giấy phép lái xe; thời hạn sử dụng của giấy phép lái xe; số phôi giấy phép lái xe; điều kiện hạn chế của giấy phép lái xe; số điểm hiện tại của giấy phép lái xe và lịch sử trừ điểm giấy phép lái xe.",
+              "points": []
+            },
+            {
+              "number": "15",
+              "content": "15. Thông tin về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam:\na) Thông tin người điều khiển phương tiện: họ, tên; số định danh cá nhân hoặc hộ chiếu; ngày, tháng, năm sinh; quốc tịch; địa chỉ; số giấy phép lái xe; cơ quan cấp;\nb) Thông tin phương tiện: biển số xe; màu biển số xe; loại xe; nhãn hiệu; số loại; số máy; số khung; màu sơn; số chỗ ngồi hoặc đứng hoặc nằm; số hiệu giấy chứng nhận kiểm định an toàn kỹ thuật;\nc) Thông tin xuất nhập cảnh: cửa khẩu tạm nhập hoặc tái xuất; thời gian tạm nhập, tái xuất; cơ quan hải quan làm thủ tục tạm nhập, tái xuất; tên doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế hoặc tổ chức, cá nhân nộp hồ sơ đề nghị chấp thuận đưa xe cơ giới vào Việt Nam;\nd) Thông tin khác về văn bản chấp thuận của cơ quan có thẩm quyền.",
+              "points": [
+                {
+                  "number": "a",
+                  "content": "a) Thông tin người điều khiển phương tiện: họ, tên; số định danh cá nhân hoặc hộ chiếu; ngày, tháng, năm sinh; quốc tịch; địa chỉ; số giấy phép lái xe; cơ quan cấp;"
+                },
+                {
+                  "number": "b",
+                  "content": "b) Thông tin phương tiện: biển số xe; màu biển số xe; loại xe; nhãn hiệu; số loại; số máy; số khung; màu sơn; số chỗ ngồi hoặc đứng hoặc nằm; số hiệu giấy chứng nhận kiểm định an toàn kỹ thuật;"
+                },
+                {
+                  "number": "c",
+                  "content": "c) Thông tin xuất nhập cảnh: cửa khẩu tạm nhập hoặc tái xuất; thời gian tạm nhập, tái xuất; cơ quan hải quan làm thủ tục tạm nhập, tái xuất; tên doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế hoặc tổ chức, cá nhân nộp hồ sơ đề nghị chấp thuận đưa xe cơ giới vào Việt Nam;"
+                },
+                {
+                  "number": "d",
+                  "content": "d) Thông tin khác về văn bản chấp thuận của cơ quan có thẩm quyền."
+                }
+              ]
+            },
+            {
+              "number": "16",
+              "content": "16. Thông tin về đơn vị kinh doanh vận tải, phù hiệu xe kinh doanh vận tải:\na) Thông tin về đơn vị kinh doanh vận tải: tên đơn vị, mã số doanh nghiệp, số Giấy phép kinh doanh vận tải, địa chỉ, cơ quan cấp Giấy phép kinh doanh vận tải, người điều hành vận tải, loại hình kinh doanh vận tải;\nb) Thông tin về phù hiệu vận tải: biển số xe, số phù hiệu, cơ quan cấp phù hiệu, thời hạn, loại hình kinh doanh vận tải.",
+              "points": [
+                {
+                  "number": "a",
+                  "content": "a) Thông tin về đơn vị kinh doanh vận tải: tên đơn vị, mã số doanh nghiệp, số Giấy phép kinh doanh vận tải, địa chỉ, cơ quan cấp Giấy phép kinh doanh vận tải, người điều hành vận tải, loại hình kinh doanh vận tải;"
+                },
+                {
+                  "number": "b",
+                  "content": "b) Thông tin về phù hiệu vận tải: biển số xe, số phù hiệu, cơ quan cấp phù hiệu, thời hạn, loại hình kinh doanh vận tải."
+                }
+              ]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "BO_SUNG",
+            "anchor": {
+              "relation": "AFTER",
+              "target_document": "151/2024/ND-CP",
+              "target": {
+                "document": "151/2024/ND-CP",
+                "article": "11",
+                "clause": "13",
+                "point": null
+              }
+            },
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K13",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K13",
+                    "number": "13"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [
+              {
+                "unit_id": "151_2024_ND-CP_D11_K14",
+                "unit_level": "CLAUSE",
+                "number": "14"
+              },
+              {
+                "unit_id": "151_2024_ND-CP_D11_K15",
+                "unit_level": "CLAUSE",
+                "number": "15"
+              },
+              {
+                "unit_id": "151_2024_ND-CP_D11_K16",
+                "unit_level": "CLAUSE",
+                "number": "16"
+              }
+            ],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:",
+            "normalized_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:",
+            "anchor_span": [
+              40,
+              56
+            ],
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D4",
+        "number": "4"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D4_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D4_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:"
+        },
+        "replacement_root_level": "POINT_LIST",
+        "replacement_tree": {
+          "points": [
+            {
+              "number": "b",
+              "content": "b) Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng, Cơ sở dữ liệu thanh toán điện tử giao thông đường bộ do Bộ Xây dựng xây dựng, quản lý;"
+            },
+            {
+              "number": "c",
+              "content": "c) Cơ sở dữ liệu quốc gia về tài chính; Cơ sở dữ liệu quốc gia về đăng ký doanh nghiệp;"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D12_K1_Db",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D12",
+                    "number": "12"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D12_K1",
+                    "number": "1"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D12_K1_Db",
+                    "number": "b"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "points",
+                  0
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D12_K1_Dc",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D12",
+                    "number": "12"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D12_K1",
+                    "number": "1"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D12_K1_Dc",
+                    "number": "c"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "points",
+                  1
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D4_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D4_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung điểm a khoản 2 như sau:"
+        },
+        "replacement_root_level": "POINT",
+        "replacement_tree": {
+          "point": {
+            "number": "a",
+            "content": "a) Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng do Bộ Xây dựng quản lý;"
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D12_K2_Da",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D12",
+                    "number": "12"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D12_K2",
+                    "number": "2"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D12_K2_Da",
+                    "number": "a"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "point"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung điểm a khoản 2 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung điểm a khoản 2 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D4_K3",
+        "source_point": {
+          "id": "236_2026_ND-CP_D4_K3",
+          "number": null,
+          "implicit": true,
+          "instruction": "3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:"
+        },
+        "replacement_root_level": "POINT",
+        "replacement_tree": {
+          "point": {
+            "number": "c",
+            "content": "c) Cơ sở dữ liệu quốc gia về bảo hiểm."
+          }
+        },
+        "actions": [
+          {
+            "operation": "BO_SUNG",
+            "anchor": {
+              "relation": "AFTER",
+              "target_document": "151/2024/ND-CP",
+              "target": {
+                "document": "151/2024/ND-CP",
+                "article": "12",
+                "clause": "4",
+                "point": "b"
+              }
+            },
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D12_K4_Db",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D12",
+                    "number": "12"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D12_K4",
+                    "number": "4"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D12_K4_Db",
+                    "number": "b"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [
+              {
+                "unit_id": "151_2024_ND-CP_D12_K4_Dc",
+                "unit_level": "POINT",
+                "number": "c"
+              }
+            ],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:",
+            "normalized_instruction": "3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:",
+            "anchor_span": [
+              18,
+              40
+            ],
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D4_K4",
+        "source_point": {
+          "id": "236_2026_ND-CP_D4_K4",
+          "number": null,
+          "implicit": true,
+          "instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+          "clauses": [
+            {
+              "number": "10",
+              "content": "10. Thông tin quy định tại khoản 14 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe do Bộ Công an xây dựng, quản lý.",
+              "points": []
+            },
+            {
+              "number": "11",
+              "content": "11. Thông tin quy định tại khoản 15 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam do Bộ Công an xây dựng, quản lý và Cơ sở dữ liệu thông tin hải quan do Bộ Tài chính xây dựng, quản lý.",
+              "points": []
+            },
+            {
+              "number": "12",
+              "content": "12. Thông tin quy định tại khoản 16 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải do Bộ Xây dựng quản lý.",
+              "points": []
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "BO_SUNG",
+            "anchor": {
+              "relation": "AFTER",
+              "target_document": "151/2024/ND-CP",
+              "target": {
+                "document": "151/2024/ND-CP",
+                "article": "12",
+                "clause": "9",
+                "point": null
+              }
+            },
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D12_K9",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D12",
+                    "number": "12"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D12_K9",
+                    "number": "9"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [
+              {
+                "unit_id": "151_2024_ND-CP_D12_K10",
+                "unit_level": "CLAUSE",
+                "number": "10"
+              },
+              {
+                "unit_id": "151_2024_ND-CP_D12_K11",
+                "unit_level": "CLAUSE",
+                "number": "11"
+              },
+              {
+                "unit_id": "151_2024_ND-CP_D12_K12",
+                "unit_level": "CLAUSE",
+                "number": "12"
+              }
+            ],
+            "replacement_references": [
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 14 Điều 11 của Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "11",
+                  "khoan": "14",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 15 Điều 11 của Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "11",
+                  "khoan": "15",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 16 Điều 11 của Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "11",
+                  "khoan": "16",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:",
+            "normalized_instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:",
+            "anchor_span": [
+              40,
+              55
+            ],
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D5",
+        "number": "5"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D5",
+        "source_point": {
+          "id": "236_2026_ND-CP_D5",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 5. Sửa đổi, bổ sung khoản 1 Điều 14"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "1",
+            "content": "1. Việc kết nối, chia sẻ thông tin giữa Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ với các cơ sở dữ liệu chuyên ngành và các cơ sở dữ liệu khác được thực hiện theo quy định của Luật Trật tự, an toàn giao thông đường bộ và quy định của Chính phủ về quản lý, kết nối và chia sẻ dữ liệu số trong cơ quan nhà nước và các quy định khác có liên quan. Các bộ, ngành thực hiện kết nối, chia sẻ thông tin với Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ thống nhất danh mục các trường dữ liệu chi tiết dựa trên thông tin quy định tại Điều 11 Nghị định này.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D14_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D14",
+                    "number": "14"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D14_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "dieu_tuyet_doi_nay",
+                "van_ban_goc": "Điều 11 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "11",
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Sửa đổi, bổ sung khoản 1 Điều 14",
+            "normalized_instruction": "Sửa đổi, bổ sung khoản 1 Điều 14",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D6",
+        "number": "6"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D6",
+        "source_point": {
+          "id": "236_2026_ND-CP_D6",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 6. Sửa đổi, bổ sung khoản 2, khoản 3 Điều 17"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+          "clauses": [
+            {
+              "number": "2",
+              "content": "2. Lắp đặt thiết bị phát tín hiệu của xe ưu tiên:\na) Xe ô tô: Đèn phát tín hiệu ưu tiên lắp đặt trên nóc xe và có thể lắp thêm đèn hỗ trợ bên trong kính chắn gió phía trước, mặt lưới tản nhiệt phía trước xe; còi phát tín hiệu ưu tiên lắp đặt ở trong xe hoặc trên nóc xe; cờ hiệu ưu tiên lắp đặt ở đầu xe phía bên trái của người lái xe;\nb) Xe mô tô: Đèn phát tín hiệu ưu tiên lắp đặt ở hai bên của thanh chống đổ hoặc hai bên thùng xe và bên trên cột phía sau; còi phát tín hiệu ưu tiên lắp đặt ở phía trước đầu xe; cờ hiệu ưu tiên lắp đặt ở đầu xe, phía bên trái của người lái xe;\nc) Đối với xe của lực lượng quân sự, công an và kiểm sát đi làm nhiệm vụ khẩn cấp, xe Cảnh sát giao thông dẫn đường khi lắp đặt đèn phát tín hiệu ưu tiên thì phần đèn phát sáng màu đỏ ở phía bên trái, phần đèn phát sáng màu xanh ở phía bên phải của người lái xe.",
+              "points": [
+                {
+                  "number": "a",
+                  "content": "a) Xe ô tô: Đèn phát tín hiệu ưu tiên lắp đặt trên nóc xe và có thể lắp thêm đèn hỗ trợ bên trong kính chắn gió phía trước, mặt lưới tản nhiệt phía trước xe; còi phát tín hiệu ưu tiên lắp đặt ở trong xe hoặc trên nóc xe; cờ hiệu ưu tiên lắp đặt ở đầu xe phía bên trái của người lái xe;"
+                },
+                {
+                  "number": "b",
+                  "content": "b) Xe mô tô: Đèn phát tín hiệu ưu tiên lắp đặt ở hai bên của thanh chống đổ hoặc hai bên thùng xe và bên trên cột phía sau; còi phát tín hiệu ưu tiên lắp đặt ở phía trước đầu xe; cờ hiệu ưu tiên lắp đặt ở đầu xe, phía bên trái của người lái xe;"
+                },
+                {
+                  "number": "c",
+                  "content": "c) Đối với xe của lực lượng quân sự, công an và kiểm sát đi làm nhiệm vụ khẩn cấp, xe Cảnh sát giao thông dẫn đường khi lắp đặt đèn phát tín hiệu ưu tiên thì phần đèn phát sáng màu đỏ ở phía bên trái, phần đèn phát sáng màu xanh ở phía bên phải của người lái xe."
+                }
+              ]
+            },
+            {
+              "number": "3",
+              "content": "3. Quản lý thiết bị phát tín hiệu của xe ưu tiên:\na) Cơ quan, tổ chức, cá nhân chỉ được lắp đặt thiết bị phát tín hiệu của xe ưu tiên trên các loại xe quy định tại khoản 1 Điều 27 Luật Trật tự, an toàn giao thông đường bộ (trừ đoàn xe tang) và phải có giấy phép sử dụng do cơ quan có thẩm quyền cấp; đối với xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật là xe phục vụ Ban chỉ đạo, xe phục vụ các lực lượng chức năng được huy động tham gia thực hiện nhiệm vụ khi tình trạng khẩn cấp được ban bố;\nb) Thiết bị phát tín hiệu của xe ưu tiên chỉ được sử dụng khi thực hiện nhiệm vụ và phải tuân thủ các quy định của pháp luật về trật tự, an toàn giao thông đường bộ.",
+              "points": [
+                {
+                  "number": "a",
+                  "content": "a) Cơ quan, tổ chức, cá nhân chỉ được lắp đặt thiết bị phát tín hiệu của xe ưu tiên trên các loại xe quy định tại khoản 1 Điều 27 Luật Trật tự, an toàn giao thông đường bộ (trừ đoàn xe tang) và phải có giấy phép sử dụng do cơ quan có thẩm quyền cấp; đối với xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật là xe phục vụ Ban chỉ đạo, xe phục vụ các lực lượng chức năng được huy động tham gia thực hiện nhiệm vụ khi tình trạng khẩn cấp được ban bố;"
+                },
+                {
+                  "number": "b",
+                  "content": "b) Thiết bị phát tín hiệu của xe ưu tiên chỉ được sử dụng khi thực hiện nhiệm vụ và phải tuân thủ các quy định của pháp luật về trật tự, an toàn giao thông đường bộ."
+                }
+              ]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D17_K2",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D17",
+                    "number": "17"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D17_K2",
+                    "number": "2"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  0
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D17_K3",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D17",
+                    "number": "17"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D17_K3",
+                    "number": "3"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  1
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "khoan_dieu_cheo_ten",
+                "van_ban_goc": "khoản 1 Điều 27 Luật Trật tự",
+                "gia_tri_xac_dinh": {
+                  "dieu": "27",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "36/2024/QH15"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_cheo_ten",
+                "van_ban_goc": "khoản 1 Điều 27 Luật Trật tự",
+                "gia_tri_xac_dinh": {
+                  "dieu": "27",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "36/2024/QH15"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Sửa đổi, bổ sung khoản 2, khoản 3 Điều 17",
+            "normalized_instruction": "Sửa đổi, bổ sung khoản 2, khoản 3 Điều 17",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D7",
+        "number": "7"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D7_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D7_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "1",
+            "content": "1. Hồ sơ đề nghị cấp mới:\nCơ quan, tổ chức gửi 01 bộ hồ sơ đến cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 của Nghị định này bao gồm:\na) Bản chính hoặc bản điện tử văn bản đề nghị cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này;\nb) Đối với xe cứu thương đi làm nhiệm vụ cấp cứu; xe hộ đê đi làm nhiệm vụ; xe đi làm nhiệm vụ cứu nạn, cứu hộ, khắc phục sự cố thiên tai, dịch bệnh; xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 Nghị định này: Bản sao hoặc bản sao điện tử văn bản quy định về chức năng, nhiệm vụ, các tài liệu khác chứng minh cơ quan, tổ chức đủ điều kiện được sử dụng thiết bị phát tín hiệu của xe ưu tiên.\nTrường hợp tài liệu chứng minh có thể khai thác qua cơ sở dữ liệu được kết nối, chia sẻ với cơ quan có thẩm quyền cấp văn bản thì cơ quan, tổ chức không phải cung cấp khi làm thủ tục.",
+            "points": [
+              {
+                "number": "a",
+                "content": "a) Bản chính hoặc bản điện tử văn bản đề nghị cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này;"
+              },
+              {
+                "number": "b",
+                "content": "b) Đối với xe cứu thương đi làm nhiệm vụ cấp cứu; xe hộ đê đi làm nhiệm vụ; xe đi làm nhiệm vụ cứu nạn, cứu hộ, khắc phục sự cố thiên tai, dịch bệnh; xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 Nghị định này: Bản sao hoặc bản sao điện tử văn bản quy định về chức năng, nhiệm vụ, các tài liệu khác chứng minh cơ quan, tổ chức đủ điều kiện được sử dụng thiết bị phát tín hiệu của xe ưu tiên.\nTrường hợp tài liệu chứng minh có thể khai thác qua cơ sở dữ liệu được kết nối, chia sẻ với cơ quan có thẩm quyền cấp văn bản thì cơ quan, tổ chức không phải cung cấp khi làm thủ tục."
+              }
+            ]
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D20_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D20",
+                    "number": "20"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D20_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "diem_khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "điểm a khoản 3 Điều 17 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "17",
+                  "khoan": "3",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "diem_khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "điểm a khoản 3 Điều 17 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "17",
+                  "khoan": "3",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D7_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D7_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung khoản 3 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "3",
+            "content": "3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên bị hư hỏng, bị mất hoặc hết thời hạn sử dụng, cơ quan, tổ chức sử dụng xe ưu tiên có bản chính hoặc bản điện tử văn bản đề nghị cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D20_K3",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D20",
+                    "number": "20"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D20_K3",
+                    "number": "3"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung khoản 3 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung khoản 3 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D8",
+        "number": "8"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D8",
+        "source_point": {
+          "id": "236_2026_ND-CP_D8",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 8. Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+          "clauses": [
+            {
+              "number": "1",
+              "content": "1. Trình tự thực hiện thủ tục cấp mới\na) Cơ quan, tổ chức gửi hồ sơ, văn bản đề nghị quy định tại khoản 1 Điều 20 Nghị định này thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp cho cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 Nghị định này.\nb) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 01 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan cấp phép có trách nhiệm cấp mới giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho cơ quan, tổ chức sử dụng xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này.",
+              "points": [
+                {
+                  "number": "a",
+                  "content": "a) Cơ quan, tổ chức gửi hồ sơ, văn bản đề nghị quy định tại khoản 1 Điều 20 Nghị định này thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp cho cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 Nghị định này."
+                },
+                {
+                  "number": "b",
+                  "content": "b) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;"
+                },
+                {
+                  "number": "c",
+                  "content": "c) Trong thời hạn 01 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan cấp phép có trách nhiệm cấp mới giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho cơ quan, tổ chức sử dụng xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này."
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "content": "2. Trình tự thực hiện thủ tục cấp lại\na) Cơ quan, tổ chức gửi hồ sơ, văn bản đề nghị quy định tại khoản 3 Điều 20 Nghị định này thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia; qua dịch vụ bưu chính; nộp trực tiếp cho cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 Nghị định này;\nb) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 01 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan cấp phép có trách nhiệm cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho cơ quan, tổ chức sử dụng xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này.",
+              "points": [
+                {
+                  "number": "a",
+                  "content": "a) Cơ quan, tổ chức gửi hồ sơ, văn bản đề nghị quy định tại khoản 3 Điều 20 Nghị định này thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia; qua dịch vụ bưu chính; nộp trực tiếp cho cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 Nghị định này;"
+                },
+                {
+                  "number": "b",
+                  "content": "b) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;"
+                },
+                {
+                  "number": "c",
+                  "content": "c) Trong thời hạn 01 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan cấp phép có trách nhiệm cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho cơ quan, tổ chức sử dụng xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này."
+                }
+              ]
+            },
+            {
+              "number": "3",
+              "content": "3. Trường hợp trong tình trạng khẩn cấp theo quy định tại điểm a khoản 3 Điều 17 của Nghị định này, cơ quan, tổ chức đề nghị cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên có thể trao đổi trước với cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 của Nghị định này bằng các hình thức phù hợp để được cấp phép theo quy định và ngay sau đó phải gửi hồ sơ theo quy định tại khoản 1 Điều 20 của Nghị định này.",
+              "points": []
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D21_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D21",
+                    "number": "21"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D21_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  0
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D21_K2",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D21",
+                    "number": "21"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D21_K2",
+                    "number": "2"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  1
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D21_K3",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D21",
+                    "number": "21"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D21_K3",
+                    "number": "3"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  2
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 20 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "20",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 20 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "20",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 20 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "20",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 20 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "20",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 3 Điều 23",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "3",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "diem_khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "điểm a khoản 3 Điều 17 của Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "17",
+                  "khoan": "3",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 1 Điều 20 của Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "20",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21",
+            "normalized_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D9",
+        "number": "9"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D9_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D9_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "1",
+            "content": "1. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này là bản giấy và bản điện tử.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D22_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D22",
+                    "number": "22"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D22_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D9_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D9_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung điểm b khoản 2 như sau:"
+        },
+        "replacement_root_level": "POINT",
+        "replacement_tree": {
+          "point": {
+            "number": "b",
+            "content": "b) Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cấp cho xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 của Nghị định này hết hiệu lực ngay sau khi kết thúc tình trạng khẩn cấp."
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D22_K2_Db",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D22",
+                    "number": "22"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D22_K2",
+                    "number": "2"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D22_K2_Db",
+                    "number": "b"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "point"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "diem_khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "điểm a khoản 3 Điều 17 của Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "17",
+                  "khoan": "3",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung điểm b khoản 2 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung điểm b khoản 2 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D10",
+        "number": "10"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D10",
+        "source_point": {
+          "id": "236_2026_ND-CP_D10",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 10. Sửa đổi, bổ sung khoản 1, khoản 2 Điều 23"
+        },
+        "replacement_root_level": "CLAUSE_LIST",
+        "replacement_tree": {
+          "clauses": [
+            {
+              "number": "1",
+              "content": "1. Cục Cảnh sát giao thông, Bộ Công an cấp mới, cấp lại, thu hồi giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho các đối tượng đăng ký biển số xe tại Cục Cảnh sát giao thông thuộc bộ, ngành, cơ quan ở trung ương, trừ xe của lực lượng quân sự đi làm nhiệm vụ khẩn cấp.",
+              "points": []
+            },
+            {
+              "number": "2",
+              "content": "2. Phòng Cảnh sát giao thông Công an tỉnh, thành phố trực thuộc trung ương cấp mới, cấp lại, thu hồi giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho các đối tượng thuộc cơ quan, tổ chức, trừ các đối tượng quy định khoản 1 Điều này và xe của lực lượng quân sự đi làm nhiệm vụ khẩn cấp.",
+              "points": []
+            }
+          ]
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D23_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D23",
+                    "number": "23"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D23_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  0
+                ]
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D23_K2",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D23",
+                    "number": "23"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D23_K2",
+                    "number": "2"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clauses",
+                  1
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "structural_series",
+                "van_ban_goc": "khoản 1 Điều này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "23",
+                  "khoan": "1",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2 Điều 23",
+            "normalized_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2 Điều 23",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D11",
+        "number": "11"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D11_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D11_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "2",
+            "content": "2. Hồ sơ đề nghị cấp phép hoạt động bao gồm:\na) Đơn đề nghị cấp giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này. Trường hợp nộp hồ sơ trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia thì khai mẫu đơn trên biểu mẫu điện tử;\nb) Dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe sản xuất, lắp ráp trong nước hoặc dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe nhập khẩu hoặc thông báo miễn kiểm tra chất lượng an toàn kỹ thuật đối với xe nhập khẩu; dữ liệu đăng ký xe trên hệ thống đăng ký, quản lý xe; giấy tờ của chủ xe theo quy định. Trường hợp không khai thác được thông tin hoặc thông tin khai thác được không đầy đủ, không chính xác thì cơ quan cấp phép yêu cầu cơ quan, tổ chức, cá nhân nộp bổ sung thành phần hồ sơ (bản sao).\nc) Đối với phương tiện giao thông thông minh tạm nhập phục vụ mục đích vận chuyển hàng hóa trong phạm vi cửa khẩu thông minh theo phê duyệt của Chính phủ đã được đăng ký, cấp biển số tại nước ngoài thì hồ sơ cấp phép gồm: đơn đề nghị quy định tại điểm a khoản này và bản sao hoặc bản sao điện tử chứng nhận đăng ký xe của nước sở tại.",
+            "points": [
+              {
+                "number": "a",
+                "content": "a) Đơn đề nghị cấp giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này. Trường hợp nộp hồ sơ trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia thì khai mẫu đơn trên biểu mẫu điện tử;"
+              },
+              {
+                "number": "b",
+                "content": "b) Dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe sản xuất, lắp ráp trong nước hoặc dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe nhập khẩu hoặc thông báo miễn kiểm tra chất lượng an toàn kỹ thuật đối với xe nhập khẩu; dữ liệu đăng ký xe trên hệ thống đăng ký, quản lý xe; giấy tờ của chủ xe theo quy định. Trường hợp không khai thác được thông tin hoặc thông tin khai thác được không đầy đủ, không chính xác thì cơ quan cấp phép yêu cầu cơ quan, tổ chức, cá nhân nộp bổ sung thành phần hồ sơ (bản sao)."
+              },
+              {
+                "number": "c",
+                "content": "c) Đối với phương tiện giao thông thông minh tạm nhập phục vụ mục đích vận chuyển hàng hóa trong phạm vi cửa khẩu thông minh theo phê duyệt của Chính phủ đã được đăng ký, cấp biển số tại nước ngoài thì hồ sơ cấp phép gồm: đơn đề nghị quy định tại điểm a khoản này và bản sao hoặc bản sao điện tử chứng nhận đăng ký xe của nước sở tại."
+              }
+            ]
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D25_K2",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D25_K2",
+                    "number": "2"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [
+              {
+                "loai": "diem_tuyet_doi_khoan_nay",
+                "van_ban_goc": "điểm a khoản này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "25",
+                  "khoan": "2",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "diem_tuyet_doi_khoan_nay",
+                "van_ban_goc": "điểm a khoản này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "25",
+                  "khoan": "2",
+                  "diem": "a",
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D11_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D11_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "4",
+            "content": "4. Phòng Cảnh sát giao thông Công an tỉnh, thành phố trực thuộc trung ương cấp giấy phép hoạt động đối với phương tiện giao thông thông minh của cơ quan, tổ chức, cá nhân có trụ sở, cư trú trong tỉnh, thành phố hoặc trường hợp phương tiện giao thông thông minh hoạt động trên địa bàn tỉnh, thành phố đó, trừ phương tiện giao thông thông minh phục vụ mục đích quốc phòng do Cục Xe máy - Vận tải, Bộ Quốc phòng cấp giấy phép hoạt động.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D25_K4",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D25_K4",
+                    "number": "4"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D11_K3",
+        "source_point": {
+          "id": "236_2026_ND-CP_D11_K3",
+          "number": null,
+          "implicit": true,
+          "instruction": "3. Sửa đổi, bổ sung điểm d khoản 5 như sau:"
+        },
+        "replacement_root_level": "POINT",
+        "replacement_tree": {
+          "point": {
+            "number": "d",
+            "content": "d) Giấy phép hoạt động được cấp trên cơ sở hồ sơ giả mạo hoặc cấp không đúng thẩm quyền."
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D25_K5_Dd",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D25_K5",
+                    "number": "5"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D25_K5_Dd",
+                    "number": "d"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": "POINT",
+                "replacement_path": [
+                  "point"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "3. Sửa đổi, bổ sung điểm d khoản 5 như sau:",
+            "normalized_instruction": "3. Sửa đổi, bổ sung điểm d khoản 5 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D12",
+        "number": "12"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D12",
+        "source_point": {
+          "id": "236_2026_ND-CP_D12",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 12. Bổ sung Điều 25a vào sau Điều 25"
+        },
+        "replacement_root_level": "ARTICLE",
+        "replacement_tree": {
+          "article": {
+            "number": "25a",
+            "title": "Trình tự, thủ tục cấp phép hoạt động phương tiện giao thông thông minh",
+            "clauses": [
+              {
+                "number": "1",
+                "content": "1. Trình tự, thủ tục cấp phép hoạt động:\na) Cơ quan, tổ chức, cá nhân là chủ sở hữu phương tiện chuẩn bị 01 bộ hồ sơ quy định tại khoản 2 Điều 25 Nghị định này và nộp cho cơ quan có thẩm quyền cấp phép hoạt động thông qua một trong các hình thức sau: nộp trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp;\nb) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 05 ngày làm việc kể từ ngày tiếp nhận hồ sơ, cơ quan cấp phép có trách nhiệm cấp giấy phép hoạt động theo Mẫu số 03b Phụ lục III ban hành kèm theo Nghị định này.",
+                "points": [
+                  {
+                    "number": "a",
+                    "content": "a) Cơ quan, tổ chức, cá nhân là chủ sở hữu phương tiện chuẩn bị 01 bộ hồ sơ quy định tại khoản 2 Điều 25 Nghị định này và nộp cho cơ quan có thẩm quyền cấp phép hoạt động thông qua một trong các hình thức sau: nộp trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp;"
+                  },
+                  {
+                    "number": "b",
+                    "content": "b) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;"
+                  },
+                  {
+                    "number": "c",
+                    "content": "c) Trong thời hạn 05 ngày làm việc kể từ ngày tiếp nhận hồ sơ, cơ quan cấp phép có trách nhiệm cấp giấy phép hoạt động theo Mẫu số 03b Phụ lục III ban hành kèm theo Nghị định này."
+                  }
+                ]
+              },
+              {
+                "number": "2",
+                "content": "2. Đổi, cấp lại giấy phép hoạt động phương tiện giao thông thông minh:\nCác trường hợp giấy phép hoạt động phương tiện giao thông thông minh bị hư hỏng thì được đổi, bị mất được cấp lại\na) Cơ quan, tổ chức, cá nhân là chủ sở hữu phương tiện hoặc người được ủy quyền theo quy định của pháp luật khai mẫu đơn trên biểu mẫu điện tử tại Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có đơn đề nghị đổi, cấp lại giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này gửi cơ quan có thẩm quyền đã cấp giấy phép trước đó thông qua dịch vụ bưu chính hoặc nộp trực tiếp;\nb) Sau khi tiếp nhận hồ sơ kê khai đổi, cấp lại giấy phép hoạt động phương tiện giao thông thông minh, cơ quan cấp phép kiểm tra hồ sơ. Đối với hồ sơ không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức, cá nhân trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 02 ngày làm việc kể từ ngày nhận hồ sơ, cơ quan cấp phép có trách nhiệm đổi, cấp lại giấy phép hoạt động theo Mẫu số 03b Phụ lục III ban hành kèm theo Nghị định này.",
+                "points": [
+                  {
+                    "number": "a",
+                    "content": "a) Cơ quan, tổ chức, cá nhân là chủ sở hữu phương tiện hoặc người được ủy quyền theo quy định của pháp luật khai mẫu đơn trên biểu mẫu điện tử tại Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có đơn đề nghị đổi, cấp lại giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này gửi cơ quan có thẩm quyền đã cấp giấy phép trước đó thông qua dịch vụ bưu chính hoặc nộp trực tiếp;"
+                  },
+                  {
+                    "number": "b",
+                    "content": "b) Sau khi tiếp nhận hồ sơ kê khai đổi, cấp lại giấy phép hoạt động phương tiện giao thông thông minh, cơ quan cấp phép kiểm tra hồ sơ. Đối với hồ sơ không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức, cá nhân trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;"
+                  },
+                  {
+                    "number": "c",
+                    "content": "c) Trong thời hạn 02 ngày làm việc kể từ ngày nhận hồ sơ, cơ quan cấp phép có trách nhiệm đổi, cấp lại giấy phép hoạt động theo Mẫu số 03b Phụ lục III ban hành kèm theo Nghị định này."
+                  }
+                ]
+              },
+              {
+                "number": "3",
+                "content": "3. Thu hồi giấy phép hoạt động đối với phương tiện giao thông thông minh Chủ sở hữu phương tiện hoặc người được ủy quyền theo quy định của pháp luật có trách nhiệm giao nộp giấy phép hoạt động phương tiện giao thông thông minh thuộc trường hợp bị thu hồi theo quy định tại khoản 5 Điều 25 Nghị định này cho cơ quan có thẩm quyền đã cấp giấy phép. Cơ quan có thẩm quyền tiếp nhận và thực hiện thu hồi giấy phép hoạt động theo quy định.",
+                "points": []
+              }
+            ]
+          }
+        },
+        "actions": [
+          {
+            "operation": "BO_SUNG",
+            "anchor": {
+              "relation": "AFTER",
+              "target_document": "151/2024/ND-CP",
+              "target": {
+                "document": "151/2024/ND-CP",
+                "article": "25",
+                "clause": null,
+                "point": null
+              }
+            },
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D25",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": null,
+                  "point": null
+                },
+                "target_level": "ARTICLE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [
+              {
+                "unit_id": "151_2024_ND-CP_D25a",
+                "unit_level": "ARTICLE",
+                "number": "25a"
+              }
+            ],
+            "replacement_references": [
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 25 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "25",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 2 Điều 25 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "25",
+                  "khoan": "2",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              },
+              {
+                "loai": "khoan_dieu_tuyet_doi_nay",
+                "van_ban_goc": "khoản 5 Điều 25 Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": "25",
+                  "khoan": "5",
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Bổ sung Điều 25a vào sau Điều 25",
+            "normalized_instruction": "Bổ sung Điều 25a vào sau Điều 25",
+            "anchor_span": [
+              17,
+              32
+            ],
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D14",
+        "number": "14"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D14",
+        "source_point": {
+          "id": "236_2026_ND-CP_D14",
+          "number": null,
+          "implicit": true,
+          "instruction": "Điều 14. Bổ sung Điều 33a vào sau Điều 33"
+        },
+        "replacement_root_level": "ARTICLE",
+        "replacement_tree": {
+          "article": {
+            "number": "33a",
+            "title": "Trình tự, thủ tục chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam được tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch hoặc tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch; thay đổi nội dung, thông tin so với văn bản đã được chấp thuận",
+            "clauses": [
+              {
+                "number": "1",
+                "content": "1. Cơ quan tiếp nhận kiểm tra hồ sơ, văn bản. Đối với hồ sơ, văn bản không đủ điều kiện chấp thuận thì gửi thông báo đến tài khoản của doanh nghiệp, tổ chức, cá nhân trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả.",
+                "points": []
+              },
+              {
+                "number": "2",
+                "content": "2. Trong thời hạn 02 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan tiếp nhận có văn bản trả lời chấp thuận (bản giấy và bản điện tử) cho doanh nghiệp, tổ chức, cá nhân theo Mẫu số 04b Phụ lục IV ban hành kèm theo Nghị định này, đồng thời gửi văn bản chấp thuận đến các đơn vị chức năng thuộc Bộ Văn hóa, Thể thao và Du lịch, Bộ Ngoại giao, Bộ Xây dựng, Bộ Quốc phòng, Bộ Tài chính, Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương có liên quan để phối hợp quản lý.",
+                "points": []
+              }
+            ]
+          }
+        },
+        "actions": [
+          {
+            "operation": "BO_SUNG",
+            "anchor": {
+              "relation": "AFTER",
+              "target_document": "151/2024/ND-CP",
+              "target": {
+                "document": "151/2024/ND-CP",
+                "article": "33",
+                "clause": null,
+                "point": null
+              }
+            },
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D33",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D33",
+                    "number": "33"
+                  },
+                  "clause": null,
+                  "point": null
+                },
+                "target_level": "ARTICLE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [
+              {
+                "unit_id": "151_2024_ND-CP_D33a",
+                "unit_level": "ARTICLE",
+                "number": "33a"
+              }
+            ],
+            "replacement_references": [
+              {
+                "loai": "van_ban_nay",
+                "van_ban_goc": "Nghị định này",
+                "gia_tri_xac_dinh": {
+                  "dieu": null,
+                  "khoan": null,
+                  "diem": null,
+                  "so_hieu_van_ban": "151/2024/ND-CP"
+                },
+                "quan_he": "THAM_CHIEU"
+              }
+            ],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "Bổ sung Điều 33a vào sau Điều 33",
+            "normalized_instruction": "Bổ sung Điều 33a vào sau Điều 33",
+            "anchor_span": [
+              17,
+              32
+            ],
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D15",
+        "number": "15"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D15_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D15_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "2",
+            "content": "2. Tổ chức thực hiện việc đưa xe cơ giới nước ngoài vào tham gia giao thông tại Việt Nam và đưa xe cơ giới nước ngoài ra khỏi lãnh thổ Việt Nam theo đúng quy định; bố trí hướng dẫn viên, phương tiện hướng dẫn giao thông có thiết bị giám sát hành trình và kết nối, chia sẻ thông tin với cơ sở dữ liệu xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam của Bộ Công an, bố trí người điều khiển phương tiện hướng dẫn giao thông cho xe cơ giới nước ngoài trong quá trình tham gia giao thông tại Việt Nam; dán tên của doanh nghiệp hoặc tổ chức, cá nhân trên kính chắn gió phía trước và phía sau (đối với xe ô tô), gắn cờ có tên của doanh nghiệp hoặc tổ chức, cá nhân vào phía trước xe (đối với xe mô tô) cho tất cả các xe trong đoàn.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D35_K2",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D35",
+                    "number": "35"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D35_K2",
+                    "number": "2"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:",
+            "normalized_instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D15_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D15_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:"
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": {
+          "clause": {
+            "number": "4",
+            "content": "4. Trong quá trình tham gia giao thông tại Việt Nam, thực hiện việc báo cáo giám sát hoạt động của đoàn xe cơ giới nước ngoài theo thời gian thực qua Ứng dụng giao thông trên thiết bị di động dành cho công dân do Bộ Công an quản lý, vận hành.",
+            "points": []
+          }
+        },
+        "actions": [
+          {
+            "operation": "SUA_DOI",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D35_K4",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D35",
+                    "number": "35"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D35_K4",
+                    "number": "4"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": "CLAUSE",
+                "replacement_path": [
+                  "clause"
+                ]
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:",
+            "normalized_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "source_context": {
+      "article": {
+        "id": "236_2026_ND-CP_D16",
+        "number": "16"
+      },
+      "clause": null,
+      "point": null
+    },
+    "items": [
+      {
+        "source_unit": "236_2026_ND-CP_D16_K1",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K1",
+          "number": null,
+          "implicit": true,
+          "instruction": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27."
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "BO_SUNG_TEXT",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D1_K4",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D1",
+                    "number": "1"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D1_K4",
+                    "number": "4"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D27",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D27",
+                    "number": "27"
+                  },
+                  "clause": null,
+                  "point": null
+                },
+                "target_level": "ARTICLE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": {
+              "unit_type": "PHRASE",
+              "text": "xe vận tải nội bộ",
+              "relation": "AFTER",
+              "anchor_text": "xe ô tô kinh doanh vận tải"
+            },
+            "appendix_amendment": null,
+            "raw_instruction": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27.",
+            "normalized_instruction": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27.",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K2",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K2",
+          "number": null,
+          "implicit": true,
+          "instruction": "2. Bổ sung cụm từ “xanh và” trước từ “đỏ” tại điểm b khoản 2 Điều 19."
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "BO_SUNG_TEXT",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D19_K2_Db",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D19",
+                    "number": "19"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D19_K2",
+                    "number": "2"
+                  },
+                  "point": {
+                    "id": "151_2024_ND-CP_D19_K2_Db",
+                    "number": "b"
+                  }
+                },
+                "target_level": "POINT",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": {
+              "unit_type": "PHRASE",
+              "text": "xanh và",
+              "relation": "BEFORE",
+              "anchor_text": "đỏ"
+            },
+            "appendix_amendment": null,
+            "raw_instruction": "2. Bổ sung cụm từ “xanh và” trước từ “đỏ” tại điểm b khoản 2 Điều 19.",
+            "normalized_instruction": "2. Bổ sung cụm từ “xanh và” trước từ “đỏ” tại điểm b khoản 2 Điều 19.",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K3",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K3",
+          "number": null,
+          "implicit": true,
+          "instruction": "3. Bãi bỏ cụm từ “sở hữu” tại tên khoản 8 Điều 11."
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "BAI_BO_TEXT",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K8",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K8",
+                    "number": "8"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": {
+              "unit_type": "PHRASE",
+              "text": "sở hữu"
+            },
+            "appendix_amendment": null,
+            "raw_instruction": "3. Bãi bỏ cụm từ “sở hữu” tại tên khoản 8 Điều 11.",
+            "normalized_instruction": "3. Bãi bỏ cụm từ “sở hữu” tại tên khoản 8 Điều 11.",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K4",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K4",
+          "number": null,
+          "implicit": true,
+          "instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "BAI_BO",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "151_2024_ND-CP_D11_K7",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D11",
+                    "number": "11"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D11_K7",
+                    "number": "7"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D12_K3",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D12",
+                    "number": "12"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D12_K3",
+                    "number": "3"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D17_K4",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D17",
+                    "number": "17"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D17_K4",
+                    "number": "4"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D18",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D18",
+                    "number": "18"
+                  },
+                  "clause": null,
+                  "point": null
+                },
+                "target_level": "ARTICLE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D25_K1",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D25_K1",
+                    "number": "1"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D25_K3",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D25_K3",
+                    "number": "3"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "151_2024_ND-CP_D25_K6",
+                "target_context": {
+                  "document": "151/2024/ND-CP",
+                  "article": {
+                    "id": "151_2024_ND-CP_D25",
+                    "number": "25"
+                  },
+                  "clause": {
+                    "id": "151_2024_ND-CP_D25_K6",
+                    "number": "6"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25.",
+            "normalized_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25.",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K5",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K5",
+          "number": null,
+          "implicit": true,
+          "instruction": "5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự."
+        },
+        "replacement_root_level": "CLAUSE",
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "BAI_BO",
+            "anchor": null,
+            "targets": [
+              {
+                "target_unit": "184_2025_ND-CP_D27_K3",
+                "target_context": {
+                  "document": "184/2025/ND-CP",
+                  "article": {
+                    "id": "184_2025_ND-CP_D27",
+                    "number": "27"
+                  },
+                  "clause": {
+                    "id": "184_2025_ND-CP_D27_K3",
+                    "number": "3"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              },
+              {
+                "target_unit": "184_2025_ND-CP_D27_K4",
+                "target_context": {
+                  "document": "184/2025/ND-CP",
+                  "article": {
+                    "id": "184_2025_ND-CP_D27",
+                    "number": "27"
+                  },
+                  "clause": {
+                    "id": "184_2025_ND-CP_D27_K4",
+                    "number": "4"
+                  },
+                  "point": null
+                },
+                "target_level": "CLAUSE",
+                "replacement_level": null,
+                "replacement_path": null
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": null,
+            "raw_instruction": "5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự.",
+            "normalized_instruction": "5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự.",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K6_Da",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K6_Da",
+          "number": "a",
+          "implicit": false,
+          "instruction": "a) Thay thế Phụ lục I ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục I ban hành kèm theo Nghị định này;"
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "THAY_THE_PHU_LUC",
+            "anchor": null,
+            "targets": [
+              {
+                "target_type": "APPENDIX",
+                "appendix_number": "I",
+                "document": "151/2024/ND-CP"
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": {
+              "old_appendix": {
+                "number": "I",
+                "document": "151/2024/ND-CP"
+              },
+              "new_appendix": {
+                "number": "I",
+                "document": "236/2026/ND-CP"
+              }
+            },
+            "raw_instruction": "a) Thay thế Phụ lục I ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục I ban hành kèm theo Nghị định này;",
+            "normalized_instruction": "a) Thay thế Phụ lục I ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục I ban hành kèm theo Nghị định này;",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K6_Db",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K6_Db",
+          "number": "b",
+          "implicit": false,
+          "instruction": "b) Thay thế Phụ lục II ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục II ban hành kèm theo Nghị định này;"
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "THAY_THE_PHU_LUC",
+            "anchor": null,
+            "targets": [
+              {
+                "target_type": "APPENDIX",
+                "appendix_number": "II",
+                "document": "151/2024/ND-CP"
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": {
+              "old_appendix": {
+                "number": "II",
+                "document": "151/2024/ND-CP"
+              },
+              "new_appendix": {
+                "number": "II",
+                "document": "236/2026/ND-CP"
+              }
+            },
+            "raw_instruction": "b) Thay thế Phụ lục II ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục II ban hành kèm theo Nghị định này;",
+            "normalized_instruction": "b) Thay thế Phụ lục II ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục II ban hành kèm theo Nghị định này;",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K6_Dc",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K6_Dc",
+          "number": "c",
+          "implicit": false,
+          "instruction": "c) Thay thế Phụ lục III ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục III ban hành kèm theo Nghị định này;"
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "THAY_THE_PHU_LUC",
+            "anchor": null,
+            "targets": [
+              {
+                "target_type": "APPENDIX",
+                "appendix_number": "III",
+                "document": "151/2024/ND-CP"
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": {
+              "old_appendix": {
+                "number": "III",
+                "document": "151/2024/ND-CP"
+              },
+              "new_appendix": {
+                "number": "III",
+                "document": "236/2026/ND-CP"
+              }
+            },
+            "raw_instruction": "c) Thay thế Phụ lục III ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục III ban hành kèm theo Nghị định này;",
+            "normalized_instruction": "c) Thay thế Phụ lục III ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục III ban hành kèm theo Nghị định này;",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      },
+      {
+        "source_unit": "236_2026_ND-CP_D16_K6_Dd",
+        "source_point": {
+          "id": "236_2026_ND-CP_D16_K6_Dd",
+          "number": "d",
+          "implicit": false,
+          "instruction": "d) Thay thế Phụ lục IV ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục IV ban hành kèm theo Nghị định này."
+        },
+        "replacement_root_level": null,
+        "replacement_tree": null,
+        "actions": [
+          {
+            "operation": "THAY_THE_PHU_LUC",
+            "anchor": null,
+            "targets": [
+              {
+                "target_type": "APPENDIX",
+                "appendix_number": "IV",
+                "document": "151/2024/ND-CP"
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": null,
+            "appendix_amendment": {
+              "old_appendix": {
+                "number": "IV",
+                "document": "151/2024/ND-CP"
+              },
+              "new_appendix": {
+                "number": "IV",
+                "document": "236/2026/ND-CP"
+              }
+            },
+            "raw_instruction": "d) Thay thế Phụ lục IV ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục IV ban hành kèm theo Nghị định này.",
+            "normalized_instruction": "d) Thay thế Phụ lục IV ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục IV ban hành kèm theo Nghị định này.",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "document": "156/2024/ND-CP",
+  "document_id": "156_2024_ND-CP",
+  "rules": [
+    {
+      "rule_id": "156_2024_ND-CP_ER_27_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "156/2024/ND-CP",
+      "source_article": "27",
+      "source_clause": "1",
+      "target_document": "156/2024/ND-CP",
+      "targets": [],
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025.",
+      "status": "RESOLVED",
+      "source_unit": "156_2024_ND-CP_D27_K1",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

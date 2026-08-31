@@ -1,0 +1,642 @@
+{
+  "so_hieu": "236/2026/ND-CP",
+  "ten": "Nghị định sửa đổi, bổ sung Nghị định 151/2024/NĐ-CP",
+  "loai": "NghiDinh_suaDoi",
+  "ngay_ban_hanh": null,
+  "co_quan_ban_hanh": null,
+  "trang_thai_hieu_luc": "con_hieu_luc",
+  "hieu_luc_tu": null,
+  "chuong": [],
+  "dieu_khong_chuong": [
+    {
+      "id": "236_2026_ND-CP_D1",
+      "id_cha": null,
+      "so": "1",
+      "tieu_de": "Sửa đổi, bổ sung khoản 1 Điều 9",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“1. Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ được xây dựng thống nhất trên toàn quốc, do lực lượng Cảnh sát giao thông quản lý, vận hành, khai thác, dùng chung cho các cơ quan, tổ chức, cá nhân có thẩm quyền, trừ cơ sở dữ liệu liên quan đến lĩnh vực quốc phòng, an ninh.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D2",
+      "id_cha": null,
+      "so": "2",
+      "tieu_de": "Sửa đổi, bổ sung một số điểm, khoản của Điều 10",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:\n“1. Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ được xây dựng phù hợp khung kiến trúc tổng thể quốc gia số, khung kiến trúc dữ liệu quốc gia, khung quản trị, quản lý dữ liệu quốc gia; tuân thủ các quy định pháp luật chuyên ngành có liên quan.\n2. Bộ Công an có trách nhiệm xây dựng, quản lý Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ và các cơ sở dữ liệu chuyên ngành có liên quan; các bộ, ngành có trách nhiệm xây dựng cơ sở dữ liệu quốc gia, cơ sở dữ liệu chuyên ngành, kết nối, chia sẻ thông tin theo quy định của pháp luật với Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ phục vụ công tác quản lý nhà nước về trật tự, an toàn giao thông đường bộ và giải quyết các thủ tục hành chính cho người dân, doanh nghiệp.”.\n2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:\n“a) Bộ Công an có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về đăng ký, quản lý xe cơ giới, xe máy chuyên dùng (trừ xe quân sự); Cơ sở dữ liệu về xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ; Cơ sở dữ liệu về tai nạn giao thông đường bộ; Cơ sở dữ liệu về hành trình của phương tiện giao thông đường bộ, hình ảnh người lái xe (trừ xe quân sự); Cơ sở dữ liệu về quản lý thời gian điều khiển phương tiện của người lái xe (trừ xe quân sự); Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng trong Công an nhân dân; Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe; Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ trong Công an nhân dân; Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam;\nb) Bộ Xây dựng có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng (trừ xe quân sự, xe công an); Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng (trừ dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật của lực lượng quân đội, công an); Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải;\nc) Bộ Tài chính có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về xe xuất khẩu, nhập khẩu; Cơ sở dữ liệu về hóa đơn, chứng từ; Cơ sở dữ liệu về lệ phí trước bạ xe;\nd) Bộ Quốc phòng có trách nhiệm xây dựng, quản lý cơ sở dữ liệu thuộc phạm vi quản lý của Bộ Quốc phòng sau đây: Cơ sở dữ liệu về đăng ký, kiểm định xe cơ giới, xe máy chuyên dùng; Cơ sở dữ liệu về đào tạo, sát hạch, cấp giấy phép lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ; Cơ sở dữ liệu về tai nạn giao thông đường bộ; Cơ sở dữ liệu về xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ;”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D2_K1",
+          "id_cha": "236_2026_ND-CP_D2",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:\n“1. Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ được xây dựng phù hợp khung kiến trúc tổng thể quốc gia số, khung kiến trúc dữ liệu quốc gia, khung quản trị, quản lý dữ liệu quốc gia; tuân thủ các quy định pháp luật chuyên ngành có liên quan.\n2. Bộ Công an có trách nhiệm xây dựng, quản lý Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ và các cơ sở dữ liệu chuyên ngành có liên quan; các bộ, ngành có trách nhiệm xây dựng cơ sở dữ liệu quốc gia, cơ sở dữ liệu chuyên ngành, kết nối, chia sẻ thông tin theo quy định của pháp luật với Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ phục vụ công tác quản lý nhà nước về trật tự, an toàn giao thông đường bộ và giải quyết các thủ tục hành chính cho người dân, doanh nghiệp.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D2_K2",
+          "id_cha": "236_2026_ND-CP_D2",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:\n“a) Bộ Công an có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về đăng ký, quản lý xe cơ giới, xe máy chuyên dùng (trừ xe quân sự); Cơ sở dữ liệu về xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ; Cơ sở dữ liệu về tai nạn giao thông đường bộ; Cơ sở dữ liệu về hành trình của phương tiện giao thông đường bộ, hình ảnh người lái xe (trừ xe quân sự); Cơ sở dữ liệu về quản lý thời gian điều khiển phương tiện của người lái xe (trừ xe quân sự); Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng trong Công an nhân dân; Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe; Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ trong Công an nhân dân; Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam;\nb) Bộ Xây dựng có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng (trừ xe quân sự, xe công an); Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng (trừ dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật của lực lượng quân đội, công an); Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải;\nc) Bộ Tài chính có trách nhiệm xây dựng, quản lý cơ sở dữ liệu sau đây: Cơ sở dữ liệu về xe xuất khẩu, nhập khẩu; Cơ sở dữ liệu về hóa đơn, chứng từ; Cơ sở dữ liệu về lệ phí trước bạ xe;\nd) Bộ Quốc phòng có trách nhiệm xây dựng, quản lý cơ sở dữ liệu thuộc phạm vi quản lý của Bộ Quốc phòng sau đây: Cơ sở dữ liệu về đăng ký, kiểm định xe cơ giới, xe máy chuyên dùng; Cơ sở dữ liệu về đào tạo, sát hạch, cấp giấy phép lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ; Cơ sở dữ liệu về tai nạn giao thông đường bộ; Cơ sở dữ liệu về xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ;”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D3",
+      "id_cha": null,
+      "so": "3",
+      "tieu_de": "Sửa đổi, bổ sung một số điểm, khoản của Điều 11",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung khoản 1 như sau:\n“1. Thông tin về đăng ký, quản lý xe cơ giới, xe máy chuyên dùng:\na) Thông tin về chủ sở hữu xe cơ giới, xe máy chuyên dùng:\nĐối với cá nhân: họ, tên; ngày, tháng, năm sinh; giới tính; số định danh cá nhân; số điện thoại (nếu có); quốc tịch; nơi thường trú; nơi tạm trú, nơi ở hiện tại, địa chỉ đăng ký xe.\nĐối với tổ chức: tên tổ chức; tên người đại diện hợp pháp; địa chỉ; mã số thuế hoặc quyết định thành lập hoặc số định danh của tổ chức (nếu có); số điện thoại; loại hình doanh nghiệp; tình trạng hoạt động;\nb) Thông tin về phương tiện theo quy định tại điểm a khoản 2 Điều này;\nc) Thông tin về đăng ký, quản lý xe: biển số xe; màu biển số xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận đăng ký xe; thời hạn đăng ký xe; trạng thái đăng ký xe; trạng thái xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận nguồn gốc xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận quyền sở hữu; số, ngày, tháng, năm cấp, cơ quan cấp chứng từ lệ phí trước bạ, số tiền lệ phí trước bạ; loại xe ưu tiên, thiết bị phát tín hiệu ưu tiên, màu của tín hiệu đèn ưu tiên, số, thời hạn sử dụng giấy phép, cơ quan cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên;\nd) Thông tin về phương tiện giao thông cơ giới đường bộ qua các trạm thu phí.”.\n2. Sửa đổi, bổ sung khoản 6 như sau:\n“6. Thông tin về đào tạo lái xe; chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng:\na) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quê quán; quốc tịch; nơi cư trú; mã, tên cơ sở đào tạo lái xe; hạng xe đào tạo; mã, tên khóa đào tạo; ngày khai giảng, ngày bế giảng, số km đào tạo thực hành lái xe; kết quả, số giấy xác nhận hoàn thành khóa đào tạo lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; hạng giấy phép lái xe đã được cấp;\nb) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; quốc tịch; nơi cư trú; khóa đào tạo; thời gian hoàn thành khóa học; kết quả kiểm tra cấp chứng chỉ; ngày, tháng, năm đạt kết quả kiểm tra cấp chứng chỉ; số chứng chỉ; ngày, tháng, năm cấp chứng chỉ; cơ sở đào tạo và cấp chứng chỉ; ngày, tháng, năm đổi, cấp lại chứng chỉ; cơ quan đổi, cấp lại chứng chỉ.”.\n3. Sửa đổi, bổ sung điểm g khoản 8 như sau:\n“g) Thông tin bồi thường bảo hiểm bắt buộc trách nhiệm dân sự của chủ xe cơ giới; thông tin tai nạn giao thông, xử phạt vi phạm hành chính, đăng ký, đăng kiểm liên quan tới xe cơ giới, xe máy chuyên dùng thu thập được thông qua kết nối với cơ sở dữ liệu của Bộ Công an, Bộ Xây dựng, Bộ Quốc phòng.”.\n4. Sửa đổi, bổ sung khoản 13 như sau:\n“13. Thông tin về sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; hành nghề lái xe ô tô hoặc không hành nghề lái xe ô tô; nơi làm việc (đối với người hành nghề lái xe ô tô); nơi khám sức khỏe; thời gian khám sức khỏe; kết quả khám lâm sàng; kết quả khám cận lâm sàng; tình trạng cơ xương khớp; kết luận về tình trạng sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng.”.\n5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:\n“14. Thông tin về sát hạch, cấp giấy phép lái xe: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quốc tịch; nơi cư trú; số giấy phép lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; cơ quan sát hạch; địa điểm tổ chức sát hạch (trung tâm sát hạch hoặc sân tập lái dùng để sát hạch); ngày, tháng, năm cấp, đổi, cấp lại giấy phép lái xe; cơ quan cấp, đổi, cấp lại giấy phép lái xe; giấy phép lái xe trước khi đổi (giấy phép lái xe hệ dân sự, giấy phép lái xe trong Công an nhân dân, giấy phép lái xe quân sự, giấy phép lái xe của nước ngoài); hạng giấy phép lái xe; thời hạn sử dụng của giấy phép lái xe; số phôi giấy phép lái xe; điều kiện hạn chế của giấy phép lái xe; số điểm hiện tại của giấy phép lái xe và lịch sử trừ điểm giấy phép lái xe.\n15. Thông tin về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam:\na) Thông tin người điều khiển phương tiện: họ, tên; số định danh cá nhân hoặc hộ chiếu; ngày, tháng, năm sinh; quốc tịch; địa chỉ; số giấy phép lái xe; cơ quan cấp;\nb) Thông tin phương tiện: biển số xe; màu biển số xe; loại xe; nhãn hiệu; số loại; số máy; số khung; màu sơn; số chỗ ngồi hoặc đứng hoặc nằm; số hiệu giấy chứng nhận kiểm định an toàn kỹ thuật;\nc) Thông tin xuất nhập cảnh: cửa khẩu tạm nhập hoặc tái xuất; thời gian tạm nhập, tái xuất; cơ quan hải quan làm thủ tục tạm nhập, tái xuất; tên doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế hoặc tổ chức, cá nhân nộp hồ sơ đề nghị chấp thuận đưa xe cơ giới vào Việt Nam;\nd) Thông tin khác về văn bản chấp thuận của cơ quan có thẩm quyền.\n16. Thông tin về đơn vị kinh doanh vận tải, phù hiệu xe kinh doanh vận tải:\na) Thông tin về đơn vị kinh doanh vận tải: tên đơn vị, mã số doanh nghiệp, số Giấy phép kinh doanh vận tải, địa chỉ, cơ quan cấp Giấy phép kinh doanh vận tải, người điều hành vận tải, loại hình kinh doanh vận tải;\nb) Thông tin về phù hiệu vận tải: biển số xe, số phù hiệu, cơ quan cấp phù hiệu, thời hạn, loại hình kinh doanh vận tải.”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D3_K1",
+          "id_cha": "236_2026_ND-CP_D3",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung khoản 1 như sau:\n“1. Thông tin về đăng ký, quản lý xe cơ giới, xe máy chuyên dùng:\na) Thông tin về chủ sở hữu xe cơ giới, xe máy chuyên dùng:\nĐối với cá nhân: họ, tên; ngày, tháng, năm sinh; giới tính; số định danh cá nhân; số điện thoại (nếu có); quốc tịch; nơi thường trú; nơi tạm trú, nơi ở hiện tại, địa chỉ đăng ký xe.\nĐối với tổ chức: tên tổ chức; tên người đại diện hợp pháp; địa chỉ; mã số thuế hoặc quyết định thành lập hoặc số định danh của tổ chức (nếu có); số điện thoại; loại hình doanh nghiệp; tình trạng hoạt động;\nb) Thông tin về phương tiện theo quy định tại điểm a khoản 2 Điều này;\nc) Thông tin về đăng ký, quản lý xe: biển số xe; màu biển số xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận đăng ký xe; thời hạn đăng ký xe; trạng thái đăng ký xe; trạng thái xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận nguồn gốc xe; số, ngày, tháng, năm cấp, cơ quan cấp chứng nhận quyền sở hữu; số, ngày, tháng, năm cấp, cơ quan cấp chứng từ lệ phí trước bạ, số tiền lệ phí trước bạ; loại xe ưu tiên, thiết bị phát tín hiệu ưu tiên, màu của tín hiệu đèn ưu tiên, số, thời hạn sử dụng giấy phép, cơ quan cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên;\nd) Thông tin về phương tiện giao thông cơ giới đường bộ qua các trạm thu phí.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D3_K2",
+          "id_cha": "236_2026_ND-CP_D3",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung khoản 6 như sau:\n“6. Thông tin về đào tạo lái xe; chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng:\na) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quê quán; quốc tịch; nơi cư trú; mã, tên cơ sở đào tạo lái xe; hạng xe đào tạo; mã, tên khóa đào tạo; ngày khai giảng, ngày bế giảng, số km đào tạo thực hành lái xe; kết quả, số giấy xác nhận hoàn thành khóa đào tạo lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; hạng giấy phép lái xe đã được cấp;\nb) Họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; quốc tịch; nơi cư trú; khóa đào tạo; thời gian hoàn thành khóa học; kết quả kiểm tra cấp chứng chỉ; ngày, tháng, năm đạt kết quả kiểm tra cấp chứng chỉ; số chứng chỉ; ngày, tháng, năm cấp chứng chỉ; cơ sở đào tạo và cấp chứng chỉ; ngày, tháng, năm đổi, cấp lại chứng chỉ; cơ quan đổi, cấp lại chứng chỉ.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D3_K3",
+          "id_cha": "236_2026_ND-CP_D3",
+          "so": "3",
+          "noi_dung": "3. Sửa đổi, bổ sung điểm g khoản 8 như sau:\n“g) Thông tin bồi thường bảo hiểm bắt buộc trách nhiệm dân sự của chủ xe cơ giới; thông tin tai nạn giao thông, xử phạt vi phạm hành chính, đăng ký, đăng kiểm liên quan tới xe cơ giới, xe máy chuyên dùng thu thập được thông qua kết nối với cơ sở dữ liệu của Bộ Công an, Bộ Xây dựng, Bộ Quốc phòng.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D3_K4",
+          "id_cha": "236_2026_ND-CP_D3",
+          "so": "4",
+          "noi_dung": "4. Sửa đổi, bổ sung khoản 13 như sau:\n“13. Thông tin về sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; hành nghề lái xe ô tô hoặc không hành nghề lái xe ô tô; nơi làm việc (đối với người hành nghề lái xe ô tô); nơi khám sức khỏe; thời gian khám sức khỏe; kết quả khám lâm sàng; kết quả khám cận lâm sàng; tình trạng cơ xương khớp; kết luận về tình trạng sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D3_K5",
+          "id_cha": "236_2026_ND-CP_D3",
+          "so": "5",
+          "noi_dung": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:\n“14. Thông tin về sát hạch, cấp giấy phép lái xe: họ, tên; số định danh cá nhân; ngày, tháng, năm sinh; giới tính; quốc tịch; nơi cư trú; số giấy phép lái xe; ngày, tháng, năm cấp giấy xác nhận hoàn thành khóa đào tạo lái xe; cơ quan sát hạch; địa điểm tổ chức sát hạch (trung tâm sát hạch hoặc sân tập lái dùng để sát hạch); ngày, tháng, năm cấp, đổi, cấp lại giấy phép lái xe; cơ quan cấp, đổi, cấp lại giấy phép lái xe; giấy phép lái xe trước khi đổi (giấy phép lái xe hệ dân sự, giấy phép lái xe trong Công an nhân dân, giấy phép lái xe quân sự, giấy phép lái xe của nước ngoài); hạng giấy phép lái xe; thời hạn sử dụng của giấy phép lái xe; số phôi giấy phép lái xe; điều kiện hạn chế của giấy phép lái xe; số điểm hiện tại của giấy phép lái xe và lịch sử trừ điểm giấy phép lái xe.\n15. Thông tin về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam:\na) Thông tin người điều khiển phương tiện: họ, tên; số định danh cá nhân hoặc hộ chiếu; ngày, tháng, năm sinh; quốc tịch; địa chỉ; số giấy phép lái xe; cơ quan cấp;\nb) Thông tin phương tiện: biển số xe; màu biển số xe; loại xe; nhãn hiệu; số loại; số máy; số khung; màu sơn; số chỗ ngồi hoặc đứng hoặc nằm; số hiệu giấy chứng nhận kiểm định an toàn kỹ thuật;\nc) Thông tin xuất nhập cảnh: cửa khẩu tạm nhập hoặc tái xuất; thời gian tạm nhập, tái xuất; cơ quan hải quan làm thủ tục tạm nhập, tái xuất; tên doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế hoặc tổ chức, cá nhân nộp hồ sơ đề nghị chấp thuận đưa xe cơ giới vào Việt Nam;\nd) Thông tin khác về văn bản chấp thuận của cơ quan có thẩm quyền.\n16. Thông tin về đơn vị kinh doanh vận tải, phù hiệu xe kinh doanh vận tải:\na) Thông tin về đơn vị kinh doanh vận tải: tên đơn vị, mã số doanh nghiệp, số Giấy phép kinh doanh vận tải, địa chỉ, cơ quan cấp Giấy phép kinh doanh vận tải, người điều hành vận tải, loại hình kinh doanh vận tải;\nb) Thông tin về phù hiệu vận tải: biển số xe, số phù hiệu, cơ quan cấp phù hiệu, thời hạn, loại hình kinh doanh vận tải.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D4",
+      "id_cha": null,
+      "so": "4",
+      "tieu_de": "Sửa đổi, bổ sung một số điểm, khoản của Điều 12",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:\n“b) Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng, Cơ sở dữ liệu thanh toán điện tử giao thông đường bộ do Bộ Xây dựng xây dựng, quản lý;\nc) Cơ sở dữ liệu quốc gia về tài chính; Cơ sở dữ liệu quốc gia về đăng ký doanh nghiệp;”.\n2. Sửa đổi, bổ sung điểm a khoản 2 như sau:\n“a) Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng do Bộ Xây dựng quản lý;”.\n3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:\n“c) Cơ sở dữ liệu quốc gia về bảo hiểm.”.\n4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:\n“10. Thông tin quy định tại khoản 14 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe do Bộ Công an xây dựng, quản lý.\n11. Thông tin quy định tại khoản 15 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam do Bộ Công an xây dựng, quản lý và Cơ sở dữ liệu thông tin hải quan do Bộ Tài chính xây dựng, quản lý.\n12. Thông tin quy định tại khoản 16 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải do Bộ Xây dựng quản lý.”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D4_K1",
+          "id_cha": "236_2026_ND-CP_D4",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:\n“b) Cơ sở dữ liệu về đăng kiểm xe cơ giới, xe máy chuyên dùng, Cơ sở dữ liệu thanh toán điện tử giao thông đường bộ do Bộ Xây dựng xây dựng, quản lý;\nc) Cơ sở dữ liệu quốc gia về tài chính; Cơ sở dữ liệu quốc gia về đăng ký doanh nghiệp;”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D4_K2",
+          "id_cha": "236_2026_ND-CP_D4",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung điểm a khoản 2 như sau:\n“a) Cơ sở dữ liệu về đào tạo lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng do Bộ Xây dựng quản lý;”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D4_K3",
+          "id_cha": "236_2026_ND-CP_D4",
+          "so": "3",
+          "noi_dung": "3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:\n“c) Cơ sở dữ liệu quốc gia về bảo hiểm.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D4_K4",
+          "id_cha": "236_2026_ND-CP_D4",
+          "so": "4",
+          "noi_dung": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:\n“10. Thông tin quy định tại khoản 14 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về sát hạch, cấp giấy phép lái xe do Bộ Công an xây dựng, quản lý.\n11. Thông tin quy định tại khoản 15 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam do Bộ Công an xây dựng, quản lý và Cơ sở dữ liệu thông tin hải quan do Bộ Tài chính xây dựng, quản lý.\n12. Thông tin quy định tại khoản 16 Điều 11 của Nghị định này được thu thập từ Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải do Bộ Xây dựng quản lý.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D5",
+      "id_cha": null,
+      "so": "5",
+      "tieu_de": "Sửa đổi, bổ sung khoản 1 Điều 14",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“1. Việc kết nối, chia sẻ thông tin giữa Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ với các cơ sở dữ liệu chuyên ngành và các cơ sở dữ liệu khác được thực hiện theo quy định của Luật Trật tự, an toàn giao thông đường bộ và quy định của Chính phủ về quản lý, kết nối và chia sẻ dữ liệu số trong cơ quan nhà nước và các quy định khác có liên quan. Các bộ, ngành thực hiện kết nối, chia sẻ thông tin với Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ thống nhất danh mục các trường dữ liệu chi tiết dựa trên thông tin quy định tại Điều 11 Nghị định này.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D6",
+      "id_cha": null,
+      "so": "6",
+      "tieu_de": "Sửa đổi, bổ sung khoản 2, khoản 3 Điều 17",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“2. Lắp đặt thiết bị phát tín hiệu của xe ưu tiên:\na) Xe ô tô: Đèn phát tín hiệu ưu tiên lắp đặt trên nóc xe và có thể lắp thêm đèn hỗ trợ bên trong kính chắn gió phía trước, mặt lưới tản nhiệt phía trước xe; còi phát tín hiệu ưu tiên lắp đặt ở trong xe hoặc trên nóc xe; cờ hiệu ưu tiên lắp đặt ở đầu xe phía bên trái của người lái xe;\nb) Xe mô tô: Đèn phát tín hiệu ưu tiên lắp đặt ở hai bên của thanh chống đổ hoặc hai bên thùng xe và bên trên cột phía sau; còi phát tín hiệu ưu tiên lắp đặt ở phía trước đầu xe; cờ hiệu ưu tiên lắp đặt ở đầu xe, phía bên trái của người lái xe;\nc) Đối với xe của lực lượng quân sự, công an và kiểm sát đi làm nhiệm vụ khẩn cấp, xe Cảnh sát giao thông dẫn đường khi lắp đặt đèn phát tín hiệu ưu tiên thì phần đèn phát sáng màu đỏ ở phía bên trái, phần đèn phát sáng màu xanh ở phía bên phải của người lái xe.\n3. Quản lý thiết bị phát tín hiệu của xe ưu tiên:\na) Cơ quan, tổ chức, cá nhân chỉ được lắp đặt thiết bị phát tín hiệu của xe ưu tiên trên các loại xe quy định tại khoản 1 Điều 27 Luật Trật tự, an toàn giao thông đường bộ (trừ đoàn xe tang) và phải có giấy phép sử dụng do cơ quan có thẩm quyền cấp; đối với xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật là xe phục vụ Ban chỉ đạo, xe phục vụ các lực lượng chức năng được huy động tham gia thực hiện nhiệm vụ khi tình trạng khẩn cấp được ban bố;\nb) Thiết bị phát tín hiệu của xe ưu tiên chỉ được sử dụng khi thực hiện nhiệm vụ và phải tuân thủ các quy định của pháp luật về trật tự, an toàn giao thông đường bộ.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D7",
+      "id_cha": null,
+      "so": "7",
+      "tieu_de": "Sửa đổi, bổ sung một số khoản của Điều 20",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung khoản 1 như sau:\n“1. Hồ sơ đề nghị cấp mới:\nCơ quan, tổ chức gửi 01 bộ hồ sơ đến cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 của Nghị định này bao gồm:\na) Bản chính hoặc bản điện tử văn bản đề nghị cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này;\nb) Đối với xe cứu thương đi làm nhiệm vụ cấp cứu; xe hộ đê đi làm nhiệm vụ; xe đi làm nhiệm vụ cứu nạn, cứu hộ, khắc phục sự cố thiên tai, dịch bệnh; xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 Nghị định này: Bản sao hoặc bản sao điện tử văn bản quy định về chức năng, nhiệm vụ, các tài liệu khác chứng minh cơ quan, tổ chức đủ điều kiện được sử dụng thiết bị phát tín hiệu của xe ưu tiên.\nTrường hợp tài liệu chứng minh có thể khai thác qua cơ sở dữ liệu được kết nối, chia sẻ với cơ quan có thẩm quyền cấp văn bản thì cơ quan, tổ chức không phải cung cấp khi làm thủ tục.”.\n2. Sửa đổi, bổ sung khoản 3 như sau:\n“3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên bị hư hỏng, bị mất hoặc hết thời hạn sử dụng, cơ quan, tổ chức sử dụng xe ưu tiên có bản chính hoặc bản điện tử văn bản đề nghị cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này.”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D7_K1",
+          "id_cha": "236_2026_ND-CP_D7",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung khoản 1 như sau:\n“1. Hồ sơ đề nghị cấp mới:\nCơ quan, tổ chức gửi 01 bộ hồ sơ đến cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 của Nghị định này bao gồm:\na) Bản chính hoặc bản điện tử văn bản đề nghị cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này;\nb) Đối với xe cứu thương đi làm nhiệm vụ cấp cứu; xe hộ đê đi làm nhiệm vụ; xe đi làm nhiệm vụ cứu nạn, cứu hộ, khắc phục sự cố thiên tai, dịch bệnh; xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 Nghị định này: Bản sao hoặc bản sao điện tử văn bản quy định về chức năng, nhiệm vụ, các tài liệu khác chứng minh cơ quan, tổ chức đủ điều kiện được sử dụng thiết bị phát tín hiệu của xe ưu tiên.\nTrường hợp tài liệu chứng minh có thể khai thác qua cơ sở dữ liệu được kết nối, chia sẻ với cơ quan có thẩm quyền cấp văn bản thì cơ quan, tổ chức không phải cung cấp khi làm thủ tục.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D7_K2",
+          "id_cha": "236_2026_ND-CP_D7",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung khoản 3 như sau:\n“3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên bị hư hỏng, bị mất hoặc hết thời hạn sử dụng, cơ quan, tổ chức sử dụng xe ưu tiên có bản chính hoặc bản điện tử văn bản đề nghị cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02b Phụ lục II ban hành kèm theo Nghị định này.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D8",
+      "id_cha": null,
+      "so": "8",
+      "tieu_de": "Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“1. Trình tự thực hiện thủ tục cấp mới\na) Cơ quan, tổ chức gửi hồ sơ, văn bản đề nghị quy định tại khoản 1 Điều 20 Nghị định này thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp cho cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 Nghị định này.\nb) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 01 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan cấp phép có trách nhiệm cấp mới giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho cơ quan, tổ chức sử dụng xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này.\n2. Trình tự thực hiện thủ tục cấp lại\na) Cơ quan, tổ chức gửi hồ sơ, văn bản đề nghị quy định tại khoản 3 Điều 20 Nghị định này thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia; qua dịch vụ bưu chính; nộp trực tiếp cho cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 Nghị định này;\nb) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 01 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan cấp phép có trách nhiệm cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho cơ quan, tổ chức sử dụng xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này.\n3. Trường hợp trong tình trạng khẩn cấp theo quy định tại điểm a khoản 3 Điều 17 của Nghị định này, cơ quan, tổ chức đề nghị cấp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên có thể trao đổi trước với cơ quan có thẩm quyền quy định tại khoản 1, khoản 2, khoản 3 Điều 23 của Nghị định này bằng các hình thức phù hợp để được cấp phép theo quy định và ngay sau đó phải gửi hồ sơ theo quy định tại khoản 1 Điều 20 của Nghị định này.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D9",
+      "id_cha": null,
+      "so": "9",
+      "tieu_de": "Sửa đổi, bổ sung một số điểm, khoản của Điều 22",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung khoản 1 như sau:\n“1. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này là bản giấy và bản điện tử.”.\n2. Sửa đổi, bổ sung điểm b khoản 2 như sau:\n“b) Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cấp cho xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 của Nghị định này hết hiệu lực ngay sau khi kết thúc tình trạng khẩn cấp.”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D9_K1",
+          "id_cha": "236_2026_ND-CP_D9",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung khoản 1 như sau:\n“1. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên theo Mẫu số 02a Phụ lục II ban hành kèm theo Nghị định này là bản giấy và bản điện tử.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D9_K2",
+          "id_cha": "236_2026_ND-CP_D9",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung điểm b khoản 2 như sau:\n“b) Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cấp cho xe đi làm nhiệm vụ trong tình trạng khẩn cấp quy định tại điểm a khoản 3 Điều 17 của Nghị định này hết hiệu lực ngay sau khi kết thúc tình trạng khẩn cấp.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D10",
+      "id_cha": null,
+      "so": "10",
+      "tieu_de": "Sửa đổi, bổ sung khoản 1, khoản 2 Điều 23",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“1. Cục Cảnh sát giao thông, Bộ Công an cấp mới, cấp lại, thu hồi giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho các đối tượng đăng ký biển số xe tại Cục Cảnh sát giao thông thuộc bộ, ngành, cơ quan ở trung ương, trừ xe của lực lượng quân sự đi làm nhiệm vụ khẩn cấp.\n2. Phòng Cảnh sát giao thông Công an tỉnh, thành phố trực thuộc trung ương cấp mới, cấp lại, thu hồi giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cho các đối tượng thuộc cơ quan, tổ chức, trừ các đối tượng quy định khoản 1 Điều này và xe của lực lượng quân sự đi làm nhiệm vụ khẩn cấp.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D11",
+      "id_cha": null,
+      "so": "11",
+      "tieu_de": "Sửa đổi, bổ sung một số điểm, khoản của Điều 25",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung khoản 2 như sau:\n“2. Hồ sơ đề nghị cấp phép hoạt động bao gồm:\na) Đơn đề nghị cấp giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này. Trường hợp nộp hồ sơ trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia thì khai mẫu đơn trên biểu mẫu điện tử;\nb) Dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe sản xuất, lắp ráp trong nước hoặc dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe nhập khẩu hoặc thông báo miễn kiểm tra chất lượng an toàn kỹ thuật đối với xe nhập khẩu; dữ liệu đăng ký xe trên hệ thống đăng ký, quản lý xe; giấy tờ của chủ xe theo quy định. Trường hợp không khai thác được thông tin hoặc thông tin khai thác được không đầy đủ, không chính xác thì cơ quan cấp phép yêu cầu cơ quan, tổ chức, cá nhân nộp bổ sung thành phần hồ sơ (bản sao).\nc) Đối với phương tiện giao thông thông minh tạm nhập phục vụ mục đích vận chuyển hàng hóa trong phạm vi cửa khẩu thông minh theo phê duyệt của Chính phủ đã được đăng ký, cấp biển số tại nước ngoài thì hồ sơ cấp phép gồm: đơn đề nghị quy định tại điểm a khoản này và bản sao hoặc bản sao điện tử chứng nhận đăng ký xe của nước sở tại.”.\n2. Sửa đổi, bổ sung khoản 4 như sau:\n“4. Phòng Cảnh sát giao thông Công an tỉnh, thành phố trực thuộc trung ương cấp giấy phép hoạt động đối với phương tiện giao thông thông minh của cơ quan, tổ chức, cá nhân có trụ sở, cư trú trong tỉnh, thành phố hoặc trường hợp phương tiện giao thông thông minh hoạt động trên địa bàn tỉnh, thành phố đó, trừ phương tiện giao thông thông minh phục vụ mục đích quốc phòng do Cục Xe máy - Vận tải, Bộ Quốc phòng cấp giấy phép hoạt động.”.\n3. Sửa đổi, bổ sung điểm d khoản 5 như sau:\n“d) Giấy phép hoạt động được cấp trên cơ sở hồ sơ giả mạo hoặc cấp không đúng thẩm quyền.”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D11_K1",
+          "id_cha": "236_2026_ND-CP_D11",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung khoản 2 như sau:\n“2. Hồ sơ đề nghị cấp phép hoạt động bao gồm:\na) Đơn đề nghị cấp giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này. Trường hợp nộp hồ sơ trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia thì khai mẫu đơn trên biểu mẫu điện tử;\nb) Dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe sản xuất, lắp ráp trong nước hoặc dữ liệu điện tử chứng nhận chất lượng an toàn kỹ thuật và bảo vệ môi trường đối với xe nhập khẩu hoặc thông báo miễn kiểm tra chất lượng an toàn kỹ thuật đối với xe nhập khẩu; dữ liệu đăng ký xe trên hệ thống đăng ký, quản lý xe; giấy tờ của chủ xe theo quy định. Trường hợp không khai thác được thông tin hoặc thông tin khai thác được không đầy đủ, không chính xác thì cơ quan cấp phép yêu cầu cơ quan, tổ chức, cá nhân nộp bổ sung thành phần hồ sơ (bản sao).\nc) Đối với phương tiện giao thông thông minh tạm nhập phục vụ mục đích vận chuyển hàng hóa trong phạm vi cửa khẩu thông minh theo phê duyệt của Chính phủ đã được đăng ký, cấp biển số tại nước ngoài thì hồ sơ cấp phép gồm: đơn đề nghị quy định tại điểm a khoản này và bản sao hoặc bản sao điện tử chứng nhận đăng ký xe của nước sở tại.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D11_K2",
+          "id_cha": "236_2026_ND-CP_D11",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung khoản 4 như sau:\n“4. Phòng Cảnh sát giao thông Công an tỉnh, thành phố trực thuộc trung ương cấp giấy phép hoạt động đối với phương tiện giao thông thông minh của cơ quan, tổ chức, cá nhân có trụ sở, cư trú trong tỉnh, thành phố hoặc trường hợp phương tiện giao thông thông minh hoạt động trên địa bàn tỉnh, thành phố đó, trừ phương tiện giao thông thông minh phục vụ mục đích quốc phòng do Cục Xe máy - Vận tải, Bộ Quốc phòng cấp giấy phép hoạt động.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D11_K3",
+          "id_cha": "236_2026_ND-CP_D11",
+          "so": "3",
+          "noi_dung": "3. Sửa đổi, bổ sung điểm d khoản 5 như sau:\n“d) Giấy phép hoạt động được cấp trên cơ sở hồ sơ giả mạo hoặc cấp không đúng thẩm quyền.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D12",
+      "id_cha": null,
+      "so": "12",
+      "tieu_de": "Bổ sung Điều 25a vào sau Điều 25",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“Điều 25a. Trình tự, thủ tục cấp phép hoạt động phương tiện giao thông thông minh\n1. Trình tự, thủ tục cấp phép hoạt động:\na) Cơ quan, tổ chức, cá nhân là chủ sở hữu phương tiện chuẩn bị 01 bộ hồ sơ quy định tại khoản 2 Điều 25 Nghị định này và nộp cho cơ quan có thẩm quyền cấp phép hoạt động thông qua một trong các hình thức sau: nộp trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp;\nb) Cơ quan cấp phép có trách nhiệm tiếp nhận, kiểm tra hồ sơ. Đối với hồ sơ, văn bản không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 05 ngày làm việc kể từ ngày tiếp nhận hồ sơ, cơ quan cấp phép có trách nhiệm cấp giấy phép hoạt động theo Mẫu số 03b Phụ lục III ban hành kèm theo Nghị định này.\n2. Đổi, cấp lại giấy phép hoạt động phương tiện giao thông thông minh:\nCác trường hợp giấy phép hoạt động phương tiện giao thông thông minh bị hư hỏng thì được đổi, bị mất được cấp lại\na) Cơ quan, tổ chức, cá nhân là chủ sở hữu phương tiện hoặc người được ủy quyền theo quy định của pháp luật khai mẫu đơn trên biểu mẫu điện tử tại Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có đơn đề nghị đổi, cấp lại giấy phép hoạt động theo Mẫu số 03a Phụ lục III ban hành kèm theo Nghị định này gửi cơ quan có thẩm quyền đã cấp giấy phép trước đó thông qua dịch vụ bưu chính hoặc nộp trực tiếp;\nb) Sau khi tiếp nhận hồ sơ kê khai đổi, cấp lại giấy phép hoạt động phương tiện giao thông thông minh, cơ quan cấp phép kiểm tra hồ sơ. Đối với hồ sơ không đủ điều kiện cấp phép thì gửi thông báo đến tài khoản của cơ quan, tổ chức, cá nhân trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả;\nc) Trong thời hạn 02 ngày làm việc kể từ ngày nhận hồ sơ, cơ quan cấp phép có trách nhiệm đổi, cấp lại giấy phép hoạt động theo Mẫu số 03b Phụ lục III ban hành kèm theo Nghị định này.\n3. Thu hồi giấy phép hoạt động đối với phương tiện giao thông thông minh Chủ sở hữu phương tiện hoặc người được ủy quyền theo quy định của pháp luật có trách nhiệm giao nộp giấy phép hoạt động phương tiện giao thông thông minh thuộc trường hợp bị thu hồi theo quy định tại khoản 5 Điều 25 Nghị định này cho cơ quan có thẩm quyền đã cấp giấy phép. Cơ quan có thẩm quyền tiếp nhận và thực hiện thu hồi giấy phép hoạt động theo quy định.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D13",
+      "id_cha": null,
+      "so": "13",
+      "tieu_de": "Sửa đổi, bổ sung một số điểm, khoản của Điều 33",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“Điều 33. Hồ sơ đề nghị chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam được tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch hoặc tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch; thay đổi nội dung, thông tin so với văn bản đã được chấp thuận\n1. Doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam theo quy định tại khoản 1 Điều 32 của Nghị định này gửi 01 bộ hồ sơ đến Cục Cảnh sát giao thông, Bộ Công an thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia, qua dịch vụ bưu chính; nộp trực tiếp. Hồ sơ bao gồm:\na) Bản chính hoặc bản điện tử văn bản đề nghị chấp thuận kèm theo danh sách người điều khiển và thông tin về xe cơ giới theo Mẫu số 04a Phụ lục IV ban hành kèm theo Nghị định này;\nb) Bản sao hoặc bản sao điện tử giấy phép kinh doanh dịch vụ lữ hành quốc tế. Trường hợp giấy phép kinh doanh dịch vụ lữ hành quốc tế được khai thác thông qua cơ sở dữ liệu được kết nối, chia sẻ với cơ quan có thẩm quyền cấp giấy phép thì gửi văn bản quy định tại điểm a khoản này.\n2. Tổ chức, cá nhân theo quy định tại khoản 2 Điều 32 của Nghị định này gửi 01 bộ hồ sơ đến Cục Cảnh sát giao thông, Bộ Công an thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia; qua dịch vụ bưu chính; nộp trực tiếp. Hồ sơ bao gồm:\na) Công hàm của cơ quan đại diện ngoại giao, cơ quan lãnh sự hoặc cơ quan đại diện của tổ chức quốc tế liên Chính phủ tại Việt Nam, nêu rõ lý do, mục đích cho phương tiện tham gia giao thông tại Việt Nam;\nb) Bản chính hoặc bản điện tử văn bản đề nghị chấp thuận kèm theo danh sách người điều khiển và thông tin về xe cơ giới theo Mẫu số 04a Phụ lục IV ban hành kèm theo Nghị định này.\n3. Trường hợp thay đổi nội dung, thông tin tại văn bản đã được chấp thuận trước đó (thay đổi lộ trình, tuyến đường di chuyển, thông tin của người nước ngoài, xe cơ giới nước ngoài hoặc thời gian người nước ngoài, xe cơ giới nước ngoài xuất cảnh chậm so với thời gian đã xác định trong văn bản chấp thuận hoặc quá thời gian lưu trú tối đa tại Việt Nam theo quy định của pháp luật về nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam) thì doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam hoặc tổ chức, cá nhân thông báo ngay với cơ quan có thẩm quyền đã cấp phép trước đó qua Ứng dụng giao thông trên thiết bị di động dành cho công dân do Bộ Công an quản lý, vận hành; nêu rõ lý do. Trong thời hạn 02 ngày kể từ ngày gửi thông báo, có bản chính hoặc bản điện tử văn bản theo Mẫu số 04a Phụ lục IV ban hành kèm theo Nghị định này gửi cơ quan có thẩm quyền đã cấp phép trước đó thông qua một trong các hình thức sau: trực tuyến trên Cổng Dịch vụ công quốc gia hoặc Ứng dụng định danh quốc gia; qua dịch vụ bưu chính; nộp trực tiếp.\n4. Các trường hợp từ chối, không chấp thuận việc doanh nghiệp kinh doanh lữ hành quốc tế của Việt Nam tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch, tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam bao gồm: không bảo đảm điều kiện theo quy định tại khoản 3, khoản 4, khoản 5 Điều 32 của Nghị định này; vi phạm các quy định tại Điều 35 của Nghị định này; vi phạm nội dung trong văn bản đã được chấp thuận trước đó; chưa thực hiện xong hoặc đã thực hiện xong yêu cầu của cơ quan nhà nước có thẩm quyền về giải quyết vụ việc vi phạm pháp luật hoặc tai nạn giao thông của người nước ngoài, sự cố liên quan đến xe cơ giới nước ngoài gây ra nhưng sau đó lại tiếp tục thực hiện hành vi vi phạm đã bị đình chỉ trước đó; thời gian, lộ trình, tuyến đường của đoàn có liên quan đến các hoạt động về an ninh, chính trị đang diễn ra của Việt Nam; nhân thân hoặc hoạt động của người nước ngoài có nguy cơ ảnh hưởng đến quốc phòng, an ninh, trật tự, an toàn xã hội.\n5. Giải quyết vi phạm đối với trường hợp đã có văn bản chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch; tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch:\na) Trường hợp kê khai gian dối, sử dụng tài liệu, giấy tờ không phải do cơ quan có thẩm quyền cấp hoặc vi phạm nội dung trong văn bản đã được chấp thuận thì cơ quan có thẩm quyền đã cấp phép trước đó đình chỉ hoạt động tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam theo Mẫu số 04c Phụ lục IV ban hành kèm theo Nghị định này và từ chối chấp thuận các đoàn khác của doanh nghiệp, tổ chức, cá nhân trong thời hạn 06 tháng kể từ ngày vi phạm;\nb) Trường hợp có người nước ngoài vi phạm các quy định pháp luật Việt Nam mà chưa thực hiện xong yêu cầu của cơ quan nhà nước có thẩm quyền về giải quyết vụ việc vi phạm thì cơ quan có thẩm quyền đã cấp phép trước đó đình chỉ hoạt động tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam theo Mẫu số 04c Phụ lục IV ban hành kèm theo Nghị định này đến khi giải quyết xong vụ việc vi phạm.”.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D14",
+      "id_cha": null,
+      "so": "14",
+      "tieu_de": "Bổ sung Điều 33a vào sau Điều 33",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "“Điều 33a. Trình tự, thủ tục chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam được tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch hoặc tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch; thay đổi nội dung, thông tin so với văn bản đã được chấp thuận\n1. Cơ quan tiếp nhận kiểm tra hồ sơ, văn bản. Đối với hồ sơ, văn bản không đủ điều kiện chấp thuận thì gửi thông báo đến tài khoản của doanh nghiệp, tổ chức, cá nhân trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia hoặc có Phiếu yêu cầu bổ sung, hoàn thiện hồ sơ, Phiếu từ chối giải quyết hồ sơ thủ tục hành chính, nêu rõ lý do theo quy định.\nTrường hợp hồ sơ, văn bản nộp trực tiếp đủ điều kiện cấp phép thì tiếp nhận và lập Giấy tiếp nhận hồ sơ và hẹn trả kết quả.\n2. Trong thời hạn 02 ngày làm việc kể từ ngày tiếp nhận đủ hồ sơ, văn bản, cơ quan tiếp nhận có văn bản trả lời chấp thuận (bản giấy và bản điện tử) cho doanh nghiệp, tổ chức, cá nhân theo Mẫu số 04b Phụ lục IV ban hành kèm theo Nghị định này, đồng thời gửi văn bản chấp thuận đến các đơn vị chức năng thuộc Bộ Văn hóa, Thể thao và Du lịch, Bộ Ngoại giao, Bộ Xây dựng, Bộ Quốc phòng, Bộ Tài chính, Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương có liên quan để phối hợp quản lý.”",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D15",
+      "id_cha": null,
+      "so": "15",
+      "tieu_de": "Sửa đổi, bổ sung một số khoản của Điều 35",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Sửa đổi, bổ sung khoản 2 như sau:\n“2. Tổ chức thực hiện việc đưa xe cơ giới nước ngoài vào tham gia giao thông tại Việt Nam và đưa xe cơ giới nước ngoài ra khỏi lãnh thổ Việt Nam theo đúng quy định; bố trí hướng dẫn viên, phương tiện hướng dẫn giao thông có thiết bị giám sát hành trình và kết nối, chia sẻ thông tin với cơ sở dữ liệu xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam của Bộ Công an, bố trí người điều khiển phương tiện hướng dẫn giao thông cho xe cơ giới nước ngoài trong quá trình tham gia giao thông tại Việt Nam; dán tên của doanh nghiệp hoặc tổ chức, cá nhân trên kính chắn gió phía trước và phía sau (đối với xe ô tô), gắn cờ có tên của doanh nghiệp hoặc tổ chức, cá nhân vào phía trước xe (đối với xe mô tô) cho tất cả các xe trong đoàn.”.\n2. Sửa đổi, bổ sung khoản 4 như sau:\n“4. Trong quá trình tham gia giao thông tại Việt Nam, thực hiện việc báo cáo giám sát hoạt động của đoàn xe cơ giới nước ngoài theo thời gian thực qua Ứng dụng giao thông trên thiết bị di động dành cho công dân do Bộ Công an quản lý, vận hành.”.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D15_K1",
+          "id_cha": "236_2026_ND-CP_D15",
+          "so": "1",
+          "noi_dung": "1. Sửa đổi, bổ sung khoản 2 như sau:\n“2. Tổ chức thực hiện việc đưa xe cơ giới nước ngoài vào tham gia giao thông tại Việt Nam và đưa xe cơ giới nước ngoài ra khỏi lãnh thổ Việt Nam theo đúng quy định; bố trí hướng dẫn viên, phương tiện hướng dẫn giao thông có thiết bị giám sát hành trình và kết nối, chia sẻ thông tin với cơ sở dữ liệu xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam của Bộ Công an, bố trí người điều khiển phương tiện hướng dẫn giao thông cho xe cơ giới nước ngoài trong quá trình tham gia giao thông tại Việt Nam; dán tên của doanh nghiệp hoặc tổ chức, cá nhân trên kính chắn gió phía trước và phía sau (đối với xe ô tô), gắn cờ có tên của doanh nghiệp hoặc tổ chức, cá nhân vào phía trước xe (đối với xe mô tô) cho tất cả các xe trong đoàn.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D15_K2",
+          "id_cha": "236_2026_ND-CP_D15",
+          "so": "2",
+          "noi_dung": "2. Sửa đổi, bổ sung khoản 4 như sau:\n“4. Trong quá trình tham gia giao thông tại Việt Nam, thực hiện việc báo cáo giám sát hoạt động của đoàn xe cơ giới nước ngoài theo thời gian thực qua Ứng dụng giao thông trên thiết bị di động dành cho công dân do Bộ Công an quản lý, vận hành.”.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D16",
+      "id_cha": null,
+      "so": "16",
+      "tieu_de": "Bổ sung, bãi bỏ, thay thế một số cụm từ, điểm, khoản, điều, phụ lục kèm theo",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27.\n2. Bổ sung cụm từ “xanh và” trước từ “đỏ” tại điểm b khoản 2 Điều 19.\n3. Bãi bỏ cụm từ “sở hữu” tại tên khoản 8 Điều 11.\n4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25.\n5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự.\n6. Thay thế một số Phụ lục như sau:\na) Thay thế Phụ lục I ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục I ban hành kèm theo Nghị định này;\nb) Thay thế Phụ lục II ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục II ban hành kèm theo Nghị định này;\nc) Thay thế Phụ lục III ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục III ban hành kèm theo Nghị định này;\nd) Thay thế Phụ lục IV ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục IV ban hành kèm theo Nghị định này.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D16_K1",
+          "id_cha": "236_2026_ND-CP_D16",
+          "so": "1",
+          "noi_dung": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D16_K2",
+          "id_cha": "236_2026_ND-CP_D16",
+          "so": "2",
+          "noi_dung": "2. Bổ sung cụm từ “xanh và” trước từ “đỏ” tại điểm b khoản 2 Điều 19.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D16_K3",
+          "id_cha": "236_2026_ND-CP_D16",
+          "so": "3",
+          "noi_dung": "3. Bãi bỏ cụm từ “sở hữu” tại tên khoản 8 Điều 11.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D16_K4",
+          "id_cha": "236_2026_ND-CP_D16",
+          "so": "4",
+          "noi_dung": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D16_K5",
+          "id_cha": "236_2026_ND-CP_D16",
+          "so": "5",
+          "noi_dung": "5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D16_K6",
+          "id_cha": "236_2026_ND-CP_D16",
+          "so": "6",
+          "noi_dung": "6. Thay thế một số Phụ lục như sau:\na) Thay thế Phụ lục I ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục I ban hành kèm theo Nghị định này;\nb) Thay thế Phụ lục II ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục II ban hành kèm theo Nghị định này;\nc) Thay thế Phụ lục III ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục III ban hành kèm theo Nghị định này;\nd) Thay thế Phụ lục IV ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục IV ban hành kèm theo Nghị định này.",
+          "diem": [
+            {
+              "id": "236_2026_ND-CP_D16_K6_Da",
+              "id_cha": "236_2026_ND-CP_D16_K6",
+              "so": "a",
+              "noi_dung": "a) Thay thế Phụ lục I ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục I ban hành kèm theo Nghị định này;",
+              "trang_thai": "hieu_luc",
+              "cap": 5
+            },
+            {
+              "id": "236_2026_ND-CP_D16_K6_Db",
+              "id_cha": "236_2026_ND-CP_D16_K6",
+              "so": "b",
+              "noi_dung": "b) Thay thế Phụ lục II ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục II ban hành kèm theo Nghị định này;",
+              "trang_thai": "hieu_luc",
+              "cap": 5
+            },
+            {
+              "id": "236_2026_ND-CP_D16_K6_Dc",
+              "id_cha": "236_2026_ND-CP_D16_K6",
+              "so": "c",
+              "noi_dung": "c) Thay thế Phụ lục III ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục III ban hành kèm theo Nghị định này;",
+              "trang_thai": "hieu_luc",
+              "cap": 5
+            },
+            {
+              "id": "236_2026_ND-CP_D16_K6_Dd",
+              "id_cha": "236_2026_ND-CP_D16_K6",
+              "so": "d",
+              "noi_dung": "d) Thay thế Phụ lục IV ban hành kèm theo Nghị định số 151/2024/NĐ-CP bằng Phụ lục IV ban hành kèm theo Nghị định này.",
+              "trang_thai": "hieu_luc",
+              "cap": 5
+            }
+          ],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D17",
+      "id_cha": null,
+      "so": "17",
+      "tieu_de": "Điều khoản chuyển tiếp",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Đối với hồ sơ đề nghị giải quyết thủ tục hành chính quy định tại Nghị định số 151/2024/NĐ-CP đã được các cơ quan có thẩm quyền tiếp nhận hoặc đã được đóng dấu bưu chính trước ngày Nghị định này có hiệu lực thì thực hiện theo quy định của pháp luật đang có hiệu lực điều chỉnh thủ tục hành chính đó tại thời điểm hồ sơ được tiếp nhận.\n2. Đối với hồ sơ đề nghị giải quyết thủ tục hành chính được cắt giảm quy định tại Nghị định này đã được cơ quan có thẩm quyền tiếp nhận hoặc đã được đóng dấu bưu chính trước ngày Nghị định này có hiệu lực thì cơ quan có thẩm quyền tiếp nhận thực hiện thông báo về việc cắt giảm thủ tục hành chính và trả hồ sơ cho cơ quan, tổ chức, cá nhân (nếu có yêu cầu).\n3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên được cấp trước ngày Nghị định này có hiệu lực cho xe của lực lượng quân đội không phù hợp với quy định tại Nghị định này thì cơ quan, tổ chức đã được cấp giấy phép trước đó thực hiện trình tự, thủ tục thu hồi và đề nghị cấp mới giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D17_K1",
+          "id_cha": "236_2026_ND-CP_D17",
+          "so": "1",
+          "noi_dung": "1. Đối với hồ sơ đề nghị giải quyết thủ tục hành chính quy định tại Nghị định số 151/2024/NĐ-CP đã được các cơ quan có thẩm quyền tiếp nhận hoặc đã được đóng dấu bưu chính trước ngày Nghị định này có hiệu lực thì thực hiện theo quy định của pháp luật đang có hiệu lực điều chỉnh thủ tục hành chính đó tại thời điểm hồ sơ được tiếp nhận.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D17_K2",
+          "id_cha": "236_2026_ND-CP_D17",
+          "so": "2",
+          "noi_dung": "2. Đối với hồ sơ đề nghị giải quyết thủ tục hành chính được cắt giảm quy định tại Nghị định này đã được cơ quan có thẩm quyền tiếp nhận hoặc đã được đóng dấu bưu chính trước ngày Nghị định này có hiệu lực thì cơ quan có thẩm quyền tiếp nhận thực hiện thông báo về việc cắt giảm thủ tục hành chính và trả hồ sơ cho cơ quan, tổ chức, cá nhân (nếu có yêu cầu).",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D17_K3",
+          "id_cha": "236_2026_ND-CP_D17",
+          "so": "3",
+          "noi_dung": "3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên được cấp trước ngày Nghị định này có hiệu lực cho xe của lực lượng quân đội không phù hợp với quy định tại Nghị định này thì cơ quan, tổ chức đã được cấp giấy phép trước đó thực hiện trình tự, thủ tục thu hồi và đề nghị cấp mới giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D18",
+      "id_cha": null,
+      "so": "18",
+      "tieu_de": "Hiệu lực thi hành",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.\n2. Quy định xây dựng Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam; Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải tại khoản 2 Điều 2 Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2027.\n3. Quy định nộp hồ sơ chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam được tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch hoặc tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia tại Điều 12 Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2027.",
+      "khoan": [
+        {
+          "id": "236_2026_ND-CP_D18_K1",
+          "id_cha": "236_2026_ND-CP_D18",
+          "so": "1",
+          "noi_dung": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D18_K2",
+          "id_cha": "236_2026_ND-CP_D18",
+          "so": "2",
+          "noi_dung": "2. Quy định xây dựng Cơ sở dữ liệu về xe cơ giới nước ngoài do người nước ngoài điều khiển tham gia giao thông tại Việt Nam; Cơ sở dữ liệu về đơn vị kinh doanh vận tải và phù hiệu xe kinh doanh vận tải tại khoản 2 Điều 2 Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2027.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        },
+        {
+          "id": "236_2026_ND-CP_D18_K3",
+          "id_cha": "236_2026_ND-CP_D18",
+          "so": "3",
+          "noi_dung": "3. Quy định nộp hồ sơ chấp thuận doanh nghiệp kinh doanh dịch vụ lữ hành quốc tế của Việt Nam được tổ chức cho người nước ngoài đưa xe cơ giới nước ngoài vào Việt Nam du lịch hoặc tổ chức, cá nhân đưa xe ô tô có tay lái ở bên phải vào tham gia giao thông tại Việt Nam không phải mục đích du lịch trên Cổng Dịch vụ công quốc gia, Ứng dụng định danh quốc gia tại Điều 12 Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2027.",
+          "diem": [],
+          "hieu_luc_tu": null,
+          "trang_thai": "hieu_luc",
+          "cap": 4
+        }
+      ],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    },
+    {
+      "id": "236_2026_ND-CP_D19",
+      "id_cha": null,
+      "so": "19",
+      "tieu_de": "Trách nhiệm thi hành",
+      "so_hieu_van_ban": "236/2026/ND-CP",
+      "noi_dung": "Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và các cơ quan, tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Nghị định này./.",
+      "khoan": [],
+      "hieu_luc_tu": null,
+      "sua_doi_boi_van_ban": null,
+      "phien_ban": "goc",
+      "trang_thai": "hieu_luc",
+      "cap": 3
+    }
+  ],
+  "cap": 1
+}
