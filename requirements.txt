@@ -1,0 +1,5 @@
+python-docx
+pytest
+pytest-cov
+ruff
+mypy
