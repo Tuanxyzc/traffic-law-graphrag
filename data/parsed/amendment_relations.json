@@ -1,0 +1,2477 @@
+[
+  {
+    "source": "118_2025_QH15_D7_K1_Da",
+    "target": "36_2024_QH15_D7_K1_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm c và điểm d như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K1_Da",
+    "target": "36_2024_QH15_D7_K1_Dd",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm c và điểm d như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K1_Db",
+    "target": "36_2024_QH15_D7_K1_Dh",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung điểm h như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K2",
+    "target": "36_2024_QH15_D9_K18",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 18"
+  },
+  {
+    "source": "118_2025_QH15_D7_K2",
+    "target": "36_2024_QH15_D9_K18",
+    "relation": "BO_SUNG",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "bổ sung khoản 18a vào sau khoản 18 Điều 9 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K2",
+    "target": "36_2024_QH15_D9_K18a",
+    "relation": "THEM_MOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "bổ sung khoản 18a vào sau khoản 18 Điều 9 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K3",
+    "target": "36_2024_QH15_D10_K3",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung khoản 3 Điều 10 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K4",
+    "target": "36_2024_QH15_D27_K3_Da",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 27 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K4",
+    "target": "36_2024_QH15_D27_K3_Db",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 27 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K5_Da",
+    "target": "36_2024_QH15_D34_K4",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung khoản 4 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K5_Db",
+    "target": "36_2024_QH15_D34_K6",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung khoản 6 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K6",
+    "target": "36_2024_QH15_D35_K2",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "6. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 35 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K6",
+    "target": "36_2024_QH15_D35_K3",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "6. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 35 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K7",
+    "target": "36_2024_QH15_D41_K7",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "7. Sửa đổi, bổ sung khoản 7 Điều 41 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K8_Da",
+    "target": "36_2024_QH15_D42_K4",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung khoản 4 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K8_Db",
+    "target": "36_2024_QH15_D42_K5_De",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung điểm e khoản 5 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K9",
+    "target": "36_2024_QH15_D43_K1",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "9. Sửa đổi, bổ sung khoản 1 Điều 43 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K10",
+    "target": "36_2024_QH15_D52_K9",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "10. Sửa đổi, bổ sung khoản 9 Điều 52 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K11",
+    "target": "36_2024_QH15_D57_K9",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Sửa đổi, bổ sung khoản 9 Điều 57 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K12_Da",
+    "target": "36_2024_QH15_D60_K3_De",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm e khoản 3 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K12_Db",
+    "target": "36_2024_QH15_D60_K7",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung khoản 7, khoản 8"
+  },
+  {
+    "source": "118_2025_QH15_D7_K12_Db",
+    "target": "36_2024_QH15_D60_K8",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung khoản 7, khoản 8"
+  },
+  {
+    "source": "118_2025_QH15_D7_K12_Db",
+    "target": "36_2024_QH15_D60_K8",
+    "relation": "BO_SUNG",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "bổ sung khoản 9 vào sau khoản 8 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K12_Db",
+    "target": "36_2024_QH15_D60_K9",
+    "relation": "THEM_MOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "bổ sung khoản 9 vào sau khoản 8 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K13_Da",
+    "target": "36_2024_QH15_D61_K4",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung khoản 4 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K13_Db",
+    "target": "36_2024_QH15_D61_K6",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung khoản 6, khoản 7"
+  },
+  {
+    "source": "118_2025_QH15_D7_K13_Db",
+    "target": "36_2024_QH15_D61_K7",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung khoản 6, khoản 7"
+  },
+  {
+    "source": "118_2025_QH15_D7_K13_Db",
+    "target": "36_2024_QH15_D61_K7",
+    "relation": "BO_SUNG",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "bổ sung khoản 8 vào sau khoản 7 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K13_Db",
+    "target": "36_2024_QH15_D61_K8",
+    "relation": "THEM_MOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "bổ sung khoản 8 vào sau khoản 7 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K14_Da",
+    "target": "36_2024_QH15_D62_K5_Db",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm b khoản 5 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K14_Db",
+    "target": "36_2024_QH15_D62_K6",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung khoản 6 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K15",
+    "target": "36_2024_QH15_D64_K1",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "15. Sửa đổi, bổ sung khoản 1 Điều 64 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K16",
+    "target": "36_2024_QH15_D67_K3",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "16. Sửa đổi, bổ sung khoản 3 Điều 67 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K17",
+    "target": "36_2024_QH15_D71",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "17. Sửa đổi, bổ sung Điều 71 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K18",
+    "target": "36_2024_QH15_D75_K4_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "18. Sửa đổi, bổ sung điểm c khoản 4 Điều 75 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K19",
+    "target": "36_2024_QH15_D87_K2",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "19. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 87 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K19",
+    "target": "36_2024_QH15_D87_K3",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "19. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 87 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K20_Da",
+    "target": "36_2024_QH15_D88_K2",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung khoản 2 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K20_Db",
+    "target": "36_2024_QH15_D88_K2",
+    "relation": "BO_SUNG",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung khoản 2a vào sau khoản 2 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K20_Db",
+    "target": "36_2024_QH15_D88_K2a",
+    "relation": "THEM_MOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung khoản 2a vào sau khoản 2 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D7_K21",
+    "target": "36_2024_QH15_D11_K13",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63."
+  },
+  {
+    "source": "118_2025_QH15_D7_K21",
+    "target": "36_2024_QH15_D12_K4",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63."
+  },
+  {
+    "source": "118_2025_QH15_D7_K21",
+    "target": "36_2024_QH15_D42_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63."
+  },
+  {
+    "source": "118_2025_QH15_D7_K21",
+    "target": "36_2024_QH15_D49_K1_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63."
+  },
+  {
+    "source": "118_2025_QH15_D7_K21",
+    "target": "36_2024_QH15_D53_K7",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63."
+  },
+  {
+    "source": "118_2025_QH15_D7_K21",
+    "target": "36_2024_QH15_D63_K4",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "21. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 13 Điều 11, khoản 4 Điều 12, khoản 5 Điều 42, điểm d khoản 1 Điều 49, khoản 7 Điều 53 và khoản 4 Điều 63."
+  },
+  {
+    "source": "118_2025_QH15_D7_K22_Da",
+    "target": "36_2024_QH15_D6_K3",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Bỏ cụm từ “, Bộ Lao động, Thương binh và Xã hội,” tại khoản 3 Điều 6;"
+  },
+  {
+    "source": "118_2025_QH15_D7_K22_Db",
+    "target": "36_2024_QH15_D75_K3",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bỏ cụm từ “trực thuộc trung ương” tại khoản 3 Điều 75."
+  },
+  {
+    "source": "118_2025_QH15_D7_K23",
+    "target": "36_2024_QH15_D62_K7",
+    "relation": "BAI_BO",
+    "source_document": "118/2025/QH15",
+    "target_document": "36/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "23. Bãi bỏ khoản 7 Điều 62."
+  },
+  {
+    "source": "118_2025_QH15_D8_K1",
+    "target": "35_2024_QH15_D2_K6",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 6 Điều 2 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K2_Da",
+    "target": "35_2024_QH15_D5_K1_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm c khoản 1 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K2_Db",
+    "target": "35_2024_QH15_D5_K2_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung điểm c khoản 2 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K3",
+    "target": "35_2024_QH15_D8",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung Điều 8 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K4",
+    "target": "35_2024_QH15_D27_K3",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung khoản 3 Điều 27 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K5",
+    "target": "35_2024_QH15_D29_K1",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Sửa đổi, bổ sung khoản 1 Điều 29 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K6",
+    "target": "35_2024_QH15_D39_K1_Da",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "6. Sửa đổi, bổ sung điểm a và điểm b khoản 1 Điều 39 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K6",
+    "target": "35_2024_QH15_D39_K1_Db",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "6. Sửa đổi, bổ sung điểm a và điểm b khoản 1 Điều 39 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K7",
+    "target": "35_2024_QH15_D78_K3",
+    "relation": "SUA_DOI",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "7. Sửa đổi, bổ sung khoản 3 Điều 78 như sau:"
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D10_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D21_K3_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D25_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D26_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D28_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D30_K4_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D30_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D32_K3_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D32_K7",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D35_K8",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D36_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D37_K1",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D38_K2_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D38_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D39_K1",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D39_K4",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D39_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D49",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D52_K1",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D52_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D57_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D61_K4",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D82_K2",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K8",
+    "target": "35_2024_QH15_D82_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại khoản 3 Điều 10, điểm a khoản 3 Điều 21, khoản 5 Điều 25, khoản 5 Điều 26, khoản 3 Điều 28, điểm b khoản 4 và khoản 5 Điều 30, điểm b khoản 3 và khoản 7 Điều 32, khoản 8 Điều 35, khoản 3 Điều 36, khoản 1 Điều 37, điểm a khoản 2 và khoản 3 Điều 38, các khoản 1, 4 và 5 Điều 39, Điều 49, khoản 1 và khoản 5 Điều 52, khoản 3 Điều 57, khoản 4 Điều 61, khoản 2 và khoản 3 Điều 82."
+  },
+  {
+    "source": "118_2025_QH15_D8_K9_Da",
+    "target": "35_2024_QH15_D10_K3",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Bỏ cụm từ “các điểm a, b và d” tại khoản 3 Điều 10;"
+  },
+  {
+    "source": "118_2025_QH15_D8_K9_Db",
+    "target": "35_2024_QH15_D12_K1",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bỏ cụm từ “; quy hoạch sử dụng đất cấp huyện” tại khoản 1 Điều 12."
+  },
+  {
+    "source": "118_2025_QH15_D8_K10",
+    "target": "35_2024_QH15_D10_K4",
+    "relation": "BAI_BO",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "10. Bãi bỏ khoản 4 Điều 10, Điều 83."
+  },
+  {
+    "source": "118_2025_QH15_D8_K10",
+    "target": "35_2024_QH15_D83",
+    "relation": "BAI_BO",
+    "source_document": "118/2025/QH15",
+    "target_document": "35/2024/QH15",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "10. Bãi bỏ khoản 4 Điều 10, Điều 83."
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K1",
+    "target": "151_2024_ND-CP_D7",
+    "relation": "SUA_DOI",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung tên Điều 7 như sau:"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K2",
+    "target": "151_2024_ND-CP_D7_K2",
+    "relation": "SUA_DOI",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 2 Điều 7 như sau:"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K3",
+    "target": "151_2024_ND-CP_D10_K3_Da",
+    "relation": "SUA_DOI",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 10 như sau:"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K3",
+    "target": "151_2024_ND-CP_D10_K3_Db",
+    "relation": "SUA_DOI",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung điểm a và điểm b khoản 3 Điều 10 như sau:"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K4",
+    "target": "151_2024_ND-CP_D12_K2",
+    "relation": "SUA_DOI",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung khoản 2 Điều 12 như sau:"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K5",
+    "target": "151_2024_ND-CP_D27_K2",
+    "relation": "SUA_DOI",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Sửa đổi, bổ sung khoản 2 Điều 27 như sau:"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D11_K8_Dg",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D12_K1_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D33_K3_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D33_K4_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D36_K1_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D36_K2_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D36_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Da",
+    "target": "151_2024_ND-CP_D36_K6",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Thay thế cụm từ “Bộ Giao thông vận tải” bằng cụm từ “Bộ Xây dựng” tại điểm g khoản 8 Điều 11, điểm b khoản 1 Điều 12, điểm a khoản 3, điểm b khoản 4 Điều 33, điểm d khoản 1, điểm b khoản 2, khoản 5, khoản 6 Điều 36;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K6_Db",
+    "target": "151_2024_ND-CP_D25_K1",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Thay thế cụm từ “Bộ trưởng Bộ Giao thông vận tải” bằng cụm từ “Bộ trưởng Bộ Xây dựng” tại khoản 1 Điều 25;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K7_Da",
+    "target": "151_2024_ND-CP_D6_K1",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Bãi bỏ cụm từ “, Bộ Lao động - Thương binh và Xã hội” tại khoản 1 Điều 6;"
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K7_Db",
+    "target": "151_2024_ND-CP_D6_K3",
+    "relation": "BAI_BO",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bãi bỏ khoản 3 Điều 6 và Điều 8."
+  },
+  {
+    "source": "184_2025_ND-CP_D27_K7_Db",
+    "target": "151_2024_ND-CP_D8",
+    "relation": "BAI_BO",
+    "source_document": "184/2025/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bãi bỏ khoản 3 Điều 6 và Điều 8."
+  },
+  {
+    "source": "236_2026_ND-CP_D1",
+    "target": "151_2024_ND-CP_D9_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1 Điều 9"
+  },
+  {
+    "source": "236_2026_ND-CP_D2_K1",
+    "target": "151_2024_ND-CP_D10_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D2_K1",
+    "target": "151_2024_ND-CP_D10_K2",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 1, khoản 2 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D2_K2",
+    "target": "151_2024_ND-CP_D10_K3_Da",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D2_K2",
+    "target": "151_2024_ND-CP_D10_K3_Db",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D2_K2",
+    "target": "151_2024_ND-CP_D10_K3_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D2_K2",
+    "target": "151_2024_ND-CP_D10_K3_Dd",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm a, điểm b, điểm c, điểm d khoản 3 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K1",
+    "target": "151_2024_ND-CP_D11_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K2",
+    "target": "151_2024_ND-CP_D11_K6",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 6 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K3",
+    "target": "151_2024_ND-CP_D11_K8_Dg",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung điểm g khoản 8 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K4",
+    "target": "151_2024_ND-CP_D11_K13",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung khoản 13 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K5",
+    "target": "151_2024_ND-CP_D11_K13",
+    "relation": "BO_SUNG",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K5",
+    "target": "151_2024_ND-CP_D11_K14",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K5",
+    "target": "151_2024_ND-CP_D11_K15",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D3_K5",
+    "target": "151_2024_ND-CP_D11_K16",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bổ sung khoản 14, khoản 15, khoản 16 vào sau khoản 13 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K1",
+    "target": "151_2024_ND-CP_D12_K1_Db",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K1",
+    "target": "151_2024_ND-CP_D12_K1_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung điểm b, điểm c khoản 1 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K2",
+    "target": "151_2024_ND-CP_D12_K2_Da",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm a khoản 2 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K3",
+    "target": "151_2024_ND-CP_D12_K4_Db",
+    "relation": "BO_SUNG",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K3",
+    "target": "151_2024_ND-CP_D12_K4_Dc",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung điểm c vào sau điểm b khoản 4 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K4",
+    "target": "151_2024_ND-CP_D12_K9",
+    "relation": "BO_SUNG",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K4",
+    "target": "151_2024_ND-CP_D12_K10",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K4",
+    "target": "151_2024_ND-CP_D12_K11",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D4_K4",
+    "target": "151_2024_ND-CP_D12_K12",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bổ sung khoản 10, khoản 11, khoản 12 vào sau khoản 9 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D5",
+    "target": "151_2024_ND-CP_D14_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1 Điều 14"
+  },
+  {
+    "source": "236_2026_ND-CP_D6",
+    "target": "151_2024_ND-CP_D17_K2",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 2, khoản 3 Điều 17"
+  },
+  {
+    "source": "236_2026_ND-CP_D6",
+    "target": "151_2024_ND-CP_D17_K3",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 2, khoản 3 Điều 17"
+  },
+  {
+    "source": "236_2026_ND-CP_D7_K1",
+    "target": "151_2024_ND-CP_D20_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D7_K2",
+    "target": "151_2024_ND-CP_D20_K3",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 3 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D8",
+    "target": "151_2024_ND-CP_D21_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21"
+  },
+  {
+    "source": "236_2026_ND-CP_D8",
+    "target": "151_2024_ND-CP_D21_K2",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21"
+  },
+  {
+    "source": "236_2026_ND-CP_D8",
+    "target": "151_2024_ND-CP_D21_K3",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2, khoản 3 Điều 21"
+  },
+  {
+    "source": "236_2026_ND-CP_D9_K1",
+    "target": "151_2024_ND-CP_D22_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 1 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D9_K2",
+    "target": "151_2024_ND-CP_D22_K2_Db",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm b khoản 2 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D10",
+    "target": "151_2024_ND-CP_D23_K1",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2 Điều 23"
+  },
+  {
+    "source": "236_2026_ND-CP_D10",
+    "target": "151_2024_ND-CP_D23_K2",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 1, khoản 2 Điều 23"
+  },
+  {
+    "source": "236_2026_ND-CP_D11_K1",
+    "target": "151_2024_ND-CP_D25_K2",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D11_K2",
+    "target": "151_2024_ND-CP_D25_K4",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D11_K3",
+    "target": "151_2024_ND-CP_D25_K5_Dd",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung điểm d khoản 5 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D12",
+    "target": "151_2024_ND-CP_D25",
+    "relation": "BO_SUNG",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung Điều 25a vào sau Điều 25"
+  },
+  {
+    "source": "236_2026_ND-CP_D12",
+    "target": "151_2024_ND-CP_D25a",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung Điều 25a vào sau Điều 25"
+  },
+  {
+    "source": "236_2026_ND-CP_D14",
+    "target": "151_2024_ND-CP_D33",
+    "relation": "BO_SUNG",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung Điều 33a vào sau Điều 33"
+  },
+  {
+    "source": "236_2026_ND-CP_D14",
+    "target": "151_2024_ND-CP_D33a",
+    "relation": "THEM_MOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung Điều 33a vào sau Điều 33"
+  },
+  {
+    "source": "236_2026_ND-CP_D15_K1",
+    "target": "151_2024_ND-CP_D35_K2",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung khoản 2 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D15_K2",
+    "target": "151_2024_ND-CP_D35_K4",
+    "relation": "SUA_DOI",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:"
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K1",
+    "target": "151_2024_ND-CP_D1_K4",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K1",
+    "target": "151_2024_ND-CP_D27",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung cụm từ “xe vận tải nội bộ” vào sau cụm từ “xe ô tô kinh doanh vận tải” tại khoản 4 Điều 1, Điều 27."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K2",
+    "target": "151_2024_ND-CP_D19_K2_Db",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung cụm từ “xanh và” trước từ “đỏ” tại điểm b khoản 2 Điều 19."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K3",
+    "target": "151_2024_ND-CP_D11_K8",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bãi bỏ cụm từ “sở hữu” tại tên khoản 8 Điều 11."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D11_K7",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D12_K3",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D17_K4",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D18",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D25_K1",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D25_K3",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K4",
+    "target": "151_2024_ND-CP_D25_K6",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bãi bỏ khoản 7 Điều 11, khoản 3 Điều 12, khoản 4 Điều 17, Điều 18, khoản 1, 3 và 6 Điều 25."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K5",
+    "target": "184_2025_ND-CP_D27_K3",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự."
+  },
+  {
+    "source": "236_2026_ND-CP_D16_K5",
+    "target": "184_2025_ND-CP_D27_K4",
+    "relation": "BAI_BO",
+    "source_document": "236/2026/ND-CP",
+    "target_document": "151/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bãi bỏ khoản 3, khoản 4 Điều 27 Nghị định số 184/2025/NĐ-CP ngày 01 tháng 7 năm 2025 của Chính phủ quy định phân định thẩm quyền khi tổ chức chính quyền địa phương 02 cấp và sửa đổi, bổ sung một số điều của các Nghị định của Chính phủ trong lĩnh vực an ninh, trật tự."
+  },
+  {
+    "source": "238_2026_ND-CP_D1_K1",
+    "target": "168_2024_ND-CP_D3_K3_Di",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung điểm i như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D1_K2",
+    "target": "168_2024_ND-CP_D3_K3_Dl",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm l như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D2_K1",
+    "target": "168_2024_ND-CP_D6_K1",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung khoản 1a vào trước khoản 1 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D2_K1",
+    "target": "168_2024_ND-CP_D6_K1a",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung khoản 1a vào trước khoản 1 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D2_K2",
+    "target": "168_2024_ND-CP_D6_K3_Dm",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm m khoản 3 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D3",
+    "target": "168_2024_ND-CP_D13_K8_Db",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung điểm b khoản 8 Điều 13"
+  },
+  {
+    "source": "238_2026_ND-CP_D4",
+    "target": "168_2024_ND-CP_D14_K3_Db",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung điểm b khoản 3 Điều 14"
+  },
+  {
+    "source": "238_2026_ND-CP_D5",
+    "target": "168_2024_ND-CP_D17_K2_Da",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung điểm a khoản 2 Điều 17"
+  },
+  {
+    "source": "238_2026_ND-CP_D6",
+    "target": "168_2024_ND-CP_D18_K4_Da",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi bổ sung điểm a khoản 4 Điều 18"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K1_Da",
+    "target": "168_2024_ND-CP_D20_K5_Dđ",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm đ như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K1_Db",
+    "target": "168_2024_ND-CP_D20_K5_Dg",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Sửa đổi, bổ sung điểm g như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K1_Dc",
+    "target": "168_2024_ND-CP_D20_K5_Dl",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "c) Sửa đổi, bổ sung điểm l, điểm m như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K1_Dc",
+    "target": "168_2024_ND-CP_D20_K5_Dm",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "c) Sửa đổi, bổ sung điểm l, điểm m như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K1_Dd",
+    "target": "168_2024_ND-CP_D20_K5_Dm",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "d) Bổ sung điểm n vào sau điểm m như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K1_Dd",
+    "target": "168_2024_ND-CP_D20_K5_Dn",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "d) Bổ sung điểm n vào sau điểm m như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K2",
+    "target": "168_2024_ND-CP_D20_K6_Dđ",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm đ khoản 6 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K3",
+    "target": "168_2024_ND-CP_D20_K8",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung khoản 8a vào sau khoản 8 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K3",
+    "target": "168_2024_ND-CP_D20_K8a",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung khoản 8a vào sau khoản 8 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D7_K4",
+    "target": "168_2024_ND-CP_D20_K10_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung điểm c khoản 10 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D8_K1",
+    "target": "168_2024_ND-CP_D21_K2_Db",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung điểm b khoản 2 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D8_K2",
+    "target": "168_2024_ND-CP_D21_K3_Db",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung điểm b khoản 3 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D8_K4_Da",
+    "target": "168_2024_ND-CP_D21_K8_Dd",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm d, điểm đ như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D8_K4_Da",
+    "target": "168_2024_ND-CP_D21_K8_Dđ",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm d, điểm đ như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D8_K4_Db",
+    "target": "168_2024_ND-CP_D21_K8_Dđ",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung điểm e vào sau điểm đ như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D8_K4_Db",
+    "target": "168_2024_ND-CP_D21_K8_De",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung điểm e vào sau điểm đ như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K1_Da",
+    "target": "168_2024_ND-CP_D26_K7_De",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "a) Sửa đổi, bổ sung điểm e như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K1_Db",
+    "target": "168_2024_ND-CP_D26_K7_Di",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung điểm k, điểm l vào sau điểm i như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K1_Db",
+    "target": "168_2024_ND-CP_D26_K7_Dk",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung điểm k, điểm l vào sau điểm i như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K1_Db",
+    "target": "168_2024_ND-CP_D26_K7_Dl",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "b) Bổ sung điểm k, điểm l vào sau điểm i như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K2",
+    "target": "168_2024_ND-CP_D26_K8_Dc",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung điểm d vào sau điểm c khoản 8 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K2",
+    "target": "168_2024_ND-CP_D26_K8_Dd",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung điểm d vào sau điểm c khoản 8 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K3",
+    "target": "168_2024_ND-CP_D26_K13_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung điểm c, điểm d khoản 13 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D9_K3",
+    "target": "168_2024_ND-CP_D26_K13_Dd",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung điểm c, điểm d khoản 13 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D10_K1",
+    "target": "168_2024_ND-CP_D29_K3",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung khoản 3a vào sau khoản 3 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D10_K1",
+    "target": "168_2024_ND-CP_D29_K3a",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung khoản 3a vào sau khoản 3 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D10_K2",
+    "target": "168_2024_ND-CP_D29_K4",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung khoản 4 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K1",
+    "target": "168_2024_ND-CP_D32_K9",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung khoản 9a vào sau khoản 9 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K1",
+    "target": "168_2024_ND-CP_D32_K9a",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung khoản 9a vào sau khoản 9 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K2",
+    "target": "168_2024_ND-CP_D32_K11_Dđ",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung điểm e vào sau điểm đ khoản 11 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K2",
+    "target": "168_2024_ND-CP_D32_K11_De",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung điểm e vào sau điểm đ khoản 11 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K3",
+    "target": "168_2024_ND-CP_D32_K13_Dđ",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung điểm e vào sau điểm đ khoản 13 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K3",
+    "target": "168_2024_ND-CP_D32_K13_De",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung điểm e vào sau điểm đ khoản 13 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K4",
+    "target": "168_2024_ND-CP_D32_K19_Dl",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Sửa đổi, bổ sung điểm l khoản 19 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D11_K5",
+    "target": "168_2024_ND-CP_D32_K21_Dc",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Sửa đổi, bổ sung điểm c khoản 21 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D12_K1",
+    "target": "168_2024_ND-CP_D41_K2_Dd",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung điểm d khoản 2 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D12_K2",
+    "target": "168_2024_ND-CP_D41_K4_Dk",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung điểm k1 vào sau điểm k khoản 4 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D12_K2",
+    "target": "168_2024_ND-CP_D41_K4_Dk1",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung điểm k1 vào sau điểm k khoản 4 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D12_K3",
+    "target": "168_2024_ND-CP_D41_K5",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Sửa đổi, bổ sung khoản 5 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D13",
+    "target": "168_2024_ND-CP_D42",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung Điều 42"
+  },
+  {
+    "source": "238_2026_ND-CP_D14",
+    "target": "168_2024_ND-CP_D43",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung Điều 43"
+  },
+  {
+    "source": "238_2026_ND-CP_D15",
+    "target": "168_2024_ND-CP_D44",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung Điều 44"
+  },
+  {
+    "source": "238_2026_ND-CP_D16",
+    "target": "168_2024_ND-CP_D46_K2",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Sửa đổi, bổ sung khoản 2 Điều 46"
+  },
+  {
+    "source": "238_2026_ND-CP_D17_K1",
+    "target": "168_2024_ND-CP_D50_K1_Dđ",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Sửa đổi, bổ sung điểm đ khoản 1 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D17_K2",
+    "target": "168_2024_ND-CP_D50_K3_Da",
+    "relation": "SUA_DOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Sửa đổi, bổ sung đoạn thứ hai điểm a khoản 3 như sau:"
+  },
+  {
+    "source": "238_2026_ND-CP_D18",
+    "target": "168_2024_ND-CP_D53_K2",
+    "relation": "BO_SUNG",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung khoản 3, khoản 4 vào sau khoản 2 Điều 53"
+  },
+  {
+    "source": "238_2026_ND-CP_D18",
+    "target": "168_2024_ND-CP_D53_K3",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung khoản 3, khoản 4 vào sau khoản 2 Điều 53"
+  },
+  {
+    "source": "238_2026_ND-CP_D18",
+    "target": "168_2024_ND-CP_D53_K4",
+    "relation": "THEM_MOI",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "Bổ sung khoản 3, khoản 4 vào sau khoản 2 Điều 53"
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K1",
+    "target": "168_2024_ND-CP_D6_K3_Dh",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "1. Bổ sung cụm từ ”, trừ hành vi vi phạm quy định tại điểm b khoản 3a Điều 29 của Nghị định này\" vào sau cụm từ \"xe được kéo khi kéo nhau\" tại điểm h khoản 3 Điều 6."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K2",
+    "target": "168_2024_ND-CP_D6_K2_Da",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung cụm từ \"hoặc chuyển làn đường không bảo đảm khoảng cách an toàn với xe phía trước, xe phía sau, xe hai bên\" vào sau cụm từ \"chỉ được phép chuyển sang một làn đường liền kề\" tại điểm a khoản 2, điểm g khoản 5 Điều 6; điểm e khoản 1 Điều 7; điểm h khoản 6 Điều 8."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K2",
+    "target": "168_2024_ND-CP_D6_K5_Dg",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung cụm từ \"hoặc chuyển làn đường không bảo đảm khoảng cách an toàn với xe phía trước, xe phía sau, xe hai bên\" vào sau cụm từ \"chỉ được phép chuyển sang một làn đường liền kề\" tại điểm a khoản 2, điểm g khoản 5 Điều 6; điểm e khoản 1 Điều 7; điểm h khoản 6 Điều 8."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K2",
+    "target": "168_2024_ND-CP_D7_K1_De",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung cụm từ \"hoặc chuyển làn đường không bảo đảm khoảng cách an toàn với xe phía trước, xe phía sau, xe hai bên\" vào sau cụm từ \"chỉ được phép chuyển sang một làn đường liền kề\" tại điểm a khoản 2, điểm g khoản 5 Điều 6; điểm e khoản 1 Điều 7; điểm h khoản 6 Điều 8."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K2",
+    "target": "168_2024_ND-CP_D8_K6_Dh",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "2. Bổ sung cụm từ \"hoặc chuyển làn đường không bảo đảm khoảng cách an toàn với xe phía trước, xe phía sau, xe hai bên\" vào sau cụm từ \"chỉ được phép chuyển sang một làn đường liền kề\" tại điểm a khoản 2, điểm g khoản 5 Điều 6; điểm e khoản 1 Điều 7; điểm h khoản 6 Điều 8."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K3",
+    "target": "168_2024_ND-CP_D6_K5_Di",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung cụm từ \"hoặc có quy định cấm của cấp có thẩm quyền đối với loại phương tiện đang điều khiển\" vào sau cụm từ \"đối với loại phương tiện đang điều khiển\" tại điểm i khoản 5 Điều 6, điểm b khoản 6 Điều 7, điểm d khoản 6 Điều 8 Nghị định này."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K3",
+    "target": "168_2024_ND-CP_D7_K6_Db",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung cụm từ \"hoặc có quy định cấm của cấp có thẩm quyền đối với loại phương tiện đang điều khiển\" vào sau cụm từ \"đối với loại phương tiện đang điều khiển\" tại điểm i khoản 5 Điều 6, điểm b khoản 6 Điều 7, điểm d khoản 6 Điều 8 Nghị định này."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K3",
+    "target": "168_2024_ND-CP_D8_K6_Dd",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "3. Bổ sung cụm từ \"hoặc có quy định cấm của cấp có thẩm quyền đối với loại phương tiện đang điều khiển\" vào sau cụm từ \"đối với loại phương tiện đang điều khiển\" tại điểm i khoản 5 Điều 6, điểm b khoản 6 Điều 7, điểm d khoản 6 Điều 8 Nghị định này."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K4",
+    "target": "168_2024_ND-CP_D6_K7_Dc",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bổ sung cụm từ \"hoặc dải dừng xe khẩn cấp\" vào sau cụm từ \"làn dừng xe khẩn cấp\" tại điểm c khoản 7 Điều 6, điểm b khoản 6 Điều 8."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K4",
+    "target": "168_2024_ND-CP_D8_K6_Db",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "4. Bổ sung cụm từ \"hoặc dải dừng xe khẩn cấp\" vào sau cụm từ \"làn dừng xe khẩn cấp\" tại điểm c khoản 7 Điều 6, điểm b khoản 6 Điều 8."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K5",
+    "target": "168_2024_ND-CP_D14_K6_Da",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "5. Bổ sung cụm từ \"khoản 1; điểm d,\" vào trước cụm từ \"điểm đ\" tại điểm a khoản 6 Điều 14."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K6",
+    "target": "168_2024_ND-CP_D20_K6_Dd",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "6. Bổ sung cụm từ”, xe vận tải nội bộ\" vào sau cụm từ \"xe ô tô kinh doanh vận tải\" tại điểm d khoản 6 Điều 20, điểm b khoản 5 Điều 21."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K6",
+    "target": "168_2024_ND-CP_D21_K5_Db",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "6. Bổ sung cụm từ”, xe vận tải nội bộ\" vào sau cụm từ \"xe ô tô kinh doanh vận tải\" tại điểm d khoản 6 Điều 20, điểm b khoản 5 Điều 21."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K7",
+    "target": "168_2024_ND-CP_D26_K11",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "7. Bổ sung cụm từ”, điểm l\" vào sau cụm từ \"điểm h\" tại khoản 11 Điều 26."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K8",
+    "target": "168_2024_ND-CP_D47_K3_Dh",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "8. Bổ sung cụm từ \"Điều 20 (điểm l khoản 5, điểm đ khoản 6), Điều 21 (điểm b khoản 3, điểm c khoản 5),\" vào trước cụm từ \"Điều 29”, cụm từ”; khoản 9a\" vào sau cụm từ \"điểm n khoản 7\" tại điểm h khoản 3 Điều 47."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K9",
+    "target": "168_2024_ND-CP_D53_K1",
+    "relation": "BO_SUNG_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "9. Bổ sung cụm từ ”, khoản 3, khoản 4\" vào sau cụm từ \"khoản 2\" tại khoản 1 Điều 53."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K10",
+    "target": "168_2024_ND-CP_D6_K5_Dp",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "10. Thay thế cụm từ \"chở người trên nóc xe; để người đu bám ở cửa xe, bên ngoài thành xe khi xe đang chạy\" bằng cụm từ \"để người nằm, ngồi, đu bám bên ngoài xe khi xe đang chạy\" tại điểm p khoản 5 Điều 6."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D3_K3_Dq",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D3_K3_Dr",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D13_K3_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D13_K4_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D18_K3_Dc",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K2_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K2_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K5_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K5_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K6_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K6_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K7_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K7_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K8_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D21_K8_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D26_K1_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D26_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D26_K5",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K1_Db",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K11_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K14_Dh",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K18_Dc",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K18_Dd",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K19_Dđ",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K19_Dg",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D32_K20",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D40_K4_Da",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K11",
+    "target": "168_2024_ND-CP_D48_K3",
+    "relation": "THAY_THE_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "11. Thay thế cụm từ \"giấy chứng nhận kiểm định\" bằng cụm từ \"chứng nhận kiểm định\" tại điểm q, điểm r khoản 3 Điều 3; điểm d khoản 3, điểm b khoản 4 Điều 13; điểm c khoản 3 Điều 18; điểm a, điểm d khoản 2, điểm a, điểm d khoản 5, điểm a, điểm b khoản 6, điểm a, điểm b khoản 7, điểm a, điểm b khoản 8 Điều 21; điểm a khoản 1, khoản 3, khoản 5 Điều 26; điểm b khoản 1, điểm d khoản 11, điểm h khoản 14, điểm c, điểm d khoản 18, điểm đ, điểm g khoản 19, khoản 20 Điều 32; điểm a khoản 4 Điều 40; khoản 3 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K12",
+    "target": "168_2024_ND-CP_D32_K7_Db",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "12. Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32, cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K12",
+    "target": "168_2024_ND-CP_D32_K7_Dd",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "12. Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32, cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K12",
+    "target": "168_2024_ND-CP_D32_K18_Dđ",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "12. Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32, cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K13",
+    "target": "168_2024_ND-CP_D47_K5_Dc",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "13. Bỏ cụm từ \"tại nơi phát hiện vi phạm\" tại điểm c khoản 5 Điều 47."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K14",
+    "target": "168_2024_ND-CP_D48_K1_Da",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "14. Bỏ cụm từ \"Điểm g khoản 5;\" tại điểm a khoản 1 Điều 48."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K15",
+    "target": "168_2024_ND-CP_D53_K2",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "15. Bỏ cụm từ \"điểm m khoản 3 Điều 6,\" tại khoản 2 Điều 53."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K16",
+    "target": "168_2024_ND-CP_D55",
+    "relation": "BAI_BO_TEXT",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "16. Bỏ cụm từ \"trực thuộc trung ương\" tại Điều 55."
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K17",
+    "target": "168_2024_ND-CP_D32_K17_Dd",
+    "relation": "BAI_BO",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "17. Bãi bỏ điểm d, điểm đ, điểm e, điểm g khoản 17 Điều 32.\nChương II\nĐIỀU KHOẢN THI HÀNH"
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K17",
+    "target": "168_2024_ND-CP_D32_K17_Dđ",
+    "relation": "BAI_BO",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "17. Bãi bỏ điểm d, điểm đ, điểm e, điểm g khoản 17 Điều 32.\nChương II\nĐIỀU KHOẢN THI HÀNH"
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K17",
+    "target": "168_2024_ND-CP_D32_K17_De",
+    "relation": "BAI_BO",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "17. Bãi bỏ điểm d, điểm đ, điểm e, điểm g khoản 17 Điều 32.\nChương II\nĐIỀU KHOẢN THI HÀNH"
+  },
+  {
+    "source": "238_2026_ND-CP_D19_K17",
+    "target": "168_2024_ND-CP_D32_K17_Dg",
+    "relation": "BAI_BO",
+    "source_document": "238/2026/ND-CP",
+    "target_document": "168/2024/ND-CP",
+    "resolution_status": "RESOLVED",
+    "raw_instruction": "17. Bãi bỏ điểm d, điểm đ, điểm e, điểm g khoản 17 Điều 32.\nChương II\nĐIỀU KHOẢN THI HÀNH"
+  }
+]

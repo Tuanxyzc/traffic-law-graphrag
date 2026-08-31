@@ -18,6 +18,30 @@
       "status": "RESOLVED",
       "source_unit": "184_2025_ND-CP_D28_K1",
       "source_unit_materialized_as_support": true
+    },
+    {
+      "rule_id": "184_2025_ND-CP_ER_28_2_1",
+      "rule_type": "EXPLICIT",
+      "source_document": "184/2025/ND-CP",
+      "source_article": "28",
+      "source_clause": "2",
+      "target_document": "184/2025/ND-CP",
+      "targets": [
+        {
+          "unit_id": "184_2025_ND-CP_D2",
+          "article": "2",
+          "clause": null,
+          "point": null
+        }
+      ],
+      "effective_from": null,
+      "effective_to": "2027-03-01",
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "2. Điều 2 của Nghị định này hết hiệu lực kể từ ngày 01 tháng 3 năm 2027 trừ các trường hợp sau:\na) Bộ Công an báo cáo Chính phủ đề xuất và được Quốc hội quyết định kéo dài thời gian áp dụng Điều này;\nb) Luật có quy định về thẩm quyền quy định tại Điều 2 của Nghị định này được thông qua kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 01 tháng 3 năm 2027 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm Luật đó có hiệu lực.",
+      "status": "RESOLVED",
+      "source_unit": "184_2025_ND-CP_D28_K2",
+      "source_unit_materialized_as_support": true
     }
   ]
 }

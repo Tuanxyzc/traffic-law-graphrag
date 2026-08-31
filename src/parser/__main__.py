@@ -43,8 +43,6 @@ def _is_serious_warning(warning: str) -> bool:
         "Số Điều bị thiếu",
         "TRÙNG",
         "id_cha",
-        "KHÔNG tồn tại",
-        "không resolve được văn bản",
     )
     return any(marker in warning for marker in serious_markers)
 

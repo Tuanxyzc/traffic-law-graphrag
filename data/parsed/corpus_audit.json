@@ -1,0 +1,58 @@
+{
+  "issue_1_backfill_originals": {
+    "pass": true,
+    "marked_units": 188
+  },
+  "issue_2_amendment_edges": {
+    "pass": true,
+    "edge_count": 275
+  },
+  "issue_3_target_documents": {
+    "pass": true,
+    "unresolved": [],
+    "semantic_target_mismatches": []
+  },
+  "issue_4_quoted_context": {
+    "pass": true,
+    "correct_edge_present": true,
+    "wrong_edges": []
+  },
+  "issue_5_deduplication": {
+    "pass": true,
+    "duplicates": []
+  },
+  "issue_6_effective_support": {
+    "pass": true,
+    "support_node_count": 5
+  },
+  "issue_7_duplicate_ids": {
+    "pass": true,
+    "repairs": [
+      {
+        "file": "118_2025_QH15_structure.full.json",
+        "original_id": "118_2025_QH15_D5_K4",
+        "new_id": "118_2025_QH15_D5_K4__occ2"
+      },
+      {
+        "file": "118_2025_QH15_structure.full.json",
+        "original_id": "118_2025_QH15_D5_K5",
+        "new_id": "118_2025_QH15_D5_K5__occ2"
+      }
+    ]
+  },
+  "issue_8_external_references": {
+    "pass": true,
+    "external_edges": 11,
+    "external_nodes": 11
+  },
+  "issue_9_cross_document": {
+    "pass": true,
+    "edge_counts": {
+      "151_2024_ND-CP": 4,
+      "156_2024_ND-CP": 7,
+      "160_2024_ND-CP": 6,
+      "168_2024_ND-CP": 4
+    }
+  },
+  "all_pass": true
+}

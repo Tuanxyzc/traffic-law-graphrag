@@ -1,0 +1,68 @@
+[
+  {
+    "id": "10_2020_ND-CP_D32",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "10_2020_ND-CP"
+  },
+  {
+    "id": "10_2020_ND-CP_D34",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "10_2020_ND-CP"
+  },
+  {
+    "id": "115_2024_ND-CP_D4",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "115_2024_ND-CP"
+  },
+  {
+    "id": "28_2021_ND-CP_D3",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "28_2021_ND-CP"
+  },
+  {
+    "id": "35_2021_ND-CP_D29",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "35_2021_ND-CP"
+  },
+  {
+    "id": "35_2021_ND-CP_D37",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "35_2021_ND-CP"
+  },
+  {
+    "id": "35_2021_ND-CP_D67",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "35_2021_ND-CP"
+  },
+  {
+    "id": "41_2024_ND-CP_D4",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "41_2024_ND-CP"
+  },
+  {
+    "id": "56_2019_ND-CP_D13",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "56_2019_ND-CP"
+  },
+  {
+    "id": "70_2022_ND-CP_D1",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "70_2022_ND-CP"
+  },
+  {
+    "id": "70_2022_ND-CP_D3",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "70_2022_ND-CP"
+  }
+]

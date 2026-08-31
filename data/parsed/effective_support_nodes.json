@@ -1,0 +1,44 @@
+[
+  {
+    "id": "118_2025_QH15_D11_K1",
+    "node_type": "EFFECTIVE_RULE_SUPPORT",
+    "document": "118/2025/QH15",
+    "external": false,
+    "source_article": "11",
+    "source_clause": "1",
+    "raw_text": "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026, trừ quy định tại khoản 2 Điều này."
+  },
+  {
+    "id": "118_2025_QH15_D11_K2",
+    "node_type": "EFFECTIVE_RULE_SUPPORT",
+    "document": "118/2025/QH15",
+    "external": false,
+    "source_article": "11",
+    "source_clause": "2",
+    "raw_text": "2. Quy định tại điểm a khoản 20 Điều 7 của Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026."
+  },
+  {
+    "id": "184_2025_ND-CP_D2",
+    "node_type": "EFFECTIVE_RULE_TARGET_SUPPORT",
+    "document": "184/2025/ND-CP",
+    "external": false
+  },
+  {
+    "id": "184_2025_ND-CP_D28_K1",
+    "node_type": "EFFECTIVE_RULE_SUPPORT",
+    "document": "184/2025/ND-CP",
+    "external": false,
+    "source_article": "28",
+    "source_clause": "1",
+    "raw_text": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2025."
+  },
+  {
+    "id": "184_2025_ND-CP_D28_K2",
+    "node_type": "EFFECTIVE_RULE_SUPPORT",
+    "document": "184/2025/ND-CP",
+    "external": false,
+    "source_article": "28",
+    "source_clause": "2",
+    "raw_text": "2. Điều 2 của Nghị định này hết hiệu lực kể từ ngày 01 tháng 3 năm 2027 trừ các trường hợp sau:\na) Bộ Công an báo cáo Chính phủ đề xuất và được Quốc hội quyết định kéo dài thời gian áp dụng Điều này;\nb) Luật có quy định về thẩm quyền quy định tại Điều 2 của Nghị định này được thông qua kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 01 tháng 3 năm 2027 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm Luật đó có hiệu lực."
+  }
+]
