@@ -4,6 +4,7 @@ amendment_recorder.py — Ghi nhận "Amendment Event"
 
 import re
 from dataclasses import asdict
+from typing import Any
 
 from src.config import AMENDMENT_TARGET_FALLBACK, OMNIBUS_CONFIG, PARSED_DIR
 from src.parser import document_registry, exporter, operation, reference
@@ -106,7 +107,7 @@ def build_replacement_tree_and_root(
         }, "CLAUSE"
 
     article_blocks = []
-    current_article = []
+    current_article: list[str] = []
     for line in quote_block.splitlines(keepends=True):
         if DIEU_TITLE_PATTERN.match(line.strip()) and current_article:
             article_blocks.append("".join(current_article).strip())
@@ -314,7 +315,7 @@ def parse_actions(text: str, default_so_hieu: str):
     shared_articles = re.findall(r"\bĐiều\s+(\d+[a-zđ]?)", text, re.IGNORECASE)
     shared_article = shared_articles[0] if len(set(shared_articles)) == 1 else None
 
-    actions = []
+    actions: list[dict[str, Any]] = []
 
     def mask_quoted_spans(value: str) -> str:
         """Mask quoted content for structural target detection only.
@@ -348,7 +349,7 @@ def parse_actions(text: str, default_so_hieu: str):
         if not hanh_dong:
             continue
 
-        anchor = None
+        anchor: dict[str, Any] | None = None
         text_amend = None
         appendix_amend = None
 
@@ -380,6 +381,44 @@ def parse_actions(text: str, default_so_hieu: str):
                     "anchor_text": m.group(4),
                 }
         elif hanh_dong == "BAI_BO_TEXT":
+            multi_bai_bo_pattern = re.compile(
+                r'(?:(?:bãi\s+bỏ|bỏ)\s+)?(từ|cụm\s+từ)\s*["“”](.*?)["”]\s*tại\s+(.*?)(?=(?:,\s*(?:(?:bãi\s+bỏ|bỏ)\s+)?(?:từ|cụm\s+từ)\s*["“”])|$|\.)',
+                re.IGNORECASE,
+            )
+            bb_matches = list(multi_bai_bo_pattern.finditer(seg))
+            if len(bb_matches) > 1:
+                for bbm in bb_matches:
+                    sub_unit_type = "WORD" if bbm.group(1).lower() == "từ" else "PHRASE"
+                    sub_text = bbm.group(2)
+                    sub_target_str = bbm.group(3).strip()
+                    if shared_article and not re.search(
+                        r"\bĐiều\s+\d+[a-zđ]?", sub_target_str, re.IGNORECASE
+                    ):
+                        sub_target_str += f" Điều {shared_article}"
+                    sub_targets = operation.detect_target(
+                        sub_target_str, default_so_hieu
+                    )
+                    sub_raw = (
+                        f'Bỏ {bbm.group(1)} "{sub_text}" tại {bbm.group(3).strip()}'
+                    )
+                    actions.append(
+                        {
+                            "operation": "BAI_BO_TEXT",
+                            "targets": sub_targets,
+                            "created_targets": [],
+                            "anchor": None,
+                            "text_amendment": {
+                                "unit_type": sub_unit_type,
+                                "text": sub_text,
+                            },
+                            "appendix_amendment": None,
+                            "raw_instruction": sub_raw,
+                            "normalized_instruction": sub_raw,
+                            "masked_instruction": sub_raw,
+                            "anchor_span": None,
+                        }
+                    )
+                continue
             m = re.search(
                 r'(?:bãi\s+bỏ|bỏ)\s+(từ|cụm\s+từ)\s*["“”](.*?)["”]', seg, re.IGNORECASE
             )
@@ -390,10 +429,19 @@ def parse_actions(text: str, default_so_hieu: str):
                 }
         elif hanh_dong == "THAY_THE_PHU_LUC":
             m = re.search(
-                r"thay thế\s+(?:một số )?(phụ lục\s+[IVX0-9A-Z]+)\b.*?(\bban hành\b.*?)?(?:bằng\s+(phụ lục\s+[IVX0-9A-Z]+))?",
+                r"thay thế\s+(?:một số )?(phụ lục\s+[IVX0-9A-Z]+)\b(?:.*?(ban hành.*?))?(?:\s*bằng\s+(phụ lục\s+[IVX0-9A-Z]+))?",
                 seg,
                 re.IGNORECASE,
             )
+            if not m or not m.group(3):
+                m = (
+                    re.search(
+                        r"thay thế\s+(?:một số )?(phụ lục\s+[IVX0-9A-Z]+)\b(?:.*?(ban hành.*?))?(?:.*?\bbằng\s+(phụ lục\s+[IVX0-9A-Z]+))",
+                        seg,
+                        re.IGNORECASE,
+                    )
+                    or m
+                )
             if m:
                 old_doc = None
                 if m.group(2):
@@ -477,7 +525,7 @@ def parse_actions(text: str, default_so_hieu: str):
             if (
                 anchor
                 and anchor.get("relation") in ("BEFORE", "AFTER")
-                and anchor.get("target")
+                and isinstance(anchor.get("target"), dict)
             ):
                 created_targets = targets
                 at = anchor["target"]
@@ -681,7 +729,7 @@ def resolve_replacement_references(
         diem=target.diem,
         so_hieu_van_ban=target_document,
     )
-    result = []
+    result: list[dict] = []
     for text in texts:
         result.extend(
             asdict(x)
@@ -749,7 +797,7 @@ def record_dedicated(source_file: str, source_so_hieu: str) -> list[dict]:
         source_items = parse_amendment_workflow(pars)
 
         event_items = []
-        clause_target_context = {}
+        clause_target_context: dict = {}
         for item in source_items:
             inst = item["instruction"] if item["instruction"] else block["tieu_de"]
             m_inst = DIEU_TITLE_PATTERN.match(inst)
@@ -1009,10 +1057,13 @@ def record_omnibus(source_file: str, source_so_hieu: str) -> list[dict]:
     for block in blocks:
         target_meta = document_registry.resolve(block["tieu_de"])
         target_so_hieu = target_meta["number"] if target_meta else None
-        if not target_so_hieu and cfg:
-            for t in cfg["targets"]:
-                if any(kw in block["tieu_de"] for kw in t["keywords"]):
-                    target_so_hieu = t["document"]
+        if not target_so_hieu and cfg and isinstance(cfg, dict):
+            targets_cfg = cfg.get("targets", [])
+            for t in targets_cfg:
+                if isinstance(t, dict) and any(
+                    kw in block["tieu_de"] for kw in t.get("keywords", [])
+                ):
+                    target_so_hieu = t.get("document")
                     break
         if not target_so_hieu:
             continue
@@ -1024,7 +1075,7 @@ def record_omnibus(source_file: str, source_so_hieu: str) -> list[dict]:
         source_items = parse_amendment_workflow(pars)
 
         event_items = []
-        clause_target_context = {}
+        clause_target_context: dict = {}
         for item in source_items:
             inst = item["instruction"] if item["instruction"] else block["tieu_de"]
             if is_non_action_container(item, inst):
@@ -1272,12 +1323,16 @@ def record_omnibus(source_file: str, source_so_hieu: str) -> list[dict]:
     return events
 
 
-def run_for(source_so_hieu: str, source_file: str, is_omnibus: bool) -> list[dict]:
+def run_for(
+    source_so_hieu: str, source_file: str, is_omnibus: bool
+) -> tuple[list[dict], list[str]]:
     events = (
         record_omnibus(source_file, source_so_hieu)
         if is_omnibus
         else record_dedicated(source_file, source_so_hieu)
     )
     exporter.save_amendment_index(events, source_so_hieu, PARSED_DIR)
-    target_docs = sorted({e["target_document"] for e in events if e["target_document"]})
+    target_docs = sorted(
+        {e["target_document"] for e in events if e.get("target_document")}
+    )
     return events, target_docs

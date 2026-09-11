@@ -23,6 +23,6 @@ print(f"Nodes: {len(nodes)}")
 print(f"Relationships: {len(relationships)}")
 
 res = validate_amendment_graph(
-    data["item"], data["item"]["actions"][0], nodes, relationships
+    data["item"], data["item"]["actions"][0], nodes, relationships, resolver
 )
 print(res)

@@ -1,8 +1,12 @@
+import logging
 import re
 from dataclasses import dataclass
+from typing import TypedDict
 
 from src.parser import document_registry
 from src.parser.models import ViTri
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -44,8 +48,14 @@ P_KHOAN = re.compile(
 P_DIEU = re.compile(r"Điều\s+(\d+[a-zđ]?)", re.IGNORECASE)
 
 
+class TargetToken(TypedDict):
+    type: str
+    span: tuple[int, int]
+    text: str
+
+
 def split_list(s: str) -> list[str]:
-    values = []
+    values: list[str] = []
     for x in re.split(r",|và", s):
         x = x.strip()
         # P_DIEM/P_KHOAN may capture repeated labels in lists such as
@@ -63,21 +73,14 @@ def split_on_repeated_label(s: str, label: str) -> list[list[str]]:
     target group. This prevents the point from being broadcast to clause 5.
     An unlabeled continuation such as ``khoan 4 va 5`` remains one list.
     """
-    label = P_KHOAN.pattern.split(r"\s+")[0]
-    connector = r"(?:,|v\u00e0|ho\u1eb7c)"
+    label_pattern = label if label else P_KHOAN.pattern.split(r"\s+")[0]
+    connector = r"(?:,|và|hoặc)"
     parts = re.split(
-        rf"\s*{connector}\s*{re.escape(label)}\s+",
+        rf"\s*{connector}\s*{re.escape(label_pattern)}\s+",
         s,
         flags=re.IGNORECASE,
     )
     return [values for part in parts if (values := split_list(part))]
-
-    parts = re.split(
-        rf"\s*(?:,|vÃ |hoáº·c)\s*{label}\s+",
-        s,
-        flags=re.IGNORECASE,
-    )
-    return [split_list(part) for part in parts if split_list(part)]
 
 
 def resolve_targets(
@@ -92,7 +95,7 @@ def resolve_targets(
     doc_to_use = explicit_doc if explicit_doc else default_document
 
     # 2. Tokenize target components
-    tokens = []
+    tokens: list[TargetToken] = []
     for m in P_DIEM.finditer(text):
         tokens.append({"type": "DIEM", "span": m.span(), "text": m.group(1)})
     for m in P_KHOAN.finditer(text):
@@ -106,7 +109,7 @@ def resolve_targets(
         return []
 
     # 3. Create TargetSpecs
-    groups = []
+    groups: list[TargetSpec] = []
     curr = TargetSpec(
         document=doc_to_use, article=None, clauses=[], points=[], source_span=None
     )
@@ -152,7 +155,7 @@ def resolve_targets(
                     source_span=None,
                 )
                 span_start = t["span"][0]
-            clause_groups = split_on_repeated_label(t["text"], "khoáº£n")
+            clause_groups = split_on_repeated_label(t["text"], "khoản")
             curr.clauses.extend(clause_groups[0] if clause_groups else [])
             for clause_group in clause_groups[1:]:
                 curr.source_span = (span_start, t["span"][0])

@@ -139,7 +139,7 @@ def _build_unit(
             diem=target.diem,
             so_hieu_van_ban=target.so_hieu_van_ban or so_hieu,
         )
-        reference_so_hieu = reference_vi_tri.so_hieu_van_ban
+        reference_so_hieu = reference_vi_tri.so_hieu_van_ban or so_hieu
 
     tham_chieu = reference.resolve_references(
         noi_dung_rieng, reference_vi_tri, reference_so_hieu

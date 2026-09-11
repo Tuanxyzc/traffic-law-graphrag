@@ -1,6 +1,12 @@
 import json
 
-from src.graph.identity import make_article_id, make_clause_id, make_point_id
+from src.graph.identity import (
+    make_action_id,
+    make_article_id,
+    make_clause_id,
+    make_point_id,
+    make_semantic_unit_id,
+)
 from src.graph.models import GraphNode, GraphRelationship
 
 
@@ -10,7 +16,7 @@ def get_source_unit(item):
 
 
 def map_semantic_unit(item, index):
-    semantic_unit_id = f"{get_source_unit(item)}_SU{index}"
+    semantic_unit_id = make_semantic_unit_id(get_source_unit(item), index)
     source_point = item["source_point"]
     node = GraphNode(
         label="SemanticUnit",
@@ -31,7 +37,7 @@ def map_semantic_unit(item, index):
 
 
 def map_amendment_action(semantic_unit: str, action: dict, index_action: int):
-    action_id = f"{semantic_unit}_A{index_action}"
+    action_id = make_action_id(semantic_unit, index_action)
 
     node = GraphNode(
         label="AmendmentAction",
@@ -380,7 +386,7 @@ def map_replacement_unit(item: dict, created_unit: dict):
 
 
 def map_anchor_relationship(action_node_id: str, action: dict, resolver):
-    relationships = []
+    relationships: list[GraphRelationship] = []
 
     anchor = action.get("anchor")
 
@@ -421,7 +427,7 @@ def map_anchor_relationship(action_node_id: str, action: dict, resolver):
 
 
 def map_bo_sung(
-    item: dict, action: dict, semantic_node: dict, action_index: int, resolver
+    item: dict, action: dict, semantic_node: GraphNode, action_index: int, resolver
 ):
 
     nodes = []
@@ -563,7 +569,7 @@ def map_text_target_relationships(action_node_id: str, action: dict, resolver):
 
 
 def map_text_amendment_operation(
-    item: dict, action: dict, semantic_node: dict, action_index: int, resolver
+    item: dict, action: dict, semantic_node: GraphNode, action_index: int, resolver
 ):
 
     nodes = []
@@ -624,7 +630,7 @@ def map_amendment_appendix(action_id: str, appendix_amendment: dict):
 
 
 def map_thay_the_phu_luc(
-    item: dict, action: dict, semantic_node: dict, action_index: int
+    item: dict, action: dict, semantic_node: GraphNode, action_index: int
 ):
     nodes = []
     relationships = []

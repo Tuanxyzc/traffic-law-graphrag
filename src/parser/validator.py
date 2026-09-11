@@ -1,9 +1,10 @@
-"""
-validator.py — Kiểm tra tính hợp lệ của dữ liệu sau khi parse.
-Chỉ PHÁT HIỆN lỗi và ghi log/trả về danh sách cảnh báo — KHÔNG tự sửa dữ liệu.
-"""
+import json
+import logging
+from pathlib import Path
 
 from src.parser.models import VanBan
+
+logger = logging.getLogger(__name__)
 
 
 def _all_dieu(van_ban: VanBan):
@@ -15,8 +16,8 @@ def _all_dieu(van_ban: VanBan):
 
 def validate_article_number(van_ban: VanBan) -> list[str]:
     """Kiểm tra số Điều có liên tục không (phát hiện Điều bị bắt sót)."""
-    warnings = []
-    so_list = []
+    warnings: list[str] = []
+    so_list: list[int] = []
     for d in _all_dieu(van_ban):
         try:
             so_list.append(int("".join(c for c in d.so if c.isdigit())))
@@ -169,16 +170,17 @@ def build_global_index(
     """
     Quét mọi *_structure.json trong parsed_dir, dựng map so_hieu_van_ban -> set
     toàn bộ id (Điều/Khoản/Điểm) THẬT SỰ có — dùng cho validate_invalid_reference.
-    Đọc trực tiếp id đã lưu sẵn trong file (không cần deserialize dataclass đầy đủ).
     """
-    import json
-    from pathlib import Path
-
     index: dict[str, set[str]] = {}
     for path in Path(parsed_dir).glob("*_structure.json"):
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, OSError):
+        except (json.JSONDecodeError, OSError) as e:
+            logger.warning(
+                "Không thể đọc file cấu trúc %s khi dựng global index: %s",
+                path.name,
+                e,
+            )
             continue
         so_hieu = data.get("so_hieu")
         if not so_hieu or so_hieu == exclude_so_hieu:

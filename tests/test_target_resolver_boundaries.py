@@ -62,6 +62,12 @@ class TargetResolverBoundaryTests(unittest.TestCase):
             [("6", "6", "a"), ("6", "7", None), ("6", "9", "b")],
         )
 
+    def test_repeated_khoan_with_utf8_vietnamese_text(self):
+        self.assertEqual(
+            self.resolve("điểm a khoản 2 và khoản 3 Điều 15"),
+            [("15", "2", "a"), ("15", "3", None)],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

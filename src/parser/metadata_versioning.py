@@ -29,7 +29,7 @@ def _iso_date(match) -> str:
 
 def extract_header_metadata(source_file: str) -> dict:
     document = docx.Document(source_file)
-    header_texts = []
+    header_texts: list[str] = []
     for table in document.tables[:3]:
         for row in table.rows[:4]:
             header_texts.extend(

@@ -15,6 +15,11 @@ Luồng xử lý:
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from src.config import (
     AMENDMENT_TARGET_FALLBACK,
     DOCUMENT_REGISTRY,
@@ -53,9 +58,9 @@ def run_one(filename: str, so_hieu: str) -> bool:
         print(f"ERROR: {filename}: KHÔNG TÌM THẤY file trong {RAW_DIR}/")
         return False
 
-    meta = VAN_BAN_SCOPE.get(so_hieu, {})
-    ten = meta.get("ten", so_hieu)
-    loai = meta.get("loai", "KhongRoLoai")
+    meta: dict = VAN_BAN_SCOPE.get(so_hieu, {})
+    ten = str(meta.get("ten", so_hieu))
+    loai = str(meta.get("loai", "KhongRoLoai"))
 
     paragraphs = normalize.load_docx(str(path))
     paragraphs = normalize.normalize_paragraphs(paragraphs)
@@ -79,12 +84,13 @@ def run_one(filename: str, so_hieu: str) -> bool:
     # Lọc Selected Scope
     van_ban = scope_resolver.apply(van_ban_full)
 
-    if meta.get("hieu_luc_tu"):
+    hieu_luc = str(meta.get("hieu_luc_tu")) if meta.get("hieu_luc_tu") else None
+    if hieu_luc:
         for d in van_ban.dieu_khong_chuong:
-            d.hieu_luc_tu = d.hieu_luc_tu or meta["hieu_luc_tu"]
+            d.hieu_luc_tu = d.hieu_luc_tu or hieu_luc
         for c in van_ban.chuong:
             for d in c.dieu:
-                d.hieu_luc_tu = d.hieu_luc_tu or meta["hieu_luc_tu"]
+                d.hieu_luc_tu = d.hieu_luc_tu or hieu_luc
 
     target_mac_dinh = AMENDMENT_TARGET_FALLBACK.get(so_hieu)
     units = semantic_unit.build(van_ban, target_so_hieu_mac_dinh=target_mac_dinh)
@@ -116,8 +122,13 @@ def run_one(filename: str, so_hieu: str) -> bool:
     exporter.save_reference_index(units, so_hieu, PARSED_DIR)
 
     # Văn bản có role AMENDMENT/OMNIBUS -> ghi nhận Amendment Event (KHÔNG merge)
-    role = DOCUMENT_REGISTRY.get(so_hieu, {}).get("role", "NORMAL")
-    amendment_targets = []
+    doc_entry = DOCUMENT_REGISTRY.get(so_hieu)
+    role = (
+        str(doc_entry.get("role", "NORMAL"))
+        if isinstance(doc_entry, dict)
+        else "NORMAL"
+    )
+    amendment_targets: list[str] = []
     if role in ("AMENDMENT", "OMNIBUS"):
         _, amendment_targets = amendment_recorder.run_for(
             so_hieu, str(path), is_omnibus=(role == "OMNIBUS")

@@ -87,6 +87,7 @@ def test_golden_case_on_real_data():
                             if label == "Clause"
                             else 4,
                             "number": item.get("so"),
+                            "content": item.get("noi_dung", ""),
                         }
                         # Gán thẳng các thuộc tính để khớp interface
                         adapter = type(
@@ -117,6 +118,13 @@ def test_golden_case_on_real_data():
                     source_unit = item["source_unit"]
                     replacement_tree = item.get("replacement_tree")
                     for idx, action in enumerate(item.get("actions", []), start=1):
+                        # This legacy golden case covers the three structural operations.
+                        if action.get("operation") not in {
+                            "SUA_DOI",
+                            "BAI_BO",
+                            "BO_SUNG",
+                        }:
+                            continue
                         amendment_actions.append(
                             {
                                 "action_id": f"{source_unit}_SU{semantic_index}_A{idx}",

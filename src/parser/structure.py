@@ -60,9 +60,9 @@ def parse_diem_list(
     """Tách 1 đoạn text thành danh sách Điểm (a, b, c...). Rỗng nếu không có."""
     text = normalize_diem_breaks(text)
     lines = text.splitlines()
-    result = []
+    result: list[Diem] = []
     current_diem_so = None
-    current_noi_dung = []
+    current_noi_dung: list[str] = []
     quote_balance = initial_quote_balance
     inside_straight_quote = initial_straight_quote
 
@@ -116,9 +116,9 @@ def parse_khoan_list(
     """Tách 1 đoạn text (nội dung 1 Điều) thành danh sách Khoản, mỗi Khoản
     tách tiếp thành Điểm nếu có."""
     lines = text.splitlines()
-    result = []
+    result: list[Khoan] = []
     current_khoan_so = None
-    current_noi_dung = []
+    current_noi_dung: list[str] = []
     quote_balance = initial_quote_balance
     inside_straight_quote = initial_straight_quote
 
@@ -265,7 +265,8 @@ def parse_document(
             continue
 
         if waiting_chuong_title and not is_inside_quote:
-            current_chuong.tieu_de = text
+            if current_chuong:
+                current_chuong.tieu_de = text
             waiting_chuong_title = False
             quote_balance += text.count("“") - text.count("”")
             quote_balance = max(quote_balance, 0)

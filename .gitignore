@@ -13,3 +13,7 @@ venv/
 !.env.example
 .vscode/
 scratch/
+pytest_temp/
+docs/
+tasks/
+

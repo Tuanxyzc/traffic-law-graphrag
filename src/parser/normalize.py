@@ -61,7 +61,8 @@ def normalize_so_hieu(so_hieu: str) -> str:
     # VD: 151/2024/NĐ-CP -> 151/2024/ND-CP
     from src.parser.canonical_id_resolver import normalize_so_hieu as canonicalize
 
-    return canonicalize(so_hieu)
+    res = canonicalize(so_hieu)
+    return res if res is not None else ""
 
 
 def remove_page_number(paragraphs: list[DoanVan]) -> list[DoanVan]:

@@ -131,6 +131,8 @@ def sync_semantic_amendments(root: Path):
                     )
 
     for document, events in by_document.items():
+        if not document:
+            continue
         path = root / f"{document.replace('/', '_')}_semantic_units.json"
         units = _read(path, [])
         for unit in units:
@@ -231,7 +233,7 @@ def mark_external_references(root: Path):
         _doc_prefix(p.name.removesuffix("_structure.json"))
         for p in root.glob("*_structure.json")
     }
-    external_nodes = {}
+    external_nodes: dict[str, dict] = {}
     for path in sorted(root.glob("*_reference_index.json")):
         edges = _read(path, [])
         for edge in edges:
@@ -313,7 +315,7 @@ def disambiguate_full_structure_ids(root: Path):
     report = []
     for path in root.glob("*_structure.full.json"):
         data = _read(path)
-        counts = defaultdict(int)
+        counts: defaultdict[str, int] = defaultdict(int)
 
         def walk(value, parent_id=None):
             if isinstance(value, dict):

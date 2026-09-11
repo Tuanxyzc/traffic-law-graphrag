@@ -26,5 +26,5 @@ data = load_json(FILE_PATH)
 resolver = CanonicalIDResolver()
 nodes, relationships = map_document_structure(data, resolver)
 
-validate_node_ids(data, nodes)
-validate_relationship(data, relationships)
+validate_node_ids(data, nodes, resolver)
+validate_relationship(data, relationships, resolver)

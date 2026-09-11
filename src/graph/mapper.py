@@ -93,7 +93,7 @@ def map_chapter_articles(document_id: str, chapter_data: dict):
     return nodes, relationships
 
 
-def map_article(document_id: str, article_data: dict, parent_id: str = None):
+def map_article(document_id: str, article_data: dict, parent_id: str | None = None):
 
     so = str(article_data["so"])
     article_id = make_article_id(document_id, so)

@@ -5034,7 +5034,24 @@
                 "target_level": "POINT",
                 "replacement_level": null,
                 "replacement_path": null
-              },
+              }
+            ],
+            "created_units": [],
+            "replacement_references": [],
+            "text_amendment": {
+              "unit_type": "PHRASE",
+              "text": "giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường"
+            },
+            "appendix_amendment": null,
+            "raw_instruction": "Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32",
+            "normalized_instruction": "Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32",
+            "anchor_span": null,
+            "resolution_status": "RESOLVED"
+          },
+          {
+            "operation": "BAI_BO_TEXT",
+            "anchor": null,
+            "targets": [
               {
                 "target_unit": "168_2024_ND-CP_D32_K18_Dđ",
                 "target_context": {
@@ -5061,11 +5078,11 @@
             "replacement_references": [],
             "text_amendment": {
               "unit_type": "PHRASE",
-              "text": "giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường"
+              "text": "điểm e, điểm g khoản 7;"
             },
             "appendix_amendment": null,
-            "raw_instruction": "12. Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32, cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32.",
-            "normalized_instruction": "12. Bỏ cụm từ \"giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường\" tại điểm b, điểm d khoản 7 Điều 32, cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32.",
+            "raw_instruction": "Bỏ cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32",
+            "normalized_instruction": "Bỏ cụm từ \"điểm e, điểm g khoản 7;\" tại điểm đ khoản 18 Điều 32",
             "anchor_span": null,
             "resolution_status": "RESOLVED"
           }

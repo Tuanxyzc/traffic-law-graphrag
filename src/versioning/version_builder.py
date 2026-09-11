@@ -1,7 +1,14 @@
+import logging
+import re
+from collections.abc import Callable
 from copy import deepcopy
 from datetime import date
+from typing import Any
 
+from src.graph.identity import make_version_id
 from src.versioning.version_models import CanonicalProvision, ProvisionVersion
+
+logger = logging.getLogger(__name__)
 
 
 class VersionBuilder:
@@ -25,17 +32,26 @@ class VersionBuilder:
         return value if isinstance(value, date) else date.fromisoformat(value)
 
     @staticmethod
-    def document_id_from_unit(unit_id):
+    def document_id_from_unit(unit_id: str | None) -> str:
+        if not unit_id:
+            return ""
+        if "_PL" in unit_id:
+            return unit_id.split("_PL", 1)[0]
         return unit_id.split("_D", 1)[0]
 
     @staticmethod
-    def level_from_node(node):
-        return {"Article": "ARTICLE", "Clause": "CLAUSE", "Point": "POINT"}[node.label]
+    def level_from_node(node) -> str:
+        return {
+            "Article": "ARTICLE",
+            "Clause": "CLAUSE",
+            "Point": "POINT",
+            "Appendix": "APPENDIX",
+        }[node.label]
 
     def build_structure_index(self):
         for doc, nodes in self.structure_nodes_by_document.items():
             for n in nodes:
-                if n.label in {"Article", "Clause", "Point"}:
+                if n.label in {"Article", "Clause", "Point", "Appendix"}:
                     self.provisions[n.id] = CanonicalProvision(
                         n.id, doc, self.level_from_node(n), n.properties.get("number")
                     )
@@ -83,7 +99,7 @@ class VersionBuilder:
                 effective = self.get_provision_effective_from(doc, n.id)
                 self.versions[n.id].append(
                     ProvisionVersion(
-                        f"{n.id}_V1",
+                        make_version_id(n.id, 1),
                         n.id,
                         effective.isoformat() if effective else None,
                         None,
@@ -112,7 +128,7 @@ class VersionBuilder:
         n = len(self.versions.setdefault(target_unit, [])) + 1
         self.versions[target_unit].append(
             ProvisionVersion(
-                f"{target_unit}_V{n}",
+                make_version_id(target_unit, n),
                 target_unit,
                 effective_date.isoformat(),
                 None,
@@ -188,6 +204,186 @@ class VersionBuilder:
                 unit, effective_date, self.get_created_unit_content(item, c), action_id
             )
 
+    @staticmethod
+    def _mutate_content_text(
+        content: Any, transform_fn: Callable[[str], tuple[str, bool]]
+    ) -> tuple[Any, bool]:
+        """Applies string transformation to text fields in content.
+
+        Returns (new_content, changed).
+        """
+        if isinstance(content, str):
+            new_text, changed = transform_fn(content)
+            return new_text, changed
+        if isinstance(content, dict):
+            new_dict = deepcopy(content)
+            any_changed = False
+            for k in ("text", "noi_dung", "title", "tieu_de", "content"):
+                if k in new_dict and isinstance(new_dict[k], str):
+                    new_val, ch = transform_fn(new_dict[k])
+                    if ch:
+                        new_dict[k] = new_val
+                        any_changed = True
+            return new_dict, any_changed
+        return content, False
+
+    def apply_thay_the_text(self, action: dict, effective_date: date, action_id: str):
+        text_amend = action.get("text_amendment") or {}
+        old_text = text_amend.get("old_text", "")
+        new_text = text_amend.get("new_text", "")
+        if not old_text:
+            raise ValueError("THAY_THE_TEXT thieu old_text")
+
+        for target in action.get("targets", []):
+            unit = self.resolver.resolve_unit(target.get("target_unit"))
+            if not unit or unit not in self.provisions:
+                raise ValueError(f"THAY_THE_TEXT target khong ton tai: {unit}")
+            current = self.get_current_version(unit)
+            if not current:
+                raise ValueError(f"THAY_THE_TEXT khong co version hien tai cho: {unit}")
+
+            pattern = re.compile(re.escape(old_text), re.IGNORECASE)
+
+            def _replace(s: str) -> tuple[str, bool]:
+                if pattern.search(s):
+                    return pattern.sub(new_text, s), True
+                return s, False
+
+            new_content, changed = self._mutate_content_text(current.content, _replace)
+            if not changed:
+                logger.warning(
+                    "THAY_THE_TEXT: Khong tim thay '%s' trong noi dung cua %s, bo qua target",
+                    old_text,
+                    unit,
+                )
+                continue
+            self.create_version(unit, effective_date, new_content, action_id)
+
+    def apply_bo_sung_text(self, action: dict, effective_date: date, action_id: str):
+        text_amend = action.get("text_amendment") or {}
+        text = text_amend.get("text", "")
+        relation = text_amend.get("relation", "AFTER")
+        anchor_text = text_amend.get("anchor_text", "")
+        if not text or not anchor_text:
+            raise ValueError("BO_SUNG_TEXT thieu text hoac anchor_text")
+
+        for target in action.get("targets", []):
+            unit = self.resolver.resolve_unit(target.get("target_unit"))
+            if not unit or unit not in self.provisions:
+                raise ValueError(f"BO_SUNG_TEXT target khong ton tai: {unit}")
+            current = self.get_current_version(unit)
+            if not current:
+                raise ValueError(f"BO_SUNG_TEXT khong co version hien tai cho: {unit}")
+
+            pattern = re.compile(re.escape(anchor_text), re.IGNORECASE)
+
+            def _insert(s: str) -> tuple[str, bool]:
+                match = pattern.search(s)
+                if match:
+                    matched_anchor = match.group(0)
+                    replacement = (
+                        f"{matched_anchor} {text}"
+                        if relation == "AFTER"
+                        else f"{text} {matched_anchor}"
+                    )
+                    return s[: match.start()] + replacement + s[match.end() :], True
+                return s, False
+
+            new_content, changed = self._mutate_content_text(current.content, _insert)
+            if not changed:
+                logger.warning(
+                    "BO_SUNG_TEXT: Khong tim thay anchor '%s' trong noi dung cua %s, bo qua target",
+                    anchor_text,
+                    unit,
+                )
+                continue
+            self.create_version(unit, effective_date, new_content, action_id)
+
+    def apply_bai_bo_text(self, action: dict, effective_date: date, action_id: str):
+        text_amend = action.get("text_amendment") or {}
+        text = text_amend.get("text", "")
+        if not text:
+            raise ValueError("BAI_BO_TEXT thieu text can xoa")
+
+        for target in action.get("targets", []):
+            unit = self.resolver.resolve_unit(target.get("target_unit"))
+            if not unit or unit not in self.provisions:
+                raise ValueError(f"BAI_BO_TEXT target khong ton tai: {unit}")
+            current = self.get_current_version(unit)
+            if not current:
+                raise ValueError(f"BAI_BO_TEXT khong co version hien tai cho: {unit}")
+
+            pattern = re.compile(re.escape(text), re.IGNORECASE)
+
+            def _delete(s: str) -> tuple[str, bool]:
+                if pattern.search(s):
+                    mutated = pattern.sub("", s)
+                    mutated = re.sub(r"[ \t]+", " ", mutated).strip()
+                    return mutated, True
+                return s, False
+
+            new_content, changed = self._mutate_content_text(current.content, _delete)
+            if not changed:
+                logger.warning(
+                    "BAI_BO_TEXT: Khong tim thay '%s' trong noi dung cua %s, bo qua target",
+                    text,
+                    unit,
+                )
+                continue
+            self.create_version(unit, effective_date, new_content, action_id)
+
+    def apply_thay_the_phu_luc(
+        self, action: dict, effective_date: date, action_id: str
+    ):
+        appendix_amend = action.get("appendix_amendment") or {}
+        old_app = appendix_amend.get("old_appendix") or {}
+        new_app = appendix_amend.get("new_appendix") or {}
+
+        unit = None
+        targets = action.get("targets", [])
+        if targets and targets[0].get("target_unit"):
+            unit = self.resolver.resolve_unit(targets[0].get("target_unit"))
+        if not unit:
+            old_doc_raw = old_app.get("document", "")
+            old_doc_res = (
+                self.resolver.resolve_document(old_doc_raw) if old_doc_raw else ""
+            )
+            old_num_str = str(old_app.get("number", "")).strip()
+            unit = f"{old_doc_res}_PL{old_num_str}"
+
+        old_doc = self.document_id_from_unit(unit)
+        old_num = str(old_app.get("number") or "")
+
+        # Register Appendix in provisions if not already indexed
+        if unit not in self.provisions:
+            self.provisions[unit] = CanonicalProvision(
+                canonical_provision_id=unit,
+                document_id=old_doc,
+                level="APPENDIX",
+                number=old_num,
+            )
+            self.versions[unit] = []
+            v1_eff = self.get_document_effective_from(old_doc)
+            self.versions[unit].append(
+                ProvisionVersion(
+                    version_id=make_version_id(unit, 1),
+                    canonical_provision_id=unit,
+                    valid_from=v1_eff.isoformat() if v1_eff else None,
+                    valid_to=None,
+                    content={"number": old_num, "document": old_doc},
+                    is_current=True,
+                    produced_by=None,
+                )
+            )
+
+        new_content = {
+            "number": new_app.get("number"),
+            "document": new_app.get("document"),
+            "source_document": new_app.get("document"),
+            "replaced_appendix": old_num,
+        }
+        self.create_version(unit, effective_date, new_content, action_id)
+
     def get_action_effective_date(self, source_document, source_unit, action=None):
         rules = self.effective_rules_by_document.get(source_document, [])
         if any(
@@ -224,6 +420,14 @@ class VersionBuilder:
             self.apply_bai_bo(action, d)
         elif op == "BO_SUNG":
             self.apply_bo_sung(item, action, d, aid)
+        elif op == "THAY_THE_TEXT":
+            self.apply_thay_the_text(action, d, aid)
+        elif op == "BO_SUNG_TEXT":
+            self.apply_bo_sung_text(action, d, aid)
+        elif op == "BAI_BO_TEXT":
+            self.apply_bai_bo_text(action, d, aid)
+        elif op == "THAY_THE_PHU_LUC":
+            self.apply_thay_the_phu_luc(action, d, aid)
 
     def build_amendment_timeline(self):
         entries = [

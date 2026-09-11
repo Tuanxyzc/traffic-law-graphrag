@@ -64,4 +64,4 @@ def resolve(text: str) -> dict | None:
 
 def get_id(number: str) -> str | None:
     meta = DOCUMENT_REGISTRY.get(number)
-    return meta["id"] if meta else None
+    return str(meta["id"]) if meta and "id" in meta else None

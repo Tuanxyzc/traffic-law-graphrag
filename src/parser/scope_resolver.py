@@ -13,15 +13,20 @@ def apply(van_ban_full: VanBan) -> VanBan:
     Returns a new VanBan object containing only the Articles (Điều)
     that are IN_SCOPE according to SCOPE_CONFIG.
     """
-    cfg = SCOPE_CONFIG.get(
-        van_ban_full.so_hieu, SCOPE_CONFIG.get("default", {"scope_mode": "ALL"})
+    default_cfg: dict = {"scope_mode": "ALL"}
+    raw_cfg = SCOPE_CONFIG.get(van_ban_full.so_hieu) or SCOPE_CONFIG.get(
+        "default", default_cfg
     )
-    mode = cfg.get("scope_mode", "ALL")
+    cfg: dict = raw_cfg if isinstance(raw_cfg, dict) else default_cfg
+    mode = str(cfg.get("scope_mode", "ALL"))
 
     if mode == "ALL":
         return deepcopy(van_ban_full)
 
-    selected = set(cfg.get("selected_articles", []))
+    selected_raw = cfg.get("selected_articles", [])
+    selected = (
+        set(selected_raw) if isinstance(selected_raw, (list, set, tuple)) else set()
+    )
 
     vb_selected = VanBan(
         so_hieu=van_ban_full.so_hieu,

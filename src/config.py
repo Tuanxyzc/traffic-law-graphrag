@@ -301,7 +301,7 @@ AMENDMENT_ARTICLE_TARGETS = {
 
 # ==========================================================
 # Tương thích ngược: VAN_BAN_SCOPE (dùng bởi reference.py, semantic_unit.py,
-# chunker.py, exporter.py...) — suy ra TỰ ĐỘNG từ DOCUMENT_REGISTRY, không
+# exporter.py...) — suy ra TỰ ĐỘNG từ DOCUMENT_REGISTRY, không
 # khai báo trùng lặp lần 2.
 # ==========================================================
 
