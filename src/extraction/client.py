@@ -285,7 +285,7 @@ class GeminiRESTClient:
             f"Hãy trích xuất subjects, sanctions, và violations cho mã điều khoản '{clause_id}'."
         )
 
-        payload = {
+        payload: dict[str, Any] = {
             "system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]},
             "contents": [{"role": "user", "parts": [{"text": full_user_prompt}]}],
             "generationConfig": {
