@@ -65,10 +65,11 @@ def make_batch_merge_provision_versions_query() -> str:
 
 
 def make_batch_link_provision_versions_query() -> str:
-    """Generates Cypher statement to connect CanonicalProvision to its ProvisionVersions."""
+    """Generates Cypher statement to connect Article/Clause/Point (and CanonicalProvision) to ProvisionVersions."""
     return (
         "UNWIND $batch AS row "
-        "MATCH (p:CanonicalProvision {id: row.canonical_provision_id}) "
+        "MATCH (p {id: row.canonical_provision_id}) "
+        "WHERE p:Point OR p:Clause OR p:Article OR p:CanonicalProvision "
         "MATCH (v:ProvisionVersion {id: row.version_id}) "
         "MERGE (p)-[:HAS_VERSION]->(v)"
     )
