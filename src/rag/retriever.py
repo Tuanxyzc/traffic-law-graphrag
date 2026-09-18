@@ -77,7 +77,15 @@ class HybridRetriever:
                 query_vector=query_vector,
                 doc_id=document_id,
             )
-            return [dict(record) for record in result]
+            records: list[dict[str, Any]] = []
+            for record in result:
+                row = dict(record)
+                if row.get("dense_score") is not None:
+                    # Neo4j cosine similarity score is normalized as (1 + cosine) / 2
+                    # Convert back to standard cosine similarity range [-1.0, 1.0]
+                    row["dense_score"] = round(2.0 * float(row["dense_score"]) - 1.0, 4)
+                records.append(row)
+            return records
         except Exception as exc:
             logger.error("Vector index query failed: %s", exc)
             return []
@@ -125,6 +133,20 @@ class HybridRetriever:
         top_k: int,
     ) -> list[RetrievedChunk]:
         """Merges and ranks candidate items using Reciprocal Rank Fusion (RRF)."""
+        # Layer 1: Floor Similarity Threshold check on Top-1 dense result
+        if dense_results:
+            top_1_dense = dense_results[0].get("dense_score")
+            if (
+                top_1_dense is not None
+                and top_1_dense < self.config.min_similarity_threshold
+            ):
+                logger.info(
+                    "Top-1 dense score %.4f is below floor threshold %.4f. Discarding all candidate chunks.",
+                    top_1_dense,
+                    self.config.min_similarity_threshold,
+                )
+                return []
+
         k_const = self.config.rrf_k
         w_dense = self.config.dense_weight
         w_sparse = self.config.sparse_weight
@@ -172,7 +194,37 @@ class HybridRetriever:
             candidates.values(),
             key=lambda x: x["rrf"],
             reverse=True,
-        )[:top_k]
+        )
+
+        # Layer 2: Dynamic-K / Relative Drop-off Pruning
+        if self.config.enable_dynamic_k and dense_results:
+            top_1_dense = dense_results[0].get("dense_score")
+            if top_1_dense is not None:
+                min_allowed_dense = max(
+                    top_1_dense * self.config.relative_dropoff_ratio,
+                    top_1_dense - self.config.max_score_gap,
+                )
+                filtered_candidates: list[dict[str, Any]] = []
+                for idx, c in enumerate(sorted_candidates[:top_k]):
+                    if idx == 0:
+                        # Always keep the top candidate (minimum 1 chunk)
+                        filtered_candidates.append(c)
+                        continue
+                    c_dense = c.get("dense_score")
+                    if c_dense is None or c_dense >= min_allowed_dense:
+                        filtered_candidates.append(c)
+                    else:
+                        logger.debug(
+                            "Pruning candidate %s: dense_score %s < min_allowed_dense %.4f",
+                            c["item"].get("id"),
+                            c_dense,
+                            min_allowed_dense,
+                        )
+                sorted_candidates = filtered_candidates
+            else:
+                sorted_candidates = sorted_candidates[:top_k]
+        else:
+            sorted_candidates = sorted_candidates[:top_k]
 
         # 4. Build Typed RetrievedChunk instances
         retrieved_chunks: list[RetrievedChunk] = []
@@ -240,6 +292,29 @@ class HybridRetriever:
                 candidate_k=candidate_k,
                 document_id=document_id,
             )
+
+            # Layer 1 Early Exit: If Top-1 dense similarity is below floor threshold,
+            # skip fulltext search and return empty chunks immediately.
+            if dense_results:
+                top_1_dense = dense_results[0].get("dense_score")
+                if (
+                    top_1_dense is not None
+                    and top_1_dense < self.config.min_similarity_threshold
+                ):
+                    logger.info(
+                        "Top-1 dense score %.4f below floor threshold %.4f for query '%s'. Early exiting with 0 chunks.",
+                        top_1_dense,
+                        self.config.min_similarity_threshold,
+                        query,
+                    )
+                    elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
+                    return RetrievalResult(
+                        query=query,
+                        top_k=k,
+                        chunks=[],
+                        execution_time_ms=elapsed_ms,
+                    )
+
             sparse_results = self._query_fulltext(
                 session=session,
                 query_text=query,

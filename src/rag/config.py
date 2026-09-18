@@ -24,8 +24,14 @@ class RAGConfig:
     rrf_k: int = 60
     dense_weight: float = 1.0
     sparse_weight: float = 1.0
-    default_top_k: int = 8
+    default_top_k: int = 4
     min_candidate_k: int = 20
+
+    # Layer 1 & Layer 2 Retrieval Defense Parameters
+    min_similarity_threshold: float = 0.50
+    enable_dynamic_k: bool = True
+    relative_dropoff_ratio: float = 0.80
+    max_score_gap: float = 0.15
 
     # Ingestion Settings
     ingest_batch_size: int = 50
@@ -45,8 +51,17 @@ class RAGConfig:
             rrf_k=int(os.getenv("RAG_RRF_K", "60")),
             dense_weight=float(os.getenv("RAG_DENSE_WEIGHT", "1.0")),
             sparse_weight=float(os.getenv("RAG_SPARSE_WEIGHT", "1.0")),
-            default_top_k=int(os.getenv("RAG_DEFAULT_TOP_K", "5")),
+            default_top_k=int(os.getenv("RAG_DEFAULT_TOP_K", "4")),
             min_candidate_k=int(os.getenv("RAG_MIN_CANDIDATE_K", "20")),
+            min_similarity_threshold=float(
+                os.getenv("RAG_MIN_SIMILARITY_THRESHOLD", "0.50")
+            ),
+            enable_dynamic_k=os.getenv("RAG_ENABLE_DYNAMIC_K", "true").lower()
+            in ("true", "1", "yes"),
+            relative_dropoff_ratio=float(
+                os.getenv("RAG_RELATIVE_DROPOFF_RATIO", "0.80")
+            ),
+            max_score_gap=float(os.getenv("RAG_MAX_SCORE_GAP", "0.15")),
             ingest_batch_size=int(os.getenv("RAG_INGEST_BATCH_SIZE", "50")),
             parsed_dir=os.getenv("PARSED_DIR", "data/parsed"),
         )
