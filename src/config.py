@@ -24,7 +24,7 @@ PARSED_DIR = "data/parsed"
 # DOCUMENT TYPE / ROLE / TARGET LEVEL / PARSER STATE
 # ==========================================================
 
-DOCUMENT_TYPES = {"LUAT": "LUAT", "NGHI_DINH": "NGHI_DINH"}
+DOCUMENT_TYPES = {"LUAT": "LUAT", "NGHI_DINH": "NGHI_DINH", "THONG_TU": "THONG_TU"}
 DOCUMENT_ROLES = {"NORMAL": "NORMAL", "AMENDMENT": "AMENDMENT", "OMNIBUS": "OMNIBUS"}
 TARGET_LEVEL = {"ARTICLE": "ARTICLE", "CLAUSE": "CLAUSE", "POINT": "POINT"}
 PARSER_STATE = {
@@ -54,7 +54,14 @@ TARGET_PATTERNS = {
     "POINT": [r"điểm\s+[a-zđ]"],
 }
 
-REFERENCE_PATTERNS = ["Điều này", "Khoản này", "Điểm này", "Luật này", "Nghị định này"]
+REFERENCE_PATTERNS = [
+    "Điều này",
+    "Khoản này",
+    "Điểm này",
+    "Luật này",
+    "Nghị định này",
+    "Thông tư này",
+]
 
 OPERATION_PRIORITY = ["BAI_BO", "THAY_THE", "SUA_DOI", "BO_SUNG", "THEM_MOI"]
 
@@ -201,6 +208,17 @@ DOCUMENT_REGISTRY = {
         "type": "NGHI_DINH",
         "role": "NORMAL",
     },
+    "72/2024/TT-BCA": {
+        "id": "72_2024_TT-BCA",
+        "number": "72/2024/TT-BCA",
+        "name": "THÔNG TƯ QUY ĐỊNH QUY TRÌNH ĐIỀU TRA, GIẢI QUYẾT TAI NẠN GIAO THÔNG ĐƯỜNG BỘ CỦA CẢNH SÁT GIAO THÔNG",
+        "aliases": [
+            "Thông tư 72/2024/TT-BCA",
+            "72/2024/TT-BCA",
+        ],
+        "type": "THONG_TU",
+        "role": "NORMAL",
+    },
 }
 
 # ==========================================================
@@ -219,6 +237,7 @@ FILE_SO_HIEU_MAP = {
     "160_2024_ND-CP_624017.docx": "160/2024/ND-CP",
     "156_2024_ND-CP_635371.docx": "156/2024/ND-CP",
     "118_2025_QH15_682798.docx": "118/2025/QH15",
+    "72_2024_TT-BCA_633011.docx": "72/2024/TT-BCA",
 }
 
 # ==========================================================
@@ -317,6 +336,8 @@ VAN_BAN_SCOPE = {
             if meta["role"] == "OMNIBUS"
             else "Luat"
             if meta["type"] == "LUAT"
+            else "ThongTu"
+            if meta.get("type") == "THONG_TU"
             else "NghiDinh"
         ),
         "pham_vi_ngoai_scope": meta["role"] == "OMNIBUS",

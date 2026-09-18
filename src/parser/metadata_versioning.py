@@ -73,7 +73,10 @@ def build_effective_rules(van_ban: VanBan) -> dict:
         for source in sources:
             raw = source.noi_dung.strip()
             for part_index, part in enumerate(
-                re.split(r";\s*(?=(?:quy định|Luật|Nghị định))", raw)
+                re.split(
+                    r";\s*(?=(?:quy định|Luật|Nghị định|Thông tư|Quyết định|Văn bản))",
+                    raw,
+                )
             ):
                 from_match = EFFECT_FROM_RE.search(part)
                 to_match = EFFECT_TO_RE.search(part)
@@ -100,7 +103,7 @@ def build_effective_rules(van_ban: VanBan) -> dict:
                     unique_targets.append(target)
                 is_general = bool(
                     re.match(
-                        r"^\s*(?:\d+[a-zđ]?\.\s*)?(?:Luật|Nghị định) này có hiệu lực",
+                        r"^\s*(?:\d+[a-zđ]?\.\s*)?(?:Luật|Nghị định|Thông tư|Quyết định|Văn bản) này có hiệu lực",
                         part,
                         re.IGNORECASE,
                     )

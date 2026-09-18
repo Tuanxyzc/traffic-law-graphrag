@@ -151,6 +151,15 @@ class Neo4jBatchImporter:
         amendment_actions_by_doc: list[dict[str, Any]] = []
         effective_rules_by_doc: dict[str, list[dict[str, Any]]] = {}
 
+        # 0. Load Effective Rules globally across corpus so date lookups succeed
+        for eff_file in sorted(self.parsed_dir.glob("*_effective_rules.json")):
+            doc_id_eff = eff_file.name.replace("_effective_rules.json", "")
+            eff_data = load_json(str(eff_file))
+            if isinstance(eff_data, dict):
+                effective_rules_by_doc[doc_id_eff] = eff_data.get("rules", [])
+            elif isinstance(eff_data, list):
+                effective_rules_by_doc[doc_id_eff] = eff_data
+
         # 1. Load Document Structure
         structure_files = sorted(self.parsed_dir.glob("*_structure.json"))
         for s_file in structure_files:
@@ -165,20 +174,17 @@ class Neo4jBatchImporter:
             all_relationships.extend(rels)
             structure_nodes_by_doc[doc_id] = nodes
 
-            eff_file = self.parsed_dir / f"{doc_id}_effective_rules.json"
-            if eff_file.exists():
-                eff_data = load_json(str(eff_file))
-                if isinstance(eff_data, dict):
-                    effective_rules_by_doc[doc_id] = eff_data.get("rules", [])
-                elif isinstance(eff_data, list):
-                    effective_rules_by_doc[doc_id] = eff_data
-
         # 2. Load Amendment Actions
         amendment_files = sorted(self.parsed_dir.rglob("amendment_index.json"))
         semantic_index = 1
         for a_file in amendment_files:
             amendment_data = load_json(str(a_file))
             for event in amendment_data:
+                src_doc = self.resolver.resolve_document(event.get("source_document", ""))
+                tgt_doc = self.resolver.resolve_document(event.get("target_document", ""))
+                if doc_filter and doc_filter not in src_doc and doc_filter not in tgt_doc:
+                    continue
+
                 for item in event.get("items", []):
                     try:
                         nodes, rels = map_amendment_item(

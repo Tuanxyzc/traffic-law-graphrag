@@ -124,12 +124,13 @@ def run_stage_neo4j(
     start = time.time()
     logger.info(">>> [STAGE 2/3] Ingesting knowledge graph & versions into Neo4j...")
     cmd = [sys.executable, "-m", "src.graph.neo4j.importer"]
-    if dry_run:
-        cmd.append("--dry-run")
-    elif doc_id:
+    if doc_id:
         cmd.extend(["--doc", doc_id])
     else:
         cmd.append("--all")
+
+    if dry_run:
+        cmd.append("--dry-run")
 
     res = subprocess.run(cmd, check=False)
     elapsed = round(time.time() - start, 2)

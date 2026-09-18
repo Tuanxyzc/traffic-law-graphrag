@@ -1,0 +1,23 @@
+{
+  "document": "72/2024/TT-BCA",
+  "document_id": "72_2024_TT-BCA",
+  "rules": [
+    {
+      "rule_id": "72_2024_TT-BCA_ER_28_1_1",
+      "rule_type": "GENERAL",
+      "source_document": "72/2024/TT-BCA",
+      "source_article": "28",
+      "source_clause": "1",
+      "target_document": "72/2024/TT-BCA",
+      "targets": [],
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "external_basis": null,
+      "condition": null,
+      "raw_text": "1. Thông tư này có hiệu lực thi hành kể từ ngày 01 tháng 01 năm 2025 và thay thế Thông tư số 63/2020/TT-BCA ngày 19 tháng 6 năm 2020 của Bộ trưởng Bộ Công an quy định quy trình điều tra, giải quyết tai nạn giao thông đường bộ của lực lượng Cảnh sát giao thông.",
+      "status": "RESOLVED",
+      "source_unit": "72_2024_TT-BCA_D28_K1",
+      "source_unit_materialized_as_support": false
+    }
+  ]
+}

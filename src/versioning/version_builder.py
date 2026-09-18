@@ -63,7 +63,16 @@ class VersionBuilder:
             for r in self.effective_rules_by_document.get(document_id, [])
             if r.get("rule_type") == "GENERAL" and r.get("effective_from")
         ]
-        return min(vals) if vals else None
+        if vals:
+            return min(vals)
+        fallback_vals = [
+            self.parse_date(r["effective_from"])
+            for r in self.effective_rules_by_document.get(document_id, [])
+            if not r.get("targets")
+            and r.get("effective_from")
+            and r.get("rule_type") != "EXTERNAL_RULE"
+        ]
+        return min(fallback_vals) if fallback_vals else None
 
     def get_external_rules_for_target(self, target_unit):
         doc = self.document_id_from_unit(target_unit)

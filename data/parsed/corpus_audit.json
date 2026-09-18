@@ -42,8 +42,8 @@
   },
   "issue_8_external_references": {
     "pass": true,
-    "external_edges": 11,
-    "external_nodes": 11
+    "external_edges": 14,
+    "external_nodes": 14
   },
   "issue_9_cross_document": {
     "pass": true,

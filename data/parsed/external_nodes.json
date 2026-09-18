@@ -18,6 +18,18 @@
     "document_id": "115_2024_ND-CP"
   },
   {
+    "id": "26_2024_TT-BCA_D30",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "26_2024_TT-BCA"
+  },
+  {
+    "id": "28_2020_TT-BCA_D12",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "28_2020_TT-BCA"
+  },
+  {
     "id": "28_2021_ND-CP_D3",
     "external": true,
     "node_type": "EXTERNAL_LEGAL_LOCATION",
@@ -52,6 +64,12 @@
     "external": true,
     "node_type": "EXTERNAL_LEGAL_LOCATION",
     "document_id": "56_2019_ND-CP"
+  },
+  {
+    "id": "62_2020_TT-BCA_D14",
+    "external": true,
+    "node_type": "EXTERNAL_LEGAL_LOCATION",
+    "document_id": "62_2020_TT-BCA"
   },
   {
     "id": "70_2022_ND-CP_D1",
