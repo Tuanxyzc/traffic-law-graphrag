@@ -21,8 +21,8 @@ class PipelineConfig:
     # Pipeline Behaviors
     enable_query_rewrite: bool = True
     enable_dual_query: bool = True
-    top_k: int = 5
-    max_reference_hops: int = 1
+    top_k: int = 4
+    max_reference_hops: int = 2
     include_superseded_warning: bool = True
 
     # Neo4j Settings
@@ -48,8 +48,8 @@ class PipelineConfig:
             in ("true", "1", "yes"),
             enable_dual_query=os.getenv("PIPELINE_ENABLE_DUAL_QUERY", "true").lower()
             in ("true", "1", "yes"),
-            top_k=int(os.getenv("PIPELINE_TOP_K", "5")),
-            max_reference_hops=int(os.getenv("PIPELINE_MAX_REF_HOPS", "1")),
+            top_k=int(os.getenv("PIPELINE_TOP_K", "4")),
+            max_reference_hops=int(os.getenv("PIPELINE_MAX_REF_HOPS", "2")),
             include_superseded_warning=os.getenv(
                 "PIPELINE_SUPERSEDED_WARNING", "true"
             ).lower()

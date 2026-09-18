@@ -44,7 +44,84 @@ OPTIONAL MATCH (target)<-[:CONTAINS_ARTICLE|CONTAINS_CHAPTER*1..2]-(direct_doc:D
 OPTIONAL MATCH (fallback_doc:Document) WHERE target.id STARTS WITH fallback_doc.id
 WITH target, current_v, historical_versions, clause_node, article_node, coalesce(parent_doc, direct_doc, fallback_doc) AS doc_node
 
-// 3. Direct Amendment Actions impacting this provision (INCOMING)
+// 3. Multi-hop (2-hop) Cross-references & Sanctions Traversal
+CALL {
+    WITH target, clause_node, article_node
+    WITH target, clause_node, article_node, [x IN [target, clause_node] WHERE x IS NOT NULL] AS anchors
+    UNWIND anchors AS anchor
+
+    // Hop 1 Outgoing
+    OPTIONAL MATCH (anchor)-[r1_out:REFERENCES|EXCEPTION_TO|THAM_CHIEU]->(h1_out:Point|Clause|Article)
+    WHERE (h1_out)-[:HAS_VERSION]->(:ProvisionVersion {is_current: true})
+      AND NOT h1_out IN [target, clause_node, article_node]
+    OPTIONAL MATCH (h1_out)-[:HAS_VERSION]->(h1_out_v:ProvisionVersion {is_current: true})
+
+    // Hop 1 Incoming (Sanctions / Trừ điểm / Tước quyền pointing to anchor)
+    OPTIONAL MATCH (h1_in:Point|Clause|Article)-[r1_in:REFERENCES|EXCEPTION_TO|THAM_CHIEU]->(anchor)
+    WHERE (h1_in)-[:HAS_VERSION]->(:ProvisionVersion {is_current: true})
+      AND NOT h1_in IN [target, clause_node, article_node]
+    OPTIONAL MATCH (h1_in)-[:HAS_VERSION]->(h1_in_v:ProvisionVersion {is_current: true})
+
+    WITH target, clause_node, article_node,
+         collect(DISTINCT CASE WHEN h1_out IS NOT NULL THEN {
+             target_id: h1_out.id,
+             relation_type: type(r1_out),
+             document_id: h1_out.document_id,
+             title: coalesce(h1_out.title, h1_out.tieu_de),
+             content: coalesce(h1_out_v.content_text, h1_out.content, h1_out.noi_dung, h1_out.text, ''),
+             direction: 'OUTGOING',
+             hop_level: 1,
+             node: h1_out
+         } ELSE null END) +
+         collect(DISTINCT CASE WHEN h1_in IS NOT NULL THEN {
+             target_id: h1_in.id,
+             relation_type: CASE
+                 WHEN coalesce(h1_in.content, h1_in_v.content_text, '') =~ '(?i).*trừ điểm.*' THEN 'TRU_DIEM_GPLX'
+                 WHEN coalesce(h1_in.content, h1_in_v.content_text, '') =~ '(?i).*tước quyền.*' THEN 'TUOC_QUYEN_GPLX'
+                 WHEN coalesce(h1_in.content, h1_in_v.content_text, '') =~ '(?i).*tịch thu.*' THEN 'TICH_THU'
+                 ELSE 'APPLIED_BY_' + type(r1_in)
+             END,
+             document_id: h1_in.document_id,
+             title: coalesce(h1_in.title, h1_in.tieu_de),
+             content: coalesce(h1_in_v.content_text, h1_in.content, h1_in.noi_dung, h1_in.text, ''),
+             direction: 'INCOMING',
+             hop_level: 1,
+             node: h1_in
+         } ELSE null END) AS h1_list
+
+    // Hop 2 Traversal from Hop 1 nodes (cross-article/cross-document or exceptions)
+    UNWIND [x IN h1_list WHERE x IS NOT NULL] + [null] AS h1_item
+    WITH target, clause_node, article_node, h1_list, h1_item.node AS n1
+    OPTIONAL MATCH (n1)-[r2:REFERENCES|EXCEPTION_TO|THAM_CHIEU]->(h2:Point|Clause|Article)
+    WHERE n1 IS NOT NULL
+      AND (h2)-[:HAS_VERSION]->(:ProvisionVersion {is_current: true})
+      AND NOT h2 IN [target, clause_node, article_node, n1]
+      AND (article_node IS NULL OR NOT h2.id STARTS WITH article_node.id)
+    OPTIONAL MATCH (h2)-[:HAS_VERSION]->(h2_v:ProvisionVersion {is_current: true})
+
+    WITH h1_list,
+         collect(DISTINCT CASE WHEN h2 IS NOT NULL THEN {
+             target_id: h2.id,
+             relation_type: type(r2),
+             document_id: h2.document_id,
+             title: coalesce(h2.title, h2.tieu_de),
+             content: coalesce(h2_v.content_text, h2.content, h2.noi_dung, h2.text, ''),
+             direction: 'OUTGOING',
+             hop_level: 2
+         } ELSE null END) AS h2_list
+
+    RETURN [x IN h1_list WHERE x IS NOT NULL | {
+        target_id: x.target_id,
+        relation_type: x.relation_type,
+        document_id: x.document_id,
+        title: x.title,
+        content: x.content,
+        direction: x.direction,
+        hop_level: x.hop_level
+    }] + [y IN h2_list WHERE y IS NOT NULL] AS references_list
+}
+
+// 4. Direct Amendment Actions impacting this provision (INCOMING)
 OPTIONAL MATCH (action_in:AmendmentAction)-[r_mod_in:AMENDS|REPEALS|ADDS]->(target)
 OPTIONAL MATCH (su_in:SemanticUnit)-[:HAS_ACTION]->(action_in)
 OPTIONAL MATCH (su_in)-[:LOCATED_AT]->(src_prov_in)
@@ -52,20 +129,13 @@ OPTIONAL MATCH (action_in)-[:HAS_REPLACEMENT]->(rep_in:AmendmentReplacement)
 OPTIONAL MATCH (action_in)-[:HAS_TEXT_AMENDMENT]->(txt_in:AmendmentText)
 OPTIONAL MATCH (doc_mod_in:Document) WHERE su_in.id STARTS WITH doc_mod_in.id
 
-// 4. Direct Amendment Actions originating from this provision (OUTGOING)
+// 5. Direct Amendment Actions originating from this provision (OUTGOING)
 OPTIONAL MATCH (su_out:SemanticUnit)-[:LOCATED_AT|EXTRACTED_FROM*0..1]->(target)
 OPTIONAL MATCH (su_out)-[:HAS_ACTION]->(action_out:AmendmentAction)
 OPTIONAL MATCH (action_out)-[r_mod_out:AMENDS|REPEALS|ADDS]->(orig_target:Point|Clause|Article)
 OPTIONAL MATCH (action_out)-[:HAS_REPLACEMENT]->(rep_out:AmendmentReplacement)
 OPTIONAL MATCH (action_out)-[:HAS_TEXT_AMENDMENT]->(txt_out:AmendmentText)
 OPTIONAL MATCH (doc_mod_out:Document) WHERE orig_target.id STARTS WITH doc_mod_out.id
-
-// 5. 1-hop Cross-references (OUTGOING & INCOMING to capture sanctions and penalty point deductions)
-OPTIONAL MATCH (target)-[r_out:REFERENCES|EXCEPTION_TO|THAM_CHIEU]->(ref_out:Point|Clause|Article)
-OPTIONAL MATCH (ref_out)-[:HAS_VERSION]->(ref_out_v:ProvisionVersion {is_current: true})
-
-OPTIONAL MATCH (ref_in:Point|Clause|Article)-[r_in:REFERENCES|EXCEPTION_TO|THAM_CHIEU]->(target)
-OPTIONAL MATCH (ref_in)-[:HAS_VERSION]->(ref_in_v:ProvisionVersion {is_current: true})
 
 RETURN target.id AS provision_id,
        labels(target)[0] AS level,
@@ -110,27 +180,7 @@ RETURN target.id AS provision_id,
            target_provision_id: orig_target.id,
            direction: 'OUTGOING'
        } ELSE null END) AS amendments,
-       collect(DISTINCT CASE WHEN ref_out IS NOT NULL THEN {
-           target_id: ref_out.id,
-           relation_type: type(r_out),
-           document_id: ref_out.document_id,
-           title: coalesce(ref_out.title, ref_out.tieu_de),
-           content: coalesce(ref_out_v.content_text, ref_out.content, ref_out.noi_dung, ref_out.text, ''),
-           direction: 'OUTGOING'
-       } ELSE null END) +
-       collect(DISTINCT CASE WHEN ref_in IS NOT NULL THEN {
-           target_id: ref_in.id,
-           relation_type: CASE
-               WHEN coalesce(ref_in.content, ref_in_v.content_text, '') =~ '(?i).*trừ điểm.*' THEN 'TRU_DIEM_GPLX'
-               WHEN coalesce(ref_in.content, ref_in_v.content_text, '') =~ '(?i).*tước quyền.*' THEN 'TUOC_QUYEN_GPLX'
-               WHEN coalesce(ref_in.content, ref_in_v.content_text, '') =~ '(?i).*tịch thu.*' THEN 'TICH_THU'
-               ELSE 'APPLIED_BY_' + type(r_in)
-           END,
-           document_id: ref_in.document_id,
-           title: coalesce(ref_in.title, ref_in.tieu_de),
-           content: coalesce(ref_in_v.content_text, ref_in.content, ref_in.noi_dung, ref_in.text, ''),
-           direction: 'INCOMING'
-       } ELSE null END) AS references
+       references_list AS references
 """
 
 DOCUMENT_AMENDMENTS_CYPHER_QUERY = """
@@ -373,6 +423,7 @@ class GraphValidator:
                                 clean_ref_content = clean_provision_content(
                                     ref.get("content")
                                 )
+                                hop_lvl = int(ref.get("hop_level") or 1)
                                 references.append(
                                     ReferencedProvision(
                                         target_id=tid,
@@ -385,6 +436,7 @@ class GraphValidator:
                                         direction=str(
                                             ref.get("direction") or "OUTGOING"
                                         ),
+                                        hop_level=hop_lvl,
                                     )
                                 )
 

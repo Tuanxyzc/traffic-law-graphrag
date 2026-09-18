@@ -12,6 +12,7 @@ from src.pipeline.models import (
     EvidenceItem,
     EvidencePackage,
     LegalValidityStatus,
+    ReferencedProvision,
     SubGraph,
     SubGraphNode,
     SubGraphRelationship,
@@ -186,6 +187,11 @@ class EvidenceBuilder:
                 validated_provision=prov,
                 warning_flag=warning_flag,
                 superseding_text=superseding_text,
+                score=chunk.score,
+                dense_score=chunk.dense_score,
+                sparse_score=chunk.sparse_score,
+                dense_rank=chunk.dense_rank,
+                sparse_rank=chunk.sparse_rank,
             )
             items.append(item)
 
@@ -488,14 +494,14 @@ class EvidenceBuilder:
                         source=ref.target_id,
                         target=prov.provision_id,
                         rel_type=rel_type,
-                        properties={"direction": "INCOMING"},
+                        properties={"direction": "INCOMING", "hop_level": ref.hop_level},
                     )
                 else:
                     add_rel(
                         source=prov.provision_id,
                         target=ref.target_id,
                         rel_type=rel_type,
-                        properties={"direction": "OUTGOING"},
+                        properties={"direction": "OUTGOING", "hop_level": ref.hop_level},
                     )
 
         if document_amendments:
@@ -760,14 +766,15 @@ class EvidenceBuilder:
                         )
 
             if prov.cross_references:
-                sanction_refs = []
-                other_refs = []
+                sanction_refs: list[ReferencedProvision] = []
+                hop1_refs: list[ReferencedProvision] = []
+                hop2_refs: list[ReferencedProvision] = []
+
                 for ref in prov.cross_references:
                     c_lower = (ref.content or "").lower()
                     t_lower = (ref.relation_type or "").upper()
-                    if (
-                        t_lower
-                        in (
+                    is_sanction = (
+                        t_lower in (
                             "TRU_DIEM_GPLX",
                             "TUOC_QUYEN_GPLX",
                             "TICH_THU",
@@ -776,10 +783,13 @@ class EvidenceBuilder:
                         or "trừ điểm" in c_lower
                         or "tước quyền" in c_lower
                         or "tịch thu" in c_lower
-                    ):
+                    )
+                    if ref.hop_level >= 2:
+                        hop2_refs.append(ref)
+                    elif is_sanction:
                         sanction_refs.append(ref)
                     else:
-                        other_refs.append(ref)
+                        hop1_refs.append(ref)
 
                 if sanction_refs:
                     parts.append(
@@ -792,13 +802,24 @@ class EvidenceBuilder:
                             f"  • [{ref.relation_type}] Căn cứ {ref_title}{ref_text}"
                         )
 
-                if other_refs:
-                    parts.append("DẪN CHIẾU THAM CHIẾU LIÊN QUAN KHÁC (1-HOP):")
-                    for ref in other_refs:
+                if hop1_refs:
+                    parts.append("DẪN CHIẾU THAM CHIẾU LIÊN QUAN TRỰC TIẾP (HOP 1):")
+                    for ref in hop1_refs:
                         ref_title = ref.title or ref.target_id
                         ref_text = f": {ref.content}" if ref.content else ""
                         parts.append(
                             f"  • [{ref.relation_type}] Căn cứ {ref_title}{ref_text}"
+                        )
+
+                if hop2_refs:
+                    parts.append(
+                        "QUY ĐỊNH LIÊN QUAN MỞ RỘNG (HOP 2 - MULTI-HOP GRAPH TRAVERSAL):"
+                    )
+                    for ref in hop2_refs:
+                        ref_title = ref.title or ref.target_id
+                        ref_text = f": {ref.content}" if ref.content else ""
+                        parts.append(
+                            f"  • [Hop 2 - {ref.relation_type}] Căn cứ {ref_title}{ref_text}"
                         )
 
         parts.append("\n=== HẾT BẰNG CHỨNG ===")
