@@ -17,3 +17,4 @@ pytest_temp/
 docs/
 tasks/
 .neo4j/
+reports/
