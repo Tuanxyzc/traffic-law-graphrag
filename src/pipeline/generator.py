@@ -173,40 +173,50 @@ class AnswerGenerator:
             and not evidence.document_amendments
             and not evidence.system_documents
         ):
-            return GenerationResult(
-                answer="Không tìm thấy quy định pháp luật phù hợp trong cơ sở dữ liệu để trả lời câu hỏi này.",
-                citations=[],
-            )
-
-        evidence_text = self.evidence_builder.format_for_llm(evidence)
-        has_sanctions = has_sanctions_in_package(evidence)
-
-        if evidence.system_documents:
-            sanction_instruction = (
-                "2. Về danh mục văn bản: Trình bày đầy đủ, phân loại rõ ràng các Luật và Nghị định có trong bằng chứng. "
-                "Tuyệt đối KHÔNG đề cập đến mức phạt tiền hay trừ điểm vì đây là câu hỏi về danh mục tài liệu của hệ thống."
-            )
-        elif has_sanctions:
-            sanction_instruction = (
-                "2. Nêu rõ hình thức xử phạt (mức phạt tiền, tước GPLX, trừ điểm GPLX có trong bằng chứng). "
-                "Phân tách rõ ràng theo loại phương tiện nếu có."
+            has_sanctions = False
+            user_prompt = (
+                f'CÂU HỎI / LỜI NHẮN CỦA NGƯỜI DÂN: "{evidence.user_query}"\n\n'
+                f"TÌNH TRẠNG TRA CỨU: Không tìm thấy điều khoản quy định pháp luật giao thông đường bộ nào trong cơ sở dữ liệu phù hợp với câu hỏi này.\n\n"
+                f"HƯỚNG DẪN XỬ LÝ:\n"
+                f"1. NẾU ĐÂY LÀ LỜI CHÀO HỎI, GIAO TIẾP HOẶC HỎI DANH TÍNH (ví dụ: 'xin chào', 'bạn là ai', 'chào bạn'):\n"
+                f"   - Hãy chào hỏi lại người dân một cách lịch sự, thân thiện.\n"
+                f"   - Giới thiệu rõ ràng bạn là Trợ lý AI Cố vấn Pháp luật Trật tự An toàn Giao thông Đường bộ Việt Nam, luôn sẵn sàng hỗ trợ giải đáp các quy định, mức xử phạt vi phạm hành chính và quy tắc an toàn giao thông.\n"
+                f"2. NẾU ĐÂY LÀ CÂU HỎI NGOÀI PHẠM VI (không liên quan đến trật tự, an toàn giao thông đường bộ, ví dụ: hỏi công thức nấu ăn, thời tiết, lập trình, giải trí, sức khỏe...):\n"
+                f"   - Hãy từ chối một cách lịch sự, nêu rõ bạn là Trợ lý chuyên sâu về Pháp luật Trật tự An toàn Giao thông Đường bộ Việt Nam nên chỉ hỗ trợ các câu hỏi thuộc lĩnh vực này.\n"
+                f"   - Mời người dân đặt câu hỏi về luật giao thông đường bộ, quy định xử phạt vi phạm hành chính, hoặc quy tắc an toàn giao thông.\n"
+                f"3. NẾU ĐÂY LÀ CÂU HỎI VỀ GIAO THÔNG NHƯNG CHƯA ĐỦ THÔNG TIN HOẶC HỆ THỐNG CHƯA CẬP NHẬT:\n"
+                f"   - Thông báo rõ ràng hiện tại cơ sở dữ liệu chưa tìm thấy quy định trực tiếp cho trường hợp này, và đề nghị người dân cung cấp thêm ngữ cảnh cụ thể (loại phương tiện, hành vi vi phạm...). Tuyệt đối không tự suy diễn hoặc bịa đặt điều luật, số hiệu văn bản."
             )
         else:
-            sanction_instruction = (
-                "2. Về hình thức xử phạt và trừ điểm GPLX: BẰNG CHỨNG KHÔNG CÓ THÔNG TIN VỀ TIỀN PHẠT HAY TRỪ ĐIỂM "
-                "(hoặc câu hỏi không hỏi về vi phạm/xử phạt), TUYỆT ĐỐI KHÔNG CẦN NÊU RA LÀ KHÔNG CÓ, không tạo mục ghi chú giải thích. "
-                "Chỉ tập trung trả lời trực tiếp, đúng trọng tâm câu hỏi của người dân."
-            )
+            evidence_text = self.evidence_builder.format_for_llm(evidence)
+            has_sanctions = has_sanctions_in_package(evidence)
 
-        user_prompt = (
-            f"HÃY GIẢI ĐÁP CÂU HỎI SAU DỰA HOÀN TOÀN VÀO GÓI BẰNG CHỨNG PHÁP LÝ:\n\n"
-            f"{evidence_text}\n\n"
-            f"YÊU CẦU TRẢ LỜI:\n"
-            f'1. Trả lời trực tiếp, rõ ràng, đúng trọng tâm cho câu hỏi của người dân: "{evidence.user_query}".\n'
-            f"{sanction_instruction}\n"
-            f"3. Dẫn chiếu chính xác Điểm, Khoản, Điều, Văn bản.\n"
-            f"4. Nếu có quy định cũ đã bị thay thế (xem cờ cảnh báo), phân tích ngắn gọn quy định trước đây và quy định hiện hành đang áp dụng."
-        )
+            if evidence.system_documents:
+                sanction_instruction = (
+                    "2. Về danh mục văn bản: Trình bày đầy đủ, phân loại rõ ràng các Luật và Nghị định có trong bằng chứng. "
+                    "Tuyệt đối KHÔNG đề cập đến mức phạt tiền hay trừ điểm vì đây là câu hỏi về danh mục tài liệu của hệ thống."
+                )
+            elif has_sanctions:
+                sanction_instruction = (
+                    "2. Nêu rõ hình thức xử phạt (mức phạt tiền, tước GPLX, trừ điểm GPLX có trong bằng chứng). "
+                    "Phân tách rõ ràng theo loại phương tiện nếu có."
+                )
+            else:
+                sanction_instruction = (
+                    "2. Về hình thức xử phạt và trừ điểm GPLX: BẰNG CHỨNG KHÔNG CÓ THÔNG TIN VỀ TIỀN PHẠT HAY TRỪ ĐIỂM "
+                    "(hoặc câu hỏi không hỏi về vi phạm/xử phạt), TUYỆT ĐỐI KHÔNG CẦN NÊU RA LÀ KHÔNG CÓ, không tạo mục ghi chú giải thích. "
+                    "Chỉ tập trung trả lời trực tiếp, đúng trọng tâm câu hỏi của người dân."
+                )
+
+            user_prompt = (
+                f"HÃY GIẢI ĐÁP CÂU HỎI SAU DỰA HOÀN TOÀN VÀO GÓI BẰNG CHỨNG PHÁP LÝ:\n\n"
+                f"{evidence_text}\n\n"
+                f"YÊU CẦU TRẢ LỜI:\n"
+                f'1. Trả lời trực tiếp, rõ ràng, đúng trọng tâm cho câu hỏi của người dân: "{evidence.user_query}".\n'
+                f"{sanction_instruction}\n"
+                f"3. Dẫn chiếu chính xác Điểm, Khoản, Điều, Văn bản.\n"
+                f"4. Nếu có quy định cũ đã bị thay thế (xem cờ cảnh báo), phân tích ngắn gọn quy định trước đây và quy định hiện hành đang áp dụng."
+            )
 
         payload: dict[str, Any] = {
             "system_instruction": {"parts": [{"text": GENERATE_SYSTEM_PROMPT}]},

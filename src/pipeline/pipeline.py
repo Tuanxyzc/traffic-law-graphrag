@@ -97,7 +97,13 @@ class GraphRAGPipeline:
         candidate_chunks: list[RetrievedChunk] = []
 
         # 2. Smart Retrieval & Intent Routing
-        if rewritten.intent == "system_meta_query":
+        if rewritten.intent == "out_of_scope":
+            logger.info(
+                "Executing out_of_scope routing for non-traffic query: bypassing retrieval and graph hops."
+            )
+            candidate_chunks = []
+
+        elif rewritten.intent == "system_meta_query":
             logger.info(
                 "Executing system_meta_query routing: retrieving full document catalog."
             )
@@ -199,11 +205,26 @@ class GraphRAGPipeline:
                 candidate_chunks = list(rag_result.chunks)
 
         logger.info("Retrieved %d candidate chunks from RAG.", len(candidate_chunks))
+        for idx, c in enumerate(candidate_chunks, start=1):
+            logger.info(
+                "  Candidate [%d]: ID=%s | RRF=%.6f | Dense=%s (rank %s) | Sparse=%s (rank %s)",
+                idx,
+                c.id,
+                c.score,
+                f"{c.dense_score:.4f}" if c.dense_score is not None else "N/A",
+                str(c.dense_rank) if c.dense_rank is not None else "-",
+                f"{c.sparse_score:.4f}" if c.sparse_score is not None else "N/A",
+                str(c.sparse_rank) if c.sparse_rank is not None else "-",
+            )
 
         # 3. Neo4j Graph Validation & 1-Hop Expansion
-        unit_ids = [chunk.id for chunk in candidate_chunks]
-        validated_provisions = self.validator.validate_provisions(unit_ids)
-        logger.info("Validated %d provisions from graph.", len(validated_provisions))
+        if candidate_chunks:
+            unit_ids = [chunk.id for chunk in candidate_chunks]
+            validated_provisions = self.validator.validate_provisions(unit_ids)
+            logger.info("Validated %d provisions from graph.", len(validated_provisions))
+        else:
+            validated_provisions = []
+            logger.info("Candidate chunks empty, skipping graph validation.")
 
         # 4. Evidence Package Assembly
         evidence_package = self.evidence_builder.build(

@@ -54,16 +54,40 @@ def test_extract_citations_from_text() -> None:
 
 
 def test_generator_empty_evidence() -> None:
-    """Test generator behavior when evidence package is empty."""
+    """Test generator behavior when evidence package is empty (prompts LLM for conversational greeting/refusal)."""
     package = EvidencePackage(
-        user_query="câu hỏi",
-        rewritten_query="câu hỏi chuẩn hóa",
+        user_query="Xin chào bạn",
+        rewritten_query="xin chào",
         items=[],
     )
-    generator = AnswerGenerator()
+    km = KeyManager(api_keys=["test-key"])
+    mock_session = MagicMock(spec=requests.Session)
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "candidates": [
+            {
+                "content": {
+                    "parts": [
+                        {
+                            "text": "Xin chào bạn! Tôi là Trợ lý AI Cố vấn Pháp luật Giao thông Đường bộ Việt Nam. Tôi có thể hỗ trợ gì cho bạn?"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    mock_session.post.return_value = mock_resp
+    generator = AnswerGenerator(key_manager=km, session=mock_session)
     res = generator.generate(package)
-    assert "Không tìm thấy" in res.answer
+
+    assert "Trợ lý AI Cố vấn Pháp luật Giao thông" in res.answer
     assert res.citations == []
+    # Verify conversational instructions are present in prompt
+    called_payload = mock_session.post.call_args[1]["json"]
+    sent_prompt = called_payload["contents"][0]["parts"][0]["text"]
+    assert "HƯỚNG DẪN XỬ LÝ" in sent_prompt
+    assert "LỜI CHÀO HỎI" in sent_prompt
 
 
 def test_generator_successful_completion() -> None:

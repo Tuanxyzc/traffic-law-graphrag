@@ -58,7 +58,11 @@ def extract_document_intent_and_numbers(
     query: str,
 ) -> tuple[
     Literal[
-        "violation_sanction", "document_amendment", "general_rule", "system_meta_query"
+        "violation_sanction",
+        "document_amendment",
+        "general_rule",
+        "system_meta_query",
+        "out_of_scope",
     ],
     str | None,
     str | None,
@@ -176,6 +180,27 @@ def check_bypass_rewrite(query: str) -> tuple[bool, RewrittenQuery | None]:
     """
     clean = query.strip()
     q_lower = clean.lower()
+
+    # 0. Chitchat / Greeting bypass
+    greetings = {
+        "xin chào",
+        "chào bạn",
+        "chào em",
+        "chào anh",
+        "chào chị",
+        "hello",
+        "hi",
+        "bạn là ai",
+        "bạn tên gì",
+        "bạn làm được gì",
+    }
+    if q_lower in greetings or any(q_lower == g for g in greetings):
+        return True, RewrittenQuery(
+            original_query=clean,
+            search_query=clean,
+            intent="out_of_scope",
+            identified_keywords=[],
+        )
 
     # 1. System Meta Query
     det_intent, det_source, det_target = extract_document_intent_and_numbers(clean)
@@ -399,6 +424,7 @@ class QueryRewriter:
                     "document_amendment",
                     "general_rule",
                     "system_meta_query",
+                    "out_of_scope",
                 ] = (
                     model_intent
                     if model_intent
@@ -407,6 +433,7 @@ class QueryRewriter:
                         "document_amendment",
                         "general_rule",
                         "system_meta_query",
+                        "out_of_scope",
                     )
                     else det_intent
                 )

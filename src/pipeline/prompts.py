@@ -10,8 +10,14 @@ Nhiệm vụ: Phân tích câu hỏi của người dân để xác định đú
 1. Ý định truy vấn (intent):
    - "violation_sanction": Hỏi về hành vi vi phạm, quy tắc giao thông, mức phạt tiền, trừ điểm giấy phép lái xe, xử phạt bổ sung (ví dụ: "vượt đèn đỏ", "không xi nhan", "nồng độ cồn").
    - "document_amendment": Hỏi về việc sửa đổi, bổ sung, bãi bỏ, thay thế giữa các văn bản pháp luật hoặc các điều khoản được sửa đổi bởi văn bản khác (ví dụ: "những điều khoản nào trong nghị định 168 đã được sửa đổi bởi ND 238", "Nghị định 238 sửa đổi bổ sung những gì trong NĐ 168").
-   - "general_rule": Hỏi về định nghĩa, nguyên tắc chung, thẩm quyền hoặc hiệu lực văn bản.
+   - "general_rule": Hỏi về định nghĩa, nguyên tắc chung, thẩm quyền hoặc hiệu lực văn bản trong lĩnh vực giao thông đường bộ.
    - "system_meta_query": Hỏi về năng lực hệ thống, danh mục các luật/nghị định mà hệ thống nắm rõ, cơ sở dữ liệu gồm những văn bản gì (ví dụ: "liệt kê các luật, nghị định mà bạn nắm rõ", "bạn biết những văn bản nào", "hệ thống có những tài liệu gì").
+   - "out_of_scope": Câu hỏi chào hỏi xã giao, hỏi danh tính ("xin chào", "chào bạn", "bạn là ai") HOẶC câu hỏi KHÔNG LIÊN QUAN đến pháp luật giao thông đường bộ Việt Nam (ví dụ: "làm cho tôi 1 bài thơ", "thời tiết hôm nay", "công thức nấu phở", "viết code python", "kể chuyện cười", câu hỏi tri thức chung không thuộc luật giao thông).
+     + NGUYÊN TẮC BẮT BUỘC CHO "out_of_scope":
+       * "search_query": Giữ nguyên văn câu hỏi gốc của người dân. TUYỆT ĐỐI KHÔNG tự ý suy diễn, gán ghép hoặc thêm các từ ngữ giao thông (như "về giao thông", "luật giao thông") vào câu hỏi của người dân.
+       * "rule_query": null.
+       * "sanction_query": null.
+       * "identified_keywords": [].
 
 2. Quy tắc cho "document_amendment":
    - Xác định rõ "source_doc": Số hiệu văn bản sửa đổi/ban hành sau (ví dụ: "238", "238/2026/NĐ-CP").
@@ -40,12 +46,12 @@ Nhiệm vụ: Phân tích câu hỏi của người dân để xác định đú
 
 Trả về định dạng JSON hợp lệ:
 {
-  "intent": "violation_sanction | document_amendment | general_rule | system_meta_query",
+  "intent": "violation_sanction | document_amendment | general_rule | system_meta_query | out_of_scope",
   "source_doc": "<số hiệu văn bản sửa đổi nếu có, hoặc null>",
   "target_doc": "<số hiệu văn bản bị sửa đổi nếu có, hoặc null>",
-  "search_query": "<câu truy vấn tổng hợp ngắn gọn>",
-  "rule_query": "<câu truy vấn về quy tắc/hành vi>",
-  "sanction_query": "<câu truy vấn về mức phạt, trừ điểm>",
+  "search_query": "<câu truy vấn ngắn gọn>",
+  "rule_query": "<câu truy vấn về quy tắc/hành vi, hoặc null>",
+  "sanction_query": "<câu truy vấn về mức phạt, trừ điểm, hoặc null>",
   "identified_keywords": ["<từ khóa 1>", "<từ khóa 2>"]
 }
 """
@@ -60,8 +66,9 @@ REWRITE_JSON_SCHEMA: dict[str, Any] = {
                 "document_amendment",
                 "general_rule",
                 "system_meta_query",
+                "out_of_scope",
             ],
-            "description": "Ý định câu hỏi: violation_sanction, document_amendment, general_rule, system_meta_query",
+            "description": "Ý định câu hỏi: violation_sanction, document_amendment, general_rule, system_meta_query, out_of_scope",
         },
         "source_doc": {
             "type": "STRING",

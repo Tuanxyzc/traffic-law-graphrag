@@ -40,10 +40,14 @@ class RewrittenQuery(BaseModel):
         default_factory=list, description="Extracted legal concepts/terms"
     )
     intent: Literal[
-        "violation_sanction", "document_amendment", "general_rule", "system_meta_query"
+        "violation_sanction",
+        "document_amendment",
+        "general_rule",
+        "system_meta_query",
+        "out_of_scope",
     ] = Field(
         default="violation_sanction",
-        description="Classified query intent: violation_sanction, document_amendment, general_rule, or system_meta_query",
+        description="Classified query intent: violation_sanction, document_amendment, general_rule, system_meta_query, or out_of_scope",
     )
     source_doc: str | None = Field(
         default=None,
@@ -142,6 +146,10 @@ class ReferencedProvision(BaseModel):
     )
     direction: str = Field(
         default="OUTGOING", description="Direction of reference: OUTGOING or INCOMING"
+    )
+    hop_level: int = Field(
+        default=1,
+        description="Traversal hop depth: 1 for direct link, 2 for secondary link",
     )
 
 
@@ -252,6 +260,21 @@ class EvidenceItem(BaseModel):
     )
     superseding_text: str | None = Field(
         default=None, description="Replacement provision text if superseded"
+    )
+    score: float | None = Field(
+        default=None, description="Combined RRF score of the chunk"
+    )
+    dense_score: float | None = Field(
+        default=None, description="Cosine similarity score from vector index"
+    )
+    sparse_score: float | None = Field(
+        default=None, description="BM25 score from fulltext index"
+    )
+    dense_rank: int | None = Field(
+        default=None, description="1-based rank in dense vector retrieval"
+    )
+    sparse_rank: int | None = Field(
+        default=None, description="1-based rank in sparse fulltext retrieval"
     )
 
 
