@@ -78,7 +78,8 @@ def test_generator_empty_evidence() -> None:
         ]
     }
     mock_session.post.return_value = mock_resp
-    generator = AnswerGenerator(key_manager=km, session=mock_session)
+    config = PipelineConfig(generator_use_local=False)
+    generator = AnswerGenerator(config=config, key_manager=km, session=mock_session)
     res = generator.generate(package)
 
     assert "Trợ lý AI Cố vấn Pháp luật Giao thông" in res.answer
@@ -132,7 +133,9 @@ def test_generator_successful_completion() -> None:
     }
     mock_session.post.return_value = mock_resp
 
+    config = PipelineConfig(generator_use_local=False)
     generator = AnswerGenerator(
+        config=config,
         key_manager=km,
         session=mock_session,
     )
@@ -184,6 +187,54 @@ def test_generator_rotation_on_429() -> None:
 
     assert mock_session.post.call_count == 2
     assert "Khoản 1 Điều 5" in res.answer
+
+
+def test_generator_rotation_on_503() -> None:
+    """Test key rotation when generator receives 503 server overloaded error."""
+    vp = ValidatedProvision(
+        provision_id="168_2024_ND-CP_D5_K1",
+        level="CLAUSE",
+        status=LegalValidityStatus.DANG_CO_HIEU_LUC,
+        content_text="Quy định điều 5",
+    )
+    item = EvidenceItem(
+        chunk_id="c1",
+        original_chunk_text="Nội dung",
+        validated_provision=vp,
+    )
+    package = EvidencePackage(
+        user_query="q",
+        rewritten_query="q",
+        items=[item],
+    )
+
+    km = KeyManager(api_keys=["key-1", "key-2"], default_cooldown=10.0)
+    mock_session = MagicMock(spec=requests.Session)
+
+    resp_503 = MagicMock()
+    resp_503.status_code = 503
+
+    resp_200 = MagicMock()
+    resp_200.status_code = 200
+    resp_200.json.return_value = {
+        "candidates": [
+            {"content": {"parts": [{"text": "Căn cứ Khoản 1 Điều 5, mức phạt là..."}]}}
+        ]
+    }
+
+    mock_session.post.side_effect = [resp_503, resp_200]
+
+    config = PipelineConfig(max_retries=2)
+    generator = AnswerGenerator(config=config, key_manager=km, session=mock_session)
+    res = generator.generate(package)
+
+    assert mock_session.post.call_count == 2
+    assert "Khoản 1 Điều 5" in res.answer
+    first_call_url = mock_session.post.call_args_list[0][0][0]
+    second_call_url = mock_session.post.call_args_list[1][0][0]
+    assert "key=key-1" in first_call_url
+    assert "key=key-2" in second_call_url
+
 
 
 def test_generator_network_failure_fallback() -> None:
@@ -315,3 +366,99 @@ def test_clean_generated_answer_preserves_genuine_sanctions() -> None:
     assert "HÌNH THỨC XỬ PHẠT VÀ ĐIỂM GPLX" in cleaned
     assert "4.000.000 đồng đến 6.000.000 đồng" in cleaned
     assert "Trừ 2 điểm" in cleaned
+
+
+def test_generator_local_mode_successful() -> None:
+    """Test answer generation using Localhost LLM OpenAI-compatible REST endpoint."""
+    config = PipelineConfig(
+        generator_use_local=True,
+        generator_local_endpoint="http://localhost:11434/v1",
+        generator_local_model="Qwen2.5:1.5b",
+    )
+    vp = ValidatedProvision(
+        provision_id="168_2024_ND-CP_D7_K1_Da",
+        level="POINT",
+        status=LegalValidityStatus.DANG_CO_HIEU_LUC,
+        content_text="Phạt tiền từ 200.000 đến 400.000 đồng đối với xe mô tô...",
+        parent_article_title="Điều 7. Xử phạt người điều khiển xe mô tô, xe gắn máy",
+    )
+    item = EvidenceItem(
+        chunk_id="c1",
+        original_chunk_text="Phạt tiền từ 200.000 đến 400.000 đồng đối với xe mô tô...",
+        validated_provision=vp,
+    )
+    pkg = EvidencePackage(
+        user_query="xe máy vượt đèn đỏ phạt bao nhiêu",
+        rewritten_query="mức phạt xe mô tô vượt đèn đỏ",
+        items=[item],
+    )
+
+    mock_session = MagicMock(spec=requests.Session)
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "choices": [
+            {
+                "message": {
+                    "content": (
+                        "Theo Điểm a Khoản 1 Điều 7 Nghị định 168/2024/NĐ-CP, "
+                        "người điều khiển xe mô tô, xe gắn máy không chấp hành hiệu lệnh của đèn tín hiệu giao thông "
+                        "bị phạt tiền từ 200.000 đồng đến 400.000 đồng."
+                    )
+                }
+            }
+        ]
+    }
+    mock_session.post.return_value = mock_resp
+
+    generator = AnswerGenerator(config=config, session=mock_session)
+    res = generator.generate(pkg)
+
+    assert "Điểm a Khoản 1 Điều 7 Nghị định 168/2024/NĐ-CP" in res.answer
+    assert "200.000 đồng đến 400.000 đồng" in res.answer
+    assert any("Điều 7" in c for c in res.citations)
+
+    called_url = mock_session.post.call_args[0][0]
+    assert "http://localhost:11434/v1/chat/completions" in called_url
+
+
+def test_generator_local_mode_failure() -> None:
+    """Test graceful fallback when Localhost LLM endpoint is unreachable."""
+    config = PipelineConfig(
+        generator_use_local=True,
+        generator_local_endpoint="http://localhost:11434/v1",
+    )
+    vp = ValidatedProvision(
+        provision_id="168_2024_ND-CP_D7_K1",
+        level="CLAUSE",
+        status=LegalValidityStatus.DANG_CO_HIEU_LUC,
+        content_text="Quy định",
+    )
+    item = EvidenceItem(
+        chunk_id="c1",
+        original_chunk_text="Quy định",
+        validated_provision=vp,
+    )
+    pkg = EvidencePackage(user_query="q", rewritten_query="q", items=[item])
+
+    mock_session = MagicMock(spec=requests.Session)
+    mock_session.post.side_effect = requests.ConnectionError("Connection refused")
+
+    generator = AnswerGenerator(config=config, session=mock_session)
+    res = generator.generate(pkg)
+
+    assert "mô hình ngôn ngữ cục bộ" in res.answer
+    assert res.citations == []
+
+
+def test_clean_generated_answer_strips_role_echo() -> None:
+    """Test that role repetition phrases like 'Bạn là chuyên viên tư vấn pháp luật...' are stripped."""
+    raw_answer = (
+        "Bạn là chuyên viên tư vấn pháp luật giao thông đường bộ Việt Nam.\n\n"
+        "Vượt đèn đỏ ở xe máy bị xử phạt như sau:\n"
+        "- Phạt tiền từ 4.000.000 đồng đến 6.000.000 đồng.\n"
+        "- Trừ 2 điểm giấy phép lái xe."
+    )
+    cleaned = clean_generated_answer(raw_answer, has_sanctions=True)
+    assert not cleaned.startswith("Bạn là chuyên viên")
+    assert "Vượt đèn đỏ ở xe máy bị xử phạt như sau:" in cleaned

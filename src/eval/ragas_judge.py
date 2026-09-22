@@ -136,6 +136,11 @@ class RagasJudgeClient:
 
                 if resp.status_code in (500, 502, 503, 504):
                     retries += 1
+                    logger.warning(
+                        "Server error %d in RagasJudge. Rotating key with short cooldown...",
+                        resp.status_code,
+                    )
+                    self.key_manager.mark_server_error(key, cooldown_seconds=15.0)
                     time.sleep(retries * 1.5)
                     continue
 

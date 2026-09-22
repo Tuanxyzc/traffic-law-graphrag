@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 
@@ -66,133 +67,6 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _clean_snippet(text: str | None, max_len: int = 110) -> str:
-    """Cleans multiline text into a compact single-line preview."""
-    if not text:
-        return ""
-    cleaned = " ".join(text.split()).strip()
-    if len(cleaned) > max_len:
-        return cleaned[:max_len] + "..."
-    return cleaned
-
-
-def format_graph_traversal_tree(result) -> list[str]:
-    """Renders the Knowledge Graph traversal paths as an intuitive visual tree."""
-    lines: list[str] = [
-        "-" * 80,
-        "🕸️  KNOWLEDGE GRAPH TRAVERSAL (CÁC NODES & QUAN HỆ ĐÃ DUYỆT):",
-    ]
-
-    items = getattr(result.evidence_package, "items", [])
-    if not items:
-        lines.append("  (Không có dữ liệu đồ thị)")
-        return lines
-
-    for idx, item in enumerate(items, start=1):
-        prov = item.validated_provision
-
-        # Hierarchy summary
-        hierarchy_parts = []
-        if prov.parent_article_title:
-            hierarchy_parts.append(prov.parent_article_title)
-        elif prov.parent_article_id:
-            hierarchy_parts.append(prov.parent_article_id)
-        if prov.parent_clause_number:
-            hierarchy_parts.append(f"Khoản {prov.parent_clause_number}")
-
-        hierarchy_str = (
-            f" | Phạm vi: {' - '.join(hierarchy_parts)}" if hierarchy_parts else ""
-        )
-        status_val = (
-            prov.status.value if hasattr(prov.status, "value") else str(prov.status)
-        )
-
-        lines.append(f"\n[{idx}] ANCHOR (Gốc trích xuất RAG): {prov.provision_id}")
-        lines.append(
-            f"  │ Cấp bậc: {prov.level} | Trạng thái: {status_val}{hierarchy_str}"
-        )
-
-        # Build list of traversed branches
-        branches: list[tuple[str, str | None]] = []
-
-        # 1. Direct amendments (amends / amended by)
-        for am in prov.amendments:
-            dir_icon = "◄──" if am.direction == "INCOMING" else "──►"
-            op_label = f"[AMENDS : {am.operation}]"
-            source_target = (
-                f"từ {am.source_provision_id or am.by_document or 'Văn bản sửa đổi'}"
-                if am.direction == "INCOMING"
-                else f"tới {am.target_provision_id or 'Quy định gốc'}"
-            )
-            label = f"{dir_icon} {op_label} {source_target}"
-            detail = _clean_snippet(am.replacement_text or am.instruction)
-            branches.append((label, detail))
-
-        # 2. Cross-references (Hop 1 & Hop 2)
-        # Prioritize Hop 1 sanctions (TRU_DIEM_GPLX, TUOC_QUYEN_GPLX, TICH_THU) first
-        sorted_refs = sorted(
-            prov.cross_references,
-            key=lambda r: (
-                r.hop_level,
-                0 if any(s in r.relation_type for s in ("GPLX", "TICH_THU", "BO_SUNG")) else 1,
-                r.relation_type,
-            ),
-        )
-        for ref in sorted_refs:
-            dir_icon = "◄──" if ref.direction == "INCOMING" else "──►"
-            hop_label = f"[Hop {ref.hop_level} : {ref.relation_type}]"
-            target_str = ref.target_id
-            if ref.title:
-                target_str += f" ({ref.title})"
-            label = f"{dir_icon} {hop_label} {target_str}"
-            detail = _clean_snippet(ref.content)
-            branches.append((label, detail))
-
-        if not branches:
-            lines.append("  └── (Không có quan hệ dẫn chiếu mở rộng)")
-        else:
-            for b_idx, (branch_label, branch_detail) in enumerate(branches):
-                is_last = b_idx == len(branches) - 1
-                tree_fork = "└── " if is_last else "├── "
-                indent_pipe = "    " if is_last else "│   "
-                lines.append(f"  {tree_fork}{branch_label}")
-                if branch_detail:
-                    lines.append(f"  {indent_pipe}  ↳ Nội dung: \"{branch_detail}\"")
-
-    # Subgraph metrics summary
-    subgraph = getattr(result, "subgraph", None) or getattr(
-        result.evidence_package, "subgraph", None
-    )
-    if subgraph and (subgraph.nodes or subgraph.relationships):
-        lines.append("\n" + "." * 80)
-        node_counts: dict[str, int] = {}
-        for n in subgraph.nodes:
-            node_counts[n.label] = node_counts.get(n.label, 0) + 1
-        node_summary = ", ".join(f"{k}: {v}" for k, v in sorted(node_counts.items()))
-
-        rel_counts: dict[str, int] = {}
-        for r in subgraph.relationships:
-            rel_counts[r.type] = rel_counts.get(r.type, 0) + 1
-        rel_summary = ", ".join(f"{k}: {v}" for k, v in sorted(rel_counts.items()))
-
-        lines.append(
-            f"📈 TỔNG KẾT KNOWLEDGE SUBGRAPH:\n"
-            f"  • Nodes ({len(subgraph.nodes)}): {node_summary}\n"
-            f"  • Quan hệ ({len(subgraph.relationships)}): {rel_summary}"
-        )
-
-    # Document-level amendments if present
-    doc_ams = getattr(result.evidence_package, "document_amendments", [])
-    if doc_ams:
-        lines.append("\n📜 VĂN BẢN SỬA ĐỔI / THAY THẾ (DOCUMENT AMENDMENTS):")
-        for da in doc_ams:
-            lines.append(
-                f"  • [{da.operation}] Mục tiêu: {da.target_id} | Chỉ dẫn: {da.instruction}"
-            )
-
-    return lines
-
-
 def format_text_output(result) -> str:
     """Formats PipelineResult as a rich readable terminal output."""
     lines: list[str] = [
@@ -203,7 +77,22 @@ def format_text_output(result) -> str:
     ]
 
     if result.rewritten_query and result.rewritten_query != result.user_query:
-        lines.append(f"🔍 Thuật ngữ tra cứu chuẩn hóa: {result.rewritten_query}")
+        if hasattr(result.rewritten_query, "to_json_dict"):
+            rw_json = json.dumps(
+                result.rewritten_query.to_json_dict(),
+                ensure_ascii=False,
+                indent=2,
+            )
+            lines.append(f"🔍 Phân tích & Chuẩn hóa truy vấn (Query Rewrite JSON):\n{rw_json}")
+        elif isinstance(result.rewritten_query, dict):
+            rw_json = json.dumps(
+                result.rewritten_query,
+                ensure_ascii=False,
+                indent=2,
+            )
+            lines.append(f"🔍 Phân tích & Chuẩn hóa truy vấn (Query Rewrite JSON):\n{rw_json}")
+        else:
+            lines.append(f"🔍 Thuật ngữ tra cứu chuẩn hóa: {result.rewritten_query}")
 
     lines.extend(
         [
@@ -219,35 +108,14 @@ def format_text_output(result) -> str:
         for c in result.citations:
             lines.append(f"  • {c}")
 
-    # Visual Knowledge Graph Traversal paths
-    lines.extend(format_graph_traversal_tree(result))
-
-    if result.evidence_package.items:
-        lines.append("-" * 80)
-        lines.append("📊 ĐIỂM SỐ RETRIEVAL CÁC CHUNKS (RRF / DENSE / SPARSE):")
-        for idx, item in enumerate(result.evidence_package.items, start=1):
-            dense_str = (
-                f"{item.dense_score:.4f} (#{item.dense_rank})"
-                if item.dense_score is not None
-                else "N/A"
-            )
-            sparse_str = (
-                f"{item.sparse_score:.4f} (#{item.sparse_rank})"
-                if item.sparse_score is not None
-                else "N/A"
-            )
-            rrf_str = f"{item.score:.6f}" if item.score is not None else "N/A"
-            lines.append(
-                f"  [{idx}] {item.chunk_id}\n"
-                f"      • RRF Score: {rrf_str} | Cosine (Dense): {dense_str} | BM25 (Sparse): {sparse_str}"
-            )
-
     if result.evidence_package.has_superseded_provisions:
         lines.append(
             "\n⚠️  LƯU Ý HIỆU LỰC: Gói bằng chứng chứa quy định đã bị sửa đổi / thay thế hoặc hết hiệu lực."
         )
 
-    lines.append("-" * 80)
+    if result.citations or result.evidence_package.has_superseded_provisions:
+        lines.append("-" * 80)
+
     lines.extend(
         [
             f"⏱️ Thời gian xử lý: {result.execution_time_ms:.1f}ms | Bằng chứng: {len(result.evidence_package.items)} điều khoản",
@@ -258,7 +126,7 @@ def format_text_output(result) -> str:
 
 
 def format_table_output(result) -> str:
-    """Formats PipelineResult with tabulate grids of evidence items and graph traversal."""
+    """Formats PipelineResult with a tabulate grid of evidence items."""
     lines: list[str] = [
         format_text_output(result),
         "\n📋 CHI TIẾT BẰNG CHỨNG PHÁP LÝ (EVIDENCE PACKAGE):",
@@ -269,26 +137,12 @@ def format_table_output(result) -> str:
         prov = item.validated_provision
         status_disp = item.warning_flag or prov.status.value
         content = (prov.content_text or item.original_chunk_text).replace("\n", " ")
-        preview = (content[:50] + "...") if len(content) > 50 else content
-        rrf_disp = f"{item.score:.6f}" if item.score is not None else "N/A"
-        dense_disp = (
-            f"{item.dense_score:.4f} (#{item.dense_rank})"
-            if item.dense_score is not None
-            else "N/A"
-        )
-        sparse_disp = (
-            f"{item.sparse_score:.4f} (#{item.sparse_rank})"
-            if item.sparse_score is not None
-            else "N/A"
-        )
+        preview = (content[:60] + "...") if len(content) > 60 else content
 
         table_data.append(
             [
                 idx,
                 prov.provision_id,
-                rrf_disp,
-                dense_disp,
-                sparse_disp,
                 prov.level,
                 prov.parent_article_title or "-",
                 status_disp,
@@ -299,70 +153,12 @@ def format_table_output(result) -> str:
     headers = [
         "#",
         "Provision ID",
-        "RRF Score",
-        "Cosine (Dense)",
-        "BM25 (Sparse)",
         "Level",
         "Điều luật",
-        "Trạng thái",
+        "Trạng thái hiệu lực",
         "Nội dung trích dẫn",
     ]
     lines.append(tabulate(table_data, headers=headers, tablefmt="grid"))
-
-    # Traversed Relationships Table
-    traversal_rows = []
-    t_idx = 1
-    for item in result.evidence_package.items:
-        prov = item.validated_provision
-        for am in prov.amendments:
-            dir_str = "◄── INCOMING" if am.direction == "INCOMING" else "──► OUTGOING"
-            conn_node = (
-                am.source_provision_id or am.by_document
-                if am.direction == "INCOMING"
-                else (am.target_provision_id or "-")
-            )
-            detail = _clean_snippet(am.replacement_text or am.instruction, 60)
-            traversal_rows.append(
-                [
-                    t_idx,
-                    prov.provision_id,
-                    dir_str,
-                    f"AMENDS ({am.operation})",
-                    1,
-                    conn_node or "-",
-                    detail,
-                ]
-            )
-            t_idx += 1
-        for ref in prov.cross_references:
-            dir_str = "◄── INCOMING" if ref.direction == "INCOMING" else "──► OUTGOING"
-            detail = _clean_snippet(ref.content, 60)
-            traversal_rows.append(
-                [
-                    t_idx,
-                    prov.provision_id,
-                    dir_str,
-                    ref.relation_type,
-                    ref.hop_level,
-                    ref.target_id,
-                    detail,
-                ]
-            )
-            t_idx += 1
-
-    if traversal_rows:
-        lines.append("\n🕸️ CÁC QUAN HỆ GRAPH TRAVERSAL MỞ RỘNG (1-HOP & 2-HOP):")
-        trav_headers = [
-            "#",
-            "Anchor Node",
-            "Hướng",
-            "Quan hệ",
-            "Hop",
-            "Node liên kết",
-            "Nội dung trích đoạn",
-        ]
-        lines.append(tabulate(traversal_rows, headers=trav_headers, tablefmt="grid"))
-
     return "\n".join(lines)
 
 

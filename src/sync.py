@@ -159,6 +159,28 @@ def run_stage_rag(doc_id: str | None, dry_run: bool = False) -> tuple[bool, floa
     return success, elapsed, status_str
 
 
+def run_stage_link_containment(dry_run: bool = False) -> tuple[bool, float, str]:
+    """Runs Stage 4: Sync CONTAINS_* edges to SemanticUnits."""
+    start = time.time()
+    logger.info(">>> [STAGE 4/4] Linking CONTAINS_* relationships to SemanticUnits...")
+    if dry_run:
+        return True, 0.0, "DRY_RUN"
+    try:
+        from src.graph.neo4j.connection import Neo4jClient
+        from src.graph.neo4j.importer import Neo4jBatchImporter
+
+        client = Neo4jClient()
+        importer = Neo4jBatchImporter()
+        with client.session() as session:
+            importer.link_semantic_unit_containment(session)
+        elapsed = round(time.time() - start, 2)
+        return True, elapsed, "SUCCESS"
+    except Exception as exc:
+        logger.error("Failed to link containment: %s", exc)
+        elapsed = round(time.time() - start, 2)
+        return False, elapsed, f"FAILED: {exc}"
+
+
 def sync(
     doc_id: str | None = None,
     dry_run: bool = False,
@@ -216,6 +238,12 @@ def sync(
             return 1
     else:
         stages_report.append(["3. RAG Vector & BM25 Index", "0.0s", "SKIPPED"])
+
+    # Stage 4: SemanticUnit Containment Linking
+    c_ok, c_time, c_status = run_stage_link_containment(dry_run=dry_run)
+    stages_report.append(["4. SemanticUnit Containment Linking", f"{c_time}s", c_status])
+    if not c_ok:
+        print("\n[WARNING] Stage 4 (Containment Linking) encountered errors.")
 
     total_elapsed = round(time.time() - total_start, 2)
     _print_summary(stages_report, total_elapsed)

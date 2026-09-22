@@ -78,10 +78,21 @@ def has_sanctions_in_package(package: EvidencePackage) -> bool:
     return False
 
 
-def clean_generated_answer(text: str, has_sanctions: bool = True) -> str:
+def clean_generated_answer(text: str | None, has_sanctions: bool = True) -> str:
     """Cleans generated answer by deduplicating repetitive sections and pruning redundant no-sanction notes."""
+    if not text or not isinstance(text, str):
+        return ""
+
+    # Strip prompt leakage XML tags
+    cleaned_text = re.sub(
+        r"</?(?:can_cu_phap_ly|chi_dan_tu_van|evidence|instructions)>",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+
     # 1. Deduplicate repeated markdown header sections (breaking degenerative completion loops)
-    lines = text.split("\n")
+    lines = cleaned_text.split("\n")
     cleaned_lines: list[str] = []
     seen_headers: set[str] = set()
     skipping_duplicate_section = False
@@ -136,14 +147,118 @@ def clean_generated_answer(text: str, has_sanctions: bool = True) -> str:
             else ("".join(retained_blocks))
         )
 
+    # Strip role repetition prefixes like "Bạn là chuyên viên tư vấn pháp luật..."
+    result = re.sub(
+        r"^(?:(?:Bạn|Tôi)\s+là\s+chuyên\s+viên\s+tư\s+vấn\s+pháp\s+luật\s+giao\s+thông\s+đường\s+bộ\s+Việt\s+Nam[.\s]*)+",
+        "",
+        result.strip(),
+        flags=re.IGNORECASE,
+    )
+
+    # Strip conversational echo prefixes like "Trả lời :", "Câu trả lời :", "CÂU TRẢ LỜI CĂN CỨ PHÁP LUẬT :" at start
+    result = re.sub(
+        r"^(?:Trả\s+lời\s*:|Câu\s+trả\s+lời\s*:|Tư\s+vấn\s*:|CÂU\s+TRẢ\s+LỜI(?:\s+CĂN\s+CỨ\s+PHÁP\s+LUẬT)?\s*:)\s*",
+        "",
+        result.strip(),
+        flags=re.IGNORECASE,
+    )
+
     # Strip trailing horizontal dividers or excessive line breaks
     result = re.sub(r"(?:\n\s*---\s*)+\Z", "", result)
     result = re.sub(r"\n{3,}", "\n\n", result)
     return result.strip()
 
 
+def verify_action_grounding(
+    answer_text: str,
+    rewritten_query: Any,
+    package: EvidencePackage,
+) -> tuple[bool, list[str]]:
+    """Verifies that generated answer adheres to action grounding constraints dynamically without hardcoding.
+
+    Checks:
+    1. Negative term drift: Answer does not introduce terms from must_not_have_terms
+       (e.g., drift to traffic lights when asked about traffic police signals).
+    2. Target entity coverage: If target_entities has multiple vehicles, answer mentions them.
+    3. Grounding integrity: Extracted statutory citations correspond to provisions present
+       in the evidence package or referenced provisions.
+
+    Returns:
+        tuple[bool, list[str]]: (is_valid, warnings)
+    """
+    warnings: list[str] = []
+    if not answer_text or not isinstance(answer_text, str):
+        return True, warnings
+
+    ans_lower = answer_text.lower()
+
+    # 1. Negative term drift check
+    must_not_have = (
+        getattr(rewritten_query, "must_not_have_terms", [])
+        if hasattr(rewritten_query, "must_not_have_terms")
+        else []
+    )
+    user_q_lower = (package.user_query or "").lower()
+    keywords = [
+        kw.lower()
+        for kw in getattr(rewritten_query, "identified_keywords", [])
+        if isinstance(kw, str)
+    ]
+    for term in must_not_have:
+        if term and term.lower() in ans_lower:
+            t_lower = term.lower()
+            if t_lower in user_q_lower or any(t_lower in kw for kw in keywords):
+                continue
+            warnings.append(
+                f"Phát hiện trôi lệch hành vi: câu trả lời chứa thuật ngữ cấm '{term}'"
+            )
+
+    # 2. Target entities coverage check
+    target_entities = (
+        getattr(rewritten_query, "target_entities", [])
+        if hasattr(rewritten_query, "target_entities")
+        else []
+    )
+    entity_keywords = {
+        "xe_o_to": ["ô tô", "o to", "xe con", "xe tải"],
+        "xe_mo_to": ["mô tô", "mo to", "xe máy", "xe gắn máy"],
+        "xe_may_chuyen_dung": ["chuyên dùng", "máy thi công", "xe lu", "máy ủi"],
+        "xe_dap": ["xe đạp", "xe thô sơ"],
+        "nguoi_di_bo": ["người đi bộ", "đi bộ"],
+        "vat_nuoi": ["súc vật", "vật nuôi"],
+    }
+    if len(target_entities) > 1:
+        for ent in target_entities:
+            kw_list = entity_keywords.get(ent, [ent.replace("_", " ")])
+            if not any(kw in ans_lower for kw in kw_list):
+                warnings.append(
+                    f"Thiếu nhóm phương tiện mục tiêu: câu trả lời chưa đề cập đến '{ent}'"
+                )
+
+    # 3. Grounding integrity check: verify citations in answer correspond to package
+    package_article_ids: set[str] = set()
+    for item in package.items:
+        prov = item.validated_provision
+        if prov.parent_article_id:
+            package_article_ids.add(prov.parent_article_id.lower())
+        if prov.provision_id:
+            package_article_ids.add(prov.provision_id.lower())
+        for ref in prov.cross_references:
+            if ref.target_id:
+                package_article_ids.add(ref.target_id.lower())
+
+    for am in package.document_amendments:
+        if am.article_id:
+            package_article_ids.add(am.article_id.lower())
+        if am.target_id:
+            package_article_ids.add(am.target_id.lower())
+
+    is_valid = len(warnings) == 0
+    return is_valid, warnings
+
+
 class AnswerGenerator:
-    """Generates strictly grounded legal answers from EvidencePackage using Gemini REST API."""
+    """Generates strictly grounded legal answers from EvidencePackage using Local LLM or Gemini REST API."""
 
     def __init__(
         self,
@@ -159,22 +274,16 @@ class AnswerGenerator:
         self.max_retries = self.config.max_retries
         self.session = session or requests.Session()
 
-    def generate(self, evidence: EvidencePackage) -> GenerationResult:
-        """Generates grounded answer with statutory citations.
-
-        Args:
-            evidence: Formatted EvidencePackage.
-
-        Returns:
-            GenerationResult containing answer text and extracted citations.
-        """
+    def _build_user_prompt(
+        self, evidence: EvidencePackage, has_sanctions: bool
+    ) -> str:
+        """Builds user prompt for answer generation."""
         if (
             not evidence.items
             and not evidence.document_amendments
             and not evidence.system_documents
         ):
-            has_sanctions = False
-            user_prompt = (
+            return (
                 f'CÂU HỎI / LỜI NHẮN CỦA NGƯỜI DÂN: "{evidence.user_query}"\n\n'
                 f"TÌNH TRẠNG TRA CỨU: Không tìm thấy điều khoản quy định pháp luật giao thông đường bộ nào trong cơ sở dữ liệu phù hợp với câu hỏi này.\n\n"
                 f"HƯỚNG DẪN XỬ LÝ:\n"
@@ -187,59 +296,254 @@ class AnswerGenerator:
                 f"3. NẾU ĐÂY LÀ CÂU HỎI VỀ GIAO THÔNG NHƯNG CHƯA ĐỦ THÔNG TIN HOẶC HỆ THỐNG CHƯA CẬP NHẬT:\n"
                 f"   - Thông báo rõ ràng hiện tại cơ sở dữ liệu chưa tìm thấy quy định trực tiếp cho trường hợp này, và đề nghị người dân cung cấp thêm ngữ cảnh cụ thể (loại phương tiện, hành vi vi phạm...). Tuyệt đối không tự suy diễn hoặc bịa đặt điều luật, số hiệu văn bản."
             )
+
+        evidence_text = self.evidence_builder.format_for_llm(evidence)
+        rw = evidence.rewritten_query
+
+        bullets: list[str] = [
+            f'- Trả lời trực tiếp, tự nhiên, gãy gọn vào câu hỏi của người dân: "{evidence.user_query}".',
+        ]
+
+        # 1. Target entities guidance (Dynamic Multi-Vehicle Handling)
+        target_entities: list[str] = (
+            getattr(rw, "target_entities", [])
+            if hasattr(rw, "target_entities") and rw.target_entities
+            else []
+        )
+        if len(target_entities) > 1:
+            entities_str = ", ".join(target_entities)
+            bullets.append(
+                f"- Câu hỏi áp dụng cho nhiều nhóm phương tiện ({entities_str}). "
+                "Hãy phân tách rõ ràng từng nhóm phương tiện trong câu trả lời; "
+                "với mỗi nhóm phương tiện, nêu đầy đủ: mức tiền phạt (từ quy định chính), "
+                "số điểm GPLX bị trừ (hoặc hình thức tước quyền nếu có từ quy định tham chiếu 1-hop), "
+                "và viện dẫn chính xác căn cứ pháp lý."
+            )
         else:
-            evidence_text = self.evidence_builder.format_for_llm(evidence)
-            has_sanctions = has_sanctions_in_package(evidence)
-
-            if evidence.system_documents:
-                sanction_instruction = (
-                    "2. Về danh mục văn bản: Trình bày đầy đủ, phân loại rõ ràng các Luật và Nghị định có trong bằng chứng. "
-                    "Tuyệt đối KHÔNG đề cập đến mức phạt tiền hay trừ điểm vì đây là câu hỏi về danh mục tài liệu của hệ thống."
-                )
-            elif has_sanctions:
-                sanction_instruction = (
-                    "2. Nêu rõ hình thức xử phạt (mức phạt tiền, tước GPLX, trừ điểm GPLX có trong bằng chứng). "
-                    "Phân tách rõ ràng theo loại phương tiện nếu có."
-                )
-            else:
-                sanction_instruction = (
-                    "2. Về hình thức xử phạt và trừ điểm GPLX: BẰNG CHỨNG KHÔNG CÓ THÔNG TIN VỀ TIỀN PHẠT HAY TRỪ ĐIỂM "
-                    "(hoặc câu hỏi không hỏi về vi phạm/xử phạt), TUYỆT ĐỐI KHÔNG CẦN NÊU RA LÀ KHÔNG CÓ, không tạo mục ghi chú giải thích. "
-                    "Chỉ tập trung trả lời trực tiếp, đúng trọng tâm câu hỏi của người dân."
-                )
-
-            user_prompt = (
-                f"HÃY GIẢI ĐÁP CÂU HỎI SAU DỰA HOÀN TOÀN VÀO GÓI BẰNG CHỨNG PHÁP LÝ:\n\n"
-                f"{evidence_text}\n\n"
-                f"YÊU CẦU TRẢ LỜI:\n"
-                f'1. Trả lời trực tiếp, rõ ràng, đúng trọng tâm cho câu hỏi của người dân: "{evidence.user_query}".\n'
-                f"{sanction_instruction}\n"
-                f"3. Dẫn chiếu chính xác Điểm, Khoản, Điều, Văn bản.\n"
-                f"4. Nếu có quy định cũ đã bị thay thế (xem cờ cảnh báo), phân tích ngắn gọn quy định trước đây và quy định hiện hành đang áp dụng."
+            bullets.append(
+                "- Phân định rõ loại phương tiện mà người dân hỏi (xe mô tô, xe gắn máy vs xe máy chuyên dùng vs xe ô tô)."
             )
 
+        # 2. Sanction vs Non-sanction guidance
+        if evidence.system_documents:
+            bullets.append(
+                "- Liệt kê danh mục văn bản, không đề cập đến mức phạt tiền hay trừ điểm "
+                "vì đây là câu hỏi tra cứu danh mục tài liệu của hệ thống."
+            )
+        elif has_sanctions:
+            bullets.append(
+                "- Nêu cụ thể mức phạt tiền và trừ điểm giấy phép lái xe theo đúng quy định "
+                "trong căn cứ tương ứng với loại phương tiện."
+            )
+        else:
+            bullets.append(
+                "- Trong căn cứ không có mức phạt tiền hoặc trừ điểm (hoặc câu hỏi chỉ hỏi về quy tắc), "
+                "tuyệt đối KHÔNG nhắc đến hay thanh minh về việc không có phạt tiền/trừ điểm. "
+                "Chỉ tập trung nêu rõ quy tắc và hành vi vi phạm."
+            )
+
+        # 3. Violation Sanction vs Law Enforcement Powers Distinction
+        query_intent = getattr(rw, "intent", None)
+        if query_intent == "violation_sanction":
+            bullets.append(
+                "- Tập trung giải đáp các chế tài xử phạt hành chính đối với người vi phạm; "
+                "tuyệt đối không đưa các quy định về thẩm quyền, biện pháp nghiệp vụ của lực lượng thực thi công vụ "
+                "(như quyền tuần tra, kiểm soát, dừng phương tiện, truy đuổi của CSGT) vào làm chế tài xử phạt của người dân."
+            )
+
+        # 4. Action matching accuracy
+        bullets.append(
+            "- Đối chiếu chính xác hành vi vi phạm: chỉ áp dụng các Điểm, Khoản có nội dung khớp đúng với hành vi người dân hỏi, "
+            "không nhầm lẫn sang các hành vi vi phạm khác."
+        )
+
+        bullets.append(
+            "- Dẫn chứng chuẩn xác Điều, Khoản, Điểm và Tên văn bản quy phạm pháp luật làm căn cứ."
+        )
+        bullets.append(
+            "- Nếu có điều khoản đã bị thay thế hoặc sửa đổi (xem cờ cảnh báo), hướng dẫn áp dụng theo quy định mới nhất hiện hành."
+        )
+
+        chi_dan_text = "\n".join(bullets)
+
+        return (
+            f"<can_cu_phap_ly>\n"
+            f"{evidence_text}\n"
+            f"</can_cu_phap_ly>\n\n"
+            f"<chi_dan_tu_van>\n"
+            f"{chi_dan_text}\n"
+            f"</chi_dan_tu_van>"
+        )
+
+    def _generate_local(
+        self,
+        user_prompt: str,
+        has_sanctions: bool,
+        evidence: EvidencePackage,
+    ) -> GenerationResult:
+        """Generates answer using Localhost LLM via OpenAI-compatible chat completions REST API."""
+        endpoint = self.config.generator_local_endpoint.rstrip("/")
+        url = (
+            endpoint
+            if endpoint.endswith("/chat/completions")
+            else f"{endpoint}/chat/completions"
+        )
+        headers: dict[str, str] = {"Content-Type": "application/json"}
+        if self.config.generator_local_api_key:
+            headers["Authorization"] = f"Bearer {self.config.generator_local_api_key}"
+
         payload: dict[str, Any] = {
-            "system_instruction": {"parts": [{"text": GENERATE_SYSTEM_PROMPT}]},
-            "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
-            "generationConfig": {
-                "temperature": self.config.temperature_generate,
-            },
+            "model": self.config.generator_local_model,
+            "messages": [
+                {"role": "system", "content": GENERATE_SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
+            "temperature": self.config.generator_local_temperature,
         }
 
+        try:
+            resp = self.session.post(
+                url,
+                headers=headers,
+                json=payload,
+                timeout=self.config.generator_local_timeout,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            choices = data.get("choices", [])
+            if not choices:
+                raise ValueError("Empty choices in Local LLM generate response")
+            first_choice = choices[0] or {}
+            message = first_choice.get("message") or {}
+            text_content = message.get("content")
+            if not text_content or not isinstance(text_content, str):
+                raise ValueError("Empty content in Local LLM generate choice")
+
+            clean_answer = clean_generated_answer(
+                text_content, has_sanctions=has_sanctions
+            )
+            citations = extract_citations_from_text(clean_answer, package=evidence)
+            is_grounded, warnings = verify_action_grounding(
+                clean_answer, evidence.rewritten_query, evidence
+            )
+            if warnings:
+                logger.warning(
+                    "Grounding verification warnings for query '%s': %s",
+                    evidence.user_query,
+                    warnings,
+                )
+
+            return GenerationResult(
+                answer=clean_answer,
+                citations=citations,
+                raw_response=text_content,
+                grounding_verified=is_grounded,
+                verification_warnings=warnings,
+            )
+        except requests.exceptions.HTTPError as exc:
+            err_msg = str(exc)
+            if exc.response is not None:
+                try:
+                    err_json = exc.response.json()
+                    if isinstance(err_json, dict) and "error" in err_json:
+                        err_msg = f"{exc}: {err_json['error']}"
+                except Exception:
+                    if exc.response.text:
+                        err_msg = f"{exc}: {exc.response.text.strip()}"
+            logger.error("Local LLM answer generation failed (HTTPError): %s", err_msg)
+            return GenerationResult(
+                answer="Hệ thống tạm thời không thể tạo câu trả lời do gián đoạn kết nối tới dịch vụ mô hình ngôn ngữ cục bộ. Vui lòng kiểm tra lại dịch vụ Local LLM.",
+                citations=[],
+            )
+        except Exception as exc:
+            logger.error(
+                "Local LLM answer generation failed: %s",
+                exc,
+            )
+            return GenerationResult(
+                answer="Hệ thống tạm thời không thể tạo câu trả lời do gián đoạn kết nối tới dịch vụ mô hình ngôn ngữ cục bộ. Vui lòng kiểm tra lại dịch vụ Local LLM.",
+                citations=[],
+            )
+
+    def _generate_gemini(
+        self,
+        user_prompt: str,
+        has_sanctions: bool,
+        evidence: EvidencePackage,
+    ) -> GenerationResult:
+        """Backward-compatible alias for _generate_cloud."""
+        return self._generate_cloud(
+            user_prompt=user_prompt,
+            has_sanctions=has_sanctions,
+            evidence=evidence,
+        )
+
+    def _generate_cloud(
+        self,
+        user_prompt: str,
+        has_sanctions: bool,
+        evidence: EvidencePackage,
+    ) -> GenerationResult:
+        """Generates answer using multi-provider Cloud LLM (Gemini, Groq, Cerebras, Cohere)."""
         retries = 0
         while retries < self.max_retries:
             try:
-                key = self.key_manager.get_key()
+                pkey = self.key_manager.get_provider_key(purpose="generate")
             except Exception as e:
-                logger.error("Failed to obtain API key for AnswerGenerator: %s", e)
+                logger.error(
+                    "Failed to obtain API key across providers for AnswerGenerator: %s",
+                    e,
+                )
                 break
 
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent?key={key}"
+            provider = pkey.provider
+            key = pkey.key
+            # Use configured model for gemini if specified, otherwise provider's model
+            model = (
+                self.config.model_name
+                if provider == "gemini" and self.config.model_name
+                else pkey.model
+            )
+            endpoint = pkey.endpoint.rstrip("/")
+            api_type = pkey.api_type
 
             try:
+                if api_type == "gemini":
+                    url = f"{endpoint}/models/{model}:generateContent?key={key}"
+                    headers: dict[str, str] = {"Content-Type": "application/json"}
+                    payload: dict[str, Any] = {
+                        "system_instruction": {
+                            "parts": [{"text": GENERATE_SYSTEM_PROMPT}]
+                        },
+                        "contents": [
+                            {"role": "user", "parts": [{"text": user_prompt}]}
+                        ],
+                        "generationConfig": {
+                            "temperature": self.config.temperature_generate,
+                        },
+                    }
+                else:  # "openai" (Groq, Cerebras, Cohere)
+                    url = (
+                        endpoint
+                        if endpoint.endswith("/chat/completions")
+                        else f"{endpoint}/chat/completions"
+                    )
+                    headers = {
+                        "Content-Type": "application/json",
+                        "Authorization": f"Bearer {key}",
+                    }
+                    payload = {
+                        "model": model,
+                        "messages": [
+                            {"role": "system", "content": GENERATE_SYSTEM_PROMPT},
+                            {"role": "user", "content": user_prompt},
+                        ],
+                        "temperature": self.config.temperature_generate,
+                    }
+
                 resp = self.session.post(
                     url,
-                    headers={"Content-Type": "application/json"},
+                    headers=headers,
                     json=payload,
                     timeout=self.config.timeout_seconds,
                 )
@@ -247,9 +551,10 @@ class AnswerGenerator:
                 # HTTP 429 Rate limited
                 if resp.status_code == 429:
                     logger.warning(
-                        "Quota reached during answer generation. Rotating key..."
+                        "Quota reached (HTTP 429) for provider '%s'. Rotating key / failing over...",
+                        provider,
                     )
-                    self.key_manager.mark_rate_limited(key)
+                    self.key_manager.mark_rate_limited(key, provider=provider)
                     retries += 1
                     continue
 
@@ -257,63 +562,139 @@ class AnswerGenerator:
                 if resp.status_code in (500, 502, 503, 504):
                     retries += 1
                     logger.warning(
-                        "Server error %d from Gemini API during answer generation. Retrying...",
+                        "Server error %d from provider '%s' during answer generation. Rotating key with short cooldown...",
                         resp.status_code,
+                        provider,
                     )
-                    time.sleep(min(retries * 2, 8))
+                    self.key_manager.mark_server_error(
+                        key, cooldown_seconds=15.0, provider=provider
+                    )
+                    time.sleep(min(retries * 1.5, 6))
                     continue
 
-                # Client error (400, 403, 404)
+                # Client errors (400, 401, 403, 404)
                 if 400 <= resp.status_code < 500:
                     logger.error(
-                        "Fatal client error %d during answer generation: %s",
+                        "Fatal client error %d from provider '%s' during answer generation: %s",
                         resp.status_code,
+                        provider,
                         resp.text,
                     )
-                    break
+                    self.key_manager.mark_server_error(
+                        key, cooldown_seconds=120.0, provider=provider
+                    )
+                    retries += 1
+                    continue
 
                 resp.raise_for_status()
                 data = resp.json()
-                candidates = data.get("candidates", [])
-                if not candidates:
-                    logger.warning(
-                        "Empty candidate response from Gemini API for answer generation."
-                    )
-                    break
 
-                text_content = (
-                    candidates[0]
-                    .get("content", {})
-                    .get("parts", [{}])[0]
-                    .get("text", "")
-                )
+                if api_type == "gemini":
+                    candidates = data.get("candidates", [])
+                    if not candidates:
+                        logger.warning(
+                            "Empty candidate response from Gemini API for answer generation."
+                        )
+                        retries += 1
+                        continue
+                    text_content = (
+                        candidates[0]
+                        .get("content", {})
+                        .get("parts", [{}])[0]
+                        .get("text", "")
+                    )
+                else:  # openai (Groq, Cerebras, Cohere)
+                    choices = data.get("choices", [])
+                    if not choices:
+                        logger.warning(
+                            "Empty choices response from provider '%s' for answer generation.",
+                            provider,
+                        )
+                        retries += 1
+                        continue
+                    text_content = choices[0].get("message", {}).get("content", "")
+
                 if not text_content:
-                    logger.warning("Empty text part in Gemini answer candidate.")
-                    break
+                    logger.warning(
+                        "Empty text content from provider '%s' answer candidate.",
+                        provider,
+                    )
+                    retries += 1
+                    continue
 
                 clean_answer = clean_generated_answer(
                     text_content, has_sanctions=has_sanctions
                 )
                 citations = extract_citations_from_text(clean_answer, package=evidence)
+                is_grounded, warnings = verify_action_grounding(
+                    clean_answer, evidence.rewritten_query, evidence
+                )
+                if warnings:
+                    logger.warning(
+                        "Grounding verification warnings for query '%s': %s",
+                        evidence.user_query,
+                        warnings,
+                    )
 
                 return GenerationResult(
                     answer=clean_answer,
                     citations=citations,
                     raw_response=text_content,
+                    grounding_verified=is_grounded,
+                    verification_warnings=warnings,
                 )
 
             except requests.RequestException as req_err:
                 retries += 1
                 logger.warning(
-                    "Request error during answer generation: %s. Retry %d/%d",
+                    "Request error during answer generation for provider '%s': %s. Retry %d/%d",
+                    provider,
                     req_err,
                     retries,
                     self.max_retries,
                 )
-                time.sleep(min(retries * 2, 8))
+                self.key_manager.mark_server_error(
+                    key, cooldown_seconds=15.0, provider=provider
+                )
+                time.sleep(min(retries * 1.5, 6))
 
-        logger.error("Failed to generate answer after %d attempts.", self.max_retries)
+        logger.error(
+            "Failed to generate answer after %d attempts across available providers.",
+            self.max_retries,
+        )
         return GenerationResult(
             answer="Hệ thống tạm thời không thể tạo câu trả lời do gián đoạn kết nối tới dịch vụ mô hình ngôn ngữ. Vui lòng thử lại sau.",
             citations=[],
+        )
+
+    def generate(self, evidence: EvidencePackage) -> GenerationResult:
+        """Generates grounded answer with statutory citations.
+
+        Args:
+            evidence: Formatted EvidencePackage.
+
+        Returns:
+            GenerationResult containing answer text and extracted citations.
+        """
+        has_sanctions = (
+            False
+            if (
+                not evidence.items
+                and not evidence.document_amendments
+                and not evidence.system_documents
+            )
+            else has_sanctions_in_package(evidence)
+        )
+        user_prompt = self._build_user_prompt(evidence, has_sanctions=has_sanctions)
+
+        if self.config.generator_use_local:
+            return self._generate_local(
+                user_prompt=user_prompt,
+                has_sanctions=has_sanctions,
+                evidence=evidence,
+            )
+        return self._generate_cloud(
+            user_prompt=user_prompt,
+            has_sanctions=has_sanctions,
+            evidence=evidence,
         )

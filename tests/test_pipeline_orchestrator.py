@@ -159,14 +159,26 @@ def test_orchestrator_multi_query_retrieval() -> None:
     mock_retriever = MagicMock(spec=HybridRetriever)
     mock_retriever.retrieve.side_effect = [
         RetrievalResult(
-            query="quy tắc giao thông",
-            top_k=2,
+            query="đi ngược chiều trên đường cao tốc",
+            top_k=5,
             chunks=[chunk_rule],
             execution_time_ms=20.0,
         ),
         RetrievalResult(
-            query="mức phạt tiền",
-            top_k=4,
+            query="đi ngược chiều trên cao tốc",
+            top_k=5,
+            chunks=[chunk_sanction],
+            execution_time_ms=25.0,
+        ),
+        RetrievalResult(
+            query="quy tắc giao thông cấm đi ngược chiều đường cao tốc",
+            top_k=5,
+            chunks=[chunk_rule],
+            execution_time_ms=20.0,
+        ),
+        RetrievalResult(
+            query="mức phạt tiền trừ điểm giấy phép lái xe đi ngược chiều cao tốc",
+            top_k=5,
             chunks=[chunk_sanction],
             execution_time_ms=25.0,
         ),
@@ -230,7 +242,7 @@ def test_orchestrator_multi_query_retrieval() -> None:
     assert result.user_query == "đi ngược chiều trên cao tốc"
     assert "Luật 36/2024/QH15" in result.answer
     assert "Nghị định 168/2024/NĐ-CP" in result.answer
-    assert mock_retriever.retrieve.call_count == 2
+    assert mock_retriever.retrieve.call_count == 4
     # Verify validator received both rule and sanction chunk IDs
     validated_ids = mock_validator.validate_provisions.call_args[0][0]
     assert chunk_rule.id in validated_ids
