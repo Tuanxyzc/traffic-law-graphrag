@@ -62,8 +62,9 @@ def test_evidence_builder_active_provisions() -> None:
     assert package.total_chunks_retrieved == 1
     assert package.total_valid_provisions == 1
     assert package.has_superseded_provisions is False
-    assert len(package.items) == 1
     assert package.items[0].warning_flag is None
+    assert package.items[0].validated_provision.parent_article_title is None
+    assert package.items[0].validated_provision.parent_clause_content is None
 
 
 def test_evidence_builder_superseded_provision() -> None:
@@ -154,7 +155,8 @@ def test_evidence_builder_fallback_provision() -> None:
 def test_format_for_llm() -> None:
     """Test text formatting for LLM consumption."""
     chunk = _make_chunk(
-        "168_2024_ND-CP_D5_K1_Da", "Phạt tiền từ 200.000 đến 400.000 đồng..."
+        "168_2024_ND-CP_D5_K1_Da",
+        "Điều 5. Xử phạt xe ô tô\nKhoản 1: Phạt tiền từ 200.000 đến 400.000 đồng...",
     )
     ref = ReferencedProvision(
         target_id="168_2024_ND-CP_D6_K1",
@@ -186,7 +188,7 @@ def test_format_for_llm() -> None:
     assert "CÂU HỎI CỦA NGƯỜI DÂN: Vượt đèn đỏ" in text
     assert "Nghị định 168/2024/NĐ-CP" in text
     assert "Điều 5. Xử phạt xe ô tô" in text
-    assert "DẪN CHIẾU THAM CHIẾU LIÊN QUAN" in text
+    assert "CÁC QUY ĐỊNH THAM CHIẾU LIÊN QUAN TỪ ĐỒ THỊ (1-HOP):" in text
     assert "Khoản 1 Điều 6" in text
 
 
@@ -217,7 +219,7 @@ def test_format_for_llm_sanction_references() -> None:
         validated_provisions=[prov],
     )
     text = builder.format_for_llm(pkg)
-    assert "HÌNH THỨC XỬ PHẠT BỔ SUNG & TRỪ ĐIỂM GIẤY PHÉP LÁI XE" in text
+    assert "CÁC QUY ĐỊNH THAM CHIẾU LIÊN QUAN TỪ ĐỒ THỊ (1-HOP):" in text
     assert "TRU_DIEM_GPLX" in text
     assert "10 điểm" in text
 

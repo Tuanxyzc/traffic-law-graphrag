@@ -12,7 +12,6 @@ from src.pipeline.models import (
     EvidenceItem,
     EvidencePackage,
     LegalValidityStatus,
-    ReferencedProvision,
     SubGraph,
     SubGraphNode,
     SubGraphRelationship,
@@ -51,6 +50,37 @@ def infer_provision_label(node_id: str, level: str | None = None) -> str:
     return "Provision"
 
 
+def _detect_vehicle_category(
+    article_title: str | None, content: str = ""
+) -> str | None:
+    """Detects and standardizes vehicle category from article title or content."""
+    art = (article_title or "").lower()
+    if "máy kéo" in art or "xe máy chuyên dùng" in art:
+        return "Xe máy chuyên dùng, xe máy kéo"
+    if "xe mô tô" in art or "xe gắn máy" in art:
+        return "Xe mô tô, xe gắn máy (xe máy)"
+    if "xe ô tô" in art or "ô tô" in art:
+        return "Xe ô tô (và các loại xe tương tự xe ô tô)"
+    if "xe đạp" in art or "xe thô sơ" in art:
+        return "Xe đạp, xe thô sơ"
+    if "người đi bộ" in art:
+        return "Người đi bộ"
+
+    source = f"{art} {content}".lower()
+    if "máy kéo" in source or "xe máy chuyên dùng" in source:
+        if "xe mô tô" not in source and "xe gắn máy" not in source:
+            return "Xe máy chuyên dùng, xe máy kéo"
+    if "xe mô tô" in source or "xe gắn máy" in source:
+        return "Xe mô tô, xe gắn máy (xe máy)"
+    if "xe ô tô" in source or "ô tô" in source:
+        return "Xe ô tô (và các loại xe tương tự xe ô tô)"
+    if "xe đạp" in source or "xe thô sơ" in source:
+        return "Xe đạp, xe thô sơ"
+    if "người đi bộ" in source:
+        return "Người đi bộ"
+    return None
+
+
 class EvidenceBuilder:
     """Combines retrieved semantic chunks and validated graph nodes into a structured EvidencePackage."""
 
@@ -60,7 +90,7 @@ class EvidenceBuilder:
     def build(
         self,
         user_query: str,
-        rewritten_query: str,
+        rewritten_query: Any,
         retrieved_chunks: Sequence[RetrievedChunk],
         validated_provisions: Sequence[ValidatedProvision],
         document_amendments: Sequence[DocumentAmendmentItem] | None = None,
@@ -181,17 +211,23 @@ class EvidenceBuilder:
             if superseding_parts:
                 superseding_text = "\n\n".join(superseding_parts)
 
+            clean_prov = prov.model_copy(
+                update={
+                    "parent_clause_content": None,
+                    "parent_article_title": None,
+                }
+            )
             item = EvidenceItem(
                 chunk_id=chunk.id,
                 original_chunk_text=chunk.raw_text or chunk.text,
-                validated_provision=prov,
+                validated_provision=clean_prov,
                 warning_flag=warning_flag,
                 superseding_text=superseding_text,
-                score=chunk.score,
-                dense_score=chunk.dense_score,
-                sparse_score=chunk.sparse_score,
-                dense_rank=chunk.dense_rank,
-                sparse_rank=chunk.sparse_rank,
+                score=getattr(chunk, "score", None),
+                dense_score=getattr(chunk, "dense_score", None),
+                sparse_score=getattr(chunk, "sparse_score", None),
+                dense_rank=getattr(chunk, "dense_rank", None),
+                sparse_rank=getattr(chunk, "sparse_rank", None),
             )
             items.append(item)
 
@@ -494,14 +530,14 @@ class EvidenceBuilder:
                         source=ref.target_id,
                         target=prov.provision_id,
                         rel_type=rel_type,
-                        properties={"direction": "INCOMING", "hop_level": ref.hop_level},
+                        properties={"direction": "INCOMING"},
                     )
                 else:
                     add_rel(
                         source=prov.provision_id,
                         target=ref.target_id,
                         rel_type=rel_type,
-                        properties={"direction": "OUTGOING", "hop_level": ref.hop_level},
+                        properties={"direction": "OUTGOING"},
                     )
 
         if document_amendments:
@@ -613,10 +649,21 @@ class EvidenceBuilder:
         if not package.items and not package.document_amendments:
             return "Không tìm thấy điều khoản pháp luật phù hợp trong cơ sở dữ liệu."
 
+        rw = package.rewritten_query
+        rw_query_str = (
+            rw.search_query
+            if hasattr(rw, "search_query")
+            else str(rw)
+        )
         parts: list[str] = [
             f"CÂU HỎI CỦA NGƯỜI DÂN: {package.user_query}",
-            f"TRUY VẤN PHÁP LÝ CHUẨN HÓA: {package.rewritten_query}",
+            f"TRUY VẤN PHÁP LÝ CHUẨN HÓA: {rw_query_str}",
         ]
+        if hasattr(rw, "intent") and rw.intent:
+            parts.append(f"MỤC ĐÍCH TRA CỨU: {rw.intent}")
+        if hasattr(rw, "target_entities") and rw.target_entities:
+            target_str = ", ".join(rw.target_entities)
+            parts.append(f"ĐỐI TƯỢNG PHƯƠNG TIỆN MỤC TIÊU: {target_str}")
 
         if package.document_amendments:
             # Group amendments by parent article
@@ -663,9 +710,9 @@ class EvidenceBuilder:
             parts.extend(
                 [
                     "",
-                    f"TỔNG SỐ BẰNG CHỨNG ĐOẠN VĂN BẢN (CHUNKS): {len(package.items)}",
+                    f"TỔNG SỐ ĐIỀU KHOẢN CĂN CỨ: {len(package.items)}",
                     "",
-                    "=== DANH SÁCH BẰNG CHỨNG PHÁP LÝ ===",
+                    "=== DANH SÁCH ĐIỀU KHOẢN CĂN CỨ PHÁP LÝ ===",
                 ]
             )
 
@@ -684,7 +731,7 @@ class EvidenceBuilder:
                 p for p in [doc_label, art_label, clause_label, prov.provision_id] if p
             ]
 
-            parts.append(f"\n--- BẰNG CHỨNG [{idx}]: {' | '.join(header_parts)} ---")
+            parts.append(f"\n--- CĂN CỨ [{idx}]: {' | '.join(header_parts)} ---")
 
             if item.warning_flag:
                 parts.append(f"TRẠNG THÁI HIỆU LỰC: {item.warning_flag}")
@@ -695,31 +742,17 @@ class EvidenceBuilder:
                     f"TRẠNG THÁI HIỆU LỰC: Đang có hiệu lực thi hành ({prov.status.value})"
                 )
 
-            if prov.parent_article_title:
-                parts.append(
-                    f"ĐIỀU LUẬT / ĐỐI TƯỢNG ÁP DỤNG: {prov.parent_article_title}"
-                )
-
-            # Prioritize rich chunk text containing clause fine preamble
+            # Prioritize self-contained chunk text containing full hierarchy, preamble & point
             chunk_txt = item.original_chunk_text.strip()
             prov_txt = prov.content_text.strip()
-            clause_preamble = (prov.parent_clause_content or "").strip()
 
-            if chunk_txt and (
-                "phạt tiền" in chunk_txt.lower() or len(chunk_txt) > len(prov_txt)
-            ):
-                content = chunk_txt
-            else:
-                content = prov_txt or chunk_txt
+            veh_cat = _detect_vehicle_category(
+                prov.parent_article_title, f"{chunk_txt} {prov_txt}"
+            )
+            if veh_cat:
+                parts.append(f"LOẠI PHƯƠNG TIỆN ÁP DỤNG: {veh_cat}")
 
-            # Weave parent clause preamble if not already present in content
-            if clause_preamble and clause_preamble.lower() not in content.lower():
-                clause_tag = (
-                    f"Khoản {prov.parent_clause_number}"
-                    if prov.parent_clause_number
-                    else "Khoản"
-                )
-                content = f"[Khung phạt tiền của {clause_tag}]: {clause_preamble}\n[Hành vi vi phạm cụ thể]: {content}"
+            content = chunk_txt or prov_txt
 
             active_replacements = [
                 am
@@ -766,61 +799,15 @@ class EvidenceBuilder:
                         )
 
             if prov.cross_references:
-                sanction_refs: list[ReferencedProvision] = []
-                hop1_refs: list[ReferencedProvision] = []
-                hop2_refs: list[ReferencedProvision] = []
-
+                parts.append("CÁC QUY ĐỊNH THAM CHIẾU LIÊN QUAN TỪ ĐỒ THỊ (1-HOP):")
                 for ref in prov.cross_references:
-                    c_lower = (ref.content or "").lower()
-                    t_lower = (ref.relation_type or "").upper()
-                    is_sanction = (
-                        t_lower in (
-                            "TRU_DIEM_GPLX",
-                            "TUOC_QUYEN_GPLX",
-                            "TICH_THU",
-                            "APPLIED_SANCTION",
-                        )
-                        or "trừ điểm" in c_lower
-                        or "tước quyền" in c_lower
-                        or "tịch thu" in c_lower
-                    )
-                    if ref.hop_level >= 2:
-                        hop2_refs.append(ref)
-                    elif is_sanction:
-                        sanction_refs.append(ref)
-                    else:
-                        hop1_refs.append(ref)
-
-                if sanction_refs:
+                    ref_title = ref.title or ref.target_id
+                    ref_text = f": {ref.content}" if ref.content else ""
+                    dir_tag = f"[{ref.direction}] " if ref.direction else ""
+                    rel_type = ref.relation_type or "THAM_CHIEU"
                     parts.append(
-                        "HÌNH THỨC XỬ PHẠT BỔ SUNG & TRỪ ĐIỂM GIẤY PHÉP LÁI XE (GPLX) ÁP DỤNG:"
+                        f"  • {dir_tag}[{rel_type}] Căn cứ {ref_title}{ref_text}"
                     )
-                    for ref in sanction_refs:
-                        ref_title = ref.title or ref.target_id
-                        ref_text = f": {ref.content}" if ref.content else ""
-                        parts.append(
-                            f"  • [{ref.relation_type}] Căn cứ {ref_title}{ref_text}"
-                        )
-
-                if hop1_refs:
-                    parts.append("DẪN CHIẾU THAM CHIẾU LIÊN QUAN TRỰC TIẾP (HOP 1):")
-                    for ref in hop1_refs:
-                        ref_title = ref.title or ref.target_id
-                        ref_text = f": {ref.content}" if ref.content else ""
-                        parts.append(
-                            f"  • [{ref.relation_type}] Căn cứ {ref_title}{ref_text}"
-                        )
-
-                if hop2_refs:
-                    parts.append(
-                        "QUY ĐỊNH LIÊN QUAN MỞ RỘNG (HOP 2 - MULTI-HOP GRAPH TRAVERSAL):"
-                    )
-                    for ref in hop2_refs:
-                        ref_title = ref.title or ref.target_id
-                        ref_text = f": {ref.content}" if ref.content else ""
-                        parts.append(
-                            f"  • [Hop 2 - {ref.relation_type}] Căn cứ {ref_title}{ref_text}"
-                        )
 
         parts.append("\n=== HẾT BẰNG CHỨNG ===")
         return "\n".join(parts)

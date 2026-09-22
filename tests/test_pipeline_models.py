@@ -30,8 +30,8 @@ def test_pipeline_config_defaults() -> None:
     assert config.temperature_rewrite == 0.1
     assert config.temperature_generate == 0.2
     assert config.max_retries == 5
-    assert config.top_k == 4
-    assert config.max_reference_hops == 2
+    assert config.top_k == 5
+    assert config.max_reference_hops == 1
     assert config.include_superseded_warning is True
 
 
