@@ -321,11 +321,11 @@ class GeminiRESTClient:
                 if resp.status_code in (500, 502, 503, 504):
                     retries += 1
                     logger.warning(
-                        "Server error %d from Gemini API. Retrying in %ds...",
+                        "Server error %d from Gemini API. Rotating key with short cooldown and retrying...",
                         resp.status_code,
-                        retries * 2,
                     )
-                    time.sleep(retries * 2)
+                    self.key_manager.mark_server_error(key, cooldown_seconds=15.0)
+                    time.sleep(min(retries * 1.5, 6))
                     continue
 
                 # Case 3: Fatal Client Error (400, 403, 404)
