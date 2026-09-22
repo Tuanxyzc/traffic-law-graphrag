@@ -1,0 +1,75 @@
+# ==============================================================================
+#  Traffic Law GraphRAG - Configuration
+# ==============================================================================
+
+llm:
+  # Thứ tự ưu tiên các nhà cung cấp Cloud LLM (Gemini -> Groq -> Cerebras -> Cohere).
+  # Khi toàn bộ API key của 1 nhà cung cấp bị cạn kiệt (hết quota / 429 / lỗi 5xx),
+  # hệ thống sẽ tự động chuyển (failover) sang nhà cung cấp kế tiếp.
+  provider_order: ["groq", "cerebras", "cohere","gemini"]
+
+
+  # Cấu hình chi tiết các nhà cung cấp Cloud LLM
+  providers:
+    gemini:
+      model: "gemini-2.5-flash"
+      endpoint: "https://generativelanguage.googleapis.com/v1beta"
+    groq:
+      model: "qwen/qwen3.8-27b"
+      endpoint: "https://api.groq.com/openai/v1"
+    cerebras:
+      model: "qwen-3.8-27b"
+      endpoint: "https://api.cerebras.ai/v1"
+    cohere:
+      model: "command-r-08-2024"
+      endpoint: "https://api.cohere.ai/compatibility/v1"
+
+  # Cấu hình Generator (sinh câu trả lời)
+  generator:
+    # true: Chạy qua Localhost LLM (Ollama / vLLM / LM Studio)
+    # false: Chạy qua Cloud LLM (Gemini / Groq / Cerebras / Cohere)
+    use_local: false
+
+    # Cấu hình Localhost LLM (OpenAI-compatible REST API)
+    local:
+      endpoint: "http://localhost:11434/v1"
+      model_name: "qwen2.5:1.5b"
+      temperature: 0.2
+      timeout_seconds: 120.0
+      api_key: "ollama"
+
+    # Cấu hình Cloud LLM (khi use_local: false)
+    gemini:
+      model_name: "gemini-2.5-flash"
+      temperature: 0.2
+      timeout_seconds: 60.0
+
+  # Cấu hình Query Rewriter (viết lại / mở rộng 3 biến thể câu hỏi)
+  rewriter:
+    # true: Bật bước viết lại câu hỏi (Multi-Query)
+    # false: Tắt bước viết lại, tìm kiếm trực tiếp bằng câu hỏi gốc
+    enable_rewrite: true
+
+    # true: Chạy qua Localhost LLM
+    # false: Chạy qua Cloud LLM
+    use_local: false
+
+    # Cấu hình Localhost LLM
+    local:
+      endpoint: "http://localhost:11434/v1"
+      model_name: "qwen2.5:1.5b"
+      temperature: 0.1
+      timeout_seconds: 60.0
+      api_key: "ollama"
+
+    # Cấu hình Cloud LLM (khi use_local: false)
+    gemini:
+      model_name: "gemini-2.5-flash"
+      temperature: 0.1
+      timeout_seconds: 60.0
+
+# Các tham số vận hành Pipeline
+pipeline:
+  top_k: 4
+  enable_dual_query: true
+  include_superseded_warning: true
