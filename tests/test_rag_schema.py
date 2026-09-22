@@ -11,6 +11,8 @@ def test_schema_statements() -> None:
         embedding_dim=1024,
         vector_index_name="test_vector_idx",
         fulltext_index_name="test_fulltext_idx",
+        article_fulltext_index_name="test_article_ft_idx",
+        document_fulltext_index_name="test_doc_ft_idx",
         constraint_name="test_constraint",
     )
     manager = RAGSchemaManager(config=config)
@@ -28,14 +30,22 @@ def test_schema_statements() -> None:
     assert "CREATE FULLTEXT INDEX test_fulltext_idx IF NOT EXISTS" in fulltext_stmt
     assert "ON EACH [n.text, n.tieu_de_dieu]" in fulltext_stmt
 
+    article_ft_stmt = manager.get_article_fulltext_index_statement()
+    assert "CREATE FULLTEXT INDEX test_article_ft_idx IF NOT EXISTS" in article_ft_stmt
+    assert "FOR (a:Article) ON EACH [a.title, a.content, a.id]" in article_ft_stmt
+
+    doc_ft_stmt = manager.get_document_fulltext_index_statement()
+    assert "CREATE FULLTEXT INDEX test_doc_ft_idx IF NOT EXISTS" in doc_ft_stmt
+    assert "FOR (d:Document) ON EACH [d.so_hieu, d.ten, d.id]" in doc_ft_stmt
+
 
 def test_ensure_schema_execution() -> None:
     mock_session = MagicMock()
     manager = RAGSchemaManager()
 
     executed = manager.ensure_schema(mock_session)
-    assert len(executed) == 3
-    assert mock_session.run.call_count == 3
+    assert len(executed) == 5
+    assert mock_session.run.call_count == 5
 
 
 def test_check_indexes_status() -> None:
@@ -43,6 +53,8 @@ def test_check_indexes_status() -> None:
     mock_records = [
         {"name": "semantic_unit_vector", "state": "ONLINE", "type": "VECTOR"},
         {"name": "semantic_unit_fulltext", "state": "ONLINE", "type": "FULLTEXT"},
+        {"name": "article_fulltext_index", "state": "ONLINE", "type": "FULLTEXT"},
+        {"name": "document_fulltext_index", "state": "ONLINE", "type": "FULLTEXT"},
     ]
     mock_session.run.return_value = mock_records
 
@@ -51,6 +63,8 @@ def test_check_indexes_status() -> None:
 
     assert statuses["semantic_unit_vector"] == "ONLINE"
     assert statuses["semantic_unit_fulltext"] == "ONLINE"
+    assert statuses["article_fulltext_index"] == "ONLINE"
+    assert statuses["document_fulltext_index"] == "ONLINE"
 
 
 def test_wait_for_indexes_online() -> None:
@@ -58,6 +72,8 @@ def test_wait_for_indexes_online() -> None:
     mock_records = [
         {"name": "semantic_unit_vector", "state": "ONLINE", "type": "VECTOR"},
         {"name": "semantic_unit_fulltext", "state": "ONLINE", "type": "FULLTEXT"},
+        {"name": "article_fulltext_index", "state": "ONLINE", "type": "FULLTEXT"},
+        {"name": "document_fulltext_index", "state": "ONLINE", "type": "FULLTEXT"},
     ]
     mock_session.run.return_value = mock_records
 
@@ -71,6 +87,8 @@ def test_wait_for_indexes_timeout() -> None:
     mock_records = [
         {"name": "semantic_unit_vector", "state": "POPULATING", "type": "VECTOR"},
         {"name": "semantic_unit_fulltext", "state": "POPULATING", "type": "FULLTEXT"},
+        {"name": "article_fulltext_index", "state": "POPULATING", "type": "FULLTEXT"},
+        {"name": "document_fulltext_index", "state": "POPULATING", "type": "FULLTEXT"},
     ]
     mock_session.run.return_value = mock_records
 

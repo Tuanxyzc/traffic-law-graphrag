@@ -202,6 +202,12 @@ class CorpusIndexer:
             MATCH (c:Clause {id: row.id})
             MERGE (su)-[:EXTRACTED_FROM]->(c)
         }
+        CALL {
+            WITH su, row
+            WITH su, row WHERE row.level = 2
+            MATCH (a:Article {id: row.id})
+            MERGE (su)-[:EXTRACTED_FROM]->(a)
+        }
         """
 
     def index_corpus(
@@ -246,6 +252,15 @@ class CorpusIndexer:
 
         # 2. Embed and Ingest in Batches
         cypher_query = self.build_cypher_statement()
+        cache_path = Path("data/parsed/embedding_cache.json")
+        embedding_cache: dict[str, list[float]] = {}
+        if cache_path.exists():
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    embedding_cache = json.load(f)
+                logger.info("Loaded %d cached embeddings from %s", len(embedding_cache), cache_path)
+            except Exception as e:
+                logger.warning("Could not read embedding cache: %s", e)
 
         with client.session() as session:
             for i in range(0, len(all_units), bs):
@@ -253,7 +268,13 @@ class CorpusIndexer:
                 texts = [u["text"] for u in chunk_units]
 
                 try:
-                    embeddings = self.embedding_manager.embed_texts(texts)
+                    cached_batch = [embedding_cache.get(u["id"]) for u in chunk_units]
+                    embeddings: list[list[float]]
+                    if all(emb is not None for emb in cached_batch):
+                        embeddings = [emb for emb in cached_batch if emb is not None]
+                    else:
+                        embeddings = self.embedding_manager.embed_texts(texts)
+
                     batch_payload = []
                     for u, emb in zip(chunk_units, embeddings, strict=True):
                         payload = dict(u)

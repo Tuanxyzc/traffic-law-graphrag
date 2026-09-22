@@ -5,6 +5,7 @@ from __future__ import annotations
 import logging
 import re
 import time
+from collections import defaultdict
 from typing import Any
 
 from neo4j import Session
@@ -34,6 +35,78 @@ def sanitize_lucene_query(query: str, max_terms: int = 30) -> str:
     truncated_query = " ".join(words)
     sanitized = LUCENE_SPECIAL_CHARS_PATTERN.sub(r"\\\1", truncated_query)
     return sanitized
+
+
+def compute_lexical_density(query_text: str, candidate_text: str) -> float:
+    """Computes keyword density and overlap ratio between query and candidate text.
+
+    Includes bigram phrase matching, statutory phrase expansions, and noise suppression
+    (e.g. prioritizing traffic light chunks over overtaking 'vượt xe' chunks).
+    """
+    if not query_text or not candidate_text:
+        return 0.0
+    query_tokens = [
+        tok for tok in re.findall(r"\w+", query_text.lower()) if len(tok) > 1
+    ]
+    if not query_tokens:
+        return 0.0
+
+    q_lower = query_text.lower()
+    cand_lower = candidate_text.lower()
+    unique_query_tokens = set(query_tokens)
+    matched_tokens = sum(1 for tok in unique_query_tokens if tok in cand_lower)
+    coverage = matched_tokens / len(unique_query_tokens)
+
+    # Term frequency (capped to prevent extreme repetition bias)
+    term_freq = sum(cand_lower.count(tok) for tok in unique_query_tokens)
+    capped_freq = min(term_freq, 20)
+
+    # 1. Bigram phrase matching
+    query_bigrams = [
+        f"{query_tokens[i]} {query_tokens[i+1]}"
+        for i in range(len(query_tokens) - 1)
+    ]
+    phrase_bonus = sum(2.0 for bg in query_bigrams if bg in cand_lower)
+
+    # 2. Statutory phrase expansion for key traffic concepts
+    statutory_expansions = [
+        (
+            ("đèn đỏ", "đèn tín hiệu", "vượt đèn"),
+            ["đèn tín hiệu", "đèn tín hiệu giao thông", "hiệu lệnh của đèn"],
+        ),
+        (
+            ("xe máy", "mô tô"),
+            ["xe mô tô", "xe gắn máy", "xe mô tô, xe gắn máy"],
+        ),
+        (
+            ("nồng độ cồn", "uống rượu", "uống bia"),
+            ["nồng độ cồn", "trong máu hoặc hơi thở"],
+        ),
+        (("mũ bảo hiểm",), ["mũ bảo hiểm"]),
+        (("tốc độ", "quá tốc độ"), ["quá tốc độ"]),
+        (("ngược chiều",), ["ngược chiều"]),
+    ]
+    for trigger_phrases, target_phrases in statutory_expansions:
+        if any(tp in q_lower for tp in trigger_phrases):
+            for tgt in target_phrases:
+                if tgt in cand_lower:
+                    phrase_bonus += 3.0
+                    break
+
+    # 3. Noise suppression: query about traffic lights, but candidate is about overtaking ('vượt xe') without 'đèn'
+    if (
+        any(k in q_lower for k in ["đèn đỏ", "đèn tín hiệu", "vượt đèn"])
+        and "vượt xe" in cand_lower
+        and "đèn" not in cand_lower
+    ):
+        phrase_bonus -= 4.0
+
+    # If no tokens and no phrases matched, return 0.0
+    if matched_tokens == 0 and phrase_bonus <= 0:
+        return 0.0
+
+    score = coverage * 10.0 + capped_freq * 0.1 + phrase_bonus
+    return round(max(score, 0.0), 4)
 
 
 class HybridRetriever:
@@ -125,6 +198,139 @@ class HybridRetriever:
         except Exception as exc:
             logger.error("Fulltext index query failed: %s", exc)
             return []
+
+    def _query_articles_fulltext(
+        self,
+        session: Session,
+        query_text: str,
+        candidate_k: int,
+        document_id: str | None = None,
+    ) -> list[dict[str, Any]]:
+        """Executes sparse lexical BM25 search over Article nodes using article_fulltext_index."""
+        sanitized = sanitize_lucene_query(query_text)
+        if not sanitized:
+            return []
+
+        query = (
+            "CALL db.index.fulltext.queryNodes($index_name, $query_text) "
+            "YIELD node, score "
+            "WHERE ($doc_id IS NULL OR node.id STARTS WITH $doc_id) "
+            "RETURN node.id AS id, node.title AS title, node.content AS content, "
+            "       node.number AS number, score AS article_score "
+            "LIMIT $k"
+        )
+        try:
+            result = session.run(
+                query,
+                index_name=self.config.article_fulltext_index_name,
+                query_text=sanitized,
+                doc_id=document_id,
+                k=candidate_k,
+            )
+            articles: list[dict[str, Any]] = []
+            for rank, record in enumerate(result, start=1):
+                row = dict(record)
+                row["article_rank"] = rank
+                articles.append(row)
+            return articles
+        except Exception as exc:
+            logger.warning("Article fulltext query failed (index might not exist yet): %s", exc)
+            return []
+
+    def _expand_and_filter_article_units(
+        self,
+        session: Session,
+        articles: list[dict[str, Any]],
+        query_text: str,
+        top_k_per_article: int = 3,
+    ) -> list[dict[str, Any]]:
+        """Traverses graph from Articles to child SemanticUnits and filters top units per Article."""
+        if not articles:
+            return []
+
+        article_ids = [a["id"] for a in articles if a.get("id")]
+        if not article_ids:
+            return []
+
+        query = (
+            "UNWIND $article_ids AS art_id "
+            "MATCH (ar:Article {id: art_id}) "
+            "OPTIONAL MATCH (ar)-[:CONTAINS_CLAUSE*0..1]->(c)-[:CONTAINS_POINT*0..1]->(p) "
+            "WHERE c = ar OR c:Clause "
+            "OPTIONAL MATCH (su1:SemanticUnit) "
+            "WHERE (su1)-[:EXTRACTED_FROM]->(p) OR (su1)-[:EXTRACTED_FROM]->(c) OR su1.id = ar.id "
+            "OPTIONAL MATCH (su2:SemanticUnit) "
+            "WHERE su2.id = ar.id OR su2.id STARTS WITH (ar.id + '_') "
+            "WITH ar, [x IN collect(DISTINCT su1) + collect(DISTINCT su2) WHERE x IS NOT NULL] AS raw_sus "
+            "UNWIND raw_sus AS su "
+            "WITH ar, su WHERE su IS NOT NULL "
+            "RETURN DISTINCT ar.id AS article_id, "
+            "       su.id AS id, su.text AS text, su.raw_text AS raw_text, "
+            "       su.document_id AS document_id, su.dieu AS dieu, su.khoan AS khoan, su.diem AS diem, "
+            "       su.tieu_de_dieu AS tieu_de_dieu, su.chuong AS chuong, su.tieu_de_chuong AS tieu_de_chuong, "
+            "       su.level AS level, su.hieu_luc_tu AS hieu_luc_tu"
+        )
+        try:
+            result = session.run(query, article_ids=article_ids)
+            units_by_article: dict[str, list[dict[str, Any]]] = defaultdict(list)
+            for record in result:
+                art_id = record["article_id"]
+                row = dict(record)
+                row.pop("article_id", None)
+                units_by_article[art_id].append(row)
+        except Exception as exc:
+            logger.error("Graph traversal expansion query failed: %s", exc)
+            return []
+
+        selected_units: list[dict[str, Any]] = []
+        seen_unit_ids: set[str] = set()
+
+        for article in articles:
+            art_id = article["id"]
+            child_units = units_by_article.get(art_id, [])
+            if not child_units:
+                continue
+
+            # Deduplicate units within the same article
+            unique_child_units: list[dict[str, Any]] = []
+            local_seen: set[str] = set()
+            for u in child_units:
+                if u["id"] not in local_seen:
+                    local_seen.add(u["id"])
+                    unique_child_units.append(u)
+
+            # Score each child unit internally against query_text
+            for u in unique_child_units:
+                content_to_score = (
+                    f"{u.get('tieu_de_dieu') or ''} "
+                    f"{u.get('text') or ''} "
+                    f"{u.get('raw_text') or ''}"
+                )
+                u["internal_score"] = compute_lexical_density(
+                    query_text, content_to_score
+                )
+
+            # Sort child units by internal_score descending
+            unique_child_units.sort(
+                key=lambda x: float(x.get("internal_score", 0.0)),
+                reverse=True,
+            )
+
+            # Pick Top N units for this Article
+            top_units = unique_child_units[:top_k_per_article]
+
+            for u in top_units:
+                u_id = u["id"]
+                if u_id not in seen_unit_ids:
+                    seen_unit_ids.add(u_id)
+                    u["sparse_score"] = article.get("article_score")
+                    selected_units.append(u)
+
+        # Assign global sequential sparse_rank (1, 2, ...) preserving Article ranking and internal score
+        for rank, u in enumerate(selected_units, start=1):
+            u["sparse_rank"] = rank
+
+        return selected_units
 
     def _fuse_rrf(
         self,
@@ -267,10 +473,19 @@ class HybridRetriever:
         top_k: int | None = None,
         document_id: str | None = None,
     ) -> RetrievalResult:
-        """Performs full hybrid retrieval for a query string."""
+        """Performs hierarchical hybrid retrieval for a query string.
+
+        1. Vector search over SemanticUnit nodes (10-20 candidates).
+        2. Layer 1 similarity threshold check (early exit if off-topic).
+        3. Article fulltext search (Top Articles) + graph traversal to child SemanticUnits.
+           Filters Top units per Article by keyword density, inherits rank.
+           Falls back to direct SemanticUnit fulltext if no Articles match.
+        4. Reciprocal Rank Fusion (RRF) & Dynamic-K pruning to return Top chunks.
+        """
         start_time = time.perf_counter()
         k = top_k or self.config.default_top_k
-        candidate_k = max(k * 3, self.config.min_candidate_k)
+        cand_k_vector = max(self.config.top_k_vector, self.config.min_candidate_k)
+        cand_k_article = self.config.top_k_article
 
         if not query or not query.strip():
             return RetrievalResult(
@@ -289,7 +504,7 @@ class HybridRetriever:
             dense_results = self._query_vector(
                 session=session,
                 query_vector=query_vector,
-                candidate_k=candidate_k,
+                candidate_k=cand_k_vector,
                 document_id=document_id,
             )
 
@@ -315,12 +530,31 @@ class HybridRetriever:
                         execution_time_ms=elapsed_ms,
                     )
 
-            sparse_results = self._query_fulltext(
+            # 2b. Hierarchical BM25 Search:
+            # 1) Search Top Articles via article_fulltext_index
+            article_results = self._query_articles_fulltext(
                 session=session,
                 query_text=query,
-                candidate_k=candidate_k,
+                candidate_k=cand_k_article,
                 document_id=document_id,
             )
+
+            # 2) Graph Traversal: Expand Article -> child SemanticUnits, filter Top 2-3 per Article
+            if article_results:
+                sparse_results = self._expand_and_filter_article_units(
+                    session=session,
+                    articles=article_results,
+                    query_text=query,
+                    top_k_per_article=self.config.top_k_semantic_per_article,
+                )
+            else:
+                # Fallback to direct semantic unit fulltext if article fulltext index returned nothing
+                sparse_results = self._query_fulltext(
+                    session=session,
+                    query_text=query,
+                    candidate_k=cand_k_vector,
+                    document_id=document_id,
+                )
 
         # 3. Fuse results with RRF
         chunks = self._fuse_rrf(dense_results, sparse_results, top_k=k)

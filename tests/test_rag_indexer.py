@@ -105,6 +105,7 @@ def test_build_cypher_statement() -> None:
     assert "su.raw_text = row.raw_text" in query
     assert "MERGE (su)-[:EXTRACTED_FROM]->(p)" in query
     assert "MERGE (su)-[:EXTRACTED_FROM]->(c)" in query
+    assert "MERGE (su)-[:EXTRACTED_FROM]->(a)" in query
 
 
 def test_index_corpus_dry_run(temp_parsed_dir: Path) -> None:

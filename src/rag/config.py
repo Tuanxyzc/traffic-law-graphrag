@@ -18,6 +18,8 @@ class RAGConfig:
     # Neo4j Index & Constraint Identifiers
     vector_index_name: str = "semantic_unit_vector"
     fulltext_index_name: str = "semantic_unit_fulltext"
+    article_fulltext_index_name: str = "article_fulltext_index"
+    document_fulltext_index_name: str = "document_fulltext_index"
     constraint_name: str = "constraint_semanticunit_id_unique"
 
     # Search & RRF Parameters
@@ -26,6 +28,9 @@ class RAGConfig:
     sparse_weight: float = 1.0
     default_top_k: int = 4
     min_candidate_k: int = 20
+    top_k_vector: int = 20
+    top_k_article: int = 5
+    top_k_semantic_per_article: int = 3
 
     # Layer 1 & Layer 2 Retrieval Defense Parameters
     min_similarity_threshold: float = 0.50
@@ -48,11 +53,22 @@ class RAGConfig:
             fulltext_index_name=os.getenv(
                 "RAG_FULLTEXT_INDEX", "semantic_unit_fulltext"
             ),
+            article_fulltext_index_name=os.getenv(
+                "RAG_ARTICLE_FULLTEXT_INDEX", "article_fulltext_index"
+            ),
+            document_fulltext_index_name=os.getenv(
+                "RAG_DOCUMENT_FULLTEXT_INDEX", "document_fulltext_index"
+            ),
             rrf_k=int(os.getenv("RAG_RRF_K", "60")),
             dense_weight=float(os.getenv("RAG_DENSE_WEIGHT", "1.0")),
             sparse_weight=float(os.getenv("RAG_SPARSE_WEIGHT", "1.0")),
             default_top_k=int(os.getenv("RAG_DEFAULT_TOP_K", "4")),
             min_candidate_k=int(os.getenv("RAG_MIN_CANDIDATE_K", "20")),
+            top_k_vector=int(os.getenv("RAG_TOP_K_VECTOR", "20")),
+            top_k_article=int(os.getenv("RAG_TOP_K_ARTICLE", "5")),
+            top_k_semantic_per_article=int(
+                os.getenv("RAG_TOP_K_SEMANTIC_PER_ARTICLE", "3")
+            ),
             min_similarity_threshold=float(
                 os.getenv("RAG_MIN_SIMILARITY_THRESHOLD", "0.50")
             ),
