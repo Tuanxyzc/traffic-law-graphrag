@@ -65,11 +65,11 @@ def make_batch_merge_provision_versions_query() -> str:
 
 
 def make_batch_link_provision_versions_query() -> str:
-    """Generates Cypher statement to connect Article/Clause/Point (and CanonicalProvision) to ProvisionVersions."""
+    """Generates Cypher statement to connect Article/Clause/Point to ProvisionVersions."""
     return (
         "UNWIND $batch AS row "
         "MATCH (p {id: row.canonical_provision_id}) "
-        "WHERE p:Point OR p:Clause OR p:Article OR p:CanonicalProvision "
+        "WHERE p:Point OR p:Clause OR p:Article "
         "MATCH (v:ProvisionVersion {id: row.version_id}) "
         "MERGE (p)-[:HAS_VERSION]->(v)"
     )
@@ -86,17 +86,19 @@ def make_batch_link_version_timeline_query() -> str:
 
 
 QUERY_POINT_IN_TIME_PROVISIONS = (
-    "MATCH (p:CanonicalProvision {document_id: $doc_id})-[:HAS_VERSION]->(v:ProvisionVersion) "
-    "WHERE (v.valid_from IS NULL OR v.valid_from <= $target_date) "
+    "MATCH (p)-[:HAS_VERSION]->(v:ProvisionVersion) "
+    "WHERE (p:Point OR p:Clause OR p:Article) "
+    "  AND (p.document_id = $doc_id OR p.id STARTS WITH $doc_id) "
+    "  AND (v.valid_from IS NULL OR v.valid_from <= $target_date) "
     "  AND (v.valid_to IS NULL OR v.valid_to > $target_date) "
-    "RETURN p.canonical_provision_id AS provision_id, "
-    "       p.level AS level, "
+    "RETURN p.id AS provision_id, "
+    "       labels(p)[0] AS level, "
     "       v.version_id AS version_id, "
     "       v.valid_from AS valid_from, "
     "       v.valid_to AS valid_to, "
     "       v.is_current AS is_current, "
     "       v.content_text AS content_text "
-    "ORDER BY p.canonical_provision_id"
+    "ORDER BY p.id"
 )
 
 

@@ -14,7 +14,6 @@ from src.graph.neo4j.connection import Neo4jClient
 from src.graph.neo4j.queries import (
     make_batch_link_provision_versions_query,
     make_batch_link_version_timeline_query,
-    make_batch_merge_canonical_provisions_query,
     make_batch_merge_nodes_query,
     make_batch_merge_provision_versions_query,
     make_batch_merge_relationships_query,
@@ -341,22 +340,8 @@ class Neo4jBatchImporter:
         provisions: dict[str, CanonicalProvision],
         versions: dict[str, list[ProvisionVersion]],
     ) -> tuple[int, int]:
-        """Batch-merges CanonicalProvision and ProvisionVersion nodes and timeline edges."""
-        # 1. Ingest CanonicalProvision nodes
-        provision_payloads = [
-            {
-                "id": p.canonical_provision_id,
-                "document_id": p.document_id,
-                "level": p.level,
-                "number": p.number,
-            }
-            for p in provisions.values()
-        ]
-        p_query = make_batch_merge_canonical_provisions_query()
-        for chunk in chunk_list(provision_payloads, self.batch_size):
-            session.run(p_query, batch=chunk)
-
-        # 2. Ingest ProvisionVersion nodes & edges
+        """Batch-merges ProvisionVersion nodes directly linked to Article/Clause/Point and timeline edges."""
+        # 1. Ingest ProvisionVersion nodes & edges
         version_payloads: list[dict[str, Any]] = []
         has_version_links: list[dict[str, Any]] = []
         timeline_links: list[dict[str, Any]] = []
@@ -405,11 +390,61 @@ class Neo4jBatchImporter:
             session.run(link_t_query, batch=chunk)
 
         logger.info(
-            "Imported %d CanonicalProvisions and %d ProvisionVersions with timelines",
-            len(provision_payloads),
+            "Imported %d ProvisionVersions with timelines linked to provisions",
             len(version_payloads),
         )
-        return len(provision_payloads), len(version_payloads)
+        return 0, len(version_payloads)
+
+    def link_semantic_unit_containment(self, session: Any) -> dict[str, int]:
+        """Synchronizes structural containment relationships (CONTAINS_*) to SemanticUnit nodes,
+
+        ensuring uniform hierarchy across all documents matching Circular 72.
+        """
+        logger.info("Synchronizing CONTAINS_* containment edges for SemanticUnits...")
+        # 1. Article -> SemanticUnit (cấp Khoản)
+        q1 = """
+        MATCH (ar:Article)-[:CONTAINS_CLAUSE]->(c:Clause)
+        MATCH (su:SemanticUnit {id: c.id})
+        MERGE (ar)-[r:CONTAINS_CLAUSE]->(su)
+        RETURN count(r) AS cnt
+        """
+        res1 = session.run(q1).single()["cnt"]
+
+        # 2. Chapter / Document -> SemanticUnit (cấp Điều)
+        q2 = """
+        MATCH (parent)-[:CONTAINS_ARTICLE]->(ar:Article)
+        MATCH (su:SemanticUnit {id: ar.id})
+        MERGE (parent)-[r:CONTAINS_ARTICLE]->(su)
+        RETURN count(r) AS cnt
+        """
+        res2 = session.run(q2).single()["cnt"]
+
+        # 3. SemanticUnit (cấp Khoản) -> Point
+        q3 = """
+        MATCH (c:Clause)-[:CONTAINS_POINT]->(p:Point)
+        MATCH (su:SemanticUnit {id: c.id})
+        MERGE (su)-[r:CONTAINS_POINT]->(p)
+        RETURN count(r) AS cnt
+        """
+        res3 = session.run(q3).single()["cnt"]
+
+        # 4. Clause -> SemanticUnit (cấp Điểm)
+        q4 = """
+        MATCH (c:Clause)-[:CONTAINS_POINT]->(p:Point)
+        MATCH (su:SemanticUnit {id: p.id})
+        MERGE (c)-[r:CONTAINS_POINT]->(su)
+        RETURN count(r) AS cnt
+        """
+        res4 = session.run(q4).single()["cnt"]
+
+        summary = {
+            "article_to_clause_su": res1,
+            "parent_to_article_su": res2,
+            "clause_su_to_point": res3,
+            "clause_to_point_su": res4,
+        }
+        logger.info("SemanticUnit containment linking completed: %s", summary)
+        return summary
 
     def clear_database(self, session: Any) -> None:
         """Clears all nodes and relationships in the active database."""
@@ -452,6 +487,7 @@ class Neo4jBatchImporter:
             self.import_nodes(session, nodes)
             self.import_provisions_and_versions(session, provisions, versions)
             self.import_relationships(session, rels)
+            self.link_semantic_unit_containment(session)
 
         logger.info("Full ingestion pipeline completed successfully: %s", summary)
         return summary

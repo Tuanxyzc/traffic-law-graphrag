@@ -15,7 +15,6 @@ PRIMARY_NODE_LABELS = [
     "SemanticUnit",
     "AmendmentAction",
     "AmendmentAppendix",
-    "CanonicalProvision",
     "ProvisionVersion",
 ]
 
@@ -23,7 +22,6 @@ INDEX_DEFINITIONS = [
     ("ProvisionVersion", "valid_from"),
     ("ProvisionVersion", "valid_to"),
     ("ProvisionVersion", "is_current"),
-    ("CanonicalProvision", "document_id"),
     ("AmendmentAction", "operation"),
 ]
 

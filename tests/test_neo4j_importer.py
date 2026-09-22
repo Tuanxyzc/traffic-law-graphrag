@@ -55,15 +55,15 @@ def test_neo4j_client_context_manager():
 def test_schema_manager():
     mock_session = MagicMock()
     constraints = SchemaManager.create_constraints(mock_session)
-    assert len(constraints) == 10
+    assert len(constraints) == 9
     assert any("FOR (n:Article) REQUIRE n.id IS UNIQUE" in c for c in constraints)
-    assert mock_session.run.call_count == 10
+    assert mock_session.run.call_count == 9
 
     mock_session.reset_mock()
     indexes = SchemaManager.create_indexes(mock_session)
-    assert len(indexes) == 5
+    assert len(indexes) == 4
     assert any("FOR (n:ProvisionVersion) ON (n.valid_from)" in idx for idx in indexes)
-    assert mock_session.run.call_count == 5
+    assert mock_session.run.call_count == 4
 
 
 def test_importer_import_nodes():
@@ -134,10 +134,10 @@ def test_importer_import_provisions_and_versions():
     num_p, num_v = importer.import_provisions_and_versions(
         mock_session, provisions, versions
     )
-    assert num_p == 1
+    assert num_p == 0
     assert num_v == 2
-    # Ran: 1 batch provisions, 1 batch versions, 1 batch HAS_VERSION, 1 batch NEXT_VERSION
-    assert mock_session.run.call_count == 4
+    # Ran: 1 batch versions, 1 batch HAS_VERSION, 1 batch NEXT_VERSION
+    assert mock_session.run.call_count == 3
 
 
 def test_importer_clear_database():
