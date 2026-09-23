@@ -213,9 +213,7 @@ class PipelineConfig:
             val = _get_yaml("pipeline", "enable_dual_query")
             enable_dual_query_val = bool(val) if val is not None else True
 
-        top_k = int(
-            os.getenv("PIPELINE_TOP_K") or _get_yaml("pipeline", "top_k") or 5
-        )
+        top_k = int(os.getenv("PIPELINE_TOP_K") or _get_yaml("pipeline", "top_k") or 5)
         max_reference_hops = int(
             os.getenv("PIPELINE_MAX_REF_HOPS")
             or _get_yaml("pipeline", "max_reference_hops")
@@ -241,7 +239,9 @@ class PipelineConfig:
         if raw_provider_order:
             if isinstance(raw_provider_order, str):
                 provider_order = tuple(
-                    p.strip().lower() for p in raw_provider_order.split(",") if p.strip()
+                    p.strip().lower()
+                    for p in raw_provider_order.split(",")
+                    if p.strip()
                 )
             elif isinstance(raw_provider_order, (list, tuple)):
                 provider_order = tuple(

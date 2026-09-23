@@ -75,6 +75,15 @@ def has_sanctions_in_package(package: EvidencePackage) -> bool:
                 return True
             if "tước quyền" in ref_c:
                 return True
+
+    for am in package.document_amendments:
+        am_combined = f"{am.instruction or ''} {am.replacement_content or ''}".lower()
+        if re.search(
+            r"phạt tiền từ\s+\d+|bị trừ\s+\d+\s+điểm|tước quyền sử dụng\s+giấy phép|tịch thu",
+            am_combined,
+        ):
+            return True
+
     return False
 
 
@@ -141,11 +150,12 @@ def clean_generated_answer(text: str | None, has_sanctions: bool = True) -> str:
             if not is_no_sanction_block:
                 retained_blocks.append(b_strip)
 
-        result = (
-            "\n\n---\n\n".join(retained_blocks)
-            if len(retained_blocks) > 1
-            else ("".join(retained_blocks))
-        )
+        if retained_blocks:
+            result = (
+                "\n\n---\n\n".join(retained_blocks)
+                if len(retained_blocks) > 1
+                else retained_blocks[0]
+            )
 
     # Strip role repetition prefixes like "Bạn là chuyên viên tư vấn pháp luật..."
     result = re.sub(
@@ -237,21 +247,50 @@ def verify_action_grounding(
 
     # 3. Grounding integrity check: verify citations in answer correspond to package
     package_article_ids: set[str] = set()
+    package_article_titles: list[str] = []
     for item in package.items:
         prov = item.validated_provision
         if prov.parent_article_id:
             package_article_ids.add(prov.parent_article_id.lower())
         if prov.provision_id:
             package_article_ids.add(prov.provision_id.lower())
+        if prov.parent_article_title:
+            package_article_titles.append(prov.parent_article_title.lower())
         for ref in prov.cross_references:
             if ref.target_id:
                 package_article_ids.add(ref.target_id.lower())
+            if ref.title:
+                package_article_titles.append(ref.title.lower())
 
     for am in package.document_amendments:
         if am.article_id:
             package_article_ids.add(am.article_id.lower())
         if am.target_id:
             package_article_ids.add(am.target_id.lower())
+        if am.article_title:
+            package_article_titles.append(am.article_title.lower())
+
+    if package_article_ids or package_article_titles:
+        citations = extract_citations_from_text(answer_text, package=package)
+        for cit in citations:
+            m_art = re.search(r"(?:điều|dieu)\s+(\d+)", cit, re.IGNORECASE)
+            if m_art:
+                art_num = m_art.group(1)
+                art_marker = f"_d{art_num}"
+                art_marker_word = f"điều {art_num}"
+                matches_id = any(
+                    art_marker == pid
+                    or f"{art_marker}_" in pid
+                    or pid.endswith(art_marker)
+                    for pid in package_article_ids
+                )
+                matches_title = any(
+                    art_marker_word in t for t in package_article_titles
+                )
+                if not matches_id and not matches_title:
+                    warnings.append(
+                        f"Căn cứ pháp lý chưa được kiểm chứng trong dữ liệu trích xuất: '{cit}'"
+                    )
 
     is_valid = len(warnings) == 0
     return is_valid, warnings
@@ -274,9 +313,7 @@ class AnswerGenerator:
         self.max_retries = self.config.max_retries
         self.session = session or requests.Session()
 
-    def _build_user_prompt(
-        self, evidence: EvidencePackage, has_sanctions: bool
-    ) -> str:
+    def _build_user_prompt(self, evidence: EvidencePackage, has_sanctions: bool) -> str:
         """Builds user prompt for answer generation."""
         if (
             not evidence.items

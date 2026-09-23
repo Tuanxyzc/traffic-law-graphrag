@@ -32,6 +32,16 @@ KNOWN_DOCUMENT_MAP: dict[str, str] = {
     "36": "36_2024_QH15",
 }
 
+_KNOWN_DOC_KEYS_ALT = "|".join(re.escape(k) for k in KNOWN_DOCUMENT_MAP)
+KNOWN_DOC_NUMS_REGEX = re.compile(rf"\b({_KNOWN_DOC_KEYS_ALT})\b")
+_KNOWN_DOC_BOUNDED_ALT = "|".join(rf"\b{re.escape(k)}\b" for k in KNOWN_DOCUMENT_MAP)
+DIRECT_STATUTORY_QUOTE_REGEX = re.compile(
+    r"^(?:trích|nội dung|cho tôi biết|xem)?\s*(?:toàn bộ|toàn văn)?\s*"
+    r"(?:điều|khoản|điểm)\s+\d+[a-zđ]?\s*"
+    rf".*(?:nghị\s*định|nđ|nd|luật|luat|\b\d{{2,3}}/\d{{4}}/|{_KNOWN_DOC_BOUNDED_ALT})",
+    re.IGNORECASE,
+)
+
 
 def resolve_canonical_doc_id(doc_ref: str | None) -> str | None:
     """Normalizes document references to canonical IDs in Neo4j."""
@@ -41,7 +51,7 @@ def resolve_canonical_doc_id(doc_ref: str | None) -> str | None:
     if cleaned in KNOWN_DOCUMENT_MAP.values():
         return cleaned
 
-    match = re.search(r"\b(118|151|156|160|165|168|184|236|238|35|36)\b", cleaned)
+    match = KNOWN_DOC_NUMS_REGEX.search(cleaned)
     if match:
         num = match.group(1)
         if num in KNOWN_DOCUMENT_MAP:
@@ -139,9 +149,7 @@ def extract_document_intent_and_numbers(
         q_lower,
     )
     if not doc_nums:
-        doc_nums = re.findall(
-            r"\b(118|151|156|160|165|168|184|236|238|35|36)\b", q_lower
-        )
+        doc_nums = KNOWN_DOC_NUMS_REGEX.findall(q_lower)
 
     if is_amendment_query and len(doc_nums) >= 2:
         if source_doc:
@@ -194,7 +202,7 @@ def check_bypass_rewrite(query: str) -> tuple[bool, RewrittenQuery | None]:
         "bạn tên gì",
         "bạn làm được gì",
     }
-    if q_lower in greetings or any(q_lower == g for g in greetings):
+    if q_lower in greetings:
         return True, RewrittenQuery(
             original_query=clean,
             search_query=clean,
@@ -213,14 +221,7 @@ def check_bypass_rewrite(query: str) -> tuple[bool, RewrittenQuery | None]:
         )
 
     # 2. Direct Statutory Quote Query (e.g. "Trích toàn bộ điều 1 của ND168")
-    is_direct_statutory_quote = bool(
-        re.search(
-            r"^(?:trích|nội dung|cho tôi biết|xem)?\s*(?:toàn bộ|toàn văn)?\s*"
-            r"(?:điều|khoản|điểm)\s+\d+[a-zđ]?\s*"
-            r".*(?:nghị\s*định|nđ|nd|luật|luat|\b\d{2,3}/\d{4}/|\b168\b|\b165\b|\b151\b|\b238\b|\b118\b|\b35\b|\b36\b)",
-            q_lower,
-        )
-    )
+    is_direct_statutory_quote = bool(DIRECT_STATUTORY_QUOTE_REGEX.search(q_lower))
     is_amendment = any(
         k in q_lower
         for k in ["sửa đổi", "bổ sung", "bãi bỏ", "thay thế", "được sửa", "sửa bởi"]
@@ -316,9 +317,7 @@ def normalize_colloquial_terms(text: str | None) -> str:
     return normalized
 
 
-def sanitize_rewritten_query_string(
-    text: Any, max_words: int = 30
-) -> str | None:
+def sanitize_rewritten_query_string(text: Any, max_words: int = 30) -> str | None:
     """Sanitizes query string by collapsing consecutive duplicate words and capping word count."""
     if not text or not isinstance(text, str):
         return None
@@ -480,8 +479,7 @@ class QueryRewriter:
             raw_search = clean_query
 
         search_query = (
-            sanitize_rewritten_query_string(raw_search, max_words=30)
-            or clean_query
+            sanitize_rewritten_query_string(raw_search, max_words=30) or clean_query
         )
         rule_query = sanitize_rewritten_query_string(
             parsed.get("rule_query"), max_words=25
@@ -537,12 +535,8 @@ class QueryRewriter:
             else det_intent
         )
 
-        source_doc = (
-            resolve_canonical_doc_id(parsed.get("source_doc")) or det_source
-        )
-        target_doc = (
-            resolve_canonical_doc_id(parsed.get("target_doc")) or det_target
-        )
+        source_doc = resolve_canonical_doc_id(parsed.get("source_doc")) or det_source
+        target_doc = resolve_canonical_doc_id(parsed.get("target_doc")) or det_target
 
         if (source_doc or target_doc) and det_intent == "document_amendment":
             intent = "document_amendment"
@@ -732,8 +726,12 @@ class QueryRewriter:
                     headers: dict[str, str] = {"Content-Type": "application/json"}
                     user_content = f'Câu hỏi của người dân: "{clean_query}"'
                     payload: dict[str, Any] = {
-                        "system_instruction": {"parts": [{"text": REWRITE_SYSTEM_PROMPT}]},
-                        "contents": [{"role": "user", "parts": [{"text": user_content}]}],
+                        "system_instruction": {
+                            "parts": [{"text": REWRITE_SYSTEM_PROMPT}]
+                        },
+                        "contents": [
+                            {"role": "user", "parts": [{"text": user_content}]}
+                        ],
                         "generationConfig": {
                             "responseMimeType": "application/json",
                             "responseSchema": REWRITE_JSON_SCHEMA,
@@ -751,9 +749,7 @@ class QueryRewriter:
                         "Content-Type": "application/json",
                         "Authorization": f"Bearer {key}",
                     }
-                    openai_user_content = (
-                        f'Phân tích và mở rộng câu hỏi sau sang 3 biến thể pháp lý (đúng định dạng JSON):\n"{clean_query}"'
-                    )
+                    openai_user_content = f'Phân tích và mở rộng câu hỏi sau sang 3 biến thể pháp lý (đúng định dạng JSON):\n"{clean_query}"'
                     payload = {
                         "model": model,
                         "messages": [

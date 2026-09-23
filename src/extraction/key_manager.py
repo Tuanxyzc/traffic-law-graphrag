@@ -123,9 +123,7 @@ class KeyManager:
                 self._active_providers.append(p)
 
         self._current_provider_index = 0
-        self._current_key_indices: dict[str, int] = {
-            p: 0 for p in self._providers_keys
-        }
+        self._current_key_indices: dict[str, int] = {p: 0 for p in self._providers_keys}
 
         if not self._active_providers:
             logger.warning(
@@ -222,7 +220,9 @@ class KeyManager:
         """Retrieves next available key with provider metadata, performing inter-provider failover if needed."""
         with self._lock:
             if not self._active_providers:
-                raise ValueError("No API keys available across any configured providers in KeyManager pool.")
+                raise ValueError(
+                    "No API keys available across any configured providers in KeyManager pool."
+                )
 
             now = time.time()
             total_providers = len(self._active_providers)
@@ -243,7 +243,9 @@ class KeyManager:
                     if now >= cooldown_until:
                         # If we had to switch to another provider because earlier ones exhausted
                         if p_idx != self._current_provider_index:
-                            prev_provider = self._active_providers[self._current_provider_index]
+                            prev_provider = self._active_providers[
+                                self._current_provider_index
+                            ]
                             logger.warning(
                                 "All keys for provider '%s' are on cooldown. Failing over to provider '%s'.",
                                 prev_provider,
@@ -252,7 +254,9 @@ class KeyManager:
                             self._current_provider_index = p_idx
 
                         self._current_key_indices[provider] = k_idx
-                        api_type = PROVIDER_DEFAULTS.get(provider, {}).get("api_type", "openai")
+                        api_type = PROVIDER_DEFAULTS.get(provider, {}).get(
+                            "api_type", "openai"
+                        )
                         endpoint = self._resolve_endpoint(provider)
                         model = self._resolve_model(provider, purpose=purpose)
 
@@ -298,9 +302,15 @@ class KeyManager:
             time.sleep(wait_time)
 
         with self._lock:
-            self._current_provider_index = self._active_providers.index(earliest_provider)
-            self._current_key_indices[earliest_provider] = self._providers_keys[earliest_provider].index(earliest_key)
-            api_type = PROVIDER_DEFAULTS.get(earliest_provider, {}).get("api_type", "openai")
+            self._current_provider_index = self._active_providers.index(
+                earliest_provider
+            )
+            self._current_key_indices[earliest_provider] = self._providers_keys[
+                earliest_provider
+            ].index(earliest_key)
+            api_type = PROVIDER_DEFAULTS.get(earliest_provider, {}).get(
+                "api_type", "openai"
+            )
             endpoint = self._resolve_endpoint(earliest_provider)
             model = self._resolve_model(earliest_provider, purpose=purpose)
 
@@ -316,7 +326,9 @@ class KeyManager:
         """Backward-compatibility: retrieves the next available API key string."""
         return self.get_provider_key(max_wait=max_wait).key
 
-    def _find_provider_for_key(self, key: str, explicit_provider: str | None = None) -> str:
+    def _find_provider_for_key(
+        self, key: str, explicit_provider: str | None = None
+    ) -> str:
         if explicit_provider and explicit_provider in self._providers_keys:
             return explicit_provider
         for p, keys in self._providers_keys.items():

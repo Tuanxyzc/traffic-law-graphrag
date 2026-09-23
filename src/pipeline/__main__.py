@@ -83,14 +83,18 @@ def format_text_output(result) -> str:
                 ensure_ascii=False,
                 indent=2,
             )
-            lines.append(f"🔍 Phân tích & Chuẩn hóa truy vấn (Query Rewrite JSON):\n{rw_json}")
+            lines.append(
+                f"🔍 Phân tích & Chuẩn hóa truy vấn (Query Rewrite JSON):\n{rw_json}"
+            )
         elif isinstance(result.rewritten_query, dict):
             rw_json = json.dumps(
                 result.rewritten_query,
                 ensure_ascii=False,
                 indent=2,
             )
-            lines.append(f"🔍 Phân tích & Chuẩn hóa truy vấn (Query Rewrite JSON):\n{rw_json}")
+            lines.append(
+                f"🔍 Phân tích & Chuẩn hóa truy vấn (Query Rewrite JSON):\n{rw_json}"
+            )
         else:
             lines.append(f"🔍 Thuật ngữ tra cứu chuẩn hóa: {result.rewritten_query}")
 

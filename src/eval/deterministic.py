@@ -76,10 +76,7 @@ def extract_fine_range(text: str) -> tuple[int | None, int | None]:
 
     # Strip markdown formatting so numbers wrapped in ** are parsed cleanly
     clean_text = (
-        text.replace("**", " ")
-        .replace("*", " ")
-        .replace("_", " ")
-        .replace("#", " ")
+        text.replace("**", " ").replace("*", " ").replace("_", " ").replace("#", " ")
     )
 
     # 1. Try range pattern: "từ X đến Y [đồng/triệu]"
@@ -269,7 +266,9 @@ class DeterministicEvaluator:
         # Unexpected provisions (cited but not expected)
         unexpected: list[str] = []
         for cand in cited_set:
-            if not any(matches_provision(exp, {cand}) for exp in sample.expected_provision_ids):
+            if not any(
+                matches_provision(exp, {cand}) for exp in sample.expected_provision_ids
+            ):
                 unexpected.append(cand)
 
         total_expected = len(sample.expected_provision_ids)

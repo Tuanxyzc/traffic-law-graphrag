@@ -80,9 +80,7 @@ def apply_retrieval_guard(
     if not chunks:
         return []
 
-    clean_must_have = [
-        t.strip().lower() for t in (must_have_terms or []) if t.strip()
-    ]
+    clean_must_have = [t.strip().lower() for t in (must_have_terms or []) if t.strip()]
     clean_must_not = [
         t.strip().lower() for t in (must_not_have_terms or []) if t.strip()
     ]
@@ -94,16 +92,20 @@ def apply_retrieval_guard(
         haystack = f"{chunk.metadata.tieu_de_dieu or ''} {chunk.text or ''} {chunk.raw_text or ''}".lower()
         return any(term in haystack for term in terms)
 
-    matching_must_have = [
-        c for c in chunks if chunk_contains_terms(c, clean_must_have)
-    ] if clean_must_have else []
+    matching_must_have = (
+        [c for c in chunks if chunk_contains_terms(c, clean_must_have)]
+        if clean_must_have
+        else []
+    )
 
     if clean_must_have and matching_must_have:
         # Purge chunks that lack must_have_terms and contain must_not_have_terms
         cleaned_chunks: list[RetrievedChunk] = []
         for c in chunks:
             has_must = chunk_contains_terms(c, clean_must_have)
-            has_must_not = chunk_contains_terms(c, clean_must_not) if clean_must_not else False
+            has_must_not = (
+                chunk_contains_terms(c, clean_must_not) if clean_must_not else False
+            )
             if has_must or not has_must_not:
                 cleaned_chunks.append(c)
             else:
@@ -149,7 +151,9 @@ def reciprocal_rank_fusion(
             scores[chunk_id] = scores.get(chunk_id, 0.0) + 1.0 / (rrf_k + rank + 1)
 
     sorted_ids = sorted(scores.keys(), key=lambda cid: scores[cid], reverse=True)
-    all_sorted_chunks = [chunks_map[cid] for cid in sorted_ids]
+    all_sorted_chunks = [
+        chunks_map[cid].model_copy(update={"score": scores[cid]}) for cid in sorted_ids
+    ]
 
     if not target_entities:
         return all_sorted_chunks[:top_k]
@@ -367,7 +371,9 @@ class GraphRAGPipeline:
         if candidate_chunks:
             unit_ids = [chunk.id for chunk in candidate_chunks]
             validated_provisions = self.validator.validate_provisions(unit_ids)
-            logger.info("Validated %d provisions from graph.", len(validated_provisions))
+            logger.info(
+                "Validated %d provisions from graph.", len(validated_provisions)
+            )
         else:
             validated_provisions = []
             logger.info("Candidate chunks empty, skipping graph validation.")

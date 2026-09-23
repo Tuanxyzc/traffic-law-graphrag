@@ -73,20 +73,48 @@ def handle_run(args: argparse.Namespace) -> int:
     print("\n================== BENCHMARK SUMMARY ===================")
     kpi_table: list[list[Any]] = [
         ["Total Samples Evaluated", summary.total_samples],
-        ["Overall Passed Samples", f"{summary.passed_samples} ({summary.overall_pass_rate * 100:.1f}%)"],
+        [
+            "Overall Passed Samples",
+            f"{summary.passed_samples} ({summary.overall_pass_rate * 100:.1f}%)",
+        ],
         ["Average Provision Recall", f"{summary.avg_provision_recall * 100:.1f}%"],
-        ["Average Provision Precision", f"{summary.avg_provision_precision * 100:.1f}%"],
+        [
+            "Average Provision Precision",
+            f"{summary.avg_provision_precision * 100:.1f}%",
+        ],
         ["Fine Amount Accuracy", f"{summary.fine_accuracy * 100:.1f}%"],
         ["Warning/Amendment Accuracy", f"{summary.warning_accuracy * 100:.1f}%"],
     ]
 
     if summary.tier == "full":
-        kpi_table.extend([
-            ["RAGAS Faithfulness", f"{summary.avg_faithfulness * 100:.1f}%" if summary.avg_faithfulness is not None else "N/A"],
-            ["RAGAS Answer Relevancy", f"{summary.avg_answer_relevancy * 100:.1f}%" if summary.avg_answer_relevancy is not None else "N/A"],
-            ["RAGAS Context Precision", f"{summary.avg_context_precision * 100:.1f}%" if summary.avg_context_precision is not None else "N/A"],
-            ["RAGAS Context Recall", f"{summary.avg_context_recall * 100:.1f}%" if summary.avg_context_recall is not None else "N/A"],
-        ])
+        kpi_table.extend(
+            [
+                [
+                    "RAGAS Faithfulness",
+                    f"{summary.avg_faithfulness * 100:.1f}%"
+                    if summary.avg_faithfulness is not None
+                    else "N/A",
+                ],
+                [
+                    "RAGAS Answer Relevancy",
+                    f"{summary.avg_answer_relevancy * 100:.1f}%"
+                    if summary.avg_answer_relevancy is not None
+                    else "N/A",
+                ],
+                [
+                    "RAGAS Context Precision",
+                    f"{summary.avg_context_precision * 100:.1f}%"
+                    if summary.avg_context_precision is not None
+                    else "N/A",
+                ],
+                [
+                    "RAGAS Context Recall",
+                    f"{summary.avg_context_recall * 100:.1f}%"
+                    if summary.avg_context_recall is not None
+                    else "N/A",
+                ],
+            ]
+        )
 
     kpi_table.append(["Average Pipeline Latency", f"{summary.avg_latency_ms:.1f} ms"])
     print(tabulate(kpi_table, headers=["Metric", "Result"], tablefmt="grid"))

@@ -258,7 +258,11 @@ class CorpusIndexer:
             try:
                 with open(cache_path, "r", encoding="utf-8") as f:
                     embedding_cache = json.load(f)
-                logger.info("Loaded %d cached embeddings from %s", len(embedding_cache), cache_path)
+                logger.info(
+                    "Loaded %d cached embeddings from %s",
+                    len(embedding_cache),
+                    cache_path,
+                )
             except Exception as e:
                 logger.warning("Could not read embedding cache: %s", e)
 

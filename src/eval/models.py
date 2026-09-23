@@ -206,7 +206,8 @@ class EvaluationSummary(BaseModel):
 
     timestamp: str = Field(..., description="Execution ISO timestamp")
     tier: str = Field(
-        default="full", description="Evaluation tier executed: 'deterministic' or 'full'"
+        default="full",
+        description="Evaluation tier executed: 'deterministic' or 'full'",
     )
     total_samples: int = Field(default=0, description="Total test cases evaluated")
     passed_samples: int = Field(default=0, description="Total passed test cases")

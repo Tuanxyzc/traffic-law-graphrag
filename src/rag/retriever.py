@@ -63,8 +63,7 @@ def compute_lexical_density(query_text: str, candidate_text: str) -> float:
 
     # 1. Bigram phrase matching
     query_bigrams = [
-        f"{query_tokens[i]} {query_tokens[i+1]}"
-        for i in range(len(query_tokens) - 1)
+        f"{query_tokens[i]} {query_tokens[i + 1]}" for i in range(len(query_tokens) - 1)
     ]
     phrase_bonus = sum(2.0 for bg in query_bigrams if bg in cand_lower)
 
@@ -234,7 +233,9 @@ class HybridRetriever:
                 articles.append(row)
             return articles
         except Exception as exc:
-            logger.warning("Article fulltext query failed (index might not exist yet): %s", exc)
+            logger.warning(
+                "Article fulltext query failed (index might not exist yet): %s", exc
+            )
             return []
 
     def _expand_and_filter_article_units(

@@ -179,9 +179,17 @@ class Neo4jBatchImporter:
         for a_file in amendment_files:
             amendment_data = load_json(str(a_file))
             for event in amendment_data:
-                src_doc = self.resolver.resolve_document(event.get("source_document", ""))
-                tgt_doc = self.resolver.resolve_document(event.get("target_document", ""))
-                if doc_filter and doc_filter not in src_doc and doc_filter not in tgt_doc:
+                src_doc = self.resolver.resolve_document(
+                    event.get("source_document", "")
+                )
+                tgt_doc = self.resolver.resolve_document(
+                    event.get("target_document", "")
+                )
+                if (
+                    doc_filter
+                    and doc_filter not in src_doc
+                    and doc_filter not in tgt_doc
+                ):
                     continue
 
                 for item in event.get("items", []):

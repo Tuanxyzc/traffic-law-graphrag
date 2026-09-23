@@ -241,7 +241,9 @@ def sync(
 
     # Stage 4: SemanticUnit Containment Linking
     c_ok, c_time, c_status = run_stage_link_containment(dry_run=dry_run)
-    stages_report.append(["4. SemanticUnit Containment Linking", f"{c_time}s", c_status])
+    stages_report.append(
+        ["4. SemanticUnit Containment Linking", f"{c_time}s", c_status]
+    )
     if not c_ok:
         print("\n[WARNING] Stage 4 (Containment Linking) encountered errors.")
 

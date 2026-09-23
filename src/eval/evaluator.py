@@ -64,9 +64,7 @@ class EvaluationOrchestrator:
             res = self.pipeline.run(sample.question)
             answer = res.answer
             citations = res.citations
-            contexts = [
-                item.original_chunk_text for item in res.evidence_package.items
-            ]
+            contexts = [item.original_chunk_text for item in res.evidence_package.items]
             unit_ids = [item.chunk_id for item in res.evidence_package.items]
             warning_flags = [
                 item.warning_flag
@@ -118,9 +116,7 @@ class EvaluationOrchestrator:
             overall_passed=overall_passed,
         )
 
-    def evaluate_dataset(
-        self, samples: list[EvaluationSample]
-    ) -> EvaluationSummary:
+    def evaluate_dataset(self, samples: list[EvaluationSample]) -> EvaluationSummary:
         """Evaluates an entire dataset of test cases and computes aggregate metrics."""
         results: list[EvaluationResult] = []
         total = len(samples)
@@ -141,23 +137,47 @@ class EvaluationOrchestrator:
         passed_samples = sum(1 for r in results if r.overall_passed)
         overall_pass_rate = passed_samples / total if total > 0 else 0.0
 
-        avg_recall = sum(r.deterministic_score.provision_recall for r in results) / total if total > 0 else 0.0
-        avg_precision = sum(r.deterministic_score.provision_precision for r in results) / total if total > 0 else 0.0
-        avg_f1 = sum(r.deterministic_score.provision_f1 for r in results) / total if total > 0 else 0.0
+        avg_recall = (
+            sum(r.deterministic_score.provision_recall for r in results) / total
+            if total > 0
+            else 0.0
+        )
+        avg_precision = (
+            sum(r.deterministic_score.provision_precision for r in results) / total
+            if total > 0
+            else 0.0
+        )
+        avg_f1 = (
+            sum(r.deterministic_score.provision_f1 for r in results) / total
+            if total > 0
+            else 0.0
+        )
 
         # Fine accuracy: fraction of applicable samples where fine matched
-        fine_applicable = [r for r in results if r.deterministic_score.fine_exact_match is not None]
+        fine_applicable = [
+            r for r in results if r.deterministic_score.fine_exact_match is not None
+        ]
         fine_acc = (
-            sum(1 for r in fine_applicable if r.deterministic_score.fine_exact_match is True)
+            sum(
+                1
+                for r in fine_applicable
+                if r.deterministic_score.fine_exact_match is True
+            )
             / len(fine_applicable)
             if fine_applicable
             else 1.0
         )
 
         # Warning accuracy: fraction of amendment cases where warning was properly handled
-        warn_applicable = [r for r in results if r.deterministic_score.warning_match is not None]
+        warn_applicable = [
+            r for r in results if r.deterministic_score.warning_match is not None
+        ]
         warn_acc = (
-            sum(1 for r in warn_applicable if r.deterministic_score.warning_match is True)
+            sum(
+                1
+                for r in warn_applicable
+                if r.deterministic_score.warning_match is True
+            )
             / len(warn_applicable)
             if warn_applicable
             else 1.0
@@ -171,10 +191,22 @@ class EvaluationOrchestrator:
 
         if self.tier == "full":
             rag_results = [r.ragas_score for r in results if r.ragas_score is not None]
-            valid_faith = [rg.faithfulness for rg in rag_results if rg.faithfulness is not None]
-            valid_rel = [rg.answer_relevancy for rg in rag_results if rg.answer_relevancy is not None]
-            valid_prec = [rg.context_precision for rg in rag_results if rg.context_precision is not None]
-            valid_rec = [rg.context_recall for rg in rag_results if rg.context_recall is not None]
+            valid_faith = [
+                rg.faithfulness for rg in rag_results if rg.faithfulness is not None
+            ]
+            valid_rel = [
+                rg.answer_relevancy
+                for rg in rag_results
+                if rg.answer_relevancy is not None
+            ]
+            valid_prec = [
+                rg.context_precision
+                for rg in rag_results
+                if rg.context_precision is not None
+            ]
+            valid_rec = [
+                rg.context_recall for rg in rag_results if rg.context_recall is not None
+            ]
 
             if valid_faith:
                 avg_faithfulness = round(sum(valid_faith) / len(valid_faith), 4)
@@ -196,8 +228,14 @@ class EvaluationOrchestrator:
 
             cat_total = len(cat_samples)
             cat_passed = sum(1 for r in cat_samples if r.overall_passed)
-            cat_rec = sum(r.deterministic_score.provision_recall for r in cat_samples) / cat_total
-            cat_prec = sum(r.deterministic_score.provision_precision for r in cat_samples) / cat_total
+            cat_rec = (
+                sum(r.deterministic_score.provision_recall for r in cat_samples)
+                / cat_total
+            )
+            cat_prec = (
+                sum(r.deterministic_score.provision_precision for r in cat_samples)
+                / cat_total
+            )
 
             cat_faith_vals = [
                 r.ragas_score.faithfulness
@@ -216,8 +254,12 @@ class EvaluationOrchestrator:
                 pass_rate=round(cat_passed / cat_total, 4),
                 avg_provision_recall=round(cat_rec, 4),
                 avg_provision_precision=round(cat_prec, 4),
-                avg_faithfulness=round(sum(cat_faith_vals) / len(cat_faith_vals), 4) if cat_faith_vals else None,
-                avg_answer_relevancy=round(sum(cat_rel_vals) / len(cat_rel_vals), 4) if cat_rel_vals else None,
+                avg_faithfulness=round(sum(cat_faith_vals) / len(cat_faith_vals), 4)
+                if cat_faith_vals
+                else None,
+                avg_answer_relevancy=round(sum(cat_rel_vals) / len(cat_rel_vals), 4)
+                if cat_rel_vals
+                else None,
             )
 
         return EvaluationSummary(

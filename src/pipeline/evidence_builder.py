@@ -650,11 +650,7 @@ class EvidenceBuilder:
             return "Không tìm thấy điều khoản pháp luật phù hợp trong cơ sở dữ liệu."
 
         rw = package.rewritten_query
-        rw_query_str = (
-            rw.search_query
-            if hasattr(rw, "search_query")
-            else str(rw)
-        )
+        rw_query_str = rw.search_query if hasattr(rw, "search_query") else str(rw)
         parts: list[str] = [
             f"CÂU HỎI CỦA NGƯỜI DÂN: {package.user_query}",
             f"TRUY VẤN PHÁP LÝ CHUẨN HÓA: {rw_query_str}",

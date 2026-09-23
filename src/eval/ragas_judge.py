@@ -129,7 +129,9 @@ class RagasJudgeClient:
                 )
 
                 if resp.status_code == 429:
-                    logger.warning("Gemini quota reached in RagasJudge. Rotating key...")
+                    logger.warning(
+                        "Gemini quota reached in RagasJudge. Rotating key..."
+                    )
                     self.key_manager.mark_rate_limited(key)
                     retries += 1
                     continue
@@ -163,7 +165,9 @@ class RagasJudgeClient:
                 logger.warning("Judge API network error: %s (attempt %d)", err, retries)
                 time.sleep(retries * 1.5)
 
-        raise RuntimeError(f"RagasJudgeClient failed after {self.max_retries} attempts.")
+        raise RuntimeError(
+            f"RagasJudgeClient failed after {self.max_retries} attempts."
+        )
 
 
 class RagasJudge:
@@ -193,7 +197,7 @@ class RagasJudge:
             return 0.0
 
         contexts_str = "\n---\n".join(
-            f"Đoạn {i+1}:\n{ctx}" for i, ctx in enumerate(retrieved_contexts)
+            f"Đoạn {i + 1}:\n{ctx}" for i, ctx in enumerate(retrieved_contexts)
         )
         user_prompt = (
             f"NGỮ CẢNH TRUY XUẤT:\n{contexts_str}\n\n"
@@ -208,9 +212,7 @@ class RagasJudge:
         supported = sum(1 for s in statements if s.get("supported") is True)
         return round(supported / len(statements), 4)
 
-    def compute_answer_relevancy(
-        self, question: str, generated_answer: str
-    ) -> float:
+    def compute_answer_relevancy(self, question: str, generated_answer: str) -> float:
         """Measures semantic similarity between user question and synthetic questions from answer."""
         if not question or not generated_answer:
             return 0.0
@@ -237,7 +239,7 @@ class RagasJudge:
             return 0.0
 
         contexts_str = "\n---\n".join(
-            f"Đoạn {i+1}:\n{ctx}" for i, ctx in enumerate(retrieved_contexts)
+            f"Đoạn {i + 1}:\n{ctx}" for i, ctx in enumerate(retrieved_contexts)
         )
         user_prompt = (
             f"CÂU HỎI:\n{question}\n\n"
@@ -276,7 +278,7 @@ class RagasJudge:
             return 0.0
 
         contexts_str = "\n---\n".join(
-            f"Đoạn {i+1}:\n{ctx}" for i, ctx in enumerate(retrieved_contexts)
+            f"Đoạn {i + 1}:\n{ctx}" for i, ctx in enumerate(retrieved_contexts)
         )
         user_prompt = (
             f"CÂU TRẢ LỜI CHUẨN (GROUND TRUTH):\n{ground_truth}\n\n"

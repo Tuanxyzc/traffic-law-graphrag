@@ -101,7 +101,12 @@ class EvaluationExporter:
         ws_dash["A4"].font = REGULAR_FONT
 
         # 2. Key Metrics Table
-        headers_kpi = ["Chỉ số đánh giá", "Giá trị", "Mục tiêu tối thiểu", "Mô tả ý nghĩa"]
+        headers_kpi = [
+            "Chỉ số đánh giá",
+            "Giá trị",
+            "Mục tiêu tối thiểu",
+            "Mô tả ý nghĩa",
+        ]
         row_kpi_start = 6
         for col_idx, h in enumerate(headers_kpi, start=1):
             cell = ws_dash.cell(row=row_kpi_start, column=col_idx, value=h)
@@ -112,16 +117,74 @@ class EvaluationExporter:
         ws_dash.row_dimensions[row_kpi_start].height = 24
 
         kpi_rows = [
-            ("Tỉ lệ Pass toàn diện (Overall Pass Rate)", f"{summary.overall_pass_rate * 100:.1f}%", ">= 80%", "Tỉ lệ câu trả lời thỏa mãn cả tiêu chuẩn luật và chất lượng RAGAS"),
-            ("Độ bao phủ điều luật (Provision Recall@K)", f"{summary.avg_provision_recall * 100:.1f}%", ">= 70%", "Tỉ lệ các điều/khoản luật kỳ vọng được hệ thống trích dẫn thành công"),
-            ("Độ chính xác điều luật (Provision Precision@K)", f"{summary.avg_provision_precision * 100:.1f}%", ">= 60%", "Tỉ lệ các điều khoản trích dẫn là chính xác, không trích dẫn thừa"),
-            ("Độ chính xác mức phạt tiền (Fine Range Accuracy)", f"{summary.fine_accuracy * 100:.1f}%", ">= 85%", "Tỉ lệ trích xuất đúng 100% khung tiền phạt tối thiểu và tối đa"),
-            ("Nhận diện cảnh báo hiệu lực/sửa đổi (Warning Accuracy)", f"{summary.warning_accuracy * 100:.1f}%", ">= 90%", "Tỉ lệ cảnh báo đúng các văn bản đã bị sửa đổi, thay thế hoặc hết hiệu lực"),
-            ("Điểm trung thực căn cứ (Faithfulness)", f"{summary.avg_faithfulness * 100:.1f}%" if summary.avg_faithfulness is not None else "N/A", ">= 70%", "Các nhận định trong câu trả lời phải được bảo chứng bởi ngữ cảnh truy xuất"),
-            ("Độ tương quan câu trả lời (Answer Relevancy)", f"{summary.avg_answer_relevancy * 100:.1f}%" if summary.avg_answer_relevancy is not None else "N/A", ">= 65%", "Câu trả lời giải đáp đúng trọng tâm câu hỏi của người dân"),
-            ("Độ chính xác ngữ cảnh (Context Precision)", f"{summary.avg_context_precision * 100:.1f}%" if summary.avg_context_precision is not None else "N/A", ">= 60%", "Các đoạn ngữ cảnh liên quan được xếp hạng ưu tiên ở vị trí cao"),
-            ("Độ bao phủ ngữ cảnh (Context Recall)", f"{summary.avg_context_recall * 100:.1f}%" if summary.avg_context_recall is not None else "N/A", ">= 60%", "Ngữ cảnh truy xuất chứa đầy đủ thông tin để trả lời câu hỏi chuẩn"),
-            ("Thời gian phản hồi trung bình (Average Latency)", f"{summary.avg_latency_ms:.1f} ms", "< 4000 ms", "Thời gian hoàn thành xử lý toàn diện qua GraphRAG pipeline"),
+            (
+                "Tỉ lệ Pass toàn diện (Overall Pass Rate)",
+                f"{summary.overall_pass_rate * 100:.1f}%",
+                ">= 80%",
+                "Tỉ lệ câu trả lời thỏa mãn cả tiêu chuẩn luật và chất lượng RAGAS",
+            ),
+            (
+                "Độ bao phủ điều luật (Provision Recall@K)",
+                f"{summary.avg_provision_recall * 100:.1f}%",
+                ">= 70%",
+                "Tỉ lệ các điều/khoản luật kỳ vọng được hệ thống trích dẫn thành công",
+            ),
+            (
+                "Độ chính xác điều luật (Provision Precision@K)",
+                f"{summary.avg_provision_precision * 100:.1f}%",
+                ">= 60%",
+                "Tỉ lệ các điều khoản trích dẫn là chính xác, không trích dẫn thừa",
+            ),
+            (
+                "Độ chính xác mức phạt tiền (Fine Range Accuracy)",
+                f"{summary.fine_accuracy * 100:.1f}%",
+                ">= 85%",
+                "Tỉ lệ trích xuất đúng 100% khung tiền phạt tối thiểu và tối đa",
+            ),
+            (
+                "Nhận diện cảnh báo hiệu lực/sửa đổi (Warning Accuracy)",
+                f"{summary.warning_accuracy * 100:.1f}%",
+                ">= 90%",
+                "Tỉ lệ cảnh báo đúng các văn bản đã bị sửa đổi, thay thế hoặc hết hiệu lực",
+            ),
+            (
+                "Điểm trung thực căn cứ (Faithfulness)",
+                f"{summary.avg_faithfulness * 100:.1f}%"
+                if summary.avg_faithfulness is not None
+                else "N/A",
+                ">= 70%",
+                "Các nhận định trong câu trả lời phải được bảo chứng bởi ngữ cảnh truy xuất",
+            ),
+            (
+                "Độ tương quan câu trả lời (Answer Relevancy)",
+                f"{summary.avg_answer_relevancy * 100:.1f}%"
+                if summary.avg_answer_relevancy is not None
+                else "N/A",
+                ">= 65%",
+                "Câu trả lời giải đáp đúng trọng tâm câu hỏi của người dân",
+            ),
+            (
+                "Độ chính xác ngữ cảnh (Context Precision)",
+                f"{summary.avg_context_precision * 100:.1f}%"
+                if summary.avg_context_precision is not None
+                else "N/A",
+                ">= 60%",
+                "Các đoạn ngữ cảnh liên quan được xếp hạng ưu tiên ở vị trí cao",
+            ),
+            (
+                "Độ bao phủ ngữ cảnh (Context Recall)",
+                f"{summary.avg_context_recall * 100:.1f}%"
+                if summary.avg_context_recall is not None
+                else "N/A",
+                ">= 60%",
+                "Ngữ cảnh truy xuất chứa đầy đủ thông tin để trả lời câu hỏi chuẩn",
+            ),
+            (
+                "Thời gian phản hồi trung bình (Average Latency)",
+                f"{summary.avg_latency_ms:.1f} ms",
+                "< 4000 ms",
+                "Thời gian hoàn thành xử lý toàn diện qua GraphRAG pipeline",
+            ),
         ]
 
         for offset, (name, val, target, desc) in enumerate(kpi_rows, start=1):
@@ -140,9 +203,22 @@ class EvaluationExporter:
 
         # 3. Category Breakdown Table
         row_cat_start = row_kpi_start + len(kpi_rows) + 3
-        ws_dash.cell(row=row_cat_start - 1, column=1, value="PHÂN TÍCH HIỆU NĂNG THEO NHÓM CÂU HỎI").font = Font(name="Calibri", size=13, bold=True, color="1F4E79")
+        ws_dash.cell(
+            row=row_cat_start - 1,
+            column=1,
+            value="PHÂN TÍCH HIỆU NĂNG THEO NHÓM CÂU HỎI",
+        ).font = Font(name="Calibri", size=13, bold=True, color="1F4E79")
 
-        cat_headers = ["Nhóm câu hỏi", "Số mẫu", "Số mẫu đạt", "Tỉ lệ Đạt", "Recall Điều luật", "Precision Điều luật", "Faithfulness", "Relevancy"]
+        cat_headers = [
+            "Nhóm câu hỏi",
+            "Số mẫu",
+            "Số mẫu đạt",
+            "Tỉ lệ Đạt",
+            "Recall Điều luật",
+            "Precision Điều luật",
+            "Faithfulness",
+            "Relevancy",
+        ]
         for col_idx, h in enumerate(cat_headers, start=1):
             cell = ws_dash.cell(row=row_cat_start, column=col_idx, value=h)
             cell.font = WHITE_BOLD_FONT
@@ -154,13 +230,35 @@ class EvaluationExporter:
         for cat_name, metrics in summary.category_breakdown.items():
             r = row_cat_start + cat_offset
             ws_dash.cell(row=r, column=1, value=cat_name).font = DARK_BOLD_FONT
-            ws_dash.cell(row=r, column=2, value=metrics.total_samples).alignment = Alignment(horizontal="center")
-            ws_dash.cell(row=r, column=3, value=metrics.passed_samples).alignment = Alignment(horizontal="center")
-            ws_dash.cell(row=r, column=4, value=f"{metrics.pass_rate * 100:.1f}%").alignment = Alignment(horizontal="center")
-            ws_dash.cell(row=r, column=5, value=f"{metrics.avg_provision_recall * 100:.1f}%").alignment = Alignment(horizontal="center")
-            ws_dash.cell(row=r, column=6, value=f"{metrics.avg_provision_precision * 100:.1f}%").alignment = Alignment(horizontal="center")
-            ws_dash.cell(row=r, column=7, value=f"{metrics.avg_faithfulness * 100:.1f}%" if metrics.avg_faithfulness is not None else "-").alignment = Alignment(horizontal="center")
-            ws_dash.cell(row=r, column=8, value=f"{metrics.avg_answer_relevancy * 100:.1f}%" if metrics.avg_answer_relevancy is not None else "-").alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r, column=2, value=metrics.total_samples
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r, column=3, value=metrics.passed_samples
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r, column=4, value=f"{metrics.pass_rate * 100:.1f}%"
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r, column=5, value=f"{metrics.avg_provision_recall * 100:.1f}%"
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r, column=6, value=f"{metrics.avg_provision_precision * 100:.1f}%"
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r,
+                column=7,
+                value=f"{metrics.avg_faithfulness * 100:.1f}%"
+                if metrics.avg_faithfulness is not None
+                else "-",
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r,
+                column=8,
+                value=f"{metrics.avg_answer_relevancy * 100:.1f}%"
+                if metrics.avg_answer_relevancy is not None
+                else "-",
+            ).alignment = Alignment(horizontal="center")
             for col in range(1, 9):
                 ws_dash.cell(row=r, column=col).border = GRID_BORDER
             cat_offset += 1
@@ -199,7 +297,9 @@ class EvaluationExporter:
             cell = ws_det.cell(row=1, column=col_idx, value=h)
             cell.font = WHITE_BOLD_FONT
             cell.fill = NAVY_HEADER_FILL
-            cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+            cell.alignment = Alignment(
+                horizontal="center", vertical="center", wrap_text=True
+            )
             cell.border = GRID_BORDER
         ws_det.row_dimensions[1].height = 28
 
@@ -240,10 +340,18 @@ class EvaluationExporter:
                 act_fine_str,
                 fine_match_str,
                 "ĐẠT" if det_score.warning_match else "CHƯA",
-                f"{rag_score.faithfulness * 100:.1f}%" if rag_score and rag_score.faithfulness is not None else "-",
-                f"{rag_score.answer_relevancy * 100:.1f}%" if rag_score and rag_score.answer_relevancy is not None else "-",
-                f"{rag_score.context_precision * 100:.1f}%" if rag_score and rag_score.context_precision is not None else "-",
-                f"{rag_score.context_recall * 100:.1f}%" if rag_score and rag_score.context_recall is not None else "-",
+                f"{rag_score.faithfulness * 100:.1f}%"
+                if rag_score and rag_score.faithfulness is not None
+                else "-",
+                f"{rag_score.answer_relevancy * 100:.1f}%"
+                if rag_score and rag_score.answer_relevancy is not None
+                else "-",
+                f"{rag_score.context_precision * 100:.1f}%"
+                if rag_score and rag_score.context_precision is not None
+                else "-",
+                f"{rag_score.context_recall * 100:.1f}%"
+                if rag_score and rag_score.context_recall is not None
+                else "-",
                 f"{res.latency_ms:.1f}",
                 res.generated_answer,
                 sample.ground_truth_answer,
@@ -261,11 +369,15 @@ class EvaluationExporter:
             if res.overall_passed:
                 status_cell.fill = PASS_FILL
                 status_cell.font = PASS_FONT
-                status_cell.alignment = Alignment(horizontal="center", vertical="center")
+                status_cell.alignment = Alignment(
+                    horizontal="center", vertical="center"
+                )
             else:
                 status_cell.fill = FAIL_FILL
                 status_cell.font = FAIL_FONT
-                status_cell.alignment = Alignment(horizontal="center", vertical="center")
+                status_cell.alignment = Alignment(
+                    horizontal="center", vertical="center"
+                )
 
             ws_det.row_dimensions[row_idx].height = 40
 
@@ -389,7 +501,9 @@ class EvaluationExporter:
 
         auto_fit_columns(ws, max_width=45)
         wb.save(str(out_file))
-        logger.info("Exported %d evaluation samples to Excel: %s", len(samples), out_file)
+        logger.info(
+            "Exported %d evaluation samples to Excel: %s", len(samples), out_file
+        )
         return out_file
 
     @staticmethod
@@ -418,7 +532,9 @@ class EvaluationExporter:
             points = int(row[6]) if row[6] not in (None, "") else None
 
             is_amended_val = row[7]
-            is_amended = bool(is_amended_val is True or str(is_amended_val).strip().upper() == "TRUE")
+            is_amended = bool(
+                is_amended_val is True or str(is_amended_val).strip().upper() == "TRUE"
+            )
 
             keywords = [k.strip() for k in str(row[8] or "").split(";") if k.strip()]
             ground_truth = str(row[9] or "").strip()
@@ -439,5 +555,7 @@ class EvaluationExporter:
             )
             samples.append(sample)
 
-        logger.info("Successfully imported %d evaluation samples from %s", len(samples), in_file)
+        logger.info(
+            "Successfully imported %d evaluation samples from %s", len(samples), in_file
+        )
         return samples
