@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
 
 from src.parser.amendment_recorder import (
@@ -229,7 +230,12 @@ class InsertAnchorRegressionTests(unittest.TestCase):
         self.assertIsNotNone(action["appendix_amendment"])
 
     def test_metadata_header_and_effective_rule(self):
-        meta = extract_header_metadata("data/raw/168_2024_ND-CP_619502.docx")
+        doc_path = Path("data/raw/168_2024_ND-CP_619502.docx")
+        if not doc_path.exists():
+            self.skipTest(
+                f"Raw docx file not found: {doc_path} (skipped in non-corpus environments)"
+            )
+        meta = extract_header_metadata(str(doc_path))
         self.assertEqual(meta["co_quan_ban_hanh"], "CHÍNH PHỦ")
         self.assertEqual(meta["ngay_ban_hanh"], "2024-12-26")
 

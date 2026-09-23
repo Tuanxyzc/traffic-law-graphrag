@@ -1,3 +1,4 @@
+from pathlib import Path
 from unittest.mock import MagicMock
 
 import pytest
@@ -147,7 +148,16 @@ def test_importer_clear_database():
     mock_session.run.assert_called_once_with("MATCH (n) DETACH DELETE n")
 
 
+def _has_parsed_corpus() -> bool:
+    parsed_dir = Path("data/parsed")
+    return parsed_dir.exists() and any(parsed_dir.glob("*_structure.json"))
+
+
 def test_importer_dry_run_execution():
+    if not _has_parsed_corpus():
+        pytest.skip(
+            "Parsed corpus not found under data/parsed (skipped in non-corpus environments)"
+        )
     importer = Neo4jBatchImporter()
     summary = importer.run(dry_run=True)
     assert summary["dry_run"] is True
@@ -200,6 +210,10 @@ def test_parse_external_node_structure():
 
 
 def test_importer_loads_references_and_external_nodes():
+    if not _has_parsed_corpus():
+        pytest.skip(
+            "Parsed corpus not found under data/parsed (skipped in non-corpus environments)"
+        )
     importer = Neo4jBatchImporter()
     nodes, rels, _, _ = importer.load_corpus_data()
 
