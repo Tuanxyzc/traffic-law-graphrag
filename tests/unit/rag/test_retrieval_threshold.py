@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 from unittest.mock import MagicMock
 
-from src.pipeline.models import EvidencePackage, GenerationResult
+from src.pipeline.models import EvidencePackage, GenerationResult, RewrittenQuery
 from src.pipeline.pipeline import GraphRAGPipeline
 from src.rag.config import RAGConfig
 from src.rag.models import RetrievalResult
@@ -174,13 +174,10 @@ def test_layer2_dynamic_k_preserves_sparse_candidate() -> None:
 def test_pipeline_zero_context_flow() -> None:
     """Integration: Empty chunks from Layer 1 bypass graph validation and generate conversational response."""
     mock_rewriter = MagicMock()
-    mock_rewriter.rewrite.return_value = MagicMock(
-        intent="violation_sanction",
+    mock_rewriter.rewrite.return_value = RewrittenQuery(
+        original_query="Xin chào bạn",
         search_query="xin chào bạn",
-        rule_query=None,
-        sanction_query=None,
-        source_doc=None,
-        target_doc=None,
+        intent="violation_sanction",
     )
 
     # Retriever returns 0 chunks (simulating Layer 1 drop)

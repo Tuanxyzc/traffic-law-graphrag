@@ -249,7 +249,9 @@ def test_generate_system_prompt_normative_reasoning() -> None:
     """Acceptance criteria: GENERATE_SYSTEM_PROMPT instructs LLM to perform 1-hop normative reasoning and distinguish sanctions from police powers."""
     # 1. 1-hop reference reasoning
     assert "ĐỐI CHIẾU THAM CHIẾU 1-HOP" in GENERATE_SYSTEM_PROMPT
-    assert "CÁC QUY ĐỊNH THAM CHIẾU LIÊN QUAN TỪ ĐỒ THỊ (1-HOP)" in GENERATE_SYSTEM_PROMPT
+    assert (
+        "CÁC QUY ĐỊNH THAM CHIẾU LIÊN QUAN TỪ ĐỒ THỊ (1-HOP)" in GENERATE_SYSTEM_PROMPT
+    )
     assert "trừ điểm" in GENERATE_SYSTEM_PROMPT.lower()
 
     # 2. Distinction between citizen sanctions and police powers

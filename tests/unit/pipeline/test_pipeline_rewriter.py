@@ -355,15 +355,7 @@ def test_rewriter_null_message_content() -> None:
     mock_session = MagicMock(spec=requests.Session)
     mock_resp = MagicMock()
     mock_resp.status_code = 200
-    mock_resp.json.return_value = {
-        "choices": [
-            {
-                "message": {
-                    "content": None
-                }
-            }
-        ]
-    }
+    mock_resp.json.return_value = {"choices": [{"message": {"content": None}}]}
     mock_session.post.return_value = mock_resp
 
     rewriter = QueryRewriter(config=config, session=mock_session)
@@ -442,7 +434,9 @@ def test_rewriter_llm_reasoning_csgt_sanction_and_constraints() -> None:
     mock_session.post.return_value = mock_resp
 
     rewriter = QueryRewriter(config=config, session=mock_session)
-    res = rewriter.rewrite("Không chấp hành hiệu lệnh cảnh sát giao thông thì xử phạt thế nào")
+    res = rewriter.rewrite(
+        "Không chấp hành hiệu lệnh cảnh sát giao thông thì xử phạt thế nào"
+    )
 
     assert "người điều khiển giao thông" in res.search_query
     assert "cảnh sát giao thông" not in (res.sanction_query or "")
@@ -453,7 +447,11 @@ def test_rewriter_llm_reasoning_csgt_sanction_and_constraints() -> None:
     # Verify JSON serialization
     json_dict = res.to_json_dict()
     assert json_dict["must_have_terms"] == ["người điều khiển giao thông"]
-    assert json_dict["must_not_have_terms"] == ["đèn tín hiệu", "biển báo hiệu", "vạch kẻ đường"]
+    assert json_dict["must_not_have_terms"] == [
+        "đèn tín hiệu",
+        "biển báo hiệu",
+        "vạch kẻ đường",
+    ]
     assert json_dict["target_entities"] == ["xe_o_to", "xe_mo_to"]
 
 
@@ -561,9 +559,7 @@ def test_rewriter_gemini_rotation_on_503() -> None:
         "identified_keywords": ["vượt đèn đỏ"],
     }
     resp_200.json.return_value = {
-        "candidates": [
-            {"content": {"parts": [{"text": json.dumps(llm_payload)}]}}
-        ]
+        "candidates": [{"content": {"parts": [{"text": json.dumps(llm_payload)}]}}]
     }
 
     mock_session.post.side_effect = [resp_503, resp_200]
@@ -577,5 +573,3 @@ def test_rewriter_gemini_rotation_on_503() -> None:
     second_call_url = mock_session.post.call_args_list[1][0][0]
     assert "key=key-1" in first_call_url
     assert "key=key-2" in second_call_url
-
-

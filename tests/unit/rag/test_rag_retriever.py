@@ -112,9 +112,13 @@ def test_compute_lexical_density() -> None:
     assert score_zero == 0.0
 
     # Partial match
-    score_partial = compute_lexical_density("vượt đèn đỏ ô tô", "Phạt người đi bộ vượt đèn đỏ")
+    score_partial = compute_lexical_density(
+        "vượt đèn đỏ ô tô", "Phạt người đi bộ vượt đèn đỏ"
+    )
     # Full match
-    score_full = compute_lexical_density("vượt đèn đỏ ô tô", "Phạt người điều khiển xe ô tô vượt đèn đỏ")
+    score_full = compute_lexical_density(
+        "vượt đèn đỏ ô tô", "Phạt người điều khiển xe ô tô vượt đèn đỏ"
+    )
 
     assert score_full > score_partial > 0.0
 
@@ -133,8 +137,20 @@ def test_compute_lexical_density() -> None:
 def test_query_articles_fulltext() -> None:
     mock_session = MagicMock()
     mock_session.run.return_value = [
-        {"id": "168_2024_ND-CP_D5", "title": "Điều 5", "content": "Nội dung Điều 5", "number": "5", "score": 14.5},
-        {"id": "168_2024_ND-CP_D6", "title": "Điều 6", "content": "Nội dung Điều 6", "number": "6", "score": 9.2},
+        {
+            "id": "168_2024_ND-CP_D5",
+            "title": "Điều 5",
+            "content": "Nội dung Điều 5",
+            "number": "5",
+            "score": 14.5,
+        },
+        {
+            "id": "168_2024_ND-CP_D6",
+            "title": "Điều 6",
+            "content": "Nội dung Điều 6",
+            "number": "6",
+            "score": 9.2,
+        },
     ]
 
     retriever = HybridRetriever()
@@ -202,9 +218,7 @@ def test_expand_and_filter_article_units() -> None:
         },
     ]
 
-    articles = [
-        {"id": "168_2024_ND-CP_D5", "article_score": 15.0, "article_rank": 1}
-    ]
+    articles = [{"id": "168_2024_ND-CP_D5", "article_score": 15.0, "article_rank": 1}]
 
     retriever = HybridRetriever()
     selected = retriever._expand_and_filter_article_units(

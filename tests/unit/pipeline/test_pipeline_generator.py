@@ -236,7 +236,6 @@ def test_generator_rotation_on_503() -> None:
     assert "key=key-2" in second_call_url
 
 
-
 def test_generator_network_failure_fallback() -> None:
     """Test fallback message when all requests fail."""
     vp = ValidatedProvision(

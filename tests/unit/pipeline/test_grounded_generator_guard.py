@@ -167,17 +167,13 @@ def test_verify_action_grounding_negative_term_drift() -> None:
     pkg = EvidencePackage(user_query="q", rewritten_query=rw, items=[])
 
     # Case 1: Answer drifts to traffic light violation
-    drifted_answer = (
-        "Theo quy định, hành vi vượt đèn đỏ khi tham gia giao thông bị phạt 5 triệu đồng."
-    )
+    drifted_answer = "Theo quy định, hành vi vượt đèn đỏ khi tham gia giao thông bị phạt 5 triệu đồng."
     is_valid, warnings = verify_action_grounding(drifted_answer, rw, pkg)
     assert is_valid is False
     assert any("vượt đèn đỏ" in w for w in warnings)
 
     # Case 2: Clean answer on police signals
-    clean_answer = (
-        "Hành vi không chấp hành hiệu lệnh của người điều khiển giao thông bị xử phạt..."
-    )
+    clean_answer = "Hành vi không chấp hành hiệu lệnh của người điều khiển giao thông bị xử phạt..."
     is_valid_clean, warnings_clean = verify_action_grounding(clean_answer, rw, pkg)
     assert is_valid_clean is True
     assert len(warnings_clean) == 0
@@ -193,9 +189,7 @@ def test_verify_action_grounding_target_entities_coverage() -> None:
     pkg = EvidencePackage(user_query="q", rewritten_query=rw, items=[])
 
     # Answer only mentions cars, omitting motorcycles
-    car_only_answer = (
-        "Đối với người điều khiển xe ô tô, hành vi không chấp hành hiệu lệnh bị phạt tiền..."
-    )
+    car_only_answer = "Đối với người điều khiển xe ô tô, hành vi không chấp hành hiệu lệnh bị phạt tiền..."
     is_valid, warnings = verify_action_grounding(car_only_answer, rw, pkg)
     assert is_valid is False
     assert any("xe_mo_to" in w for w in warnings)
@@ -263,3 +257,58 @@ def test_generator_local_grounding_verified_integration() -> None:
     assert result.grounding_verified is True
     assert len(result.verification_warnings) == 0
     assert "Điều 6" in result.answer
+
+
+def test_verify_action_grounding_ungrounded_citation() -> None:
+    """Verifies that verify_action_grounding flags statutory citations absent from the evidence package."""
+    rw = RewrittenQuery(
+        original_query="phạt hiệu lệnh",
+        search_query="hiệu lệnh CSGT",
+        target_entities=["xe_o_to"],
+    )
+    prov = ValidatedProvision(
+        provision_id="168_2024_ND-CP_D6_K9_Dc",
+        level="POINT",
+        status=LegalValidityStatus.DANG_CO_HIEU_LUC,
+        is_current=True,
+        content_text="Không chấp hành hiệu lệnh",
+        parent_article_id="168_2024_ND-CP_D6",
+        parent_article_title="Điều 6. Xử phạt xe ô tô",
+    )
+    chunk = _make_chunk("168_2024_ND-CP_D6_K9_Dc", "Không chấp hành hiệu lệnh", "6")
+    builder = EvidenceBuilder()
+    pkg = builder.build(
+        user_query="phạt hiệu lệnh",
+        rewritten_query=rw,
+        retrieved_chunks=[chunk],
+        validated_provisions=[prov],
+    )
+
+    # Answer hallucinates Điều 99 which is not in evidence
+    hallucinated_answer = "Theo Khoản 3 Điều 99 Nghị định 168/2024/NĐ-CP, người điều khiển xe ô tô bị phạt 5 triệu."
+    is_valid, warnings = verify_action_grounding(hallucinated_answer, rw, pkg)
+    assert is_valid is False
+    assert any("Điều 99" in w for w in warnings)
+
+
+def test_has_sanctions_in_package_document_amendments() -> None:
+    """Verifies that has_sanctions_in_package detects penalties present in document_amendments."""
+    from src.pipeline.generator import has_sanctions_in_package
+    from src.pipeline.models import DocumentAmendmentItem
+
+    am = DocumentAmendmentItem(
+        target_id="168_2024_ND-CP_D21_K8_Dd",
+        target_title="Điểm d Khoản 8 Điều 21",
+        article_id="168_2024_ND-CP_D21",
+        article_title="Điều 21",
+        operation="SUA_DOI",
+        instruction="Sửa đổi mức phạt tiền",
+        replacement_content="Phạt tiền từ 5.000.000 đồng đến 7.000.000 đồng",
+    )
+    pkg = EvidencePackage(
+        user_query="Nghị định 238 sửa gì",
+        rewritten_query="sửa đổi Nghị định 168",
+        items=[],
+        document_amendments=[am],
+    )
+    assert has_sanctions_in_package(pkg) is True

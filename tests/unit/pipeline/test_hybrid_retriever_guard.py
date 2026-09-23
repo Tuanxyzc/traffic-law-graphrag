@@ -154,13 +154,21 @@ def test_apply_retrieval_guard_no_constraints() -> None:
 def test_diversified_reciprocal_rank_fusion_balances_target_entities() -> None:
     """Test that diversified RRF balances target vehicle entities in top-k."""
     # Suppose BM25 gives high scores to 3 short bike chunks
-    bike_1 = _make_chunk("bike_1", "Xử phạt người đi xe đạp", "Xe đạp vi phạm quy tắc 1")
-    bike_2 = _make_chunk("bike_2", "Xử phạt người đi xe đạp", "Xe đạp vi phạm quy tắc 2")
-    bike_3 = _make_chunk("bike_3", "Xử phạt người đi xe đạp", "Xe đạp vi phạm quy tắc 3")
+    bike_1 = _make_chunk(
+        "bike_1", "Xử phạt người đi xe đạp", "Xe đạp vi phạm quy tắc 1"
+    )
+    bike_2 = _make_chunk(
+        "bike_2", "Xử phạt người đi xe đạp", "Xe đạp vi phạm quy tắc 2"
+    )
+    bike_3 = _make_chunk(
+        "bike_3", "Xử phạt người đi xe đạp", "Xe đạp vi phạm quy tắc 3"
+    )
 
     # Moderate score for moto and car
     moto_1 = _make_chunk(
-        "moto_1", "Xử phạt người điều khiển xe mô tô", "Xe mô tô không chấp hành hiệu lệnh"
+        "moto_1",
+        "Xử phạt người điều khiển xe mô tô",
+        "Xe mô tô không chấp hành hiệu lệnh",
     )
     car_1 = _make_chunk(
         "car_1", "Xử phạt người điều khiển xe ô tô", "Xe ô tô không chấp hành hiệu lệnh"

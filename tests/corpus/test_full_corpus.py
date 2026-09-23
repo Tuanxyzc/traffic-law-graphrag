@@ -2,6 +2,8 @@ import sys
 import unittest
 from pathlib import Path
 
+import pytest
+
 ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -159,8 +161,15 @@ def collect_effective_rule_errors(structure_results):
     return files, rule_count, errors
 
 
+@pytest.mark.corpus
 class FullCorpusGraphTests(unittest.TestCase):
     maxDiff = None
+
+    def setUp(self):
+        if not PARSED_DIR.exists() or not any(PARSED_DIR.glob("*_structure.json")):
+            self.skipTest(
+                f"Corpus data not found under {PARSED_DIR} (requires local data)"
+            )
 
     def test_all_structure_files_map_and_validate(self):
         files, errors, _ = collect_structure_errors()

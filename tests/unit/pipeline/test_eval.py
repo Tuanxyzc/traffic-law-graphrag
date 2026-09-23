@@ -81,7 +81,9 @@ def test_detect_warning() -> None:
     assert detect_warning("Văn bản này đã hết hiệu lực từ ngày 01/01/2025") is True
     assert detect_warning("Điều khoản này đã được sửa đổi bởi Nghị định 238") is True
     assert detect_warning("Quy định thông thường đang có hiệu lực") is False
-    assert detect_warning("Lưu ý hiệu lực từ năm 2026", custom_keywords=["2026"]) is True
+    assert (
+        detect_warning("Lưu ý hiệu lực từ năm 2026", custom_keywords=["2026"]) is True
+    )
 
 
 def test_deterministic_evaluator_pass() -> None:

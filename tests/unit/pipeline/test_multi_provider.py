@@ -126,7 +126,9 @@ def test_generator_multi_provider_failover_gemini_to_groq() -> None:
         "gemini": ["gem-1"],
         "groq": ["groq-1"],
     }
-    km = KeyManager(api_keys=pools, provider_order=["gemini", "groq"], default_cooldown=10.0)
+    km = KeyManager(
+        api_keys=pools, provider_order=["gemini", "groq"], default_cooldown=10.0
+    )
 
     mock_session = MagicMock(spec=requests.Session)
 
@@ -176,7 +178,9 @@ def test_rewriter_multi_provider_failover_gemini_to_cerebras() -> None:
         "gemini": ["gem-1"],
         "cerebras": ["cere-1"],
     }
-    km = KeyManager(api_keys=pools, provider_order=["gemini", "cerebras"], default_cooldown=10.0)
+    km = KeyManager(
+        api_keys=pools, provider_order=["gemini", "cerebras"], default_cooldown=10.0
+    )
 
     mock_session = MagicMock(spec=requests.Session)
 
@@ -207,13 +211,17 @@ def test_rewriter_multi_provider_failover_gemini_to_cerebras() -> None:
 
     mock_session.post.side_effect = [resp_gemini_503, resp_cerebras_200]
 
-    config = PipelineConfig(enable_query_rewrite=True, rewriter_use_local=False, max_retries=3)
+    config = PipelineConfig(
+        enable_query_rewrite=True, rewriter_use_local=False, max_retries=3
+    )
     rewriter = QueryRewriter(config=config, key_manager=km, session=mock_session)
     res = rewriter.rewrite("vượt đèn đỏ xe máy")
 
     assert mock_session.post.call_count == 2
     # First was Gemini
-    assert "generativelanguage.googleapis.com" in mock_session.post.call_args_list[0][0][0]
+    assert (
+        "generativelanguage.googleapis.com" in mock_session.post.call_args_list[0][0][0]
+    )
     # Second was Cerebras
     second_url = mock_session.post.call_args_list[1][0][0]
     second_headers = mock_session.post.call_args_list[1][1]["headers"]
@@ -230,7 +238,9 @@ def test_key_manager_cooldown_expiry_recovery() -> None:
         "gemini": ["gem-1"],
         "groq": ["groq-1"],
     }
-    km = KeyManager(api_keys=pools, provider_order=["gemini", "groq"], default_cooldown=0.05)
+    km = KeyManager(
+        api_keys=pools, provider_order=["gemini", "groq"], default_cooldown=0.05
+    )
 
     # Rate limit gem-1 with 0.05s cooldown
     km.mark_rate_limited("gem-1", cooldown_seconds=0.05, provider="gemini")
