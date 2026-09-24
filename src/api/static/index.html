@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra cứu Tư vấn Pháp luật Giao thông — GraphRAG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/tokens.css">
+  <link rel="stylesheet" href="/static/css/app.css">
+  <!-- Thư viện hỗ trợ: Lucide icons, Marked (Markdown), Cytoscape (Graph) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- ===================================================================
+         Left Sidebar (220px)
+         =================================================================== -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="brand-section">
+        <i data-lucide="scale" class="brand-icon"></i>
+        <span class="brand-title">Luật Giao Thông AI</span>
+      </div>
+
+      <button class="new-chat-btn" id="btn-new-chat">
+        <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+        <span>Câu hỏi mới</span>
+      </button>
+
+      <ul class="nav-menu">
+        <li>
+          <button class="nav-item-btn active" id="nav-chat" data-view="chat">
+            <i data-lucide="compass" class="nav-icon"></i>
+            <span>Tra cứu & Tư vấn</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" id="nav-docs" data-view="docs">
+            <i data-lucide="book-open" class="nav-icon"></i>
+            <span>Danh mục văn bản</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Lịch sử tra cứu (Client-side / Mock Storage) -->
+      <div class="history-section">
+        <div class="history-header">
+          <span>Lịch sử gần đây</span>
+          <i data-lucide="history" style="width: 14px; height: 14px; color: var(--color-stone);"></i>
+        </div>
+        <ul class="history-list" id="history-list">
+          <!-- Render dynamically by JS -->
+        </ul>
+      </div>
+
+      <!-- Trạng thái kết nối GraphRAG Backend -->
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span id="system-status-text">GraphRAG Engine sẵn sàng</span>
+      </div>
+    </aside>
+
+    <!-- ===================================================================
+         Main Workspace (Center Content + Right Graph Panel)
+         =================================================================== -->
+    <main class="main-wrapper">
+      <!-- Header Bar (52px) -->
+      <header class="header-bar">
+        <div class="header-left">
+          <span class="header-breadcrumbs" id="current-view-title">Tra cứu & Tư vấn pháp lý</span>
+        </div>
+        <div class="header-right">
+          <!-- Nút mũi tên kéo ra / kéo vào để mở rộng đồ thị tri thức -->
+          <button class="toggle-graph-btn" id="btn-toggle-graph" title="Bật/Tắt Đồ thị tri thức (Knowledge Graph)">
+            <i data-lucide="network" style="width: 15px; height: 15px;"></i>
+            <span id="graph-btn-label">Đồ thị tri thức</span>
+            <i data-lucide="chevron-right" id="graph-arrow-icon" style="width: 14px; height: 14px;"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Layout: Main Feed & Graph Canvas -->
+      <div class="content-layout">
+        <div class="scroll-container" id="main-scroll-container">
+          <!-- View 1: Chat / Search Hub -->
+          <div class="center-column" id="chat-view">
+            <!-- Hero Search State (Trạng thái ban đầu) -->
+            <section class="hero-section" id="hero-section">
+              <h1 class="hero-wordmark">Tra cứu Pháp luật Giao thông</h1>
+              <p class="hero-subtitle">Hỏi đáp tình huống vi phạm, mức phạt tiền và quy định trừ điểm giấy phép lái xe theo Nghị định 168/2024/NĐ-CP và Luật Trật tự ATGT đường bộ.</p>
+
+              <!-- Central Hero Search Input -->
+              <div class="search-container">
+                <div class="search-input-area">
+                  <textarea id="hero-query-input" class="search-input" rows="2" placeholder="Hỏi bất kỳ điều gì về luật giao thông (ví dụ: Vượt đèn đỏ xe máy bị phạt bao nhiêu?)..."></textarea>
+                </div>
+                <div class="search-controls">
+                  <div class="search-mode-pill">
+                    <i data-lucide="git-branch" style="width: 12px; height: 12px;"></i>
+                    <span>GraphRAG Hybrid</span>
+                  </div>
+                  <button id="hero-submit-btn" class="submit-btn" title="Gửi câu hỏi" disabled>
+                    <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Quick Suggestion Chips -->
+              <div class="suggestion-grid">
+                <button class="suggestion-chip" data-query="Nồng độ cồn xe máy bị phạt bao nhiêu tiền và có bị trừ điểm bằng lái không?">
+                  <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--color-deep-teal);"></i>
+                  <span>Nồng độ cồn xe máy</span>
+                </button>
+                <button class="suggestion-chip" data-query="Vượt đèn đỏ ô tô theo Nghị định 168/2024 bị phạt bao nhiêu?">
+                  <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--color-deep-teal);"></i>
+                  <span>Vượt đèn đỏ ô tô</span>
+                </button>
+                <button class="suggestion-chip" data-query="Quy định trừ điểm giấy phép lái xe mới nhất áp dụng từ năm 2025 thế nào?">
+                  <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--color-deep-teal);"></i>
+                  <span>Quy định trừ điểm bằng lái</span>
+                </button>
+                <button class="suggestion-chip" data-query="Đi xe máy không đội mũ bảo hiểm bị phạt bao nhiêu tiền?">
+                  <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--color-deep-teal);"></i>
+                  <span>Không đội mũ bảo hiểm</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- Chat Feed (Xuất hiện sau khi người dùng gửi câu hỏi) -->
+            <section id="chat-feed" style="display: none; width: 100%;">
+              <!-- Render dynamically by JS:
+                   1. User query card
+                   2. 4-step pipeline progress card
+                   3. Answer card with streaming markdown & citations
+              -->
+            </section>
+          </div>
+
+          <!-- View 2: Document Browser -->
+          <div class="document-browser-view" id="docs-view">
+            <div style="margin-bottom: var(--spacing-16);">
+              <h2 style="font-size: var(--text-heading); font-weight: var(--font-weight-medium); color: var(--color-charcoal); margin-bottom: 4px;">Danh mục Văn bản Quy phạm Pháp luật</h2>
+              <p style="font-size: var(--text-caption); color: var(--color-ash-gray);">Toàn bộ văn bản luật, nghị định, thông tư đã được lập chỉ mục và phân tích trên đồ thị Neo4j.</p>
+            </div>
+            <div id="docs-list-container" style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+              <!-- Render dynamically by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Bottom Input during Chat -->
+        <div class="sticky-footer-search" id="sticky-footer-search">
+          <div class="search-container" style="padding: 8px 14px;">
+            <div class="search-input-area">
+              <textarea id="footer-query-input" class="search-input" rows="1" placeholder="Hỏi câu tiếp theo hoặc làm rõ tình huống..." style="min-height: 38px;"></textarea>
+              <button id="footer-submit-btn" class="submit-btn" title="Gửi" disabled>
+                <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             Right Side: Collapsible Knowledge Graph Canvas
+             =================================================================== -->
+        <aside class="graph-panel collapsed" id="graph-panel">
+          <div class="graph-panel-header">
+            <div class="graph-title">
+              <i data-lucide="network" style="width: 16px; height: 16px; color: var(--color-deep-teal);"></i>
+              <span>Đồ thị Tri thức Pháp luật</span>
+            </div>
+            <button id="btn-close-graph" style="color: var(--color-ash-gray); padding: 4px;" title="Thu gọn đồ thị">
+              <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+
+          <div class="graph-canvas-container">
+            <div id="cy-graph"></div>
+
+            <div class="graph-legend">
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: #016a71;"></span>
+                <span>Văn bản (Document)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: #2563eb;"></span>
+                <span>Điều luật (Article)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: #4b5563;"></span>
+                <span>Khoản / Điểm (Clause/Point)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: #dc2626;"></span>
+                <span>Sửa đổi (AMENDS)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: #9ca3af;"></span>
+                <span>Tham chiếu (THAM_CHIEU)</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- ===================================================================
+         Citation Popover Card (Card nổi giải thích điều khoản)
+         =================================================================== -->
+    <div id="citation-popover" class="citation-popover">
+      <div class="popover-title" id="popover-title">Điều 5, Nghị định 168/2024/NĐ-CP</div>
+      <div class="popover-badge valid" id="popover-status">Đang có hiệu lực</div>
+      <div class="popover-body" id="popover-content">
+        Đang tải nội dung điều khoản...
+      </div>
+      <button class="popover-btn" id="popover-graph-btn">
+        <i data-lucide="share-2" style="width: 13px; height: 13px;"></i>
+        <span>Xem trên Đồ thị</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
