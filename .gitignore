@@ -19,3 +19,4 @@ tasks/
 .neo4j/
 reports/
 data/
+DESIGN.md
