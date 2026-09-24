@@ -304,6 +304,13 @@ COLLOQUIAL_LEGAL_MAPPINGS: list[tuple[re.Pattern[str], str]] = [
         ),
         "đi vào khu vực cấm, đường có biển báo hiệu có nội dung cấm",
     ),
+    (
+        re.compile(
+            r"\b(?:đeo\s+tai\s+nghe|dùng\s+tai\s+nghe|sử\s+dụng\s+tai\s+nghe|tai\s+nghe)\b",
+            re.IGNORECASE,
+        ),
+        'sử dụng "thiết bị âm thanh"',
+    ),
 ]
 
 

@@ -80,9 +80,15 @@ Luôn thay thế từ ngữ đời thường bằng thuật ngữ pháp quy chí
                                                         chiều trên đường có biển cấm đi ngược chiều"
   • "lạng lách / đánh võng / tạt đầu"              -> "điều khiển xe lạng lách, đánh võng"
   • "không xi nhan / quên bật đèn rẽ"              -> "không có báo hiệu bằng đèn trước khi chuyển hướng"
+  • "đeo tai nghe / dùng tai nghe / tai nghe"      -> "sử dụng thiết bị âm thanh" (trừ thiết bị trợ thính)
   • "công an / cảnh sát / csgt" (khi hỏi về chấp
      hành lệnh)                                    -> "người điều khiển giao thông" hoặc
                                                         "người kiểm soát giao thông"
+
+  ★ QUY TẮC CỤM TỪ PHÁP LÝ CỐT LÕI (PHRASE QUOTING):
+    Các cụm từ pháp lý quan trọng mang tính định danh cao (ví dụ: "thiết bị âm thanh", "nồng độ cồn",
+    "đèn tín hiệu") nên được bao bọc trong dấu ngoặc kép "..." trong "search_query" hoặc "identified_keywords"
+    để hỗ trợ tìm kiếm chính xác theo cụm từ (Lucene Phrase Search).
 
   ★ QUY TẮC BẮT BUỘC: Tuyệt đối LOẠI BỎ các danh xưng CSGT/công an ra khỏi "sanction_query" để tránh
     kéo nhầm các điều luật về quyền hạn công vụ (thẩm quyền dừng xe, kiểm soát, tuần tra...).
@@ -115,8 +121,13 @@ Quy tắc mở rộng khi câu hỏi KHÔNG chỉ định phương tiện:
     -> BẮT BUỘC mở rộng 2 loại phổ biến nhất: ["xe_o_to", "xe_mo_to"].
   - Nếu câu hỏi có ngữ cảnh gợi ý phương tiện đặc thù (nhắc "xe cứu hỏa", "máy xúc", "xe đạp"...)
     -> chỉ chọn đúng mã tương ứng, KHÔNG mở rộng thêm xe_o_to/xe_mo_to.
-  - Chỉ riêng MỘT TRƯỜNG HỢP DUY NHẤT nếu câu hỏi chung chung về hành vi "không đội mũ bảo hiểm" hoặc các câu hỏi về "mũ bảo hiểm"
-    -> BẮT BUỘC chọn các mã là phương tiện 2 bánh như ["xe_mo_to", "xe_may_chuyen_dung", "xe_dap"]
+  - Trường hợp về hành vi "không đội mũ bảo hiểm" hoặc các câu hỏi về "mũ bảo hiểm"
+    -> BẮT BUỘC chọn các mã là phương tiện 2 bánh như ["xe_mo_to", "xe_may_chuyen_dung", "xe_dap"].
+  - Trường hợp về hành vi "đeo tai nghe" hoặc "sử dụng thiết bị âm thanh" khi lái xe:
+    -> BẮT BUỘC chỉ chọn ["xe_mo_to"] (hoặc kèm ["xe_dap"] nếu hỏi về xe đạp). Tuyệt đối KHÔNG tự động
+       mở rộng sang "xe_o_to" trừ khi người dùng hỏi đích danh về xe ô tô, vì pháp luật giao thông đường bộ chỉ
+       quy định cấm và xử phạt hành vi sử dụng thiết bị âm thanh đối với người điều khiển phương tiện 2 bánh (mô tô,
+       xe gắn máy, xe đạp); đối với xe ô tô luật chỉ cấm dùng tay cầm và sử dụng điện thoại khi đang di chuyển.
 
 ===============================================================================
 5. XỬ LÝ NGỮ CẢNH ĐA LƯỢT (MULTI-TURN DE-CONTEXTUALIZATION)
@@ -135,10 +146,11 @@ Nếu câu hỏi mới hoàn toàn không liên quan đến lịch sử (đổi 
 
 
 ===============================================================================
-6. CẤU TRÚC 3 BIẾN THỂ TRUY VẤN
+6. CẤU TRÚC BIẾN THỂ TRUY VẤN VÀ BỘ LỌC RETRIEVAL GUARD
 ===============================================================================
 
-Độ dài mỗi biến thể: 8–25 từ đơn tiếng Việt (đếm theo từ, không đếm theo âm tiết ghép).
+Độ dài mỗi biến thể: 8–25 từ đơn tiếng Việt (đếm theo từ, không đếm theo âm tiết ghép) để bảo đảm đầy đủ
+ngữ nghĩa tự nhiên cho tìm kiếm Dense Vector (Embedding).
 
   - "search_query": Thuật ngữ chuẩn hóa theo Mục 3. Nếu câu hỏi có nhắc số hiệu văn bản, ghi CẢ dạng
     đầy đủ lẫn viết tắt nếu người dùng cung cấp đủ thông tin (VD: "Nghị định 168/2024/NĐ-CP (NĐ 168)").
@@ -147,6 +159,13 @@ Nếu câu hỏi mới hoàn toàn không liên quan đến lịch sử (đổi 
   - "rule_query": Tập trung vào quy tắc điều khiển, hành vi bị nghiêm cấm và loại phương tiện liên quan.
   - "sanction_query": Tập trung vào khung tiền phạt, trừ điểm GPLX, tước quyền sử dụng GPLX. Không chứa
     danh xưng lực lượng thực thi công vụ (xem Mục 3).
+
+  - QUY TẮC BẮT BUỘC VỀ "must_have_terms":
+    + CHỈ chọn 1–2 thuật ngữ ĐỊNH DANH CỐT LÕI (core discriminative subject) của hành vi
+      (ví dụ: ["thiết bị âm thanh"], ["nồng độ cồn"], ["mũ bảo hiểm"], ["đèn tín hiệu"]).
+    + TUYỆT ĐỐI KHÔNG đưa các từ ngữ bối cảnh chung chung vào "must_have_terms" như: "điều khiển phương tiện",
+      "tham gia giao thông", "người lái xe", "quy định", "hành vi" vì các từ này xuất hiện ở mọi điều luật
+      và làm vô hiệu hóa bộ lọc semantic guardrail.
 
 Với intent "document_amendment": xác định rõ "source_doc" (văn bản sửa đổi/ban hành sau) và "target_doc"
 (văn bản bị sửa đổi/ban hành trước); "search_query" PHẢI giữ nguyên số hiệu văn bản và thuật ngữ sửa đổi
@@ -255,6 +274,22 @@ Output:
   "must_have_terms": [],
   "must_not_have_terms": [],
   "target_entities": []
+}
+
+[Ví dụ 7: Hành vi tai nghe / thiết bị âm thanh]
+Input: "Đeo tai nghe khi lái xe có bị phạt không?"
+Output:
+{
+  "intent": "violation_sanction",
+  "source_doc": null,
+  "target_doc": null,
+  "search_query": "xử phạt hành vi sử dụng \"thiết bị âm thanh\" khi điều khiển xe mô tô xe gắn máy",
+  "rule_query": "quy định cấm người lái xe mô tô xe gắn máy sử dụng \"thiết bị âm thanh\" trừ thiết bị trợ thính",
+  "sanction_query": "mức phạt tiền trừ điểm người điều khiển xe mô tô sử dụng \"thiết bị âm thanh\"",
+  "identified_keywords": ["thiết bị âm thanh", "tai nghe", "xe mô tô", "xe gắn máy"],
+  "must_have_terms": ["thiết bị âm thanh"],
+  "must_not_have_terms": ["điều khiển phương tiện", "quy định chung"],
+  "target_entities": ["xe_mo_to"]
 }
 
 

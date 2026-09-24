@@ -18,23 +18,33 @@ from src.rag.models import ChunkMetadata, RetrievalResult, RetrievedChunk
 logger = logging.getLogger(__name__)
 
 # Reserved Lucene characters that must be escaped or cleaned for full-text search
-LUCENE_SPECIAL_CHARS_PATTERN = re.compile(r"([\+\-\&\|\!\(\)\{\}\[\]\^\"~\*\?\:\\/])")
+LUCENE_SPECIAL_CHARS_NO_QUOTE = re.compile(r"([\+\-\&\|\!\(\)\{\}\[\]\^~\*\?\:\\/])")
+LUCENE_SPECIAL_CHARS_ALL = re.compile(r"([\+\-\&\|\!\(\)\{\}\[\]\^\"~\*\?\:\\/])")
 
 
 def sanitize_lucene_query(query: str, max_terms: int = 30) -> str:
     """Sanitizes user queries for safe execution in Neo4j Lucene full-text indexes.
 
-    Escapes Lucene special characters with backslashes so syntax errors are avoided,
-    and caps the number of terms to avoid Lucene TooManyClauses (maxClauseCount=1024).
+    Preserves balanced double-quoted phrases (e.g. "thiết bị âm thanh") for phrase matching,
+    while escaping other Lucene special characters to avoid syntax errors and capping terms.
     """
     if not query or not query.strip():
         return ""
-    words = query.strip().split()
-    if len(words) > max_terms:
-        words = words[:max_terms]
-    truncated_query = " ".join(words)
-    sanitized = LUCENE_SPECIAL_CHARS_PATTERN.sub(r"\\\1", truncated_query)
-    return sanitized
+    raw_tokens = re.findall(r'"[^"\n]*"|\S+', query.strip())
+    if len(raw_tokens) > max_terms:
+        raw_tokens = raw_tokens[:max_terms]
+
+    sanitized_tokens = []
+    for tok in raw_tokens:
+        if tok.startswith('"') and tok.endswith('"') and len(tok) >= 2:
+            inner = tok[1:-1]
+            clean_inner = LUCENE_SPECIAL_CHARS_NO_QUOTE.sub(r"\\\1", inner)
+            sanitized_tokens.append(f'"{clean_inner}"')
+        else:
+            clean_tok = LUCENE_SPECIAL_CHARS_ALL.sub(r"\\\1", tok)
+            sanitized_tokens.append(clean_tok)
+
+    return " ".join(sanitized_tokens)
 
 
 def compute_lexical_density(query_text: str, candidate_text: str) -> float:
@@ -84,6 +94,10 @@ def compute_lexical_density(query_text: str, candidate_text: str) -> float:
         (("mũ bảo hiểm",), ["mũ bảo hiểm"]),
         (("tốc độ", "quá tốc độ"), ["quá tốc độ"]),
         (("ngược chiều",), ["ngược chiều"]),
+        (
+            ("tai nghe", "đeo tai nghe", "thiết bị âm thanh"),
+            ["thiết bị âm thanh", "trừ thiết bị trợ thính"],
+        ),
     ]
     for trigger_phrases, target_phrases in statutory_expansions:
         if any(tp in q_lower for tp in trigger_phrases):

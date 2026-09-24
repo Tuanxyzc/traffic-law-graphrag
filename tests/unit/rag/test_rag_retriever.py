@@ -21,6 +21,18 @@ def test_sanitize_lucene_query() -> None:
     assert r"\)" in sanitized
     assert r"\?" in sanitized
 
+    # Check preservation of balanced quotes for phrase search
+    phrase_query = 'sử dụng "thiết bị âm thanh" xe mô tô'
+    sanitized_phrase = sanitize_lucene_query(phrase_query)
+    assert '"thiết bị âm thanh"' in sanitized_phrase
+    assert "sử dụng" in sanitized_phrase
+    assert "xe mô tô" in sanitized_phrase
+
+    # Check escaping of unbalanced quote
+    unbalanced = '"thiết bị âm thanh không đóng ngoặc'
+    sanitized_unbalanced = sanitize_lucene_query(unbalanced)
+    assert r'\"thiết' in sanitized_unbalanced
+
 
 def test_fuse_rrf_scoring() -> None:
     config = RAGConfig(rrf_k=60, dense_weight=1.0, sparse_weight=1.0)
