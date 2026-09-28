@@ -13,7 +13,16 @@ from tabulate import tabulate
 
 from src.eval.evaluator import EvaluationOrchestrator
 from src.eval.exporter import EvaluationExporter
-from src.eval.models import EvaluationSample
+from src.eval.models import (
+    DeterministicBenchmarkItem,
+    EvaluationSample,
+    TestCategory,
+)
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -25,13 +34,50 @@ DEFAULT_DATASET_PATH = Path("data/eval/golden_dataset.json")
 DEFAULT_OUTPUT_DIR = Path("reports/eval")
 
 
-def load_dataset_from_json(path: Path) -> list[EvaluationSample]:
-    """Loads evaluation dataset from JSON file."""
+def load_deterministic_dataset(path: Path) -> list[DeterministicBenchmarkItem]:
+    """Loads and validates deterministic golden dataset from JSON file."""
+    if not path.exists():
+        raise FileNotFoundError(f"Evaluation dataset file not found: {path}")
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return [DeterministicBenchmarkItem.model_validate(item) for item in data]
+
+
+def load_legacy_dataset(path: Path) -> list[EvaluationSample]:
+    """Loads evaluation dataset using legacy schema for backward compatibility."""
     if not path.exists():
         raise FileNotFoundError(f"Evaluation dataset file not found: {path}")
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return [EvaluationSample.model_validate(item) for item in data]
+
+
+def handle_validate(args: argparse.Namespace) -> int:
+    """Validates target dataset JSON file against DeterministicBenchmarkItem schema."""
+    dataset_path = Path(args.dataset) if args.dataset else DEFAULT_DATASET_PATH
+    print("\n=======================================================")
+    print("      DATASET VALIDATION: DETERMINISTIC BENCHMARK      ")
+    print("=======================================================")
+    print(f"Target: {dataset_path.resolve()}\n")
+
+    try:
+        items = load_deterministic_dataset(dataset_path)
+    except Exception as exc:
+        print(f"[FAILED] VALIDATION FAILED: {exc}")
+        return 1
+
+    cat_counts: dict[str, int] = {}
+    for it in items:
+        cat_counts[it.category.value] = cat_counts.get(it.category.value, 0) + 1
+
+    table = [[cat, cat_counts.get(cat, 0)] for cat in [c.value for c in TestCategory]]
+    table.append(["--- TOTAL ---", len(items)])
+
+    print(tabulate(table, headers=["Category", "Count"], tablefmt="grid"))
+    print(
+        "\n[PASSED] DATASET INTEGRITY VERIFIED: 100% compliant with DeterministicBenchmarkItem schema.\n"
+    )
+    return 0
 
 
 def handle_run(args: argparse.Namespace) -> int:
@@ -40,92 +86,115 @@ def handle_run(args: argparse.Namespace) -> int:
     output_dir = Path(args.output_dir) if args.output_dir else DEFAULT_OUTPUT_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    mode = args.mode or ("e2e" if args.tier == "full" else "retrieval")
+
     print("\n=======================================================")
-    print("      TRAFFIC LAW GRAPHRAG EVALUATION BENCHMARK        ")
+    print("      TRAFFIC LAW GRAPHRAG DETERMINISTIC BENCHMARK     ")
     print("=======================================================")
     print(f"Dataset:       {dataset_path}")
-    print(f"Tier:          {args.tier.upper()}")
+    print(
+        f"Mode:          {mode.upper()} ({'Retrieval-Only (0 tokens)' if mode == 'retrieval' else 'End-to-End with LLM Generate'})"
+    )
     print(f"Output dir:    {output_dir}")
     print("-------------------------------------------------------\n")
 
-    samples = load_dataset_from_json(dataset_path)
+    try:
+        items = load_deterministic_dataset(dataset_path)
+    except Exception as err:
+        logger.warning(
+            "Could not load deterministic items directly (%s), falling back to legacy.",
+            err,
+        )
+        samples = load_legacy_dataset(dataset_path)
+        orchestrator = EvaluationOrchestrator(tier=args.tier or "deterministic")
+        summary = orchestrator.evaluate_dataset(samples)
+        summary_path = output_dir / "eval_summary_latest.json"
+        with open(summary_path, "w", encoding="utf-8") as f:
+            f.write(summary.model_dump_json(indent=2))
+        return 0 if summary.overall_pass_rate >= 0.70 else 1
+
     if args.limit and args.limit > 0:
-        samples = samples[: args.limit]
-        print(f"Evaluating subset limited to {len(samples)} samples.\n")
+        items = items[: args.limit]
+        print(f"Evaluating subset limited to {len(items)} items.\n")
 
-    orchestrator = EvaluationOrchestrator(tier=args.tier)
-    summary = orchestrator.evaluate_dataset(samples)
+    orchestrator = EvaluationOrchestrator()
+    summary_det = orchestrator.evaluate_deterministic_dataset(items, mode=mode)
 
-    # 1. Export Excel Report
-    excel_path = output_dir / "eval_results_latest.xlsx"
-    EvaluationExporter.export_to_excel(summary, excel_path)
-
-    # 2. Export CSV Report
-    csv_path = output_dir / "eval_results_latest.csv"
-    EvaluationExporter.export_to_csv(summary, csv_path)
-
-    # 3. Export JSON Summary
-    summary_path = output_dir / "eval_summary_latest.json"
+    # 1. Export JSON Summary & Excel Report
+    summary_path = output_dir / f"benchmark_{mode}_summary_latest.json"
     with open(summary_path, "w", encoding="utf-8") as f:
-        f.write(summary.model_dump_json(indent=2))
+        f.write(summary_det.model_dump_json(indent=2))
 
-    # 4. Print Summary Terminal Table
+    excel_path = output_dir / f"benchmark_{mode}_summary_latest.xlsx"
+    EvaluationExporter.export_deterministic_benchmark_to_excel(summary_det, excel_path)
+
+    # 2. Print Summary Terminal Table
     print("\n================== BENCHMARK SUMMARY ===================")
     kpi_table: list[list[Any]] = [
-        ["Total Samples Evaluated", summary.total_samples],
+        ["Benchmark Mode", summary_det.mode.upper()],
+        ["Total Test Cases", summary_det.total_samples],
         [
-            "Overall Passed Samples",
-            f"{summary.passed_samples} ({summary.overall_pass_rate * 100:.1f}%)",
+            "Overall Passed",
+            f"{summary_det.passed_samples} ({summary_det.overall_pass_rate * 100:.1f}%)",
         ],
-        ["Average Provision Recall", f"{summary.avg_provision_recall * 100:.1f}%"],
         [
-            "Average Provision Precision",
-            f"{summary.avg_provision_precision * 100:.1f}%",
+            "Retrieval Pass Rate (Set Theory)",
+            f"{summary_det.retrieval_pass_rate * 100:.1f}%",
         ],
-        ["Fine Amount Accuracy", f"{summary.fine_accuracy * 100:.1f}%"],
-        ["Warning/Amendment Accuracy", f"{summary.warning_accuracy * 100:.1f}%"],
     ]
 
-    if summary.tier == "full":
-        kpi_table.extend(
+    if summary_det.generation_pass_rate is not None:
+        kpi_table.append(
             [
-                [
-                    "RAGAS Faithfulness",
-                    f"{summary.avg_faithfulness * 100:.1f}%"
-                    if summary.avg_faithfulness is not None
-                    else "N/A",
-                ],
-                [
-                    "RAGAS Answer Relevancy",
-                    f"{summary.avg_answer_relevancy * 100:.1f}%"
-                    if summary.avg_answer_relevancy is not None
-                    else "N/A",
-                ],
-                [
-                    "RAGAS Context Precision",
-                    f"{summary.avg_context_precision * 100:.1f}%"
-                    if summary.avg_context_precision is not None
-                    else "N/A",
-                ],
-                [
-                    "RAGAS Context Recall",
-                    f"{summary.avg_context_recall * 100:.1f}%"
-                    if summary.avg_context_recall is not None
-                    else "N/A",
-                ],
+                "Generation Pass Rate (Slot/Regex)",
+                f"{summary_det.generation_pass_rate * 100:.1f}%",
             ]
         )
 
-    kpi_table.append(["Average Pipeline Latency", f"{summary.avg_latency_ms:.1f} ms"])
     print(tabulate(kpi_table, headers=["Metric", "Result"], tablefmt="grid"))
 
-    print("\nReports generated:")
-    print(f" - Excel:   {excel_path.resolve()}")
-    print(f" - CSV:     {csv_path.resolve()}")
-    print(f" - Summary: {summary_path.resolve()}")
+    # 3. Print Root-Cause Attribution Table if failures exist
+    failures = [r for r in summary_det.results if not r.overall_passed]
+    if failures:
+        print("\n============= FAILURE ROOT-CAUSE ATTRIBUTION ============")
+        rc_table: list[list[Any]] = [
+            [rc, count]
+            for rc, count in summary_det.root_cause_counts.items()
+            if rc != "NONE"
+        ]
+        print(
+            tabulate(rc_table, headers=["Failure Root Cause", "Count"], tablefmt="grid")
+        )
+
+        print("\nFailed Test Cases Details:")
+        fail_details: list[list[Any]] = []
+        for f_item in failures[:10]:  # Show up to 10
+            fail_details.append(
+                [
+                    f_item.test_id,
+                    f_item.category.value,
+                    f_item.root_cause.value,
+                    f"{f_item.execution_time_ms:.1f}ms",
+                ]
+            )
+        print(
+            tabulate(
+                fail_details,
+                headers=["ID", "Category", "Root Cause", "Latency"],
+                tablefmt="grid",
+            )
+        )
+        if len(failures) > 10:
+            print(
+                f"... and {len(failures) - 10} more failures (see {summary_path.resolve()})"
+            )
+
+    print("\nReport saved to:")
+    print(f" - JSON:  {summary_path.resolve()}")
+    print(f" - Excel: {excel_path.resolve()}")
     print("=======================================================\n")
 
-    return 0 if summary.overall_pass_rate >= 0.70 else 1
+    return 0 if summary_det.overall_pass_rate >= 0.70 else 1
 
 
 def handle_export_excel(args: argparse.Namespace) -> int:
@@ -135,7 +204,7 @@ def handle_export_excel(args: argparse.Namespace) -> int:
         Path(args.output) if args.output else dataset_path.with_suffix(".xlsx")
     )
 
-    samples = load_dataset_from_json(dataset_path)
+    samples = load_legacy_dataset(dataset_path)
     EvaluationExporter.export_dataset_to_excel(samples, output_path)
     print(f"Exported {len(samples)} samples to Excel: {output_path.resolve()}")
     return 0
@@ -164,7 +233,8 @@ def main() -> None:
         description="Evaluation & Benchmarking CLI for Traffic Law GraphRAG.",
     )
     subparsers = parser.add_subparsers(
-        dest="command", help="Subcommands: run, export-excel, import-excel"
+        dest="command",
+        help="Subcommands: run, validate-dataset, export-excel, import-excel",
     )
 
     # 1. Run command
@@ -175,10 +245,16 @@ def main() -> None:
         "--dataset", type=str, default=None, help="Path to golden dataset JSON"
     )
     run_parser.add_argument(
+        "--mode",
+        choices=["retrieval", "e2e"],
+        default="retrieval",
+        help="Benchmark mode: 'retrieval' (Retrieval-Only, 0 tokens) or 'e2e' (Full End-to-End with Generator)",
+    )
+    run_parser.add_argument(
         "--tier",
         choices=["deterministic", "full"],
-        default="deterministic",
-        help="Evaluation tier: 'deterministic' (fast, 0 tokens) or 'full' (+ RAGAS LLM-as-a-judge)",
+        default=None,
+        help="Legacy tier alias: 'deterministic' -> mode=retrieval, 'full' -> mode=e2e",
     )
     run_parser.add_argument(
         "--output-dir",
@@ -193,7 +269,15 @@ def main() -> None:
         help="Limit number of test samples to evaluate",
     )
 
-    # 2. Export Excel command
+    # 2. Validate Dataset command
+    val_parser = subparsers.add_parser(
+        "validate-dataset", help="Validate golden dataset JSON against Pydantic schema"
+    )
+    val_parser.add_argument(
+        "--dataset", type=str, default=None, help="Path to golden dataset JSON"
+    )
+
+    # 3. Export Excel command
     export_parser = subparsers.add_parser(
         "export-excel", help="Export JSON dataset to Excel for editing"
     )
@@ -204,7 +288,7 @@ def main() -> None:
         "--output", type=str, default=None, help="Path to output Excel file"
     )
 
-    # 3. Import Excel command
+    # 4. Import Excel command
     import_parser = subparsers.add_parser(
         "import-excel", help="Import modified Excel test cases into JSON"
     )
@@ -225,6 +309,8 @@ def main() -> None:
 
     if args.command == "run":
         sys.exit(handle_run(args))
+    elif args.command == "validate-dataset":
+        sys.exit(handle_validate(args))
     elif args.command == "export-excel":
         sys.exit(handle_export_excel(args))
     elif args.command == "import-excel":

@@ -4,8 +4,20 @@ from __future__ import annotations
 
 import logging
 import re
+from typing import Any
 
-from src.eval.models import DeterministicScore, EvaluationSample
+from src.eval.models import (
+    BenchmarkItemEvaluationResult,
+    DeterministicBenchmarkItem,
+    DeterministicScore,
+    EvaluationSample,
+    FactualGroundTruth,
+    FailureRootCause,
+    GenerationAssertions,
+    GenerationEvaluationResult,
+    RetrievalEvaluationResult,
+    RetrievalGroundTruth,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -24,11 +36,34 @@ SINGLE_FINE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+POINTS_DEDUCTED_PATTERN = re.compile(
+    r"trừ\s*(?:điểm\s*giấy\s*phép\s*lái\s*xe|điểm\s*gplx|gplx)?\s*"
+    r"(\d+|mười\s*hai|mười|tám|sáu|bốn|hai)\s*điểm",
+    re.IGNORECASE,
+)
+
+NO_POINTS_PATTERN = re.compile(
+    r"không\s*(?:bị\s*)?trừ\s*điểm",
+    re.IGNORECASE,
+)
+
+SUSPENSION_RANGE_PATTERN = re.compile(
+    r"tước\s*(?:quyền\s*sử\s*dụng\s*)?(?:GPLX|giấy\s*phép\s*lái\s*xe|bằng\s*lái(?:\s*xe)?)?\s*"
+    r"(?:từ\s*)?(\d+)\s*(?:tháng\s*)?(?:đến|-)\s*(\d+)\s*tháng",
+    re.IGNORECASE,
+)
+
+SUSPENSION_SINGLE_PATTERN = re.compile(
+    r"tước\s*(?:quyền\s*sử\s*dụng\s*)?(?:GPLX|giấy\s*phép\s*lái\s*xe|bằng\s*lái(?:\s*xe)?)?\s*"
+    r"(\d+)\s*tháng",
+    re.IGNORECASE,
+)
+
 PROVISION_CODE_PATTERN = re.compile(
     r"([a-zA-Z0-9_\-]+(?:_D\d+)?(?:_K\d+)?(?:_D[a-zA-Z0-9]+)?)"
 )
 
-# Textual Vietnamese citation patterns: "Điều X Khoản Y Điểm Z [Nghị định/Luật W]"
+# Textual Vietnamese citation patterns: "Điểm X Khoản Y Điều Z [Nghị định/Luật W]"
 TEXTUAL_CITATION_PATTERN = re.compile(
     r"(?:Điểm\s+([a-zA-Z0-9_]+)\s+)?(?:Khoản\s+(\d+)\s+)?Điều\s+(\d+)(?:\s+(?:của\s+)?(Luật|Nghị\s+định|Thông\s+tư)\s+([0-9\/\-]+(?:\/[a-zA-Z0-9\-]+)?))?",
     re.IGNORECASE,
@@ -48,6 +83,32 @@ WARNING_PHRASES = [
     "cảnh báo",
 ]
 
+REFUSAL_PHRASES = [
+    "không thuộc phạm vi",
+    "ngoài phạm vi",
+    "nằm ngoài phạm vi",
+    "không điều chỉnh",
+    "không áp dụng",
+    "không có thẩm quyền",
+    "không quy định xử phạt",
+    "không bị phạt",
+    "không có chế tài",
+    "không xử phạt",
+    "chưa có quy định xử phạt",
+    "chỉ hỗ trợ",
+    "chỉ giải đáp",
+    "không hỗ trợ",
+]
+
+WORD_TO_NUMBER = {
+    "hai": 2,
+    "bốn": 4,
+    "sáu": 6,
+    "tám": 8,
+    "mười": 10,
+    "mười hai": 12,
+}
+
 
 def parse_vnd_amount(num_str: str, unit_str: str | None = None) -> int | None:
     """Parses Vietnamese currency string into integer VND amount."""
@@ -63,7 +124,6 @@ def parse_vnd_amount(num_str: str, unit_str: str | None = None) -> int | None:
     elif "nghìn" in unit or unit == "k":
         val = val * 1_000
     elif val < 1_000:
-        # e.g., "phạt từ 2 đến 3 triệu" -> 2 should be 2,000,000
         val = val * 1_000_000
 
     return val
@@ -74,7 +134,6 @@ def extract_fine_range(text: str) -> tuple[int | None, int | None]:
     if not text:
         return None, None
 
-    # Strip markdown formatting so numbers wrapped in ** are parsed cleanly
     clean_text = (
         text.replace("**", " ").replace("*", " ").replace("_", " ").replace("#", " ")
     )
@@ -83,7 +142,6 @@ def extract_fine_range(text: str) -> tuple[int | None, int | None]:
     range_match = FINE_RANGE_PATTERN.search(clean_text)
     if range_match:
         num1, unit1, num2, unit2 = range_match.groups()
-        # If first unit is omitted, inherit from second unit (e.g. "từ 2 đến 3 triệu đồng")
         inherited_unit = unit2 if not unit1 else unit1
         val_min = parse_vnd_amount(num1, inherited_unit)
         val_max = parse_vnd_amount(num2, unit2)
@@ -99,6 +157,39 @@ def extract_fine_range(text: str) -> tuple[int | None, int | None]:
         val = parse_vnd_amount(num, unit)
         if val is not None:
             return val, val
+
+    return None, None
+
+
+def extract_points_deducted(text: str) -> int | None:
+    """Extracts driving license points deducted from answer text."""
+    if not text:
+        return None
+    if NO_POINTS_PATTERN.search(text):
+        return 0
+    match = POINTS_DEDUCTED_PATTERN.search(text)
+    if not match:
+        return None
+    raw_val = match.group(1).lower().strip()
+    if raw_val.isdigit():
+        return int(raw_val)
+    return WORD_TO_NUMBER.get(raw_val)
+
+
+def extract_license_suspension(text: str) -> tuple[int | None, int | None]:
+    """Extracts driving license suspension months from answer text."""
+    if not text:
+        return None, None
+
+    range_match = SUSPENSION_RANGE_PATTERN.search(text)
+    if range_match:
+        min_m, max_m = range_match.groups()
+        return int(min_m), int(max_m)
+
+    single_match = SUSPENSION_SINGLE_PATTERN.search(text)
+    if single_match:
+        m = int(single_match.group(1))
+        return m, m
 
     return None, None
 
@@ -121,7 +212,6 @@ TEXTUAL_PROV_PAT2 = re.compile(
 
 def parse_textual_citation(citation: str) -> str | None:
     """Converts a Vietnamese textual legal citation into standard provision ID."""
-    # Try Order 1: Điểm X Khoản Y Điều Z Văn bản W
     m1 = TEXTUAL_PROV_PAT1.search(citation)
     if m1:
         diem, khoan, dieu, doc = m1.groups()
@@ -133,7 +223,6 @@ def parse_textual_citation(citation: str) -> str | None:
             res += f"_D{diem.upper()}"
         return res
 
-    # Try Order 2: Điều Z Khoản Y Điểm X Văn bản W
     m2 = TEXTUAL_PROV_PAT2.search(citation)
     if m2:
         dieu, khoan, diem, doc = m2.groups()
@@ -156,7 +245,7 @@ def extract_cited_provisions(
     """Extracts all recognized statutory provision identifiers from citations and answer text."""
     extracted: set[str] = set()
 
-    # 1. Add direct citations (both raw and canonicalized from text)
+    # 1. Direct citations
     for c in citations:
         c_clean = c.strip()
         if not c_clean:
@@ -166,7 +255,7 @@ def extract_cited_provisions(
         if canon:
             extracted.add(canon)
 
-    # 2. Parse textual citations from the answer body
+    # 2. Textual citations from answer body
     for m in TEXTUAL_PROV_PAT1.finditer(answer_text):
         diem, khoan, dieu, doc = m.groups()
         doc_clean = normalize_provision_id(doc)
@@ -187,13 +276,13 @@ def extract_cited_provisions(
             res += f"_D{diem.upper()}"
         extracted.add(res)
 
-    # 3. Extract standard code IDs from answer text (e.g. 168_2024_ND-CP_D6_K3)
+    # 3. Standard code IDs from answer text
     for match in PROVISION_CODE_PATTERN.finditer(answer_text):
         token = match.group(1)
         if "_D" in token or token.startswith("LUAT_") or "ND_CP" in token:
             extracted.add(normalize_provision_id(token))
 
-    # 4. If nothing was extracted from citations and answer, fallback to retrieved_unit_ids
+    # 4. Fallback to retrieved_unit_ids if nothing was extracted
     if not extracted and retrieved_unit_ids:
         for uid in retrieved_unit_ids:
             extracted.add(normalize_provision_id(uid))
@@ -210,7 +299,6 @@ def matches_provision(expected: str, cited_candidates: set[str]) -> bool:
     for cand in cited_candidates:
         if norm_expected == cand:
             return True
-        # Partial hierarchy match: e.g. expected 168_2024_ND_CP_D6_K3_DA vs cited 168_2024_ND_CP_D6_K3
         if norm_expected.startswith(cand) or cand.startswith(norm_expected):
             return True
 
@@ -232,8 +320,259 @@ def detect_warning(text: str, custom_keywords: list[str] | None = None) -> bool:
     return False
 
 
+def detect_refusal(text: str) -> bool:
+    """Checks if answer contains out-of-scope refusal language."""
+    text_lower = text.lower()
+    return any(p in text_lower for p in REFUSAL_PHRASES)
+
+
+# ============================================================================
+# Core Decoupled Deterministic Evaluation Engine (Mode 1 & Mode 2)
+# ============================================================================
+
+
+def evaluate_retrieval(
+    ground_truth: RetrievalGroundTruth,
+    retrieved_node_ids: list[str],
+) -> RetrievalEvaluationResult:
+    """Evaluates retrieval layer against authoritative ground truth using Set Theory."""
+    retrieved_set = {normalize_provision_id(nid) for nid in retrieved_node_ids}
+
+    # 1. Must-have checking
+    must_have_matched = [
+        m
+        for m in ground_truth.must_have_node_ids
+        if matches_provision(m, retrieved_set)
+    ]
+    must_have_missing = [
+        m for m in ground_truth.must_have_node_ids if m not in must_have_matched
+    ]
+    total_must_have = len(ground_truth.must_have_node_ids)
+    recall = len(must_have_matched) / total_must_have if total_must_have > 0 else 1.0
+
+    # 2. Must-not-have collision checking (Noise & Collision Filter)
+    must_not_have_detected = [
+        f
+        for f in ground_truth.must_not_have_node_ids
+        if matches_provision(f, retrieved_set)
+    ]
+    total_forbidden = len(ground_truth.must_not_have_node_ids)
+    collision_rate = (
+        len(must_not_have_detected) / total_forbidden if total_forbidden > 0 else 0.0
+    )
+
+    # 3. Optional node matching
+    optional_matched = [
+        opt
+        for opt in ground_truth.optional_node_ids
+        if matches_provision(opt, retrieved_set)
+    ]
+
+    # Pass rule: recall == 1.0 AND 0 forbidden collisions
+    passed = (recall >= 1.0) and (len(must_not_have_detected) == 0)
+
+    return RetrievalEvaluationResult(
+        must_have_matched=must_have_matched,
+        must_have_missing=must_have_missing,
+        must_not_have_detected=must_not_have_detected,
+        optional_matched=optional_matched,
+        recall=round(recall, 4),
+        collision_rate=round(collision_rate, 4),
+        passed=passed,
+    )
+
+
+def evaluate_generation(
+    ground_truth: FactualGroundTruth,
+    assertions: GenerationAssertions,
+    generated_answer: str,
+    evidence_warning: str | None = None,
+) -> GenerationEvaluationResult:
+    """Evaluates generation output deterministically via Slot-Filling, Regex, & Noise Filtering."""
+    extracted_min, extracted_max = extract_fine_range(generated_answer)
+    extracted_points = extract_points_deducted(generated_answer)
+    extracted_susp_min, extracted_susp_max = extract_license_suspension(
+        generated_answer
+    )
+
+    extracted_sanctions_record: dict[str, dict[str, Any]] = {
+        "extracted_values": {
+            "fine_min": extracted_min,
+            "fine_max": extracted_max,
+            "points_deducted": extracted_points,
+            "license_suspended_months_min": extracted_susp_min,
+            "license_suspended_months_max": extracted_susp_max,
+        }
+    }
+
+    # 1. Vehicle sanctions validation
+    vehicle_sanctions_passed: dict[str, bool] = {}
+    for vehicle, slot in ground_truth.vehicle_sanctions.items():
+        v_passed = True
+        if slot.fine_min is not None:
+            if extracted_min != slot.fine_min:
+                v_passed = False
+        if slot.fine_max is not None:
+            if extracted_max != slot.fine_max:
+                v_passed = False
+        if slot.points_deducted is not None:
+            if extracted_points != slot.points_deducted:
+                v_passed = False
+        if slot.license_suspended_months_min is not None:
+            if extracted_susp_min != slot.license_suspended_months_min:
+                v_passed = False
+        if slot.license_suspended_months_max is not None:
+            if extracted_susp_max != slot.license_suspended_months_max:
+                v_passed = False
+        vehicle_sanctions_passed[vehicle] = v_passed
+
+    # 2. Regex assertions matching
+    regex_passed: dict[str, bool] = {}
+    for pattern in assertions.must_contain_regex:
+        matched = bool(re.search(pattern, generated_answer, re.IGNORECASE))
+        regex_passed[pattern] = matched
+
+    # 3. Forbidden keywords detection
+    forbidden_detected: list[str] = []
+    answer_lower = generated_answer.lower()
+    for kw in assertions.must_not_contain_keywords:
+        if kw.lower() in answer_lower:
+            forbidden_detected.append(kw)
+
+    # 4. Citations & Dates
+    citations_passed = True
+    for cit in ground_truth.required_citations:
+        if cit.lower() not in answer_lower:
+            # Check partial match on key keywords
+            parts = [p.strip() for p in cit.split() if len(p.strip()) > 2]
+            if not all(p.lower() in answer_lower for p in parts):
+                citations_passed = False
+                break
+
+    dates_passed = True
+    if ground_truth.exact_dates:
+        dates_passed = any(d.lower() in answer_lower for d in ground_truth.exact_dates)
+
+    # 5. Behavioral flags
+    refusal_passed = True
+    if assertions.is_refusal_expected:
+        refusal_passed = detect_refusal(generated_answer)
+
+    amended_warning_passed = True
+    if assertions.is_amended_warning_expected:
+        combined_text = f"{generated_answer} {evidence_warning or ''}"
+        amended_warning_passed = detect_warning(combined_text)
+
+    # All criteria must hold for generation pass
+    all_sanctions_ok = (
+        all(vehicle_sanctions_passed.values()) if vehicle_sanctions_passed else True
+    )
+    all_regex_ok = all(regex_passed.values()) if regex_passed else True
+    no_forbidden_keywords = len(forbidden_detected) == 0
+
+    passed = bool(
+        all_sanctions_ok
+        and all_regex_ok
+        and no_forbidden_keywords
+        and refusal_passed
+        and amended_warning_passed
+    )
+
+    return GenerationEvaluationResult(
+        vehicle_sanctions_passed=vehicle_sanctions_passed,
+        extracted_sanctions=extracted_sanctions_record,
+        regex_passed=regex_passed,
+        forbidden_keywords_detected=forbidden_detected,
+        citations_passed=citations_passed,
+        dates_passed=dates_passed,
+        refusal_passed=refusal_passed,
+        amended_warning_passed=amended_warning_passed,
+        passed=passed,
+    )
+
+
+def evaluate_benchmark_item(
+    item: DeterministicBenchmarkItem,
+    retrieved_unit_ids: list[str],
+    generated_answer: str | None = None,
+    citations: list[str] | None = None,
+    evidence_warning: str | None = None,
+    mode: str = "e2e",
+    execution_time_ms: float = 0.0,
+) -> BenchmarkItemEvaluationResult:
+    """Evaluates a single benchmark item for either Mode 1 (Retrieval) or Mode 2 (End-to-End)."""
+    ret_res = evaluate_retrieval(item.retrieval_gt, retrieved_unit_ids)
+
+    if mode == "retrieval":
+        overall_passed = ret_res.passed
+        root_cause = FailureRootCause.NONE
+        if not overall_passed:
+            if ret_res.must_not_have_detected:
+                root_cause = FailureRootCause.RETRIEVAL_FORBIDDEN_NODE_COLLISION
+            else:
+                root_cause = FailureRootCause.RETRIEVAL_MISSING_MUST_HAVE
+
+        return BenchmarkItemEvaluationResult(
+            test_id=item.test_id,
+            category=item.category,
+            question=item.question,
+            mode="retrieval",
+            retrieval_result=ret_res,
+            generation_result=None,
+            overall_passed=overall_passed,
+            root_cause=root_cause,
+            execution_time_ms=execution_time_ms,
+        )
+
+    # Mode 2: End-to-End
+    gen_res = evaluate_generation(
+        ground_truth=item.factual_gt,
+        assertions=item.assertions,
+        generated_answer=generated_answer or "",
+        evidence_warning=evidence_warning,
+    )
+
+    overall_passed = ret_res.passed and gen_res.passed
+    root_cause = FailureRootCause.NONE
+
+    if not overall_passed:
+        if len(ret_res.must_not_have_detected) > 0:
+            root_cause = FailureRootCause.RETRIEVAL_FORBIDDEN_NODE_COLLISION
+        elif len(ret_res.must_have_missing) > 0:
+            root_cause = FailureRootCause.RETRIEVAL_MISSING_MUST_HAVE
+        elif not gen_res.refusal_passed:
+            root_cause = FailureRootCause.GENERATION_REFUSAL_EXPECTED_FAIL
+        elif not gen_res.amended_warning_passed:
+            root_cause = FailureRootCause.GENERATION_AMENDMENT_WARNING_MISSING
+        elif len(gen_res.forbidden_keywords_detected) > 0:
+            root_cause = FailureRootCause.GENERATION_FORBIDDEN_KEYWORD_LEAK
+        elif any(not p for p in gen_res.regex_passed.values()):
+            root_cause = FailureRootCause.GENERATION_REGEX_UNMATCHED
+        elif any(not p for p in gen_res.vehicle_sanctions_passed.values()):
+            root_cause = FailureRootCause.GENERATION_SANCTION_MISMATCH
+        else:
+            root_cause = FailureRootCause.GENERATION_SANCTION_MISMATCH
+
+    return BenchmarkItemEvaluationResult(
+        test_id=item.test_id,
+        category=item.category,
+        question=item.question,
+        mode="e2e",
+        retrieval_result=ret_res,
+        generation_result=gen_res,
+        overall_passed=overall_passed,
+        root_cause=root_cause,
+        execution_time_ms=execution_time_ms,
+    )
+
+
+# ============================================================================
+# Legacy Evaluator Adapter (DeterministicEvaluator)
+# ============================================================================
+
+
 class DeterministicEvaluator:
-    """Evaluates legal answers against expected provisions, fine amounts, and validity flags."""
+    """Evaluates legal answers against expected provisions, fine amounts, and validity flags (Legacy API)."""
 
     def __init__(self, recall_threshold: float = 0.5) -> None:
         self.recall_threshold = recall_threshold
@@ -246,8 +585,7 @@ class DeterministicEvaluator:
         retrieved_unit_ids: list[str] | None = None,
         evidence_warning: str | None = None,
     ) -> DeterministicScore:
-        """Executes complete deterministic evaluation of a test case."""
-        # 1. Provision Citation Evaluation
+        """Executes complete deterministic evaluation of a test case for legacy callers."""
         cited_set = extract_cited_provisions(
             citations=citations,
             answer_text=generated_answer,
@@ -263,7 +601,6 @@ class DeterministicEvaluator:
             else:
                 missing.append(exp)
 
-        # Unexpected provisions (cited but not expected)
         unexpected: list[str] = []
         for cand in cited_set:
             if not any(
@@ -275,7 +612,6 @@ class DeterministicEvaluator:
         total_cited = len(cited_set)
 
         if total_expected == 0:
-            # Out-of-scope question: passing if no hallucinated provisions
             recall = 1.0
             precision = 1.0 if total_cited == 0 else 0.0
         else:
@@ -288,7 +624,6 @@ class DeterministicEvaluator:
             else 0.0
         )
 
-        # 2. Fine Amount Evaluation
         extracted_min, extracted_max = extract_fine_range(generated_answer)
 
         fine_min_match: bool | None = None
@@ -307,7 +642,6 @@ class DeterministicEvaluator:
                 and (extracted_min is not None or extracted_max is not None)
             )
 
-        # 3. Validity & Amendment Warning Evaluation
         combined_text = f"{generated_answer} {evidence_warning or ''}"
         warning_detected = detect_warning(
             combined_text, sample.expected_warning_keywords
@@ -319,9 +653,7 @@ class DeterministicEvaluator:
         else:
             warning_match = True
 
-        # 4. Overall Deterministic Pass Decision
         if total_expected == 0:
-            # Out-of-scope question
             deterministic_passed = len(unexpected) == 0
         else:
             recall_passed = recall >= self.recall_threshold

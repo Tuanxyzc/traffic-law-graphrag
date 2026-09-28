@@ -5,15 +5,23 @@ from __future__ import annotations
 import logging
 import time
 from datetime import datetime, timezone
+from typing import Any
 
-from src.eval.deterministic import DeterministicEvaluator
+from src.eval.deterministic import (
+    DeterministicEvaluator,
+    evaluate_benchmark_item,
+)
 from src.eval.models import (
+    BenchmarkItemEvaluationResult,
+    BenchmarkRunSummary,
     CategoryMetricSummary,
+    DeterministicBenchmarkItem,
     EvaluationCategory,
     EvaluationResult,
     EvaluationSample,
     EvaluationSummary,
     RagasScore,
+    TestCategory,
 )
 from src.eval.ragas_judge import RagasJudge
 from src.pipeline.pipeline import GraphRAGPipeline
@@ -279,5 +287,145 @@ class EvaluationOrchestrator:
             avg_context_recall=avg_ctx_recall,
             avg_latency_ms=round(avg_latency, 2),
             category_breakdown=category_breakdown,
+            results=results,
+        )
+
+    def evaluate_deterministic_sample(
+        self,
+        item: DeterministicBenchmarkItem,
+        mode: str = "retrieval",
+        mock_unit_ids: list[str] | None = None,
+        mock_answer: str | None = None,
+        mock_citations: list[str] | None = None,
+        mock_evidence_warning: str | None = None,
+        mock_latency_ms: float | None = None,
+    ) -> BenchmarkItemEvaluationResult:
+        """Executes pipeline and performs deterministic evaluation for a single item."""
+        start_time = time.perf_counter()
+
+        if (
+            mock_unit_ids is not None
+            or mock_answer is not None
+            or mock_citations is not None
+        ):
+            unit_ids = mock_unit_ids or []
+            answer = mock_answer or ""
+            citations = mock_citations or []
+            evidence_warning = mock_evidence_warning
+            latency_ms = (
+                mock_latency_ms
+                if mock_latency_ms is not None
+                else round((time.perf_counter() - start_time) * 1000.0, 2)
+            )
+        else:
+            if self.pipeline is None:
+                self.pipeline = GraphRAGPipeline()
+
+            if mode == "retrieval":
+                res = self.pipeline.run(item.question, skip_generation=True)
+                unit_ids = [
+                    it.chunk_id for it in res.evidence_package.items if it.chunk_id
+                ]
+                answer = ""
+                citations = res.citations
+                evidence_warning = None
+                latency_ms = res.execution_time_ms
+            else:
+                res = self.pipeline.run(item.question, skip_generation=False)
+                unit_ids = [
+                    it.chunk_id for it in res.evidence_package.items if it.chunk_id
+                ]
+                answer = res.answer
+                citations = res.citations
+                warning_flags = [
+                    it.warning_flag
+                    for it in res.evidence_package.items
+                    if it.warning_flag
+                ]
+                evidence_warning = " | ".join(warning_flags) if warning_flags else None
+                latency_ms = res.execution_time_ms
+
+        return evaluate_benchmark_item(
+            item=item,
+            retrieved_unit_ids=unit_ids,
+            generated_answer=answer,
+            citations=citations,
+            evidence_warning=evidence_warning,
+            mode=mode,
+            execution_time_ms=latency_ms,
+        )
+
+    def evaluate_deterministic_dataset(
+        self,
+        items: list[DeterministicBenchmarkItem],
+        mode: str = "retrieval",
+    ) -> BenchmarkRunSummary:
+        """Evaluates a list of deterministic benchmark items and aggregates results."""
+        results: list[BenchmarkItemEvaluationResult] = []
+        total = len(items)
+        logger.info(
+            "Starting deterministic benchmark for %d items (Mode: %s)...",
+            total,
+            mode,
+        )
+
+        for idx, item in enumerate(items, start=1):
+            logger.info(
+                "[%d/%d] Evaluating %s: '%s' (Mode: %s)...",
+                idx,
+                total,
+                item.test_id,
+                item.question,
+                mode,
+            )
+            res = self.evaluate_deterministic_sample(item, mode=mode)
+            results.append(res)
+
+        passed_count = sum(1 for r in results if r.overall_passed)
+        retrieval_passed_count = sum(1 for r in results if r.retrieval_result.passed)
+
+        overall_pass_rate = passed_count / total if total > 0 else 0.0
+        retrieval_pass_rate = retrieval_passed_count / total if total > 0 else 0.0
+
+        generation_pass_rate = None
+        if mode == "e2e":
+            gen_passed_count = sum(
+                1 for r in results if r.generation_result and r.generation_result.passed
+            )
+            generation_pass_rate = gen_passed_count / total if total > 0 else 0.0
+
+        # Count root causes
+        root_cause_counts: dict[str, int] = {}
+        for r in results:
+            rc = r.root_cause.value
+            root_cause_counts[rc] = root_cause_counts.get(rc, 0) + 1
+
+        # Category breakdown
+        cat_breakdown: dict[str, dict[str, Any]] = {}
+        for cat in TestCategory:
+            cat_items = [r for r in results if r.category == cat]
+            if cat_items:
+                cat_total = len(cat_items)
+                cat_passed = sum(1 for r in cat_items if r.overall_passed)
+                cat_breakdown[cat.value] = {
+                    "total": cat_total,
+                    "passed": cat_passed,
+                    "pass_rate": round(cat_passed / cat_total, 4)
+                    if cat_total > 0
+                    else 0.0,
+                }
+
+        return BenchmarkRunSummary(
+            timestamp=datetime.now(timezone.utc).isoformat(),
+            mode=mode,
+            total_samples=total,
+            passed_samples=passed_count,
+            overall_pass_rate=round(overall_pass_rate, 4),
+            retrieval_pass_rate=round(retrieval_pass_rate, 4),
+            generation_pass_rate=round(generation_pass_rate, 4)
+            if generation_pass_rate is not None
+            else None,
+            root_cause_counts=root_cause_counts,
+            category_breakdown=cat_breakdown,
             results=results,
         )

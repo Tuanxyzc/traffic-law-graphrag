@@ -214,6 +214,7 @@ class GraphRAGPipeline:
         user_query: str,
         document_id: str | None = None,
         top_k: int | None = None,
+        skip_generation: bool = False,
     ) -> PipelineResult:
         """Executes the complete GraphRAG pipeline from citizen query to verified legal answer.
 
@@ -261,6 +262,24 @@ class GraphRAGPipeline:
                 validated_provisions=[],
                 system_documents=system_docs,
             )
+            if skip_generation:
+                elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
+                logger.info(
+                    "GraphRAG pipeline retrieval-only completed system_meta_query in %.2fms.",
+                    elapsed_ms,
+                )
+                return PipelineResult(
+                    user_query=clean_query,
+                    rewritten_query=rewritten,
+                    answer="",
+                    citations=[],
+                    evidence_package=evidence_package,
+                    subgraph=evidence_package.subgraph,
+                    execution_time_ms=elapsed_ms,
+                    grounding_verified=True,
+                    verification_warnings=[],
+                )
+
             generation_res = self.generator.generate(evidence_package)
             elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
             logger.info(
@@ -388,6 +407,27 @@ class GraphRAGPipeline:
         )
 
         # 5. Grounded LLM Generation
+        if skip_generation:
+            elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
+            logger.info(
+                "GraphRAG pipeline retrieval-only completed in %.2fms.", elapsed_ms
+            )
+            return PipelineResult(
+                user_query=clean_query,
+                rewritten_query=rewritten,
+                answer="",
+                citations=[
+                    it.validated_provision.provision_id
+                    for it in evidence_package.items
+                    if it.validated_provision and it.validated_provision.provision_id
+                ],
+                evidence_package=evidence_package,
+                subgraph=evidence_package.subgraph,
+                execution_time_ms=elapsed_ms,
+                grounding_verified=True,
+                verification_warnings=[],
+            )
+
         generation_res = self.generator.generate(evidence_package)
         elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
         logger.info("GraphRAG pipeline completed in %.2fms.", elapsed_ms)

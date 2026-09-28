@@ -356,8 +356,16 @@ def test_golden_dataset_validation() -> None:
     samples = [EvaluationSample.model_validate(item) for item in raw_data]
 
     categories = {s.category for s in samples}
-    assert EvaluationCategory.FINE_LOOKUP in categories
-    assert EvaluationCategory.TEMPORAL_VALIDITY in categories
-    assert EvaluationCategory.DOCUMENT_AMENDMENT in categories
-    assert EvaluationCategory.MULTI_HOP_RULE_SANCTION in categories
-    assert EvaluationCategory.OUT_OF_SCOPE in categories
+    if EvaluationCategory.THESAURUS_NORMALIZATION in categories:
+        assert EvaluationCategory.THESAURUS_NORMALIZATION in categories
+        assert EvaluationCategory.KEYWORD_COLLISION in categories
+        assert EvaluationCategory.ENTITY_EXPANSION in categories
+        assert EvaluationCategory.MULTI_HOP_CROSS_DOC in categories
+        assert EvaluationCategory.TEMPORAL_AMENDMENT in categories
+        assert EvaluationCategory.OUT_OF_SCOPE in categories
+    else:
+        assert EvaluationCategory.FINE_LOOKUP in categories
+        assert EvaluationCategory.TEMPORAL_VALIDITY in categories
+        assert EvaluationCategory.DOCUMENT_AMENDMENT in categories
+        assert EvaluationCategory.MULTI_HOP_RULE_SANCTION in categories
+        assert EvaluationCategory.OUT_OF_SCOPE in categories

@@ -12,6 +12,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 from src.eval.models import (
+    BenchmarkRunSummary,
     EvaluationCategory,
     EvaluationSample,
     EvaluationSummary,
@@ -559,3 +560,238 @@ class EvaluationExporter:
             "Successfully imported %d evaluation samples from %s", len(samples), in_file
         )
         return samples
+
+    @staticmethod
+    def export_deterministic_benchmark_to_excel(
+        summary: BenchmarkRunSummary, output_path: str | Path
+    ) -> Path:
+        """Exports deterministic benchmark summary and results into a styled Excel workbook."""
+        out_file = Path(output_path)
+        out_file.parent.mkdir(parents=True, exist_ok=True)
+
+        wb = Workbook()
+
+        # ==========================================
+        # Sheet 1: Dashboard Tổng quan
+        # ==========================================
+        ws_dash = wb.active
+        ws_dash.title = "Dashboard Tổng quan"
+        ws_dash.views.sheetView[0].showGridLines = True
+
+        ws_dash.merge_cells("A1:F1")
+        ws_dash["A1"] = "BÁO CÁO KIỂM CHUẨN TẤT ĐỊNH (DETERMINISTIC BENCHMARK)"
+        ws_dash["A1"].font = TITLE_FONT
+        ws_dash["A1"].alignment = Alignment(vertical="center")
+        ws_dash.row_dimensions[1].height = 35
+
+        ws_dash["A2"] = f"Thời gian đánh giá: {summary.timestamp}"
+        ws_dash["A2"].font = REGULAR_FONT
+        ws_dash["A3"] = (
+            f"Chế độ kiểm chuẩn: {summary.mode.upper()} ({'Retrieval-Only (0 VNĐ API)' if summary.mode == 'retrieval' else 'End-to-End LLM Generation'})"
+        )
+        ws_dash["A3"].font = REGULAR_FONT
+        ws_dash["A4"] = f"Tổng số ca kiểm thử: {summary.total_samples}"
+        ws_dash["A4"].font = REGULAR_FONT
+
+        # Key Metrics Table
+        headers_kpi = ["Chỉ số đánh giá", "Giá trị", "Mục tiêu tối thiểu", "Ý nghĩa"]
+        row_kpi_start = 6
+        for col_idx, h in enumerate(headers_kpi, start=1):
+            cell = ws_dash.cell(row=row_kpi_start, column=col_idx, value=h)
+            cell.font = WHITE_BOLD_FONT
+            cell.fill = NAVY_HEADER_FILL
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+            cell.border = GRID_BORDER
+        ws_dash.row_dimensions[row_kpi_start].height = 24
+
+        kpi_rows = [
+            (
+                "Tỉ lệ Pass toàn diện (Overall Pass Rate)",
+                f"{summary.overall_pass_rate * 100:.1f}%",
+                ">= 70%",
+                "Tỉ lệ testcase thỏa mãn 100% assertions",
+            ),
+            (
+                "Tỉ lệ Đạt tầng Retrieval (Must-Have Recall + No Forbidden)",
+                f"{summary.retrieval_pass_rate * 100:.1f}%",
+                ">= 80%",
+                "Độ phủ Node ID bắt buộc và không dính Node cấm",
+            ),
+        ]
+        if summary.generation_pass_rate is not None:
+            kpi_rows.append(
+                (
+                    "Tỉ lệ Đạt tầng Generation (Slot-filling + Regex)",
+                    f"{summary.generation_pass_rate * 100:.1f}%",
+                    ">= 75%",
+                    "Độ chính xác số tiền phạt, điểm GPLX, thời gian tước GPLX, regex",
+                )
+            )
+
+        for offset, (name, val, target, desc) in enumerate(kpi_rows, start=1):
+            r = row_kpi_start + offset
+            c1 = ws_dash.cell(row=r, column=1, value=name)
+            c2 = ws_dash.cell(row=r, column=2, value=val)
+            c3 = ws_dash.cell(row=r, column=3, value=target)
+            c4 = ws_dash.cell(row=r, column=4, value=desc)
+            for c in (c1, c2, c3, c4):
+                c.font = REGULAR_FONT
+                c.border = GRID_BORDER
+            c1.font = DARK_BOLD_FONT
+            c2.alignment = Alignment(horizontal="center")
+            c3.alignment = Alignment(horizontal="center")
+            ws_dash.row_dimensions[r].height = 20
+
+        # Category Breakdown Table
+        row_cat_start = row_kpi_start + len(kpi_rows) + 3
+        ws_dash.cell(
+            row=row_cat_start - 1, column=1, value="PHÂN TÍCH THEO NHÓM TESTCASE"
+        ).font = Font(name="Calibri", size=13, bold=True, color="1F4E79")
+
+        cat_headers = ["Nhóm vi phạm / Tình huống", "Tổng số", "Số ca đạt", "Tỉ lệ Đạt"]
+        for col_idx, h in enumerate(cat_headers, start=1):
+            cell = ws_dash.cell(row=row_cat_start, column=col_idx, value=h)
+            cell.font = WHITE_BOLD_FONT
+            cell.fill = NAVY_HEADER_FILL
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+            cell.border = GRID_BORDER
+
+        cat_offset = 1
+        for cat_name, metrics in summary.category_breakdown.items():
+            r = row_cat_start + cat_offset
+            ws_dash.cell(row=r, column=1, value=cat_name).font = DARK_BOLD_FONT
+            ws_dash.cell(row=r, column=2, value=metrics["total"]).alignment = Alignment(
+                horizontal="center"
+            )
+            ws_dash.cell(
+                row=r, column=3, value=metrics["passed"]
+            ).alignment = Alignment(horizontal="center")
+            ws_dash.cell(
+                row=r, column=4, value=f"{metrics['pass_rate'] * 100:.1f}%"
+            ).alignment = Alignment(horizontal="center")
+            for c in range(1, 5):
+                ws_dash.cell(row=r, column=c).border = GRID_BORDER
+            cat_offset += 1
+
+        # Root Cause Breakdown Table
+        row_rc_start = row_cat_start + cat_offset + 2
+        ws_dash.cell(
+            row=row_rc_start - 1,
+            column=1,
+            value="QUY KẾT NGUYÊN NHÂN LỖI (ROOT-CAUSE ATTRIBUTION)",
+        ).font = Font(name="Calibri", size=13, bold=True, color="1F4E79")
+
+        rc_headers = ["Nguyên nhân lỗi gốc", "Số ca vi phạm"]
+        for col_idx, h in enumerate(rc_headers, start=1):
+            cell = ws_dash.cell(row=row_rc_start, column=col_idx, value=h)
+            cell.font = WHITE_BOLD_FONT
+            cell.fill = NAVY_HEADER_FILL
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+            cell.border = GRID_BORDER
+
+        rc_offset = 1
+        for rc_name, count in summary.root_cause_counts.items():
+            r = row_rc_start + rc_offset
+            ws_dash.cell(row=r, column=1, value=rc_name).font = DARK_BOLD_FONT
+            ws_dash.cell(row=r, column=2, value=count).alignment = Alignment(
+                horizontal="center"
+            )
+            for c in range(1, 3):
+                ws_dash.cell(row=r, column=c).border = GRID_BORDER
+            rc_offset += 1
+
+        auto_fit_columns(ws_dash, max_width=50)
+
+        # ==========================================
+        # Sheet 2: Chi tiết Test Cases
+        # ==========================================
+        ws_cases = wb.create_sheet(title="Chi tiết Test Cases")
+        ws_cases.views.sheetView[0].showGridLines = True
+
+        case_headers = [
+            "ID",
+            "Category",
+            "Câu hỏi kiểm thử",
+            "Kết quả",
+            "Root Cause",
+            "Retrieval Passed",
+            "Must-Have Recall",
+            "Node cấm xuất hiện",
+            "Node bắt buộc thiếu",
+            "Generation Passed",
+            "Khớp chế tài (xe)",
+            "Khớp từ chối",
+            "Cảnh báo sửa đổi",
+            "Khớp Regex",
+            "Từ khóa cấm xuất hiện",
+            "Thời gian (ms)",
+        ]
+        for col_idx, h in enumerate(case_headers, start=1):
+            cell = ws_cases.cell(row=1, column=col_idx, value=h)
+            cell.font = WHITE_BOLD_FONT
+            cell.fill = NAVY_HEADER_FILL
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+            cell.border = GRID_BORDER
+        ws_cases.row_dimensions[1].height = 25
+
+        for row_idx, res in enumerate(summary.results, start=2):
+            ret_res = res.retrieval_result
+            gen_res = res.generation_result
+
+            all_sanctions_ok = (
+                all(gen_res.vehicle_sanctions_passed.values())
+                if gen_res and gen_res.vehicle_sanctions_passed
+                else ("PASS" if gen_res else "N/A")
+            )
+            all_regex_ok = (
+                all(gen_res.regex_passed.values())
+                if gen_res and gen_res.regex_passed
+                else ("PASS" if gen_res else "N/A")
+            )
+
+            row_vals = [
+                res.test_id,
+                res.category.value,
+                res.question,
+                "PASS" if res.overall_passed else "FAIL",
+                res.root_cause.value,
+                "PASS" if ret_res.passed else "FAIL",
+                f"{ret_res.recall * 100:.0f}%",
+                "; ".join(ret_res.must_not_have_detected)
+                if ret_res.must_not_have_detected
+                else "-",
+                "; ".join(ret_res.must_have_missing)
+                if ret_res.must_have_missing
+                else "-",
+                "PASS"
+                if (gen_res and gen_res.passed)
+                else ("FAIL" if gen_res else "N/A"),
+                "PASS" if all_sanctions_ok is True else str(all_sanctions_ok),
+                str(gen_res.refusal_passed) if gen_res else "N/A",
+                str(gen_res.amended_warning_passed) if gen_res else "N/A",
+                "PASS" if all_regex_ok is True else str(all_regex_ok),
+                "; ".join(gen_res.forbidden_keywords_detected)
+                if gen_res and gen_res.forbidden_keywords_detected
+                else "-",
+                round(res.execution_time_ms, 1),
+            ]
+            for col_idx, cell_val in enumerate(row_vals, start=1):
+                cell = ws_cases.cell(row=row_idx, column=col_idx, value=cell_val)
+                cell.font = REGULAR_FONT
+                cell.border = GRID_BORDER
+                cell.alignment = Alignment(vertical="center")
+
+            # Format overall pass/fail cell
+            pass_cell = ws_cases.cell(row=row_idx, column=4)
+            if res.overall_passed:
+                pass_cell.fill = PASS_FILL
+                pass_cell.font = PASS_FONT
+            else:
+                pass_cell.fill = FAIL_FILL
+                pass_cell.font = FAIL_FONT
+
+        auto_fit_columns(ws_cases, max_width=40)
+
+        wb.save(str(out_file))
+        logger.info("Saved deterministic benchmark report to Excel: %s", out_file)
+        return out_file
