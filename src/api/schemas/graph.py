@@ -9,14 +9,26 @@ class DocumentMetaResponse(BaseModel):
     """Metadata of a legal document in Neo4j."""
 
     id: str = Field(..., description="Canonical document ID (e.g. '168_2024_ND-CP')")
-    so_hieu: str | None = Field(default=None, description="Official statutory number (e.g. '168/2024/NĐ-CP')")
+    so_hieu: str | None = Field(
+        default=None, description="Official statutory number (e.g. '168/2024/NĐ-CP')"
+    )
     ten: str | None = Field(default=None, description="Official statutory title")
-    loai: str | None = Field(default=None, description="Type of document (Nghị định, Luật, Thông tư)")
-    ngay_ban_hanh: str | None = Field(default=None, description="Date of issuance (YYYY-MM-DD)")
-    ngay_hieu_luc: str | None = Field(default=None, description="Effective date (YYYY-MM-DD)")
-    ngay_het_hieu_luc: str | None = Field(default=None, description="Expiry date if applicable")
+    loai: str | None = Field(
+        default=None, description="Type of document (Nghị định, Luật, Thông tư)"
+    )
+    ngay_ban_hanh: str | None = Field(
+        default=None, description="Date of issuance (YYYY-MM-DD)"
+    )
+    ngay_hieu_luc: str | None = Field(
+        default=None, description="Effective date (YYYY-MM-DD)"
+    )
+    ngay_het_hieu_luc: str | None = Field(
+        default=None, description="Expiry date if applicable"
+    )
     status: str | None = Field(default=None, description="General legal status")
-    total_articles: int = Field(default=0, description="Total article count in document")
+    total_articles: int = Field(
+        default=0, description="Total article count in document"
+    )
 
 
 class ProvisionVersionSchema(BaseModel):
@@ -53,8 +65,12 @@ class AmendmentRecordSchema(BaseModel):
 class ProvisionDetailResponse(BaseModel):
     """Comprehensive detail and temporal status of a statutory provision."""
 
-    provision_id: str = Field(..., description="Canonical ID of provision (e.g. '168_2024_ND-CP_D5_K1_Da')")
-    level: str = Field(..., description="Hierarchy level (Point, Clause, Article, Document)")
+    provision_id: str = Field(
+        ..., description="Canonical ID of provision (e.g. '168_2024_ND-CP_D5_K1_Da')"
+    )
+    level: str = Field(
+        ..., description="Hierarchy level (Point, Clause, Article, Document)"
+    )
     document_id: str | None = None
     document_title: str | None = None
     parent_article_id: str | None = None

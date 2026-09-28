@@ -132,7 +132,9 @@ def test_metrics_endpoint(client: TestClient) -> None:
 # --- 2. Query Endpoints Tests ---
 
 
-def test_query_sync_success(client: TestClient, mock_pipeline_result: PipelineResult) -> None:
+def test_query_sync_success(
+    client: TestClient, mock_pipeline_result: PipelineResult
+) -> None:
     """Verifies POST /api/v1/query returns 200 with complete structured answer."""
     mock_pipe = MagicMock()
     mock_pipe.run.return_value = mock_pipeline_result
@@ -183,7 +185,9 @@ def test_query_out_of_scope(client: TestClient) -> None:
         rewritten_query=rewritten,
         answer="Chào bạn, tôi là trợ lý tư vấn luật giao thông đường bộ Việt Nam. Bạn cần tìm hiểu quy định hay mức xử phạt nào?",
         citations=[],
-        evidence_package=EvidencePackage(user_query="Xin chào", rewritten_query=rewritten),
+        evidence_package=EvidencePackage(
+            user_query="Xin chào", rewritten_query=rewritten
+        ),
         execution_time_ms=5.0,
         grounding_verified=True,
     )
@@ -202,7 +206,9 @@ def test_query_out_of_scope(client: TestClient) -> None:
         app.dependency_overrides.pop(get_pipeline, None)
 
 
-def test_query_streaming_sse(client: TestClient, mock_pipeline_result: PipelineResult) -> None:
+def test_query_streaming_sse(
+    client: TestClient, mock_pipeline_result: PipelineResult
+) -> None:
     """Verifies POST /api/v1/query/stream emits Server-Sent Events."""
     mock_pipe = MagicMock()
     mock_pipe.run.return_value = mock_pipeline_result
@@ -323,9 +329,7 @@ def test_get_subgraph(client: TestClient) -> None:
     rel_mock.type = "REFERENCES"
     rel_mock.__iter__.return_value = []
 
-    mock_session.run.return_value = [
-        {"n": node_mock1, "r": rel_mock, "m": node_mock2}
-    ]
+    mock_session.run.return_value = [{"n": node_mock1, "r": rel_mock, "m": node_mock2}]
 
     app.dependency_overrides[get_neo4j_client] = lambda: mock_neo4j
     try:
@@ -397,7 +401,11 @@ def test_ui_index_served(client: TestClient) -> None:
     assert response.status_code == 200
     assert "text/html" in response.headers.get("content-type", "")
     assert "Tra cứu Tư vấn Pháp luật Giao thông" in response.text
-    assert "Perplexity" in response.text or "Warm research terminal" in response.text or "app-sidebar" in response.text
+    assert (
+        "Perplexity" in response.text
+        or "Warm research terminal" in response.text
+        or "app-sidebar" in response.text
+    )
 
 
 def test_ui_static_css_served(client: TestClient) -> None:
@@ -406,4 +414,3 @@ def test_ui_static_css_served(client: TestClient) -> None:
     assert response.status_code == 200
     assert "--color-aged-paper" in response.text
     assert "--color-deep-teal" in response.text
-

@@ -39,4 +39,6 @@ class PaginationParams(BaseModel):
     """Standard pagination query parameters."""
 
     skip: int = Field(default=0, ge=0, description="Offset of records to skip")
-    limit: int = Field(default=20, ge=1, le=100, description="Maximum records to return")
+    limit: int = Field(
+        default=20, ge=1, le=100, description="Maximum records to return"
+    )

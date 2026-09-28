@@ -46,7 +46,9 @@ async def readiness_probe(
     total_keys = 0
     active_providers: list[str] = []
     if key_manager:
-        total_keys = sum(len(keys) for keys in getattr(key_manager, "_providers_keys", {}).values())
+        total_keys = sum(
+            len(keys) for keys in getattr(key_manager, "_providers_keys", {}).values()
+        )
         active_providers = getattr(key_manager, "_active_providers", [])
 
     is_ready = neo4j_ok

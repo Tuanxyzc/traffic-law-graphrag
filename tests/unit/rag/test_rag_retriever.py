@@ -31,7 +31,7 @@ def test_sanitize_lucene_query() -> None:
     # Check escaping of unbalanced quote
     unbalanced = '"thiết bị âm thanh không đóng ngoặc'
     sanitized_unbalanced = sanitize_lucene_query(unbalanced)
-    assert r'\"thiết' in sanitized_unbalanced
+    assert r"\"thiết" in sanitized_unbalanced
 
 
 def test_fuse_rrf_scoring() -> None:

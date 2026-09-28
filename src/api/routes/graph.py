@@ -26,7 +26,9 @@ router = APIRouter(prefix="/graph", tags=["Knowledge Graph"])
 async def list_documents(
     service: Annotated[GraphService, Depends(get_graph_service)],
     skip: Annotated[int, Query(ge=0, description="Số bản ghi bỏ qua")] = 0,
-    limit: Annotated[int, Query(ge=1, le=100, description="Số bản ghi tối đa trả về")] = 20,
+    limit: Annotated[
+        int, Query(ge=1, le=100, description="Số bản ghi tối đa trả về")
+    ] = 20,
 ) -> list[DocumentMetaResponse]:
     """Retrieves list of legal documents in knowledge graph."""
     return await service.get_documents(skip=skip, limit=limit)
@@ -62,7 +64,9 @@ async def get_provision_detail(
 )
 async def get_subgraph_nodes(
     service: Annotated[GraphService, Depends(get_graph_service)],
-    unit_ids: Annotated[list[str], Query(description="Danh sách các mã điều khoản cần trực quan hóa")],
+    unit_ids: Annotated[
+        list[str], Query(description="Danh sách các mã điều khoản cần trực quan hóa")
+    ],
 ) -> SubGraphSchema:
     """Retrieves visual subgraph for given provision IDs."""
     return await service.get_subgraph(unit_ids=unit_ids)

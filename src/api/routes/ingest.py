@@ -27,7 +27,9 @@ async def trigger_corpus_ingestion(
     service: Annotated[IngestService, Depends(get_ingest_service)],
 ) -> IngestTaskStatusResponse:
     """Schedules background corpus ingestion."""
-    logger.info("Received corpus ingestion request for file: %s", request.json_file_path)
+    logger.info(
+        "Received corpus ingestion request for file: %s", request.json_file_path
+    )
     task_status = await service.start_ingest_task(
         file_path=request.json_file_path,
         batch_size=request.batch_size,

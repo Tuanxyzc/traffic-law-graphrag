@@ -31,7 +31,9 @@ def convert_pipeline_subgraph(result: PipelineResult) -> SubGraphSchema | None:
             for n in result.subgraph.nodes
         ],
         relationships=[
-            SubGraphEdgeSchema(source=r.source, target=r.target, type=r.type, properties=r.properties)
+            SubGraphEdgeSchema(
+                source=r.source, target=r.target, type=r.type, properties=r.properties
+            )
             for r in result.subgraph.relationships
         ],
     )
@@ -59,7 +61,9 @@ class QueryService:
             top_k=top_k,
         )
 
-        subgraph_schema = convert_pipeline_subgraph(result) if include_subgraph else None
+        subgraph_schema = (
+            convert_pipeline_subgraph(result) if include_subgraph else None
+        )
         rewritten_obj = result.rewritten_query
         intent_str = getattr(rewritten_obj, "intent", "violation_sanction")
         search_query_str = getattr(rewritten_obj, "search_query", str(rewritten_obj))
@@ -93,14 +97,20 @@ class QueryService:
         # 1. Stage: Rewriting
         yield format_sse(
             "stage",
-            {"stage": "rewriting", "message": "Đang phân tích ý định và chuẩn hóa thuật ngữ pháp lý..."},
+            {
+                "stage": "rewriting",
+                "message": "Đang phân tích ý định và chuẩn hóa thuật ngữ pháp lý...",
+            },
         )
         await asyncio.sleep(0.01)
 
         # 2. Stage: Retrieval & Graph Validation
         yield format_sse(
             "stage",
-            {"stage": "retrieving", "message": "Đang tìm kiếm lai (Dense & BM25) và kiểm định đồ thị Neo4j..."},
+            {
+                "stage": "retrieving",
+                "message": "Đang tìm kiếm lai (Dense & BM25) và kiểm định đồ thị Neo4j...",
+            },
         )
 
         # Execute pipeline core off-thread
@@ -125,7 +135,10 @@ class QueryService:
         # 4. Stage: Generating Answer
         yield format_sse(
             "stage",
-            {"stage": "generating", "message": "Đang tổng hợp câu trả lời dựa trên căn cứ pháp lý..."},
+            {
+                "stage": "generating",
+                "message": "Đang tổng hợp câu trả lời dựa trên căn cứ pháp lý...",
+            },
         )
 
         # Stream answer in chunks (words/tokens) to deliver responsive user experience

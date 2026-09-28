@@ -41,7 +41,11 @@ class IngestService:
 
         try:
             self._tasks[task_id].status = "processing"
-            logger.info("Starting background indexing task %s for file %s", task_id, file_path_str)
+            logger.info(
+                "Starting background indexing task %s for file %s",
+                task_id,
+                file_path_str,
+            )
 
             units = self.indexer.parse_file(target_path)
             if not units:
@@ -82,7 +86,12 @@ class IngestService:
                         session.run(cypher_query, batch=batch_payload)
                         successful_units += len(batch_payload)
                     except Exception as exc:
-                        logger.error("Failed indexing batch %d-%d: %s", i, i + len(chunk_units), exc)
+                        logger.error(
+                            "Failed indexing batch %d-%d: %s",
+                            i,
+                            i + len(chunk_units),
+                            exc,
+                        )
                         failed_units += len(chunk_units)
 
             elapsed = round(time.perf_counter() - start_time, 2)

@@ -22,11 +22,15 @@ logger = logging.getLogger(__name__)
 class GraphService:
     """Service handling legal document catalog, provision inspection, and subgraph queries."""
 
-    def __init__(self, neo4j_client: Neo4jClient, validator: GraphValidator | None = None) -> None:
+    def __init__(
+        self, neo4j_client: Neo4jClient, validator: GraphValidator | None = None
+    ) -> None:
         self.neo4j_client = neo4j_client
         self.validator = validator or GraphValidator()
 
-    def _sync_get_documents(self, skip: int = 0, limit: int = 20) -> list[DocumentMetaResponse]:
+    def _sync_get_documents(
+        self, skip: int = 0, limit: int = 20
+    ) -> list[DocumentMetaResponse]:
         """Synchronously retrieves document catalog with article counts."""
         query = (
             "MATCH (d:Document) "
@@ -58,7 +62,9 @@ class GraphService:
                 )
             return docs
 
-    async def get_documents(self, skip: int = 0, limit: int = 20) -> list[DocumentMetaResponse]:
+    async def get_documents(
+        self, skip: int = 0, limit: int = 20
+    ) -> list[DocumentMetaResponse]:
         """Asynchronously retrieves legal document catalog from Neo4j."""
         return await asyncio.to_thread(self._sync_get_documents, skip=skip, limit=limit)
 
@@ -74,7 +80,9 @@ class GraphService:
             is_current=p.is_current,
             valid_from=p.valid_from,
             valid_to=p.valid_to,
-            statutory_status=p.status.value if hasattr(p.status, "value") else str(p.status),
+            statutory_status=p.status.value
+            if hasattr(p.status, "value")
+            else str(p.status),
         )
 
         cross_refs = [
@@ -117,7 +125,9 @@ class GraphService:
 
     async def get_provision(self, provision_id: str) -> ProvisionDetailResponse | None:
         """Asynchronously retrieves detailed provision information."""
-        return await asyncio.to_thread(self._sync_get_provision, provision_id=provision_id)
+        return await asyncio.to_thread(
+            self._sync_get_provision, provision_id=provision_id
+        )
 
     def _sync_get_subgraph(self, unit_ids: list[str]) -> SubGraphSchema:
         """Synchronously traverses and builds visual subgraph for requested unit IDs."""
@@ -143,16 +153,28 @@ class GraphService:
                 m = record.get("m")
                 if n and n.get("id"):
                     nid = n["id"]
-                    lbl = next(iter(n.labels)) if hasattr(n, "labels") and n.labels else "Node"
+                    lbl = (
+                        next(iter(n.labels))
+                        if hasattr(n, "labels") and n.labels
+                        else "Node"
+                    )
                     props = dict(n)
                     props.pop("embedding", None)
-                    nodes_map[nid] = SubGraphNodeSchema(id=nid, label=lbl, properties=props)
+                    nodes_map[nid] = SubGraphNodeSchema(
+                        id=nid, label=lbl, properties=props
+                    )
                 if m and m.get("id"):
                     mid = m["id"]
-                    lbl_m = next(iter(m.labels)) if hasattr(m, "labels") and m.labels else "Node"
+                    lbl_m = (
+                        next(iter(m.labels))
+                        if hasattr(m, "labels") and m.labels
+                        else "Node"
+                    )
                     props_m = dict(m)
                     props_m.pop("embedding", None)
-                    nodes_map[mid] = SubGraphNodeSchema(id=mid, label=lbl_m, properties=props_m)
+                    nodes_map[mid] = SubGraphNodeSchema(
+                        id=mid, label=lbl_m, properties=props_m
+                    )
                 if r:
                     src = n.get("id") if n else None
                     tgt = m.get("id") if m else None
@@ -163,11 +185,16 @@ class GraphService:
                             relationships_set.add(rel_key)
                             relationships.append(
                                 SubGraphEdgeSchema(
-                                    source=src, target=tgt, type=rtype, properties=dict(r)
+                                    source=src,
+                                    target=tgt,
+                                    type=rtype,
+                                    properties=dict(r),
                                 )
                             )
 
-        return SubGraphSchema(nodes=list(nodes_map.values()), relationships=relationships)
+        return SubGraphSchema(
+            nodes=list(nodes_map.values()), relationships=relationships
+        )
 
     async def get_subgraph(self, unit_ids: list[str]) -> SubGraphSchema:
         """Asynchronously traverses and returns visual subgraph."""

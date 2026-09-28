@@ -19,7 +19,9 @@ class APISettings(BaseModel):
     host: str = Field(default_factory=lambda: os.getenv("API_HOST", "0.0.0.0"))
     port: int = Field(default_factory=lambda: int(os.getenv("API_PORT", "8000")))
     debug: bool = Field(
-        default_factory=lambda: os.getenv("API_DEBUG", "false").lower() in ("true", "1", "yes")
+        default_factory=lambda: (
+            os.getenv("API_DEBUG", "false").lower() in ("true", "1", "yes")
+        )
     )
     cors_origins: list[str] = Field(
         default_factory=lambda: [
@@ -28,7 +30,9 @@ class APISettings(BaseModel):
             if origin.strip()
         ]
     )
-    default_top_k: int = Field(default_factory=lambda: int(os.getenv("DEFAULT_TOP_K", "5")))
+    default_top_k: int = Field(
+        default_factory=lambda: int(os.getenv("DEFAULT_TOP_K", "5"))
+    )
     max_top_k: int = Field(default_factory=lambda: int(os.getenv("MAX_TOP_K", "20")))
 
 

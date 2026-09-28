@@ -31,7 +31,9 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     try:
         client = get_neo4j_client()
         if client.verify_connectivity():
-            logger.info("Neo4j database connection verified successfully at %s", client.uri)
+            logger.info(
+                "Neo4j database connection verified successfully at %s", client.uri
+            )
         else:
             logger.warning("Could not establish connection to Neo4j at startup.")
     except Exception as exc:
