@@ -16,6 +16,8 @@ from src.pipeline.models import (
     LegalValidityStatus,
     PipelineResult,
     RewrittenQuery,
+    RoutingAction,
+    RoutingDecision,
     SubGraph,
     SubGraphNode,
     SubGraphRelationship,
@@ -222,6 +224,75 @@ def test_query_streaming_sse(
         text_content = response.text
         assert "event: stage" in text_content
         assert "event: token" in text_content
+        assert "event: done" in text_content
+    finally:
+        app.dependency_overrides.pop(get_pipeline, None)
+
+
+def test_query_streaming_sse_direct_lookup(
+    client: TestClient, mock_pipeline_result: PipelineResult
+) -> None:
+    """Verifies POST /api/v1/query/stream emits DIRECT_LOOKUP routing decision and bypass events."""
+    mock_pipe = MagicMock()
+    mock_pipe.router.route.return_value = RoutingDecision(
+        action=RoutingAction.DIRECT_LOOKUP,
+        unit_id="168_2024_ND-CP_D6_K5",
+        query="khoản 5 điều 6 nghị định 168",
+        reason="Tra cứu định danh số hiệu điều khoản.",
+        extracted_by="tier1_regex",
+    )
+    pipe_res = mock_pipeline_result.model_copy(
+        update={
+            "routing_action": "DIRECT_LOOKUP",
+            "matched_unit_id": "168_2024_ND-CP_D6_K5",
+        }
+    )
+    mock_pipe.run.return_value = pipe_res
+
+    app.dependency_overrides[get_pipeline] = lambda: mock_pipe
+    try:
+        payload = {"query": "khoản 5 điều 6 nghị định 168", "top_k": 3}
+        response = client.post("/api/v1/query/stream", json=payload)
+        assert response.status_code == 200
+        text_content = response.text
+        assert "DIRECT_LOOKUP" in text_content
+        assert "168_2024_ND-CP_D6_K5" in text_content
+        assert "retrieval_bypass" in text_content
+        assert "event: done" in text_content
+    finally:
+        app.dependency_overrides.pop(get_pipeline, None)
+
+
+def test_query_streaming_sse_hybrid_search(
+    client: TestClient, mock_pipeline_result: PipelineResult
+) -> None:
+    """Verifies POST /api/v1/query/stream emits HYBRID_SEARCH routing decision and rewriting events."""
+    mock_pipe = MagicMock()
+    mock_pipe.router.route.return_value = RoutingDecision(
+        action=RoutingAction.HYBRID_SEARCH,
+        unit_id=None,
+        query="vượt đèn đỏ xe máy phạt bao nhiêu",
+        reason="Câu hỏi hành vi vi phạm không có số hiệu.",
+        extracted_by="tier1_regex",
+    )
+    pipe_res = mock_pipeline_result.model_copy(
+        update={
+            "routing_action": "HYBRID_SEARCH",
+            "matched_unit_id": None,
+        }
+    )
+    mock_pipe.run.return_value = pipe_res
+
+    app.dependency_overrides[get_pipeline] = lambda: mock_pipe
+    try:
+        payload = {"query": "vượt đèn đỏ xe máy phạt bao nhiêu", "top_k": 3}
+        response = client.post("/api/v1/query/stream", json=payload)
+        assert response.status_code == 200
+        text_content = response.text
+        assert "HYBRID_SEARCH" in text_content
+        assert "routing_decision" in text_content
+        assert "rewriting" in text_content
+        assert "retrieving" in text_content
         assert "event: done" in text_content
     finally:
         app.dependency_overrides.pop(get_pipeline, None)

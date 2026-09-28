@@ -10,8 +10,14 @@ from src.pipeline.config import PipelineConfig
 from src.pipeline.evidence_builder import EvidenceBuilder
 from src.pipeline.generator import AnswerGenerator
 from src.pipeline.graph_validator import GraphValidator
-from src.pipeline.models import DocumentAmendmentItem, PipelineResult
+from src.pipeline.models import (
+    DocumentAmendmentItem,
+    PipelineResult,
+    RoutingAction,
+    RoutingDecision,
+)
 from src.pipeline.rewriter import QueryRewriter, normalize_colloquial_terms
+from src.pipeline.router import QueryRouter
 from src.rag.models import RetrievedChunk
 from src.rag.retriever import HybridRetriever
 
@@ -189,6 +195,7 @@ class GraphRAGPipeline:
 
     def __init__(
         self,
+        router: QueryRouter | None = None,
         rewriter: QueryRewriter | None = None,
         retriever: HybridRetriever | None = None,
         validator: GraphValidator | None = None,
@@ -199,6 +206,9 @@ class GraphRAGPipeline:
     ) -> None:
         self.config = config or PipelineConfig.from_env()
         self.key_manager = key_manager or KeyManager()
+        self.router = router or QueryRouter(
+            config=self.config, key_manager=self.key_manager
+        )
         self.rewriter = rewriter or QueryRewriter(
             config=self.config, key_manager=self.key_manager
         )
@@ -215,6 +225,7 @@ class GraphRAGPipeline:
         document_id: str | None = None,
         top_k: int | None = None,
         skip_generation: bool = False,
+        routing_decision: RoutingDecision | None = None,
     ) -> PipelineResult:
         """Executes the complete GraphRAG pipeline from citizen query to verified legal answer.
 
@@ -222,6 +233,8 @@ class GraphRAGPipeline:
             user_query: Natural colloquial question from citizen.
             document_id: Optional document ID to restrict retrieval.
             top_k: Candidate retrieval chunk count override.
+            skip_generation: Whether to skip LLM generation.
+            routing_decision: Optional pre-computed routing decision from QueryRouter.
 
         Returns:
             PipelineResult containing answer, citations, evidence, and timings.
@@ -230,8 +243,87 @@ class GraphRAGPipeline:
         clean_query = user_query.strip()
         logger.info("Starting GraphRAG pipeline for query: '%s'", clean_query)
 
-        # 1. Colloquial Query Rewriting with Intent Decomposition
-        rewritten = self.rewriter.rewrite(clean_query)
+        # 0. Query Routing & Entity Parsing (DIRECT_LOOKUP vs HYBRID_SEARCH)
+        if routing_decision is None:
+            routing_decision = self.router.route(clean_query)
+        logger.info(
+            "Routing decision: action=%s, unit_id=%s, reason='%s'",
+            routing_decision.action.value,
+            routing_decision.unit_id,
+            routing_decision.reason,
+        )
+
+        if (
+            routing_decision.action == RoutingAction.DIRECT_LOOKUP
+            and routing_decision.unit_id
+        ):
+            logger.info(
+                "Executing DIRECT_LOOKUP for unit_id '%s': bypassing BM25/Vector retrieval.",
+                routing_decision.unit_id,
+            )
+            if hasattr(self.validator, "lookup_legal_provision_neighborhood"):
+                validated_provisions = (
+                    self.validator.lookup_legal_provision_neighborhood(
+                        routing_decision.unit_id
+                    )
+                )
+            else:
+                target_node = self.validator.lookup_legal_provision_node(
+                    routing_decision.unit_id
+                )
+                validated_provisions = [target_node] if target_node else []
+
+            evidence_package = self.evidence_builder.build(
+                user_query=clean_query,
+                rewritten_query=routing_decision.query,
+                retrieved_chunks=[],
+                validated_provisions=validated_provisions,
+                document_amendments=[],
+                system_documents=[],
+            )
+
+            citations = (
+                [p.provision_id for p in validated_provisions]
+                if validated_provisions
+                else [routing_decision.unit_id]
+            )
+
+            if skip_generation:
+                elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
+                return PipelineResult(
+                    user_query=clean_query,
+                    rewritten_query=routing_decision.query,
+                    answer="",
+                    citations=citations,
+                    evidence_package=evidence_package,
+                    subgraph=evidence_package.subgraph,
+                    execution_time_ms=elapsed_ms,
+                    grounding_verified=True,
+                    verification_warnings=[],
+                    routing_action=RoutingAction.DIRECT_LOOKUP,
+                    matched_unit_id=routing_decision.unit_id,
+                )
+
+            generation_res = self.generator.generate(evidence_package)
+            elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
+            final_citations = generation_res.citations or citations
+
+            return PipelineResult(
+                user_query=clean_query,
+                rewritten_query=routing_decision.query,
+                answer=generation_res.answer,
+                citations=final_citations,
+                evidence_package=evidence_package,
+                subgraph=evidence_package.subgraph,
+                execution_time_ms=elapsed_ms,
+                grounding_verified=generation_res.grounding_verified,
+                verification_warnings=generation_res.verification_warnings,
+                routing_action=RoutingAction.DIRECT_LOOKUP,
+                matched_unit_id=routing_decision.unit_id,
+            )
+
+        # 1. Colloquial Query Rewriting with Intent Decomposition (for HYBRID_SEARCH)
+        rewritten = self.rewriter.rewrite(routing_decision.query)
         search_query = rewritten.search_query
         logger.info(
             "Search query after rewrite: '%s' (intent: %s)",
@@ -278,6 +370,8 @@ class GraphRAGPipeline:
                     execution_time_ms=elapsed_ms,
                     grounding_verified=True,
                     verification_warnings=[],
+                    routing_action=RoutingAction.HYBRID_SEARCH,
+                    matched_unit_id=None,
                 )
 
             generation_res = self.generator.generate(evidence_package)
@@ -295,6 +389,8 @@ class GraphRAGPipeline:
                 execution_time_ms=elapsed_ms,
                 grounding_verified=generation_res.grounding_verified,
                 verification_warnings=generation_res.verification_warnings,
+                routing_action=RoutingAction.HYBRID_SEARCH,
+                matched_unit_id=None,
             )
 
         elif rewritten.intent == "document_amendment" and (
@@ -426,6 +522,8 @@ class GraphRAGPipeline:
                 execution_time_ms=elapsed_ms,
                 grounding_verified=True,
                 verification_warnings=[],
+                routing_action=RoutingAction.HYBRID_SEARCH,
+                matched_unit_id=None,
             )
 
         generation_res = self.generator.generate(evidence_package)
@@ -442,6 +540,8 @@ class GraphRAGPipeline:
             execution_time_ms=elapsed_ms,
             grounding_verified=generation_res.grounding_verified,
             verification_warnings=generation_res.verification_warnings,
+            routing_action=RoutingAction.HYBRID_SEARCH,
+            matched_unit_id=None,
         )
 
     # Alias query to run for backwards compatibility

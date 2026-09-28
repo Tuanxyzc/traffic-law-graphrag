@@ -15,7 +15,7 @@ from src.api.schemas.query import (
     SubGraphNodeSchema,
     SubGraphSchema,
 )
-from src.pipeline.models import PipelineResult
+from src.pipeline.models import PipelineResult, RoutingDecision
 from src.pipeline.pipeline import GraphRAGPipeline
 
 logger = logging.getLogger(__name__)
@@ -68,6 +68,14 @@ class QueryService:
         intent_str = getattr(rewritten_obj, "intent", "violation_sanction")
         search_query_str = getattr(rewritten_obj, "search_query", str(rewritten_obj))
 
+        routing_action_str = (
+            result.routing_action.value
+            if hasattr(result.routing_action, "value")
+            else str(result.routing_action)
+            if result.routing_action
+            else None
+        )
+
         return QueryResponse(
             status="success" if intent_str != "out_of_scope" else "out_of_scope",
             user_query=result.user_query,
@@ -79,6 +87,8 @@ class QueryService:
             execution_time_ms=result.execution_time_ms,
             grounding_verified=result.grounding_verified,
             verification_warnings=result.verification_warnings,
+            routing_action=routing_action_str,
+            matched_unit_id=result.matched_unit_id,
         )
 
     async def execute_query_stream(
@@ -94,28 +104,139 @@ class QueryService:
         def format_sse(event: str, data: dict[str, Any]) -> str:
             return f"event: {event}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
 
-        # 1. Stage: Rewriting
+        # 0. Stage: Routing (Start)
         yield format_sse(
             "stage",
             {
-                "stage": "rewriting",
-                "message": "Đang phân tích ý định và chuẩn hóa thuật ngữ pháp lý...",
+                "stage": "routing",
+                "status": "running",
+                "message": "Đang phân tích tọa độ pháp lý & phân luồng truy vấn...",
             },
         )
         await asyncio.sleep(0.01)
 
-        # 2. Stage: Retrieval & Graph Validation
-        yield format_sse(
-            "stage",
-            {
-                "stage": "retrieving",
-                "message": "Đang tìm kiếm lai (Dense & BM25) và kiểm định đồ thị Neo4j...",
-            },
-        )
+        routing_decision = None
+        if hasattr(self.pipeline, "router") and self.pipeline.router:
+            try:
+                cand = await asyncio.to_thread(
+                    self.pipeline.router.route,
+                    query,
+                )
+                if isinstance(cand, RoutingDecision):
+                    routing_decision = cand
+            except Exception as e:
+                logger.warning("Error running router in streaming service: %s", e)
+                routing_decision = None
+
+        if routing_decision is not None:
+            routing_action_str = (
+                routing_decision.action.value
+                if hasattr(routing_decision.action, "value")
+                else str(routing_decision.action)
+                if routing_decision.action
+                else "HYBRID_SEARCH"
+            )
+            unit_id_str = getattr(routing_decision, "unit_id", None)
+            reason_str = getattr(routing_decision, "reason", None)
+            extracted_by_str = getattr(routing_decision, "extracted_by", None)
+
+            # Emit routing decision event
+            yield format_sse(
+                "stage",
+                {
+                    "stage": "routing_decision",
+                    "status": "completed",
+                    "routing_action": routing_action_str,
+                    "matched_unit_id": unit_id_str,
+                    "reason": reason_str,
+                    "extracted_by": extracted_by_str,
+                    "message": (
+                        f"Phân luồng: Tra cứu định danh (Direct Lookup: {unit_id_str})"
+                        if routing_action_str == "DIRECT_LOOKUP"
+                        else "Phân luồng: Tìm kiếm ngữ nghĩa lai (Hybrid Search)"
+                    ),
+                },
+            )
+            await asyncio.sleep(0.01)
+
+            if routing_action_str == "DIRECT_LOOKUP":
+                yield format_sse(
+                    "stage",
+                    {
+                        "stage": "retrieval_bypass",
+                        "status": "skipped",
+                        "routing_action": "DIRECT_LOOKUP",
+                        "message": f"Bỏ qua tìm kiếm lai (Đã xác định đích danh tọa độ: {unit_id_str})",
+                    },
+                )
+                await asyncio.sleep(0.01)
+                yield format_sse(
+                    "stage",
+                    {
+                        "stage": "graph",
+                        "status": "running",
+                        "routing_action": "DIRECT_LOOKUP",
+                        "matched_unit_id": unit_id_str,
+                        "message": f"Đang tra cứu trực tiếp node {unit_id_str} & liên kết chế tài trên Neo4j...",
+                    },
+                )
+            else:
+                yield format_sse(
+                    "stage",
+                    {
+                        "stage": "rewriting",
+                        "status": "running",
+                        "routing_action": "HYBRID_SEARCH",
+                        "message": "Đang phân tích ý định và chuẩn hóa thuật ngữ pháp lý...",
+                    },
+                )
+                await asyncio.sleep(0.01)
+                yield format_sse(
+                    "stage",
+                    {
+                        "stage": "retrieving",
+                        "status": "running",
+                        "routing_action": "HYBRID_SEARCH",
+                        "message": "Đang tìm kiếm lai (Dense & BM25) và kiểm định đồ thị Neo4j...",
+                    },
+                )
+        else:
+            # Fallback if router not initialized or failed
+            yield format_sse(
+                "stage",
+                {
+                    "stage": "rewriting",
+                    "status": "running",
+                    "message": "Đang phân tích ý định và chuẩn hóa thuật ngữ pháp lý...",
+                },
+            )
+            await asyncio.sleep(0.01)
+            yield format_sse(
+                "stage",
+                {
+                    "stage": "retrieving",
+                    "status": "running",
+                    "message": "Đang tìm kiếm lai (Dense & BM25) và kiểm định đồ thị Neo4j...",
+                },
+            )
 
         # Execute pipeline core off-thread
         try:
+            run_kwargs: dict[str, Any] = {
+                "user_query": query,
+                "document_id": document_id,
+                "top_k": top_k,
+            }
+            if routing_decision is not None:
+                run_kwargs["routing_decision"] = routing_decision
+
             result: PipelineResult = await asyncio.to_thread(
+                self.pipeline.run,
+                **run_kwargs,
+            )
+        except TypeError:
+            # Fallback for mock pipelines that don't accept routing_decision kwarg
+            result = await asyncio.to_thread(
                 self.pipeline.run,
                 user_query=query,
                 document_id=document_id,
@@ -153,6 +274,13 @@ class QueryService:
         rewritten_obj = result.rewritten_query
         intent_str = getattr(rewritten_obj, "intent", "violation_sanction")
         search_query_str = getattr(rewritten_obj, "search_query", str(rewritten_obj))
+        routing_action_str = (
+            result.routing_action.value
+            if hasattr(result.routing_action, "value")
+            else str(result.routing_action)
+            if result.routing_action
+            else None
+        )
 
         yield format_sse(
             "done",
@@ -164,5 +292,7 @@ class QueryService:
                 "execution_time_ms": elapsed_ms,
                 "grounding_verified": result.grounding_verified,
                 "verification_warnings": result.verification_warnings,
+                "routing_action": routing_action_str,
+                "matched_unit_id": result.matched_unit_id,
             },
         )

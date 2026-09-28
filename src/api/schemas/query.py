@@ -105,6 +105,12 @@ class QueryResponse(BaseModel):
     verification_warnings: list[str] = Field(
         default_factory=list, description="Warning flags raised during verification"
     )
+    routing_action: str | None = Field(
+        default=None, description="Routing action: DIRECT_LOOKUP or HYBRID_SEARCH"
+    )
+    matched_unit_id: str | None = Field(
+        default=None, description="Canonical unit ID if routed to DIRECT_LOOKUP"
+    )
 
 
 class StreamChunkEvent(BaseModel):

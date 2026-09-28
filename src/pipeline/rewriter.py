@@ -30,6 +30,7 @@ KNOWN_DOCUMENT_MAP: dict[str, str] = {
     "238": "238_2026_ND-CP",
     "35": "35_2024_QH15",
     "36": "36_2024_QH15",
+    "72": "72_2024_TT-BCA",
 }
 
 _KNOWN_DOC_KEYS_ALT = "|".join(re.escape(k) for k in KNOWN_DOCUMENT_MAP)

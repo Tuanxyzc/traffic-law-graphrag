@@ -87,6 +87,105 @@ class EvidenceBuilder:
     def __init__(self, config: PipelineConfig | None = None) -> None:
         self.config = config or PipelineConfig.from_env()
 
+    def _create_evidence_item(
+        self,
+        prov: ValidatedProvision,
+        chunk: RetrievedChunk | None = None,
+    ) -> tuple[EvidenceItem, bool]:
+        """Creates a standardized EvidenceItem from a ValidatedProvision and optional RetrievedChunk."""
+        warning_flag: str | None = None
+        has_superseded = False
+
+        prov_status = getattr(prov, "status", None)
+        prov_amendments = getattr(prov, "amendments", []) or []
+
+        if self.config.include_superseded_warning:
+            if prov_status == LegalValidityStatus.DA_BI_THAY_THE:
+                warning_flag = WARNING_SUPERSEDED
+                has_superseded = True
+            elif prov_status == LegalValidityStatus.HET_HIEU_LUC:
+                warning_flag = WARNING_EXPIRED
+                has_superseded = True
+            elif prov_status == LegalValidityStatus.DA_BI_BAI_BO:
+                warning_flag = WARNING_REPEALED
+                has_superseded = True
+            elif prov_status == LegalValidityStatus.CHUA_CO_HIEU_LUC:
+                warning_flag = WARNING_NOT_YET_EFFECTIVE
+                has_superseded = True
+            elif any(
+                am.direction == "INCOMING"
+                and am.operation in ("SUA_DOI", "AMENDS", "THAY_THE", "BO_SUNG", "ADDS")
+                for am in prov_amendments
+            ):
+                warning_flag = WARNING_AMENDED
+                has_superseded = True
+
+        incoming_amendments = [
+            am
+            for am in prov_amendments
+            if am.direction == "INCOMING"
+            and am.operation in ("THAY_THE", "SUA_DOI", "AMENDS", "BO_SUNG", "ADDS")
+        ]
+        outgoing_amendments = [
+            am for am in prov_amendments if am.direction == "OUTGOING"
+        ]
+
+        superseding_parts: list[str] = []
+        for am in incoming_amendments:
+            source_info = (
+                f" ({am.source_provision_id})" if am.source_provision_id else ""
+            )
+            eff_info = (
+                f" [Hiệu lực từ: {am.effective_from}]" if am.effective_from else ""
+            )
+            part = f"Theo {am.by_document or 'văn bản sửa đổi'}{source_info}{eff_info}: {am.instruction}"
+            if am.replacement_text:
+                part += f"\n-> NỘI DUNG MỚI ÁP DỤNG HIỆN HÀNH: {am.replacement_text}"
+            superseding_parts.append(part)
+
+        for am in outgoing_amendments:
+            eff_info = (
+                f" [Hiệu lực từ: {am.effective_from}]" if am.effective_from else ""
+            )
+            part = (
+                f"Quy định này sửa đổi, bổ sung cho điều khoản [{am.target_provision_id or ''}] "
+                f"của {am.by_document or 'văn bản được sửa đổi'}{eff_info}: {am.instruction}"
+            )
+            if am.replacement_text:
+                part += f"\n-> NỘI DUNG SỬA ĐỔI ĐƯỢC ÁP DỤNG: {am.replacement_text}"
+            superseding_parts.append(part)
+
+        superseding_text = "\n\n".join(superseding_parts) if superseding_parts else None
+
+        clean_prov = prov.model_copy(
+            update={
+                "parent_clause_content": None,
+                "parent_article_title": None,
+            }
+        )
+
+        chunk_id = chunk.id if chunk else prov.provision_id
+        chunk_text = (
+            (chunk.raw_text or chunk.text)
+            if chunk
+            else (prov.content_text or prov.parent_clause_content or "")
+        )
+
+        item = EvidenceItem(
+            chunk_id=chunk_id,
+            original_chunk_text=chunk_text,
+            clean_chunk_text=prov.content_text or chunk_text,
+            validated_provision=clean_prov,
+            warning_flag=warning_flag,
+            superseding_text=superseding_text,
+            score=getattr(chunk, "score", None) if chunk else 1.0,
+            dense_score=getattr(chunk, "dense_score", None) if chunk else None,
+            sparse_score=getattr(chunk, "sparse_score", None) if chunk else None,
+            dense_rank=getattr(chunk, "dense_rank", None) if chunk else None,
+            sparse_rank=getattr(chunk, "sparse_rank", None) if chunk else None,
+        )
+        return item, has_superseded
+
     def build(
         self,
         user_query: str,
@@ -117,9 +216,10 @@ class EvidenceBuilder:
         items: list[EvidenceItem] = []
         has_superseded = False
         valid_provisions_count = 0
+        processed_prov_ids: set[str] = set()
 
+        # 1. Process retrieved_chunks (if hybrid retrieval ran)
         for chunk in retrieved_chunks:
-            # 1. Match validated provision
             prov = prov_map.get(chunk.id)
             if not prov:
                 for pid, p in prov_map.items():
@@ -131,7 +231,6 @@ class EvidenceBuilder:
                         prov = p
                         break
             if not prov:
-                # Build fallback provision from chunk metadata
                 prov = ValidatedProvision(
                     provision_id=chunk.id,
                     level="UNKNOWN",
@@ -143,94 +242,25 @@ class EvidenceBuilder:
                 )
             else:
                 valid_provisions_count += 1
+                processed_prov_ids.add(prov.provision_id)
 
-            # 2. Determine warning flag
-            warning_flag: str | None = None
-            superseding_text: str | None = None
-
-            if self.config.include_superseded_warning:
-                if prov.status == LegalValidityStatus.DA_BI_THAY_THE:
-                    warning_flag = WARNING_SUPERSEDED
-                    has_superseded = True
-                elif prov.status == LegalValidityStatus.HET_HIEU_LUC:
-                    warning_flag = WARNING_EXPIRED
-                    has_superseded = True
-                elif prov.status == LegalValidityStatus.DA_BI_BAI_BO:
-                    warning_flag = WARNING_REPEALED
-                    has_superseded = True
-                elif prov.status == LegalValidityStatus.CHUA_CO_HIEU_LUC:
-                    warning_flag = WARNING_NOT_YET_EFFECTIVE
-                    has_superseded = True
-                elif any(
-                    am.direction == "INCOMING"
-                    and am.operation
-                    in ("SUA_DOI", "AMENDS", "THAY_THE", "BO_SUNG", "ADDS")
-                    for am in prov.amendments
-                ):
-                    warning_flag = WARNING_AMENDED
-                    has_superseded = True
-
-            # 3. Detect superseding/amendment provision text
-            incoming_amendments = [
-                am
-                for am in prov.amendments
-                if am.direction == "INCOMING"
-                and am.operation in ("THAY_THE", "SUA_DOI", "AMENDS", "BO_SUNG", "ADDS")
-            ]
-            outgoing_amendments = [
-                am for am in prov.amendments if am.direction == "OUTGOING"
-            ]
-
-            superseding_parts: list[str] = []
-            for am in incoming_amendments:
-                source_info = (
-                    f" ({am.source_provision_id})" if am.source_provision_id else ""
-                )
-                eff_info = (
-                    f" [Hiệu lực từ: {am.effective_from}]" if am.effective_from else ""
-                )
-                part = f"Theo {am.by_document or 'văn bản sửa đổi'}{source_info}{eff_info}: {am.instruction}"
-                if am.replacement_text:
-                    part += (
-                        f"\n-> NỘI DUNG MỚI ÁP DỤNG HIỆN HÀNH: {am.replacement_text}"
-                    )
-                superseding_parts.append(part)
-
-            for am in outgoing_amendments:
-                eff_info = (
-                    f" [Hiệu lực từ: {am.effective_from}]" if am.effective_from else ""
-                )
-                part = (
-                    f"Quy định này sửa đổi, bổ sung cho điều khoản [{am.target_provision_id or ''}] "
-                    f"của {am.by_document or 'văn bản được sửa đổi'}{eff_info}: {am.instruction}"
-                )
-                if am.replacement_text:
-                    part += f"\n-> NỘI DUNG SỬA ĐỔI ĐƯỢC ÁP DỤNG: {am.replacement_text}"
-                superseding_parts.append(part)
-
-            if superseding_parts:
-                superseding_text = "\n\n".join(superseding_parts)
-
-            clean_prov = prov.model_copy(
-                update={
-                    "parent_clause_content": None,
-                    "parent_article_title": None,
-                }
-            )
-            item = EvidenceItem(
-                chunk_id=chunk.id,
-                original_chunk_text=chunk.raw_text or chunk.text,
-                validated_provision=clean_prov,
-                warning_flag=warning_flag,
-                superseding_text=superseding_text,
-                score=getattr(chunk, "score", None),
-                dense_score=getattr(chunk, "dense_score", None),
-                sparse_score=getattr(chunk, "sparse_score", None),
-                dense_rank=getattr(chunk, "dense_rank", None),
-                sparse_rank=getattr(chunk, "sparse_rank", None),
-            )
+            item, sup = self._create_evidence_item(prov, chunk)
+            if sup:
+                has_superseded = True
             items.append(item)
 
+        # 2. Process any validated_provisions not yet included in items
+        # Crucial for DIRECT_LOOKUP route or multi-hop provisions traversed from graph
+        for prov in validated_provisions:
+            if prov.provision_id not in processed_prov_ids:
+                processed_prov_ids.add(prov.provision_id)
+                valid_provisions_count += 1
+                item, sup = self._create_evidence_item(prov, chunk=None)
+                if sup:
+                    has_superseded = True
+                items.append(item)
+
+        total_chunks = len(retrieved_chunks) if retrieved_chunks else len(items)
         doc_amendments_list = list(document_amendments) if document_amendments else []
         sys_docs_list = list(system_documents) if system_documents else []
         subgraph = self.build_subgraph(items, doc_amendments_list, sys_docs_list)
@@ -239,7 +269,7 @@ class EvidenceBuilder:
             user_query=user_query,
             rewritten_query=rewritten_query,
             items=items,
-            total_chunks_retrieved=len(retrieved_chunks),
+            total_chunks_retrieved=total_chunks,
             total_valid_provisions=valid_provisions_count,
             has_superseded_provisions=has_superseded,
             subgraph=subgraph,
@@ -274,8 +304,13 @@ class EvidenceBuilder:
             if node_id in nodes:
                 existing = nodes[node_id]
                 merged = {**existing.properties, **clean_props}
+                target_label = (
+                    label
+                    if label and label != "SemanticUnit"
+                    else (existing.label or label)
+                )
                 nodes[node_id] = SubGraphNode(
-                    id=node_id, label=existing.label or label, properties=merged
+                    id=node_id, label=target_label, properties=merged
                 )
             else:
                 nodes[node_id] = SubGraphNode(
@@ -312,8 +347,8 @@ class EvidenceBuilder:
         for item in items:
             prov = item.validated_provision
 
-            # 1. SemanticUnit node
-            if item.chunk_id:
+            # 1. SemanticUnit node (only when chunk_id is distinct from the provision node itself)
+            if item.chunk_id and item.chunk_id != prov.provision_id:
                 chunk_preview = item.original_chunk_text.strip()
                 if len(chunk_preview) > 300:
                     chunk_preview = chunk_preview[:300] + "..."
@@ -322,12 +357,11 @@ class EvidenceBuilder:
                     label="SemanticUnit",
                     properties={"chunk_id": item.chunk_id, "text": chunk_preview},
                 )
-                if item.chunk_id != prov.provision_id:
-                    add_rel(
-                        source=item.chunk_id,
-                        target=prov.provision_id,
-                        rel_type="EXTRACTED_FROM",
-                    )
+                add_rel(
+                    source=item.chunk_id,
+                    target=prov.provision_id,
+                    rel_type="EXTRACTED_FROM",
+                )
 
             # 2. Target validated provision node
             prov_label = infer_provision_label(prov.provision_id, prov.level)

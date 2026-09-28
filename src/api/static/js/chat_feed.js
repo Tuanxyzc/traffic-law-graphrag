@@ -44,8 +44,8 @@ export class ChatFeedManager {
     this.feedContainer.appendChild(progressDOM);
     this.activeProgress = progress;
 
-    // Bắt đầu bước 1: Chuẩn hóa câu hỏi
-    progress.setStep(0);
+    // Bắt đầu bước 1: Phân luồng truy vấn & Bóc tách tọa độ
+    progress.setStepById('routing', 'active', 'Đang quét số hiệu Điều, Khoản, Điểm và tên văn bản...');
     this.scrollToBottom();
 
     // 3. Chuẩn bị Answer Card
@@ -146,19 +146,35 @@ export class ChatFeedManager {
       const payload = JSON.parse(dataStr);
 
       if (eventType === 'stage' || payload.stage) {
-        const stageName = payload.stage || payload.name || '';
-        if (stageName.includes('rewrit') || stageName.includes('chuẩn hóa')) {
-          progress.setStep(0);
+        const stageName = (payload.stage || payload.name || '').toLowerCase();
+        if (stageName === 'routing') {
+          progress.setStepById('routing', 'active', payload.message);
+        } else if (stageName === 'routing_decision') {
+          progress.setRoutingDecision(payload);
+          const statusMeta = answerCard.querySelector('#answer-meta-status');
+          if (statusMeta) {
+            const action = payload.routing_action || '';
+            const unitId = payload.matched_unit_id || '';
+            if (action === 'DIRECT_LOOKUP') {
+              statusMeta.innerHTML = `<span class="answer-route-badge direct">⚡ Direct Lookup: ${this.escapeHtml(unitId)}</span>`;
+            } else {
+              statusMeta.innerHTML = `<span class="answer-route-badge hybrid">🔍 Hybrid Search</span>`;
+            }
+          }
+        } else if (stageName === 'retrieval_bypass') {
+          progress.setStepById('retrieve', 'skipped', payload.message);
+        } else if (stageName.includes('rewrit') || stageName.includes('chuẩn hóa')) {
+          progress.setStepById('rewrite', 'active', payload.message);
         } else if (stageName.includes('retriev') || stageName.includes('tìm kiếm')) {
-          progress.setStep(1);
+          progress.setStepById('retrieve', 'active', payload.message);
         } else if (stageName.includes('validat') || stageName.includes('kiểm định') || stageName.includes('graph')) {
-          progress.setStep(2);
+          progress.setStepById('graph', 'active', payload.message);
         } else if (stageName.includes('generat') || stageName.includes('sinh')) {
-          progress.setStep(3);
+          progress.setStepById('generate', 'active', payload.message);
         }
       } else if (eventType === 'token' || payload.token !== undefined) {
         const token = payload.token || '';
-        progress.setStep(3);
+        progress.setStepById('generate', 'active');
         answerCard.style.display = 'block';
 
         this.tokenBuffer += token;
@@ -169,16 +185,41 @@ export class ChatFeedManager {
           this.onSubgraphReceived(payload);
         }
       } else if (eventType === 'done' || payload.status === 'done') {
+        if (payload.routing_action && !progress.routingDecision) {
+          progress.setRoutingDecision({
+            action: payload.routing_action,
+            unit_id: payload.matched_unit_id,
+          });
+        }
         progress.completeAll();
+
         const groundingBox = answerCard.querySelector('#grounding-box');
         const execLabel = answerCard.querySelector('#exec-time-label');
         const statusMeta = answerCard.querySelector('#answer-meta-status');
 
-        if (groundingBox) groundingBox.style.display = 'flex';
+        if (groundingBox) {
+          groundingBox.style.display = 'flex';
+          let routeBadge = groundingBox.querySelector('.routing-result-badge');
+          if (!routeBadge && payload.routing_action) {
+            routeBadge = document.createElement('span');
+            routeBadge.className = `routing-result-badge ${payload.routing_action === 'DIRECT_LOOKUP' ? 'direct' : 'hybrid'}`;
+            routeBadge.innerHTML = payload.routing_action === 'DIRECT_LOOKUP'
+              ? `<span>⚡ Fast-Path: <strong>${this.escapeHtml(payload.matched_unit_id || '')}</strong></span>`
+              : `<span>🔍 Hybrid GraphRAG</span>`;
+            groundingBox.insertBefore(routeBadge, groundingBox.firstChild);
+          }
+        }
+
         if (execLabel && payload.execution_time_ms) {
           execLabel.textContent = `${Math.round(payload.execution_time_ms)} ms`;
         }
-        if (statusMeta) statusMeta.textContent = 'Hoàn tất';
+        if (statusMeta) {
+          if (payload.routing_action === 'DIRECT_LOOKUP') {
+            statusMeta.innerHTML = `<span class="answer-route-badge direct">⚡ Fast-Path (${this.escapeHtml(payload.matched_unit_id || '')})</span>`;
+          } else {
+            statusMeta.innerHTML = `<span class="answer-route-badge hybrid">🔍 Hybrid Search</span>`;
+          }
+        }
         this.attachCitationEvents(answerCard);
       }
     } catch {
@@ -193,8 +234,8 @@ export class ChatFeedManager {
 
   async fallbackSyncQuery(query, answerCard, progress) {
     try {
-      progress.setStep(1);
-      setTimeout(() => progress.setStep(2), 400);
+      progress.setStepById('routing', 'active', 'Đang phân tích truy vấn...');
+      setTimeout(() => progress.setStepById('retrieve', 'active'), 300);
 
       const res = await fetch('/api/v1/query', {
         method: 'POST',
@@ -202,9 +243,14 @@ export class ChatFeedManager {
         body: JSON.stringify({ query, top_k: 5, include_subgraph: true })
       });
 
-      progress.setStep(3);
       if (res.ok) {
         const data = await res.json();
+        if (data.routing_action) {
+          progress.setRoutingDecision({
+            action: data.routing_action,
+            unit_id: data.matched_unit_id,
+          });
+        }
         progress.completeAll();
         answerCard.style.display = 'block';
 
@@ -217,8 +263,27 @@ export class ChatFeedManager {
 
         const groundingBox = answerCard.querySelector('#grounding-box');
         const execLabel = answerCard.querySelector('#exec-time-label');
-        if (groundingBox) groundingBox.style.display = 'flex';
+        const statusMeta = answerCard.querySelector('#answer-meta-status');
+
+        if (groundingBox) {
+          groundingBox.style.display = 'flex';
+          let routeBadge = groundingBox.querySelector('.routing-result-badge');
+          if (!routeBadge && data.routing_action) {
+            routeBadge = document.createElement('span');
+            routeBadge.className = `routing-result-badge ${data.routing_action === 'DIRECT_LOOKUP' ? 'direct' : 'hybrid'}`;
+            routeBadge.innerHTML = data.routing_action === 'DIRECT_LOOKUP'
+              ? `<span>⚡ Fast-Path: <strong>${this.escapeHtml(data.matched_unit_id || '')}</strong></span>`
+              : `<span>🔍 Hybrid GraphRAG</span>`;
+            groundingBox.insertBefore(routeBadge, groundingBox.firstChild);
+          }
+        }
+
         if (execLabel) execLabel.textContent = `${Math.round(data.execution_time_ms || 250)} ms`;
+        if (statusMeta && data.routing_action) {
+          statusMeta.innerHTML = data.routing_action === 'DIRECT_LOOKUP'
+            ? `<span class="answer-route-badge direct">⚡ Fast-Path (${this.escapeHtml(data.matched_unit_id || '')})</span>`
+            : `<span class="answer-route-badge hybrid">🔍 Hybrid Search</span>`;
+        }
 
         this.attachCitationEvents(answerCard);
       } else {

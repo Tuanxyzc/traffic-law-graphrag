@@ -128,6 +128,30 @@ RETURN target.id AS provision_id,
        } ELSE null END) AS references
 """
 
+NEIGHBORHOOD_CYPHER_QUERY = """
+OPTIONAL MATCH (direct_node {id: $unit_id})
+WHERE direct_node:Point OR direct_node:Clause OR direct_node:Article
+OPTIONAL MATCH (su:SemanticUnit {id: $unit_id})-[:LOCATED_AT|EXTRACTED_FROM]->(su_node:Point|Clause|Article)
+WITH coalesce(direct_node, su_node) AS target
+WHERE target IS NOT NULL
+WITH DISTINCT target
+
+// 1. Children: Downward traversal (Clause -> Point, Article -> Clause, Article -> Clause -> Point)
+OPTIONAL MATCH (target)-[:CONTAINS_CLAUSE|CONTAINS_POINT*1..2]->(child:Point|Clause)
+
+// 2. Parents: Upward traversal (Point -> Clause, Point -> Clause -> Article, Clause -> Article)
+OPTIONAL MATCH (target)<-[:CONTAINS_POINT|CONTAINS_CLAUSE*1..2]-(parent:Clause|Article)
+
+// 3. 1-hop Cross-references (references, exceptions)
+OPTIONAL MATCH (target)-[:REFERENCES|EXCEPTION_TO]-(ref:Point|Clause|Article)
+
+WITH target,
+     collect(DISTINCT child.id) AS child_ids,
+     collect(DISTINCT parent.id) AS parent_ids,
+     collect(DISTINCT ref.id) AS ref_ids
+RETURN target.id AS target_id, child_ids, parent_ids, ref_ids
+"""
+
 DOCUMENT_AMENDMENTS_CYPHER_QUERY = """
 MATCH (action:AmendmentAction)-[r_mod:AMENDS|REPEALS|ADDS]->(target)
 WHERE (
@@ -424,6 +448,94 @@ class GraphValidator:
         except Exception as exc:
             logger.error("Failed to validate provisions via Neo4j: %s", exc)
             return []
+
+    def lookup_legal_provision_node(self, unit_id: str) -> ValidatedProvision | None:
+        """Looks up a single statutory provision node (Point, Clause, Article) by canonical ID.
+
+        Args:
+            unit_id: The canonical provision unit ID (e.g. '168_2024_ND-CP_D6_K5_Da').
+
+        Returns:
+            ValidatedProvision object if found in knowledge graph, otherwise None.
+        """
+        clean_id = unit_id.strip() if unit_id else ""
+        if not clean_id:
+            return None
+        provisions = self.validate_provisions([clean_id])
+        if provisions:
+            return provisions[0]
+        return None
+
+    def lookup_legal_provision_neighborhood(
+        self, unit_id: str, max_provisions: int = 30
+    ) -> list[ValidatedProvision]:
+        """Looks up a statutory provision and its immediate structural neighborhood (children, parents, references).
+
+        Order of returned provisions:
+        1. Target node itself (always first)
+        2. Child provisions (Points under Clause, Clauses/Points under Article)
+        3. Cross-referenced provisions (references, exceptions)
+        4. Parent provisions (Parent Clause, Parent Article)
+
+        Args:
+            unit_id: The canonical provision unit ID (e.g. '168_2024_ND-CP_D1_K1').
+            max_provisions: Maximum total provisions to return (default 30).
+
+        Returns:
+            List of ValidatedProvision objects ordered by relevance, beginning with the target node.
+        """
+        clean_id = unit_id.strip() if unit_id else ""
+        if not clean_id:
+            return []
+
+        try:
+            with self.client.session() as session:
+                record = session.run(
+                    NEIGHBORHOOD_CYPHER_QUERY, unit_id=clean_id
+                ).single()
+                if not record or not record.get("target_id"):
+                    # Fallback to single node lookup if neighborhood query found nothing
+                    single = self.lookup_legal_provision_node(clean_id)
+                    return [single] if single else []
+
+                target_id = record["target_id"]
+                child_ids = [c for c in (record.get("child_ids") or []) if c]
+                parent_ids = [p for p in (record.get("parent_ids") or []) if p]
+                ref_ids = [r for r in (record.get("ref_ids") or []) if r]
+
+                seen: set[str] = set()
+                ordered_ids: list[str] = []
+                for uid in [target_id] + child_ids + ref_ids + parent_ids:
+                    if uid and uid not in seen:
+                        seen.add(uid)
+                        ordered_ids.append(uid)
+
+                ordered_ids = ordered_ids[:max_provisions]
+                provisions = self.validate_provisions(ordered_ids)
+
+                # Preserve the ordered hierarchy (target first, then children, refs, parents)
+                prov_map = {p.provision_id: p for p in provisions}
+                ordered_provisions = [
+                    prov_map[uid] for uid in ordered_ids if uid in prov_map
+                ]
+
+                logger.info(
+                    "Neighborhood lookup for '%s': found %d provisions (target + %d children + %d refs + %d parents)",
+                    clean_id,
+                    len(ordered_provisions),
+                    len(child_ids),
+                    len(ref_ids),
+                    len(parent_ids),
+                )
+                return ordered_provisions
+        except Exception as exc:
+            logger.error(
+                "Failed to lookup provision neighborhood for '%s': %s",
+                clean_id,
+                exc,
+            )
+            single = self.lookup_legal_provision_node(clean_id)
+            return [single] if single else []
 
     def find_document_amendments(
         self,

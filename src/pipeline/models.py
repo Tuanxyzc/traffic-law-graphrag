@@ -401,3 +401,32 @@ class PipelineResult(BaseModel):
         default_factory=list,
         description="Warnings or issues detected by action grounding guard",
     )
+    routing_action: RoutingAction | str | None = Field(
+        default=None, description="Routing action: DIRECT_LOOKUP or HYBRID_SEARCH"
+    )
+    matched_unit_id: str | None = Field(
+        default=None, description="Canonical unit ID if routed to DIRECT_LOOKUP"
+    )
+
+
+class RoutingAction(str, Enum):
+    """Action determined by Query Router."""
+
+    DIRECT_LOOKUP = "DIRECT_LOOKUP"
+    HYBRID_SEARCH = "HYBRID_SEARCH"
+
+
+class RoutingDecision(BaseModel):
+    """Decision produced by QueryRouter."""
+
+    model_config = ConfigDict(frozen=True)
+
+    action: RoutingAction = Field(..., description="DIRECT_LOOKUP or HYBRID_SEARCH")
+    unit_id: str | None = Field(
+        default=None, description="Canonical Unit ID if DIRECT_LOOKUP"
+    )
+    query: str = Field(..., description="Cleaned search query")
+    reason: str = Field(..., description="Explanation for routing decision")
+    extracted_by: str = Field(
+        default="tier1_regex", description="'tier1_regex' or 'tier2_llm'"
+    )
