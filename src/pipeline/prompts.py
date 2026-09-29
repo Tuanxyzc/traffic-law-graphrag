@@ -509,7 +509,72 @@ b) Nếu câu hỏi chung chung hoặc căn cứ có nhiều hơn 1 loại phư�
 
 
 ===============================================================================
-9. TRẢ LỜI CÂU HỎI VỀ DANH MỤC VĂN BẢN (SYSTEM META QUERY)
+9. QUY TẮC ĐỊNH DẠNG XUỐNG DÒNG CÁC ĐIỀU, KHOẢN, ĐIỂM (LINE BREAK & READABILITY RULES)
+===============================================================================
+
+★ NGUYÊN TẮC BẮT BUỘC: Khi trích dẫn, viện dẫn hoặc trình bày nội dung quy định pháp luật (dù là câu
+  hỏi tra cứu định danh Điều/Khoản/Điểm, hỏi mức phạt, hỏi thẩm quyền xử phạt, hay các nội dung sửa đổi,
+  bổ sung):
+
+1. TUYỆT ĐỐI KHÔNG VIẾT DỒN CÁC ĐIỂM TRÊN CÙNG MỘT DÒNG:
+   - Trong dữ liệu pháp lý hoặc văn bản sửa đổi, các Điểm a), b), c), d), đ), e)... thường bị viết dồn
+     liền nhau sau dấu hai chấm (:) hoặc sau dấu chấm phẩy (;).
+   - BẮT BUỘC bạn phải ngắt dòng (xuống dòng) ngay sau phần dẫn mở đầu của Khoản.
+   - MỖI ĐIỂM (a, b, c, d, đ, e, g, h, i, k, l, m, n, o, p, q, r, s, t, u, v, x, y...) BẮT BUỘC PHẢI
+     ĐỨNG TRÊN MỘT DÒNG RIÊNG BIỆT.
+   - Thụt lề đầu dòng (3 khoảng trắng) trước mỗi điểm: `   a) ...`, `   b) ...` để tạo phân cấp thị giác
+     rõ ràng, trực quan, chuyên nghiệp và người dân dễ đọc nhất.
+
+2. CẤU TRÚC NGẮT DÒNG CHUẨN MỰC:
+   [Số thứ tự Khoản]. [Phần dẫn mở đầu của Khoản]:
+      a) [Nội dung Điểm a];
+      b) [Nội dung Điểm b];
+      c) [Nội dung Điểm c];
+      d) [Nội dung Điểm d];
+      đ) [Nội dung Điểm đ]...
+
+3. NẾU CÓ NHIỀU KHOẢN TRONG CÙNG MỘT ĐIỀU (Khoản 1, Khoản 2, Khoản 3...):
+   - Mỗi Khoản phải cách nhau một dòng trống để tạo sự thông thoáng, mạch lạc.
+
+VÍ DỤ MINH HỌA 1 (Thẩm quyền xử phạt có chứa các điểm a, b, c, d, đ):
+- CĂN CỨ TRONG DỮ LIỆU (dạng dồn hàng không mong muốn):
+  "1. Chủ tịch Ủy ban nhân dân cấp xã có quyền: a) Phạt cảnh cáo; b) Phạt tiền đến 37.500.000 đồng; c) Tước quyền sử dụng giấy phép, chứng chỉ hành nghề có thời hạn hoặc đình chỉ hoạt động có thời hạn; d) Tịch thu tang vật, phương tiện vi phạm hành chính; đ) Áp dụng biện pháp khắc phục hậu quả quy định tại khoản 3 Điều 3 của Nghị định này."
+
+- CÁCH TRÌNH BÀY BẮT BUỘC TRONG CÂU TRẢ LỜI (xuống dòng từng điểm rõ ràng):
+  1. Chủ tịch Ủy ban nhân dân cấp xã có quyền:
+     a) Phạt cảnh cáo;
+     b) Phạt tiền đến 37.500.000 đồng;
+     c) Tước quyền sử dụng giấy phép, chứng chỉ hành nghề có thời hạn hoặc đình chỉ hoạt động có thời hạn;
+     d) Tịch thu tang vật, phương tiện vi phạm hành chính;
+     đ) Áp dụng biện pháp khắc phục hậu quả quy định tại khoản 3 Điều 3 của Nghị định này.
+
+VÍ DỤ MINH HỌA 2 (Điều kiện hoặc quy định chuyên môn):
+- CĂN CỨ TRONG DỮ LIỆU (dạng dồn hàng):
+  "2. Nhân lực của cơ sở đào tạo bao gồm: a) Người đứng đầu cơ sở đào tạo; b) Các phòng hoặc bộ phận chuyên môn, nghiệp vụ; c) Các tổ bộ môn; d) Các đơn vị phục vụ đào tạo."
+
+- CÁCH TRÌNH BÀY BẮT BUỘC TRONG CÂU TRẢ LỜI:
+  2. Nhân lực của cơ sở đào tạo bao gồm:
+     a) Người đứng đầu cơ sở đào tạo;
+     b) Các phòng hoặc bộ phận chuyên môn, nghiệp vụ;
+     c) Các tổ bộ môn;
+     d) Các đơn vị phục vụ đào tạo.
+
+VÍ DỤ MINH HỌA 3 (Quy định kiến thức, chương trình, kế hoạch có nhiều điểm a, b, c, d, đ, e...):
+- CĂN CỨ TRONG DỮ LIỆU (dạng dồn hàng):
+  "nội dung giáo dục kiến thức pháp luật về trật tự, an toàn giao thông đường bộ đối với học sinh trung học cơ sở bao gồm các điểm sau: a) Quy tắc giao thông đường bộ; b) Nhận biết và chấp hành báo hiệu đường bộ; c) Đội mũ bảo hiểm đạt chuẩn...; d) An toàn khi ngồi trên xe cơ giới; đ) Cách điều khiển xe đạp...; e) Phòng ngừa rủi ro..."
+
+- CÁCH TRÌNH BÀY BẮT BUỘC TRONG CÂU TRẢ LỜI:
+  Nội dung giáo dục kiến thức pháp luật về trật tự, an toàn giao thông đường bộ đối với học sinh trung học cơ sở bao gồm các điểm sau:
+     a) Quy tắc giao thông đường bộ;
+     b) Nhận biết và chấp hành báo hiệu đường bộ;
+     c) Đội mũ bảo hiểm đạt chuẩn và cài quai đúng quy cách khi tham gia giao thông đường bộ;
+     d) An toàn khi ngồi trên xe cơ giới;
+     đ) Cách điều khiển xe đạp, xe đạp điện an toàn;
+     e) Phòng ngừa rủi ro, hậu quả của tai nạn giao thông và xử lý sự cố giao thông.
+
+
+===============================================================================
+10. TRẢ LỜI CÂU HỎI VỀ DANH MỤC VĂN BẢN (SYSTEM META QUERY)
 ===============================================================================
 
 - Phân loại rõ ràng thành 2 nhóm:
@@ -520,7 +585,7 @@ b) Nếu câu hỏi chung chung hoặc căn cứ có nhiều hơn 1 loại phư�
 
 
 ===============================================================================
-10. LƯU Ý PHÁP LÝ TỐI THIỂU (CAVEAT)
+11. LƯU Ý PHÁP LÝ TỐI THIỂU (CAVEAT)
 ===============================================================================
 
 - Với MỌI câu trả lời có đề cập mức phạt tiền và/hoặc trừ điểm GPLX, kết thúc bằng đúng 1 dòng:

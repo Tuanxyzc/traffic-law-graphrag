@@ -87,6 +87,19 @@ def has_sanctions_in_package(package: EvidencePackage) -> bool:
     return False
 
 
+def format_legal_points_linebreaks(text: str | None) -> str:
+    """Ensures statutory points (a), b), c), d), đ)...) start on new indented lines instead of being bunched inline."""
+    if not text or not isinstance(text, str):
+        return ""
+    # 1. Break after colon before first point: ": a)" -> ":\n   a)"
+    text = re.sub(r":\s*([a-zA-ZđĐ]\))\s+", r":\n   \1 ", text)
+    # 2. Break after semicolon before next point: "; b)" -> ";\n   b)"
+    text = re.sub(r";\s*([a-zA-ZđĐ]\))\s+", r";\n   \1 ", text)
+    # 3. Break after period before next point: ". b)" -> ".\n   b)"
+    text = re.sub(r"\.\s+([a-zA-ZđĐ]\))\s+", r".\n   \1 ", text)
+    return text
+
+
 def clean_generated_answer(text: str | None, has_sanctions: bool = True) -> str:
     """Cleans generated answer by deduplicating repetitive sections and pruning redundant no-sanction notes."""
     if not text or not isinstance(text, str):
@@ -176,6 +189,7 @@ def clean_generated_answer(text: str | None, has_sanctions: bool = True) -> str:
     # Strip trailing horizontal dividers or excessive line breaks
     result = re.sub(r"(?:\n\s*---\s*)+\Z", "", result)
     result = re.sub(r"\n{3,}", "\n\n", result)
+    result = format_legal_points_linebreaks(result)
     return result.strip()
 
 
@@ -399,6 +413,11 @@ class AnswerGenerator:
         )
         bullets.append(
             "- Nếu có điều khoản đã bị thay thế hoặc sửa đổi (xem cờ cảnh báo), hướng dẫn áp dụng theo quy định mới nhất hiện hành."
+        )
+        bullets.append(
+            "- Quy tắc ngắt dòng các Điểm: Khi trích dẫn hoặc nêu nội dung điều khoản có chứa các điểm a), b), c), d), đ)..., "
+            "bắt buộc phải ngắt dòng sau phần dẫn của khoản và đặt mỗi điểm trên một dòng riêng biệt (thụt lề 3 khoảng trắng: '   a) ...'), "
+            "tuyệt đối không viết dồn các điểm a), b), c)... trên cùng một dòng."
         )
 
         chi_dan_text = "\n".join(bullets)

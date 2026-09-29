@@ -461,3 +461,31 @@ def test_clean_generated_answer_strips_role_echo() -> None:
     cleaned = clean_generated_answer(raw_answer, has_sanctions=True)
     assert not cleaned.startswith("Bạn là chuyên viên")
     assert "Vượt đèn đỏ ở xe máy bị xử phạt như sau:" in cleaned
+
+
+def test_clean_generated_answer_formats_legal_points_linebreaks() -> None:
+    """Test that inline statutory points like ': a) ...; b) ...' are broken into separate lines."""
+    raw_answer = (
+        "1. Chủ tịch Ủy ban nhân dân cấp xã có quyền: a) Phạt cảnh cáo; "
+        "b) Phạt tiền đến 37.500.000 đồng; c) Tước quyền sử dụng giấy phép; "
+        "d) Tịch thu tang vật; đ) Áp dụng biện pháp khắc phục hậu quả."
+    )
+    cleaned = clean_generated_answer(raw_answer, has_sanctions=True)
+    assert ":\n   a) Phạt cảnh cáo;" in cleaned
+    assert ";\n   b) Phạt tiền đến 37.500.000 đồng;" in cleaned
+    assert ";\n   c) Tước quyền sử dụng giấy phép;" in cleaned
+    assert ";\n   d) Tịch thu tang vật;" in cleaned
+    assert ";\n   đ) Áp dụng biện pháp khắc phục hậu quả." in cleaned
+
+    # Test education provisions with points a through e including đ)
+    edu_answer = (
+        "nội dung giáo dục bao gồm các điểm sau: a) Quy tắc; b) Nhận biết; "
+        "c) Đội mũ bảo hiểm; d) An toàn; đ) Cách điều khiển xe đạp; e) Phòng ngừa."
+    )
+    cleaned_edu = clean_generated_answer(edu_answer, has_sanctions=False)
+    assert ":\n   a) Quy tắc;" in cleaned_edu
+    assert ";\n   b) Nhận biết;" in cleaned_edu
+    assert ";\n   c) Đội mũ bảo hiểm;" in cleaned_edu
+    assert ";\n   d) An toàn;" in cleaned_edu
+    assert ";\n   đ) Cách điều khiển xe đạp;" in cleaned_edu
+    assert ";\n   e) Phòng ngừa." in cleaned_edu

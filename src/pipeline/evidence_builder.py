@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from collections.abc import Sequence
 from typing import Any
 
@@ -28,6 +29,16 @@ WARNING_NOT_YET_EFFECTIVE = "[CẢNH BÁO: ĐIỀU KHOẢN CHƯA CÓ HIỆU LỰ
 WARNING_AMENDED = (
     "[LƯU Ý: ĐIỀU KHOẢN ĐÃ ĐƯỢC SỬA ĐỔI, BỔ SUNG - ÁP DỤNG QUY ĐỊNH MỚI NHẤT]"
 )
+
+
+def format_legal_points_linebreaks(text: str | None) -> str:
+    """Formats inline statutory points (e.g. ': a)', '; b)') onto indented separate lines."""
+    if not text or not isinstance(text, str):
+        return ""
+    text = re.sub(r":\s*([a-zA-ZđĐ]\))\s+", r":\n   \1 ", text)
+    text = re.sub(r";\s*([a-zA-ZđĐ]\))\s+", r";\n   \1 ", text)
+    text = re.sub(r"\.\s+([a-zA-ZđĐ]\))\s+", r".\n   \1 ", text)
+    return text
 
 
 def infer_provision_label(node_id: str, level: str | None = None) -> str:
@@ -174,7 +185,6 @@ class EvidenceBuilder:
         item = EvidenceItem(
             chunk_id=chunk_id,
             original_chunk_text=chunk_text,
-            clean_chunk_text=prov.content_text or chunk_text,
             validated_provision=clean_prov,
             warning_flag=warning_flag,
             superseding_text=superseding_text,
@@ -728,8 +738,11 @@ class EvidenceBuilder:
                             f"    - Lệnh sửa đổi/bổ sung: {am_item.instruction}"
                         )
                     if am_item.replacement_content:
+                        clean_rep_content = format_legal_points_linebreaks(
+                            am_item.replacement_content
+                        )
                         parts.append(
-                            f'    - Nội dung mới sau sửa đổi, bổ sung:\n      "{am_item.replacement_content}"'
+                            f'    - Nội dung mới sau sửa đổi, bổ sung:\n      "{clean_rep_content}"'
                         )
                     elif am_item.old_phrase and am_item.new_phrase:
                         parts.append(
@@ -792,15 +805,18 @@ class EvidenceBuilder:
             if active_replacements:
                 am_rep = active_replacements[0]
                 doc_str = f" theo {am_rep.by_document}" if am_rep.by_document else ""
+                clean_rep = format_legal_points_linebreaks(am_rep.replacement_text)
+                clean_content = format_legal_points_linebreaks(content)
                 parts.append(
                     f"NỘI DUNG QUY ĐỊNH:\n"
                     f"★ [QUY ĐỊNH MỚI SAU SỬA ĐỔI, BỔ SUNG (BẮT BUỘC ÁP DỤNG HIỆN HÀNH{doc_str})]:\n"
-                    f"{am_rep.replacement_text}\n\n"
+                    f"{clean_rep}\n\n"
                     f"[QUY ĐỊNH GỐC / TRƯỚC SỬA ĐỔI (THAM KHẢO ĐỐI CHIẾU)]:\n"
-                    f"{content}"
+                    f"{clean_content}"
                 )
             else:
-                parts.append(f"NỘI DUNG QUY ĐỊNH:\n{content}")
+                clean_content = format_legal_points_linebreaks(content)
+                parts.append(f"NỘI DUNG QUY ĐỊNH:\n{clean_content}")
 
             if prov.amendments:
                 parts.append("LỊCH SỬ SỬA ĐỔI / BỔ SUNG & TRAVERSAL 2 CHIỀU:")

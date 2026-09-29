@@ -39,6 +39,15 @@ def convert_pipeline_subgraph(result: PipelineResult) -> SubGraphSchema | None:
     )
 
 
+def extract_routing_action_str(action: Any) -> str | None:
+    """Extracts string representation of RoutingAction enum or string."""
+    if action is None:
+        return None
+    if hasattr(action, "value"):
+        return str(action.value)
+    return str(action)
+
+
 class QueryService:
     """Service mediating synchronous and streaming interactions with GraphRAGPipeline."""
 
@@ -68,13 +77,7 @@ class QueryService:
         intent_str = getattr(rewritten_obj, "intent", "violation_sanction")
         search_query_str = getattr(rewritten_obj, "search_query", str(rewritten_obj))
 
-        routing_action_str = (
-            result.routing_action.value
-            if hasattr(result.routing_action, "value")
-            else str(result.routing_action)
-            if result.routing_action
-            else None
-        )
+        routing_action_str = extract_routing_action_str(result.routing_action)
 
         return QueryResponse(
             status="success" if intent_str != "out_of_scope" else "out_of_scope",
@@ -128,13 +131,10 @@ class QueryService:
                 logger.warning("Error running router in streaming service: %s", e)
                 routing_decision = None
 
+        decision_action_str: str | None = None
         if routing_decision is not None:
-            routing_action_str = (
-                routing_decision.action.value
-                if hasattr(routing_decision.action, "value")
-                else str(routing_decision.action)
-                if routing_decision.action
-                else "HYBRID_SEARCH"
+            decision_action_str = (
+                extract_routing_action_str(routing_decision.action) or "HYBRID_SEARCH"
             )
             unit_id_str = getattr(routing_decision, "unit_id", None)
             reason_str = getattr(routing_decision, "reason", None)
@@ -146,20 +146,20 @@ class QueryService:
                 {
                     "stage": "routing_decision",
                     "status": "completed",
-                    "routing_action": routing_action_str,
+                    "routing_action": decision_action_str,
                     "matched_unit_id": unit_id_str,
                     "reason": reason_str,
                     "extracted_by": extracted_by_str,
                     "message": (
                         f"Phân luồng: Tra cứu định danh (Direct Lookup: {unit_id_str})"
-                        if routing_action_str == "DIRECT_LOOKUP"
+                        if decision_action_str == "DIRECT_LOOKUP"
                         else "Phân luồng: Tìm kiếm ngữ nghĩa lai (Hybrid Search)"
                     ),
                 },
             )
             await asyncio.sleep(0.01)
 
-            if routing_action_str == "DIRECT_LOOKUP":
+            if decision_action_str == "DIRECT_LOOKUP":
                 yield format_sse(
                     "stage",
                     {
@@ -274,13 +274,7 @@ class QueryService:
         rewritten_obj = result.rewritten_query
         intent_str = getattr(rewritten_obj, "intent", "violation_sanction")
         search_query_str = getattr(rewritten_obj, "search_query", str(rewritten_obj))
-        routing_action_str = (
-            result.routing_action.value
-            if hasattr(result.routing_action, "value")
-            else str(result.routing_action)
-            if result.routing_action
-            else None
-        )
+        routing_action_str = extract_routing_action_str(result.routing_action)
 
         yield format_sse(
             "done",
