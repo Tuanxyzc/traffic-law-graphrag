@@ -16,9 +16,10 @@
 ## 2. 🎬 Demo
 
 <!-- DEMO PLACEHOLDER -->
-> 📸 **Hình ảnh/GIF demo luồng truy vấn hệ thống sẽ đặt ở đây**
+> 📸 **<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/967cabda-ef50-4cab-9163-0b851494e1ce" />
+**
 > 
-> *(Placeholder dành cho bản ghi màn hình / ảnh chụp luồng xử lý câu hỏi pháp luật, kết quả trích xuất căn cứ pháp lý và giao diện tương tác API)*
+> 
 
 ---
 
