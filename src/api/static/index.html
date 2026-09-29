@@ -12,6 +12,15 @@
   <!-- Thư viện hỗ trợ: Lucide icons, Marked (Markdown), Cytoscape (Graph) -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    if (window.marked) {
+      if (typeof window.marked.use === 'function') {
+        window.marked.use({ breaks: true, gfm: true });
+      } else if (typeof window.marked.setOptions === 'function') {
+        window.marked.setOptions({ breaks: true, gfm: true });
+      }
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
 </head>
 <body>

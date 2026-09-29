@@ -304,6 +304,12 @@ export class ChatFeedManager {
       return;
     }
 
+    if (typeof window.marked.use === 'function') {
+      window.marked.use({ breaks: true, gfm: true });
+    } else if (typeof window.marked.setOptions === 'function') {
+      window.marked.setOptions({ breaks: true, gfm: true });
+    }
+
     // Tiền xử lý các trích dẫn pháp lý thành thẻ citation tag tương tác
     // Regex nhận diện ví dụ: [Điều 5 Nghị định 168/2024/NĐ-CP] hoặc [Khoản 1 Điều 6]
     let html = window.marked.parse(text);
