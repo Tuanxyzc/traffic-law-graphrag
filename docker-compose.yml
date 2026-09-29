@@ -26,3 +26,27 @@ services:
       timeout: 5s
       retries: 10
       start_period: 15s
+
+  api:
+    image: ${DOCKER_IMAGE:-tnaumib/traffic-law-api:latest} 
+    build: .
+    container_name: traffic-law-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Ghi đè URI kết nối để trỏ tới đúng container neo4j thay vì localhost
+      - NEO4J_URI=bolt://neo4j:7687
+    volumes:
+      # Giữ lại cache mô hình BAAI/bge-m3 để không phải tải lại 2.2GB mỗi lần khởi động
+      - hf_cache:/root/.cache/huggingface
+      # (Tùy chọn) Mount thư mục data nếu muốn chạy tác vụ import/ingest trực tiếp từ container
+      - ./data:/app/data:ro
+    depends_on:
+      neo4j:
+        condition: service_healthy
+
+volumes:
+  hf_cache:
